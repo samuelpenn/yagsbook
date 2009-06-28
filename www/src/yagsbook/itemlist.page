@@ -1,0 +1,241 @@
+<?xml version="1.0"?>
+<!--
+    XML Source for HTML.
+    Use pagexml stylesheets to render.
+ -->
+<page>
+    <header>
+        <title>Itemlist</title>
+
+        <summary>
+            An XML format for describing roleplaying games.
+        </summary>
+
+        <cvsinfo>
+            <version>$Revision: 1.2 $</version>
+            <date>$Date: 2005/07/17 15:14:31 $</date>
+        </cvsinfo>
+
+        <license type="BSD">
+            <year>2005</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                Redistribution and use in source, binary and printed
+                forms with or without modification is permitted. See
+                the full license text for details.
+            </text>
+            <url>http://www.glendale.org.uk/bsd.txt</url>
+        </license>
+        
+        <style>default</style>    
+        <footer href="../footer.inc"/>
+    </header>
+    
+    <links>
+        <link uri="/index">home</link>
+        <link uri="../yagsbook">yagsbook</link>
+        <link uri="sect1">sect1</link>
+    </links>
+
+    <sidebar>
+        <title>Summary</title>
+
+        <p>
+            A list of items displayed as an ordered or unordered list.
+        </p>
+    </sidebar>
+    
+    <sidebar>
+        <title>Parents</title>
+        
+        <p>
+            <xml uri="sect1">sect1</xml>,
+            <xml uri="sect2">sect2</xml>,
+            <xml uri="sect3">sect3</xml>,
+            <xml uri="sect4">sect4</xml>,
+            <xml uri="sect5">sect5</xml>,
+            <xml>description</xml>.
+        </p>
+    </sidebar>
+    
+    <sidebar>
+        <title>Related</title>
+        
+        <p>
+            <xml uri="targetlist">targetlist</xml>.
+        </p>
+    </sidebar>
+    
+    <body>
+        <sect1>
+            <p>
+                The <xml>itemlist</xml> element is a generic list which is
+                one of the basic block elements. It can normally be used
+                wherever a <xml uri="para">para</xml> element can be used.
+            </p>
+            
+            <p>
+                The <xml>itemlist</xml> can be used to provide a list of
+                definitions, a list of numbered items or an unordered
+                list of bulleted points.
+            </p>
+            
+            <sect2>
+                <title>Examples</title>
+                
+                <p>
+                    As a generic list structure, there are several ways to
+                    use <xml>itemlist</xml>. Some of the more common ways
+                    are shown below.
+                </p>
+                
+                <p>
+                    The first is as a basic list of definitions, displayed
+                    strictly in the order they are in the source document.
+                    Each item is displayed with its name, followed by its
+                    description.
+                </p>
+                
+                <xmlroot name="itemlist">
+                    <attribute name="order" value="strict"/>
+                    
+                    <element name="item">
+                        <attribute name="name" value="1"/>
+                        <text>
+                            This is the first item in the list.
+                        </text>
+                    </element>
+                    
+                    <element name="item">
+                        <attribute name="name" value="2"/>
+                        <text>
+                            This is the second item.
+                        </text>
+                    </element>
+                </xmlroot>
+                
+                <p>
+                    The second example is an unordered list. These have no
+                    <e>name</e> attribute, and are simply presented as a
+                    bulletted list.
+                </p>
+                
+                <xmlroot name="itemlist">
+                    <attribute name="order" value="unordered"/>
+                    
+                    <element name="item">
+                        This is the first item in the list.
+                    </element>
+                    
+                    <element name="item">
+                        This is the second item.
+                    </element>
+                </xmlroot>
+
+                <p>
+                    The final example is a numbered list, displayed in
+                    the given order, but each item is numbered.
+                </p>
+                
+                <xmlroot name="itemlist">
+                    <attribute name="order" value="1"/>
+                    
+                    <element name="item">
+                        This is the first item in the list.
+                    </element>
+                    
+                    <element name="item">
+                        This is the second item.
+                    </element>
+                </xmlroot>
+            </sect2>
+            
+            <sect2>
+                <title>Definition</title>
+                
+                <p>
+                    itemlist:: (item)+
+                </p>
+                
+                <p>
+                    How the list is displayed is controlled by the value
+                    of the 'order' attribute.
+                </p>
+                
+                <sect3>
+                    <title>itemlist/@order</title>
+                    
+                    <p>
+                        The order attribute can take any of the following
+                        values.
+                    </p>
+                    
+                    <itemlist order="strict">
+                        <item name="strict">
+                            Each item is displayed in the order given in
+                            the source document. Each item has a name
+                            attribute, and the name is given in bold
+                            preceeding each description. This list is
+                            actually a strict itemlist.
+                        </item>
+                        
+                        <item name="sort">
+                            As for a strict list, except the items are
+                            sorted into alphabetical order according to
+                            the value of each name attribute.
+                        </item>
+                        
+                        <item name="unordered">
+                            The list is displayed in source order, with
+                            each item marked with a bullet. The name of
+                            each item is ignored.
+                        </item>
+                        
+                        <item name="1">
+                            The list is displayed unsorted, with each item
+                            numbered, starting at 1, increasing for each
+                            item.
+                        </item>
+                        
+                        <item name="a">
+                            The list is displayed unsorted, with each item
+                            marked with a letter, beginning with 'a', and
+                            increasing through the alphabet.
+                        </item>
+                        
+                        <item name="i">
+                            The list is displayed unsorted, with each item
+                            numbered with lower case roman numerals.
+                        </item>
+                        
+                        <item name="I">
+                            The list is displayed unsorted, with each item
+                            numbered with uppercase roman numerals.
+                        </item>
+                    </itemlist>
+                </sect3>
+                
+                <sect3>
+                    <title>itemlist/item/@name</title>
+                    
+                    <p>
+                        The name attribute of each item is only displayed
+                        for lists of type 'sort' or 'strict'. For all
+                        other list types, the name is not given.
+                    </p>
+                </sect3>
+            </sect2>
+            
+            <sect2>
+                <title>Rendition</title>
+                
+                <p>
+                    Each list item should be indented from the main text,
+                    and seperated from preceeding list items in some way.
+                </p>
+            </sect2>
+        </sect1>
+    </body>
+</page>
+
+

@@ -1,0 +1,385 @@
+<?xml version="1.0"?>
+<!--
+    XML Source for HTML.
+    Use pagexml stylesheets to render.
+ -->
+<page>
+    <header>
+        <title>Item</title>
+
+        <summary>
+            Defines a single item of equipment.
+        </summary>
+
+        <cvsinfo>
+            <version>$Revision: 1.7 $</version>
+            <date>$Date: 2005/07/17 15:14:30 $</date>
+        </cvsinfo>
+
+        <license type="BSD">
+            <year>2005</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                Redistribution and use in source, binary and printed
+                forms with or without modification is permitted. See
+                the full license text for details.
+            </text>
+            <url>http://www.glendale.org.uk/bsd.txt</url>
+        </license>
+
+        <style>default</style>
+        <footer href="../footer.inc"/>
+    </header>
+
+    <links>
+        <link uri="/index">home</link>
+        <link uri="../yagsbook">yagsbook</link>
+        <link uri="equipment">equipment</link>
+    </links>
+
+    <sidebar>
+        <title>Summary</title>
+
+        <p>
+            Defines a single item of equipment. The minimum set of data is
+            quite simple, but complex rules specific information can be
+            included for items such as weapons or armour.
+        </p>
+    </sidebar>
+
+    <sidebar>
+        <title>Parents</title>
+
+        <p>
+            <xml uri="equipment">equipment</xml>.
+        </p>
+    </sidebar>
+
+    <sidebar>
+        <title>Rules Specific</title>
+
+        <p>
+            <link uri="yags/equipment-item" name="Yags"/>
+        </p>
+    </sidebar>
+
+
+    <body>
+        <sect1>
+            <p>
+                The <xml>item</xml> element is a child of the
+                <xml uri="equipment">equipment</xml> element, and defines a
+                single item of equipment.
+            </p>
+
+            <p>
+                All real world units are defined in the cgs (centimetre-
+                gram-second) scale. If required, style sheets can convert
+                to other units.
+            </p>
+
+            <sect2>
+                <title>Examples</title>
+
+                <p>
+                    The simplest entry for an item of equipment is as
+                    follows.
+                </p>
+
+                <xmlroot name="item">
+                    <attribute name="name" value="10' pole"/>
+                    <element name="category" value="Adventuring"/>
+                    <element name="importance" value="3"/>
+
+                    <element name="availability" value="2"/>
+
+                    <element name="short" value="A 10' long wooden pole"/>
+
+                    <element name="weight" value="1000"/>
+                    <element name="material" value="wood"/>
+
+                    <element name="cost" value="3"/>
+                </xmlroot>
+
+                <p>
+                    A more complete item description is as follows.
+                </p>
+
+                <xmlroot name="item">
+                    <attribute name="name" value="Padlock"/>
+                    <attribute name="quality" value="2"/>
+
+                    <element name="category" value="Adventuring"/>
+                    <element name="importance" value="2"/>
+
+                    <element name="availability" value="3"/>
+                    <element name="tech">
+                        <attribute name="level" value="3"/>
+                    </element>
+
+                    <element name="short" value="A standard padlock."/>
+
+                    <element name="description">
+                        <element name="para">
+                            A padlock designed to lock doors and chests.
+                        </element>
+                    </element>
+
+                    <comment>
+                        Dimensions are always in centimetres.
+                    </comment>
+                    <element name="dimensions">
+                        <element name="length" value="10"/>
+                        <element name="width" value="6"/>
+                        <element name="height" value="3"/>
+                    </element>
+
+                    <comment>
+                        Weight is in grammes.
+                    </comment>
+                    <element name="weight" value="500"/>
+                    <element name="material" value="iron"/>
+
+                    <element name="cost" value="100"/>
+
+                    <comment>
+                        Properties are flags which by default are unset
+                        unless they are listed. Some may have an @value
+                        attribute, though this should be rare. All
+                        properties are system agnostic.
+                    </comment>
+                    <element name="properties">
+                        <element name="specialist"/>
+                    </element>
+
+                    <comment>
+                        The final element is game specific, in this case d20.
+                        The existence of the 'device' element also declares
+                        this item to be a mechanical device of some sort.
+                    </comment>
+                    <element name="device">
+                        <attribute name="xmlns" value="http://yagsbook.sourceforge.net/xml/d20"/>
+
+                        <element name="difficulty" value="20"/>
+                        <element name="toughness" value="3"/>
+                        <element name="hitpoints" value="3"/>
+                        <element name="break" value="24"/>
+                    </element>
+                </xmlroot>
+            </sect2>
+
+            <sect2>
+                <title>Definition</title>
+
+                <p>
+                    item:: category, importance, availability, short,
+                    description?, dimensions?, weight, material, cost
+                </p>
+
+                <sect3>
+                    <title>@name</title>
+
+                    <p>
+                        Required and should be unique, though items which
+                        have different qualities will share the same name.
+                        This is what appears in a table listing all items.
+                    </p>
+                </sect3>
+
+                <sect3>
+                    <title>@quality</title>
+
+                    <p>
+                        Optional, defines the quality of an item one a
+                        scale of 1 to 5 (in a similar way to characters).
+                        1 = poor, 2 = average, 3 = good, 4 = excellent
+                        and 5 = superb. If an item is listed with
+                        different qualities, then each listing should
+                        have identical names.
+                    </p>
+                </sect3>
+
+                <sect3>
+                    <title>category</title>
+
+                    <p>
+                        The category that this item should be listed under.
+                        Each item should have exactly one category.
+                    </p>
+
+                    <itemlist order="strict">
+                        <item name="Adventuring">
+                            Typical adventuring gear.
+                        </item>
+
+                        <item name="Food">
+                            Food and drink, both prepared meals and fresh
+                            food.
+                        </item>
+
+                        <item name="Rogue">
+                            Dodgy equipment often used by thieves. Not
+                            necessarily illegal, but items such as
+                            crowbars might need explaining.
+                        </item>
+
+                        <item name="Fashion">
+                            Perfumes, jewellry and expensive clothing.
+                        </item>
+                    </itemlist>
+                </sect3>
+
+                <sect3>
+                    <title>importance</title>
+
+                    <p>
+                        Ranges from 0 to 3. Items of importance 3 are
+                        included on all equipment lists, importance 0
+                        are only included on the most detailed lists.
+                    </p>
+
+                    <p>
+                        Most items will be of importance 2.
+                    </p>
+                </sect3>
+
+                <sect3>
+                    <title>availability</title>
+
+                    <p>
+                        How easy or difficult something is to obtain, on a
+                        scale of 0 to 6.
+                    </p>
+
+                    <item order="strict">
+                        <item name="0">
+                            Item is available naturally, such as firewood
+                            or chalk. May be obtained almost anywhere,
+                            either for sale, or for 'free'.
+                        </item>
+
+                        <item name="1">
+                            Item is common, and available in farmsteads
+                            and hamlets.
+                        </item>
+
+                        <item name="2">
+                            Item is available in villages.
+                        </item>
+
+                        <item name="3">
+                            Item is available in small towns.
+                        </item>
+
+                        <item name="4">
+                            Item is only available in large towns.
+                        </item>
+
+                        <item name="5">
+                            Item is rare, and only available in major
+                            cities.
+                        </item>
+
+                        <item name="6">
+                            Item is incredibly rare and hard to obtain. It
+                            is normally only available in the largest of
+                            cities, and even then only if they are an
+                            important trade centre.
+                        </item>
+                    </item>
+                </sect3>
+
+                <sect3>
+                    <title>tech</title>
+
+                    <p>
+                        Technology level of when the item was first
+                        introduced. This assumes a technology advancement
+                        similar to Western Europe.
+                    </p>
+
+                    <p>
+                        The actual TL is specified as the attribute @level.
+                        This is to leave room for a more detailed
+                        technology tree as sub-elements of <xml>tech</xml>.
+                    </p>
+                </sect3>
+
+                <sect3>
+                    <title>short</title>
+
+                    <p>
+                        Short description of this item, though longer than
+                        the unique name.
+                    </p>
+                </sect3>
+
+                <sect3>
+                    <title>description (optional)</title>
+
+                    <p>
+                        A full description of this item, will full
+                        paragraphs and other text blocks such as tables
+                        or lists. There is room here for full background
+                        details of the item, though more than a few
+                        hundred words is probably excessive.
+                    </p>
+                </sect3>
+
+                <sect3>
+                    <title>dimensions (optional)</title>
+
+                    <p>
+                        Dimensions of the item, in centimetres. Length is
+                        always the longest dimension, width the next longest
+                        and height the shortest, unless there are very good
+                        reasons not to do this.
+                    </p>
+
+                    <xmlroot name="dimensions">
+                        <element name="length" value="90"/>
+                        <element name="width" value="40"/>
+                        <element name="height" value="10"/>
+                    </xmlroot>
+                </sect3>
+
+                <sect3>
+                    <title>weight</title>
+
+                    <p>
+                        The weight of the item, in grammes.
+                    </p>
+                </sect3>
+
+                <sect3>
+                    <title>material</title>
+
+                    <p>
+                        The material that this item is made from. This is
+                        just a very rough guide.
+                    </p>
+                </sect3>
+
+                <sect3>
+                    <title>cost</title>
+
+                    <p>
+                        Cost, in some as yet undetermined units.
+                    </p>
+                </sect3>
+            </sect2>
+
+            <sect2>
+                <title>Rendition</title>
+
+                <p>
+                    Each item in the list will be displayed in a table.
+                    The table may contain only a limited subset of the
+                    values defined.
+                </p>
+            </sect2>
+        </sect1>
+    </body>
+</page>
+
+

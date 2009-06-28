@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<!--
+    XML Source for HTML.
+    Use pagexml stylesheets to render.
+ -->
+<page>
+    <header>
+        <title>Element</title>
+
+        <summary>
+            An XML format for describing a website.
+        </summary>
+
+        <cvsinfo>
+            <version>$Revision: 1.2 $</version>
+            <date>$Date: 2005/07/17 15:14:29 $</date>
+        </cvsinfo>
+
+        <license type="BSD">
+            <year>2005</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                Redistribution and use in source, binary and printed
+                forms with or without modification is permitted. See
+                the full license text for details.
+            </text>
+            <url>http://www.glendale.org.uk/bsd.txt</url>
+        </license>
+        
+        <style>default</style>    
+        <footer href="../footer.inc"/>
+    </header>
+    
+    <links>
+        <link uri="/index">home</link>
+        <link uri="../pagexml">pagexml</link>
+        <link uri="xmlroot">xmlroot</link>
+        <link uri="element">element</link>
+    </links>
+
+    <sidebar>
+        <title>Summary</title>
+
+        <p>
+            An <xml>element</xml> documents an element of an XML document.
+            They are descendents of an <xml uri="xmlroot">xmlroot</xml>.
+        </p>
+    </sidebar>
+    
+    <sidebar>
+        <title>Parents</title>
+        
+        <p>
+            <xml uri="xmlroot">xmlroot</xml>,
+            <xml uri="element">element</xml>.
+        </p>
+    </sidebar>
+    
+    <sidebar>
+        <title>Children</title>
+        
+        <p>
+            <xml uri="attribute">attribute</xml>,
+            <xml uri="element">element</xml>,
+            <xml uri="text">text</xml>.
+        </p>
+    </sidebar>
+        
+    <body>
+        <sect1>
+            <p>
+                An <xml>element</xml> documents a single element within an
+                XML document. It may be the child of either an
+                <xml uri="xmlroot">xmlroot</xml> or another
+                <xml uri="element">element</xml>.
+            </p>
+            
+            <p>
+                If the element being documented has any attributes, then
+                these should be defined with
+                <xml uri="attribute">attribute</xml> children. If the
+                element has nested elements, then further <xml>element</xml>
+                nodes may be nested within it.
+            </p>
+                        
+            <sect2>
+                <title>Example</title>
+
+                <xmlroot name="element">
+                    <attribute name="name" value="element"/>
+                    
+                    <element name="attribute">
+                        <attribute name="name" value="name"/>
+                        <attribute name="value" value="value"/>
+                    </element>
+                    
+                    <element name="text">
+                        This is a text node.
+                    </element>
+                </xmlroot>
+            </sect2>
+            
+            <sect2>
+                <title>Definition</title>
+                
+                <p>
+                    element:: attribute*, element*, text?
+                </p>
+                
+                <p>
+                    An <xml>element</xml> must have a single attribute
+                    called 'name'. The node may contain text if it has
+                    no child <xml>attribute</xml> or <xml>element</xml>
+                    nodes of its own, otherwise any text must be
+                    contained within an <xml uri="text">text</xml>
+                    element.
+                </p>
+            </sect2>
+            
+            <sect2>
+                <title>Rendition</title>
+                
+                <p>    
+                    <xml>element</xml> elements are rendered as part
+                    of an <xml uri="xmlroot">xmlroot</xml> structure.
+                </p>                
+            </sect2>
+        </sect1>
+    </body>
+</page>
+
+

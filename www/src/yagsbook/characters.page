@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<!--
+    XML Source for HTML.
+    Use pagexml stylesheets to render.
+ -->
+<page>
+    <header>
+        <title>Characters</title>
+
+        <summary>
+            An XML format for describing roleplaying games.
+        </summary>
+
+        <cvsinfo>
+            <version>$Revision: 1.2 $</version>
+            <date>$Date: 2005/07/17 15:14:30 $</date>
+        </cvsinfo>
+
+        <license type="BSD">
+            <year>2005</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                Redistribution and use in source, binary and printed
+                forms with or without modification is permitted. See
+                the full license text for details.
+            </text>
+            <url>http://www.glendale.org.uk/bsd.txt</url>
+        </license>
+        
+        <style>default</style>    
+        <footer href="../footer.inc"/>
+    </header>
+    
+    <links>
+        <link uri="/index">home</link>
+        <link uri="../yagsbook">yagsbook</link>
+        <link uri="sect1">sect1</link>
+    </links>
+
+    <sidebar>
+        <title>Summary</title>
+
+        <p>
+            A set of characters, related by role.
+        </p>
+    </sidebar>
+    
+    <sidebar>
+        <title>Parents</title>
+        
+        <p>
+            <xml uri="sect1">sect1</xml>
+        </p>
+        
+        <p>
+            Note that this may also be used as a root element.
+        </p>
+    </sidebar>
+    
+    <sidebar>
+        <title>Children</title>
+        
+        <p>
+            <xml uri="character">character</xml>
+        </p>
+    </sidebar>        
+
+    <body>
+        <sect1>
+            <p>
+                The <xml>characters</xml> element contains a list of
+                one or more <xml uri="character">character</xml>
+                descriptions. Beyond being able to group a set of
+                characters together, there are two practical reasons why
+                a <xml>characters</xml> template might be used.
+            </p>
+            
+            <p>
+                The element's @role attribute specifies what the included
+                <xml>character</xml> elements are being used for. They
+                may be a set of <e>packages</e> or <e>stock</e> characters
+                for instance. When included in an Encyclopedia article, it
+                is possible for these characters to be found and pulled
+                out automatically according to topic and role.
+            </p>
+            
+            <p>
+                A document may have <xml>characters</xml> as its root
+                element. Currently, there is no standard way to handle
+                the display of such a document directly, but it may be
+                the target of an <xml uri="import-characters">
+                import-characters</xml> call.
+            </p>
+            
+                        
+            <sect2>
+                <title>Example</title>
+                
+                <xmlroot name="characters">
+                    <attribute name="role" value="package"/>
+                    <attribute name="title" value="List of Characters"/>
+                </xmlroot>
+            </sect2>
+            
+            <sect2>
+                <title>Definition</title>
+                
+                <p>
+                    characters:: @title? @role?
+                </p>
+            </sect2>
+        </sect1>
+    </body>
+</page>
+
+

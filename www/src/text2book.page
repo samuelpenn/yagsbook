@@ -1,0 +1,234 @@
+<?xml version="1.0"?>
+<!--
+    XML Source for HTML.
+    Use pagexml stylesheets to render.
+ -->
+<page>
+    <header>
+        <title>Text2book</title>
+
+        <summary>
+            A utility for converting plain text files into Yagsbook format.
+        </summary>
+
+        <cvsinfo>
+            <version>$Revision: 1.3 $</version>
+            <date>$Date: 2005/07/17 15:14:27 $</date>
+        </cvsinfo>
+
+        <license type="BSD">
+            <year>2005</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                Redistribution and use in source, binary and printed
+                forms with or without modification is permitted. See
+                the full license text for details.
+            </text>
+            <url>http://www.glendale.org.uk/bsd.txt</url>
+        </license>
+        
+        <style>default</style>    
+        <footer href="footer.inc"/>
+    </header>
+    
+    <links>
+        <link href="/index">home</link>
+        <link uri="yagsbook">yagsbook</link>
+    </links>
+
+    <sidebar>
+        <title>Summary</title>
+
+        <p>
+            Text2book was written to make it easier to write Yagsbook
+            articles on my PDA. Articles can be authored in a simple,
+            plain text format, then later converted into XML.
+        </p>
+    </sidebar>
+
+    <sidebar>
+        <title>License</title>
+
+        <p>
+            The software is released under the GNU Public License.
+        </p>
+    </sidebar>
+    
+    <sidebar>
+        <title>Sourceforge</title>
+        
+        <p>
+            Yagsbook is a SourceForge project. See the main project page at
+            <link href="http://sourceforge.net/projects/yagsbook"
+                  name="Sourceforge"/>
+            for reporting bugs and downloading latest releases.
+        </p>
+        
+    </sidebar>
+    
+    <sidebar>
+        <title>Author</title>
+        
+        <p>
+            The author of this software is
+            <link href="http://www.glendale.org.uk/~sam/samuelpenn.html"
+                  name="Samuel Penn"/>.
+        </p>
+    </sidebar>
+
+    <body>
+        <sect1>
+            <p>
+                <cmd>text2book</cmd> is a simple utility which converts a
+                plain text file into Yagsbook XML format. The file should
+                obey some simple rules, since it uses short keywords to
+                define things such as topics and categories for when the
+                article is generated.
+            </p>
+            
+            <p>
+                It was written primarily for when writing articles on a
+                PDA, where input of large numbers of XML tags can be more
+                trouble that it's worth.
+            </p>
+            
+            <p>
+                The utility is a C program. Currently it is only available
+                in CVS, but can be built with a single invocation of
+                <cmd>make</cmd>.
+            </p>
+        </sect1>
+        
+        <sect1>
+            <title>Usage</title>
+            
+            <p>
+                To invoke the command, use the following.
+            </p>
+            
+            <script prompt="$ ">
+                <cmd command="text2book">
+                    <option name="-d" parameter="outputdir" optional="true"/>
+                    <option name="-t" parameter="template" optional="true"/>
+                    <argument parameter="files..."/>
+                </cmd>
+            </script>
+            
+            <p>
+                For example, to convert the files file1.ty and file2.ty
+                and output the results into directory 'yags', use the
+                following command:
+            </p>
+            
+            <script prompt="$ ">
+                <cmd command="text2book">
+                    <option name="-d" value="yags"/>
+                    <option name="-t" value="/usr/share/xml/template.xml"/>
+                    <argument value="file1.ty"/>
+                    <argument value="file2.ty"/>
+                </cmd>
+            </script>
+        </sect1>
+        
+        <sect1>
+            <title>File Format</title>
+            
+            <p>
+                The format of files to be converted is quite strict, but
+                is kept easy to type if using a small keyboard (or a
+                stylus). There are three distinct areas - the filename,
+                header and body of the file.
+            </p>
+            
+            <sect2>
+                <title>Filename</title>
+                
+                <p>
+                    The filename should be the URI of the Yagsbook article.
+                    This means that it may only contain lower case
+                    alphanumeric characters plus the '-' character. The
+                    file extension is normally '.ty' though this is not
+                    enforced.
+                </p>
+                
+                <p>
+                    The filename is used directly when filling in fields
+                    within the generated XML, so it is important to get
+                    it right.
+                </p>
+            </sect2>
+            
+            <sect2>
+                <title>Header</title>
+                
+                <p>
+                    The header consists of meta data for the document,
+                    including topic sets and subject lines. The title is
+                    always the first line of the file, and subsequent lines
+                    are special commands. The first blank line ends the
+                    command section, and everything following that blank
+                    line is assumed to be body text.
+                </p>
+                
+                <p>
+                    For example, consider the following file header which
+                    describes the <e>Stone of Annuminas</e>.
+                </p>
+                
+                <output ref="header" numbered="true">
+                    <line ref="title">Stone of Annuminas</line>
+                    <line ref="subject">#sub annuminas Annuminas</line>
+                    <line ref="category">#cat Artifacts</line>
+                    <line>#top arnor Arnor</line>
+                    <line>#top middle-earth Middle Earth</line>
+                </output>
+                
+                <p>
+                    Line <ref output="header" ref="title"/> defines the
+                    title of this article. The title is put into the header
+                    and is also used for the title of the first section
+                    of the body text. This is always the first line of the
+                </p>
+                
+                <p>
+                    Line <ref output="header" ref="subject"/> uses the
+                    <cmd>#sub</cmd> tag to define the subject of the
+                    article. All '#' commands must be at the start of the
+                    line, and are three character commands. The first word
+                    following the '#sub' is the URI of the subject article.
+                    All subsequent words are the long text of the subject.
+                    If no subject command is given, then it is assumed that
+                    the article is its own subject.
+                </p>
+                
+                <p>
+                    The category of the article is defined on line
+                    <ref output="header" ref="category"/>. 
+                </p>
+                
+                <p>
+                    The following '#top' lines give the topic sets for the
+                    article. Each topic consists of the URI listed first,
+                    followed by the full text description of that topic.
+                </p>
+                
+                <p>
+                    The header is ended by a single blank line.
+                </p>
+            </sect2>
+            
+            <sect2>
+                <title>Body Text</title>
+                
+                <p>
+                    The body of each file should consists of a number of
+                    paragraphs of text, each unbroken by new lines. Each
+                    paragraph is ended by a newline and any number of
+                    empty lines.
+                </p>
+            </sect2>
+        </sect1>
+    </body>
+</page>
+
+

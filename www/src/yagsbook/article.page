@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<!--
+    XML Source for HTML.
+    Use pagexml stylesheets to render.
+ -->
+<page>
+    <header>
+        <title>Article</title>
+
+        <summary>
+            An XML format for describing roleplaying games.
+        </summary>
+
+        <cvsinfo>
+            <version>$Revision: 1.4 $</version>
+            <date>$Date: 2005/07/17 15:14:30 $</date>
+        </cvsinfo>
+
+        <license type="BSD">
+            <year>2005</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                Redistribution and use in source, binary and printed
+                forms with or without modification is permitted. See
+                the full license text for details.
+            </text>
+            <url>http://www.glendale.org.uk/bsd.txt</url>
+        </license>
+        
+        <style>default</style>    
+        <footer href="../footer.inc"/>
+    </header>
+    
+    <links>
+        <link uri="/index">home</link>
+        <link uri="../yagsbook">yagsbook</link>
+    </links>
+
+    <sidebar>
+        <title>Summary</title>
+
+        <p>
+            An <xml>article</xml> is the top level root node of a document.
+        </p>
+        
+    </sidebar>
+    
+    <sidebar>
+        <title>Children</title>
+        
+        <p>
+            <xml uri="header">header</xml>,
+            <xml uri="body">body</xml>,
+            <xml uri="front">front</xml>,
+            <xml uri="back">back</xml>.
+        </p>
+    </sidebar>
+        
+
+    <body>
+        <sect1>
+            <p>
+                An <xml>article</xml> node is always the root node of a
+                document. When rendered to the output format, each
+                article will represent a single output document. Articles
+                are the base of all documentation in Yagsbook. Every
+                entry in an Encyclopedia is an <xml>article</xml>, and
+                each standalone document of rules is an <xml>article</xml>.
+            </p>
+            
+            <p>
+                An <xml>article</xml> will often reference other
+                documents which will be included when the document is
+                rendered to the final format.
+            </p>
+            
+            <sect2>
+                <title>Example</title>
+                
+                <xmlroot name="article">
+                    <element name="header">
+                        <element name="title" value="Example Document"/>
+                        <element name="tagline" value="Yagsbook"/>
+                        <element name="slugline" value="simple sample document"/>
+                        
+                        <element name="author">
+                            <element name="fullname" value="Samuel Penn"/>
+                            <element name="email" value="sam@bifrost.demon.co.uk"/>
+                        </element>
+                        
+                        <element name="cvsinfo"/>
+                        <element name="license"/>
+                    </element>
+                    
+                    <element name="front"/>
+                    <element name="back"/>
+                    
+                    <element name="body">
+                        <element name="sect1">
+                            <element name="title" value="Main Section"/>
+                            
+                            <element name="p">
+                                A simple paragraph of text.
+                            </element>
+                        </element>
+                    </element>
+                </xmlroot>
+            </sect2>
+            
+            <sect2>
+                <title>Definition</title>
+                
+                <p>
+                    article:: (header, front?, back?, body)
+                </p>
+                
+                <p>
+                    At a minimum, an <xml>article</xml> must contain one
+                    <xml uri="header">header</xml> which contains the meta
+                    data for the article, and a <xml uri="body">body</xml>
+                    element which contains the story text of the article.
+                </p>
+                
+                <p>
+                    The <xml uri="front">front</xml> and <xml uri="back">
+                    back</xml> matter of the article (as defined by the
+                    GNU FDL) is optional.
+                </p>
+            </sect2>
+        </sect1>
+    </body>
+</page>
+
+

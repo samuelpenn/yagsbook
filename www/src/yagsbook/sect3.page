@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<!--
+    XML Source for HTML.
+    Use pagexml stylesheets to render.
+ -->
+<page>
+    <header>
+        <title>Sect3</title>
+
+        <summary>
+            Third level section.
+        </summary>
+
+        <cvsinfo>
+            <version>$Revision: 1.1 $</version>
+            <date>$Date: 2005/07/17 15:33:40 $</date>
+        </cvsinfo>
+
+        <license type="BSD">
+            <year>2005</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                Redistribution and use in source, binary and printed
+                forms with or without modification is permitted. See
+                the full license text for details.
+            </text>
+            <url>http://www.glendale.org.uk/bsd.txt</url>
+        </license>
+
+        <style>default</style>
+        <footer href="../footer.inc"/>
+    </header>
+
+    <links>
+        <link uri="/index">home</link>
+        <link uri="../yagsbook">yagsbook</link>
+        <link uri="article">article</link>
+        <link uri="body">body</link>
+        <link uri="sect1">sect1</link>
+    </links>
+
+    <sidebar>
+        <title>Summary</title>
+
+        <p>
+            The <xml>sect3</xml> element is always a direct child of a
+            <xml uri="sect2">sect2</xml> element. It contains paragraph
+            type elements and <xml uri="sect4">sect4</xml> sections.
+        </p>
+    </sidebar>
+
+    <sidebar>
+        <title>Parents</title>
+
+        <p>
+            <xml uri="sect2">sect2</xml>
+        </p>
+    </sidebar>
+
+    <sidebar>
+        <title>Children</title>
+
+        <p>
+            <xml uri="sect4">sect4</xml>,
+            and others similar to sect1.
+        </p>
+    </sidebar>
+
+
+    <body>
+        <sect1>
+            <p>
+                A <xml>sect3</xml> element represents a third level
+                section, always nested within a <xml uri="sect2">sect2</xml>.
+                It may contain <xml uri="sect4">sect4</xml> sections, plus
+                any other type of element supported by <xml>sect1</xml>
+                with the exception of <xml>sect2</xml> elements.
+            </p>
+
+            <p>
+                See <xml uri="sect1">sect1</xml> for full details of how
+                to use the various section tags.
+            </p>
+
+            <sect2>
+                <title>Rendition</title>
+
+                <p>
+                    Section three headings are of middling importance,
+                    and normally denote a sub topic. The title should
+                    not greatly break the flow of text.
+                </p>
+            </sect2>
+        </sect1>
+    </body>
+</page>
+
+

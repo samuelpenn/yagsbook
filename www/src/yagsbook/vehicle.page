@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<!--
+    XML Source for HTML.
+    Use pagexml stylesheets to render.
+ -->
+<page>
+    <header>
+        <title>Vehicle</title>
+
+        <summary>
+            A description of a vehicle.
+        </summary>
+
+        <cvsinfo>
+            <version>$Revision: 1.1 $</version>
+            <date>$Date: 2005/07/17 18:14:03 $</date>
+        </cvsinfo>
+
+        <license type="BSD">
+            <year>2005</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                Redistribution and use in source, binary and printed
+                forms with or without modification is permitted. See
+                the full license text for details.
+            </text>
+            <url>http://www.glendale.org.uk/bsd.txt</url>
+        </license>
+
+        <style>default</style>
+        <footer href="../footer.inc"/>
+    </header>
+
+    <links>
+        <link uri="/index">home</link>
+        <link uri="../yagsbook">yagsbook</link>
+        <link uri="sect1">sect1</link>
+    </links>
+
+    <sidebar>
+        <title>Summary</title>
+
+        <p>
+            A vehicle description, including game statistics.
+        </p>
+    </sidebar>
+
+    <sidebar>
+        <title>Parents</title>
+
+        <p>
+            <xml uri="sect1">sect1</xml>
+        </p>
+    </sidebar>
+
+    <sidebar>
+        <title>Children</title>
+
+        <p>
+            <xml uri="dirtside/vehicle">dirtside:statistics</xml>
+        </p>
+    </sidebar>
+
+    <sidebar>
+        <title>Game Systems</title>
+
+        <p>
+            Game statistics are currently only available for Dirtside,
+            indeed support was added specifically for this wargame.
+        </p>
+    </sidebar>
+
+
+    <body>
+        <sect1>
+            <p>
+                The <xml>vehicle</xml> element is used to describe a
+                vehicle, such as a tank, car or plane. It is of most use
+                when game statistics are provided for the vehicle in
+                question - currently only <e>Dirtside</e> is supported
+                but other systems may be added later.
+            </p>
+
+            <sect2>
+                <title>Overview</title>
+
+                <p>
+                    The element consists of a game-neutral description
+                    followed by one or more statistics blocks much in
+                    the same way as for <xml uri="character">character</xml>
+                    elements. These blocks use a namespace to define which
+                    set of rules they are describing.
+                </p>
+
+                <p>
+                    The standard way of denoting the namespace is to use
+                    the xmlns= attribute, for example:
+                </p>
+
+                <xmlroot name="statistics">
+                    <attribute name="xmlns"
+                        value="http://yagsbook.sourceforge.net/xml/dirtside"/>
+                </xmlroot>
+            </sect2>
+
+
+            <sect2>
+                <title>Example</title>
+
+                <xmlroot name="vehicle">
+                    <attribute name="name" value="Panzer XII"/>
+
+                    <element name="description">
+                        <element name="image" value="picture.jpg"/>
+
+                        <element name="physical">
+                            <element name="para">
+                                Some text describing what the vehicle looks
+                                like and what it's capabilities are.
+                            </element>
+                        </element>
+
+                        <element name="history">
+                            <element name="para">
+                                History of this vehicle type - when it was
+                                built, the uses to which it has been put.
+                            </element>
+                        </element>
+                    </element>
+
+                    <element name="statistics">
+                        <attribute name="xmlns"
+                                   value="http://yagsbook.sourceforge.net/xml/dirtside"/>
+                    </element>
+                </xmlroot>
+            </sect2>
+
+            <sect2>
+                <title>Definition</title>
+
+                <p>
+                    vehicle:: description, statistics*
+                </p>
+            </sect2>
+
+            <sect2>
+                <title>Rendition</title>
+
+                <p>
+                    Display will depend on the game in question.
+                </p>
+            </sect2>
+        </sect1>
+    </body>
+</page>
+
+

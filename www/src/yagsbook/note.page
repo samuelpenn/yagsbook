@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<!--
+    XML Source for HTML.
+    Use pagexml stylesheets to render.
+ -->
+<page>
+    <header>
+        <title>Note</title>
+
+        <summary>
+            A note tag, for denoting an important point.
+        </summary>
+
+        <cvsinfo>
+            <version>$Revision: 1.2 $</version>
+            <date>$Date: 2005/07/17 15:14:31 $</date>
+        </cvsinfo>
+
+        <license type="BSD">
+            <year>2005</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                Redistribution and use in source, binary and printed
+                forms with or without modification is permitted. See
+                the full license text for details.
+            </text>
+            <url>http://www.glendale.org.uk/bsd.txt</url>
+        </license>
+        
+        <style>default</style>    
+        <footer href="../footer.inc"/>
+    </header>
+    
+    <links>
+        <link uri="/index">home</link>
+        <link uri="../yagsbook">yagsbook</link>
+        <link uri="para">para</link>
+    </links>
+
+    <sidebar>
+        <title>Summary</title>
+
+        <p>
+            This text is important and should be noted.
+        </p>
+    </sidebar>
+    
+    <sidebar>
+        <title>Parents</title>
+        
+        <p>
+            <xml uri="para">para</xml>.
+        </p>
+    </sidebar>
+    
+    <sidebar>
+        <title>Related</title>
+        
+        <p>
+            <xml uri="e">e</xml>,
+            <xml uri="s">s</xml>,
+            <xml uri="tm">tm</xml>,
+            <xml uri="warning">warning</xml>,
+            <xml uri="url">url</xml>,
+            <xml uri="qv">qv</xml>.
+        </p>
+    </sidebar>
+    
+    <body>
+        <sect1>
+            <p>
+                A <xml>note</xml> marks up a block of text which is
+                important enough to need highlighting. Unlike the emphasis
+                tags which tend to be used to mark up a single world,
+                notes often mark a whole sentance, or a whole paragraph.
+            </p>
+
+            <sect2>
+                <title>Example</title>
+
+                <xmlroot name="sect1">
+                    <element name="para">
+                        This is quite a simple experiment,
+                        <inline name="note" value="though you really should
+                        wash your hands before you begin for best results"/>.
+                        Other people have found it quite easy.
+                    </element>
+                </xmlroot>
+            </sect2>
+            
+            <sect2>
+                <title>Definition</title>
+                
+                <p>
+                    A <xml>note</xml> may only contain basic text.
+                </p>
+            </sect2>
+            
+            <sect2>
+                <title>Rendition</title>
+                
+                <p>
+                    The text should be emphasised in some way, though not
+                    overtly so. Simple italics will often be sufficient,
+                    but a different background colour, or inline graphics,
+                    may work.
+                </p>
+            </sect2>
+        </sect1>
+    </body>
+</page>
+
+

@@ -1,0 +1,369 @@
+<?xml version="1.0"?>
+<!--
+    XML Source for HTML.
+    Use pagexml stylesheets to render.
+ -->
+<page>
+    <header>
+        <title>Character</title>
+
+        <summary>
+            An XML format for describing roleplaying games.
+        </summary>
+
+        <cvsinfo>
+            <version>$Revision: 1.6 $</version>
+            <date>$Date: 2005/07/17 15:14:30 $</date>
+        </cvsinfo>
+
+        <license type="BSD">
+            <year>2005</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                Redistribution and use in source, binary and printed
+                forms with or without modification is permitted. See
+                the full license text for details.
+            </text>
+            <url>http://www.glendale.org.uk/bsd.txt</url>
+        </license>
+
+        <style>default</style>
+        <footer href="../footer.inc"/>
+    </header>
+
+    <links>
+        <link uri="/index">home</link>
+        <link uri="../yagsbook">yagsbook</link>
+        <link uri="sect1">sect1</link>
+    </links>
+
+    <sidebar>
+        <title>Summary</title>
+
+        <p>
+            A character description, including free text and game rules
+            information.
+        </p>
+    </sidebar>
+
+    <sidebar>
+        <title>Parents</title>
+
+        <p>
+            <xml uri="sect1">sect1</xml>
+        </p>
+    </sidebar>
+
+    <sidebar>
+        <title>Children</title>
+
+        <p>
+            <xml uri="yags/character-statistics">yags:statistics</xml>
+        </p>
+    </sidebar>
+
+    <sidebar>
+        <title>Related</title>
+
+        <p>
+            <xml uri="beast">beast</xml>.
+        </p>
+    </sidebar>
+
+    <sidebar>
+        <title>Game Systems</title>
+
+        <p>
+            <s>Yagsbook</s> is optimised for the Yags game system (hence
+            its name), however there is a desire to support multiple game
+            systems if for no other reason than it being the right thing
+            to do. Currently, only Yags is properly supported (and even
+            here, things are currently buggy). The first systems to be
+            supported other than Yags will probably be Warhammer, d20,
+            GURPS and maybe Ars Magica.
+        </p>
+
+        <p>
+            Near future support for all systems other than Yags will be
+            basic at best, with no calculations or special rules being
+            supported.
+        </p>
+    </sidebar>
+
+
+    <body>
+        <sect1>
+            <p>
+                The <xml>character</xml> element is one of the most
+                complex of the XML structures used in Yagsbook. It allows
+                for a complete character description, including background
+                and physical description, as well as game rules and combat
+                statistics.
+            </p>
+
+            <sect2>
+                <title>Overview</title>
+
+                <p>
+                    There are three main ways in which a
+                    <xml>character</xml> element may be used, which is
+                    based on what it actually represents. The first part of
+                    any character description will include the descriptive
+                    part, which is independent of any game system. The
+                    rest of the content will be game specific.
+                </p>
+
+                <p>
+                    Each game specific description is included in a
+                    <xml>statistics</xml> element. Each such element should
+                    declare a namespace - such as yags:, d20: or gurps: to
+                    denote the game system being used. A character may be
+                    described for multiple game systems if desired.
+                </p>
+
+                <p>
+                    The standard way of denoting the namespace is to use
+                    the xmlns= attribute, for example:
+                </p>
+
+                <xmlroot name="statistics">
+                    <attribute name="xmlns"
+                        value="http://yagsbook.sourceforge.net/xslt/yags"/>
+                </xmlroot>
+
+                <sect3>
+                    <title>Individual Character</title>
+
+                    <p>
+                        The description of an <i>individual</i> will
+                        include anything up to a full set of attributes,
+                        skills, advantages and equipment. It will
+                        include a physical description, as well as
+                        background information. Optionally, such a
+                        character will include combat statistics such
+                        as weapon skills and body levels.
+                    </p>
+
+                    <p>
+                        Such a <xml>character</xml> element is the most
+                        full and complete of any of the three. It can be
+                        used to generate a full page character sheet.
+                    </p>
+                </sect3>
+
+                <sect3>
+                    <title>Character Package</title>
+
+                    <p>
+                        A <i>package</i> describes an option pack of
+                        skills for a particular type of starting character
+                        with a bit of background information. They do
+                        not include attributes and advantages, since
+                        these are left to the player's choice.
+                    </p>
+
+                    <p>
+                        A <i>package</i> does not represent a single,
+                        individual character so does not require as much
+                        information as above.
+                    </p>
+
+                    <p>
+                        A package represents a Yags package, a GURPS or
+                        Ars Magica template, and a d20 class.
+                    </p>
+                </sect3>
+
+                <sect3>
+                    <title>Stock Character</title>
+
+                    <p>
+                        Similar to a <i>package</i>, a stock character
+                        represents an example of  particular type of
+                        Such a character includes attributes, skills
+                        and equipment, and possibly a little background.
+                        They are stock characters however, such as a
+                        generic 'Town Guard' or 'Customs Inspector'.
+                    </p>
+
+                    <p>
+                        Such descriptions can be split by quality, so there
+                        may be several versions of the same type of
+                        character, differing only in age and experience.
+                        They will have similar sets of abilities, but the
+                        higher quality versions will have better abilities
+                        and possibly a broader set.
+                    </p>
+                </sect3>
+            </sect2>
+
+            <sect2>
+                <title>Display Options</title>
+
+                <p>
+                    When displaying a character, there are a number of
+                    options available to determine just how much
+                    information to display.
+                </p>
+
+                <itemlist order="strict">
+                    <item name="brief">
+                        Display a very brief description of the character,
+                        including name, race, gender and a short text
+                        description.
+                    </item>
+
+                    <item name="long">
+                        Display all the textual (non-game) information
+                        about this character.
+                    </item>
+
+                    <item name="stats">
+                        Display a very brief description as per 'brief',
+                        but also include game statistics.
+                    </item>
+
+                    <item name="full">
+                        Display all available information about this
+                        character, including full text description and all
+                        available game statistics.
+                    </item>
+                </itemlist>
+            </sect2>
+
+            <sect2>
+                <title>Example</title>
+
+                <xmlroot name="character">
+                    <attribute name="name" value="Fred Bloggs"/>
+
+                    <element name="description">
+                        <element name="gender" value="Male"/>
+                        <element name="age" value="24"/>
+                        <element name="short" value="A short fat man."/>
+
+                        <element name="detail">
+                            <attribute name="units" value="metric"/>
+
+                            <element name="height" value="165"/>
+                            <element name="weight" value="95"/>
+
+                            <element name="hair">
+                                <element name="colour" value="black"/>
+                                <element name="length" value="short"/>
+                                <element name="beard" value="long"/>
+                            </element>
+
+                            <element name="build" value="fat"/>
+                        </element>
+
+                        <element name="physical">
+                            <element name="para">
+                                Some text describing just how short and fat
+                                Fred Bloggs is, as well things like the
+                                colour of his hair, and what he tends to
+                                wear.
+                            </element>
+                        </element>
+
+                        <element name="background">
+                            <element name="para">
+                                Some paragraphs describing his background,
+                                such as who he is and what he does. Maybe a
+                                bit of history and personality as well.
+                            </element>
+                        </element>
+                    </element>
+
+                    <element name="statistics">
+                        <attribute name="xmlns"
+                                   value="http://yagsbook.sourceforge.net/xml/yags"/>
+                    </element>
+                </xmlroot>
+            </sect2>
+
+            <sect2>
+                <title>Definition</title>
+
+                <p>
+                    character::
+                </p>
+
+                <p>
+                    A top level section of the body text.
+                </p>
+
+                <sect3>
+                    <title>description/gender</title>
+
+                    <p>
+                        The sex of the character, either "Male", "Female"
+                        or "None".
+                    </p>
+                </sect3>
+
+                <sect3>
+                    <title>description/age</title>
+
+                    <p>
+                        The character's age, in years.
+                    </p>
+                </sect3>
+
+                <sect3>
+                    <title>description/short</title>
+
+                    <p>
+                        A short description of the character, normally a
+                        single sentence. It might give their profession,
+                        physical description and possibly obvious
+                        personality quirks.
+                    </p>
+                </sect3>
+
+                <sect3>
+                    <title>description/detail</title>
+
+                    <p>
+                        Optional detailed description. Contains a full
+                        structured description of the character. The
+                        individual structures are described below.
+                    </p>
+
+                    <sect4>@units</sect4>
+
+                    <p>
+                        Either "metric" or "imperial".
+                    </p>
+                </sect3>
+
+                <sect3>
+                    <title>statistics</title>
+
+                    <p>
+                        A character description may contain zero or more
+                        statistics blocks. Each has a seperate namespace
+                        defined, and there should only be one statistics
+                        block for any given namespace.
+                    </p>
+
+                    <p>
+                        The namespace defines which rules system the
+                        statistics define. A single character may be
+                        described using multiple rule sets.
+                    </p>
+                </sect3>
+            </sect2>
+
+            <sect2>
+                <title>Rendition</title>
+
+                <p>
+                    Bordered in green.
+                </p>
+            </sect2>
+        </sect1>
+    </body>
+</page>
+
+

@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<!--
+    XML Source for HTML.
+    Use pagexml stylesheets to render.
+ -->
+<page>
+    <header>
+        <title>S</title>
+
+        <summary>
+            Strong emphasis tag.
+        </summary>
+
+        <cvsinfo>
+            <version>$Revision: 1.2 $</version>
+            <date>$Date: 2005/07/17 15:14:31 $</date>
+        </cvsinfo>
+
+        <license type="BSD">
+            <year>2005</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                Redistribution and use in source, binary and printed
+                forms with or without modification is permitted. See
+                the full license text for details.
+            </text>
+            <url>http://www.glendale.org.uk/bsd.txt</url>
+        </license>
+        
+        <style>default</style>    
+        <footer href="../footer.inc"/>
+    </header>
+    
+    <links>
+        <link uri="/index">home</link>
+        <link uri="../yagsbook">yagsbook</link>
+        <link uri="para">para</link>
+    </links>
+
+    <sidebar>
+        <title>Summary</title>
+
+        <p>
+            Display the marked text as strongly emphasised.
+        </p>
+    </sidebar>
+    
+    <sidebar>
+        <title>Parents</title>
+        
+        <p>
+            <xml uri="para">para</xml>.
+        </p>
+    </sidebar>
+    
+    <sidebar>
+        <title>Related</title>
+        
+        <p>
+            <xml uri="e">e</xml>,
+            <xml uri="tm">tm</xml>,
+            <xml uri="note">note</xml>,
+            <xml uri="warning">warning</xml>,
+            <xml uri="url">url</xml>,
+            <xml uri="qv">qv</xml>.
+        </p>
+    </sidebar>
+    
+    <body>
+        <sect1>
+            <p>
+                The <xml>s</xml> tag is inline markup within a
+                <xml uri="para">para</xml> element. Any text it encloses
+                is displayed with strong emphasis. It is used to mark a
+                piece of text as being very important. Moderately
+                important text should be marked up using the normal
+                emphasis tag <xml uri="e">e</xml>.
+            </p>
+
+            <sect2>
+                <title>Example</title>
+
+                <xmlroot name="sect1">
+                    <element name="para">
+                        This is <inline name="s" value="important"/> text.
+                    </element>
+                </xmlroot>
+            </sect2>
+            
+            <sect2>
+                <title>Definition</title>
+                
+                <p>
+                    An <xml>s</xml> may only contain basic text.
+                </p>
+            </sect2>
+            
+            <sect2>
+                <title>Rendition</title>
+                
+                <p>
+                    Strongly emphasised text should be displayed in
+                    <s>bold</s> at the same size and style as the
+                    surrounding text.
+                </p>
+            </sect2>
+        </sect1>
+    </body>
+</page>
+
+

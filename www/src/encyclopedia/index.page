@@ -1,0 +1,259 @@
+<?xml version="1.0"?>
+<!--
+    XML Source for HTML.
+    Use pagexml stylesheets to render.
+ -->
+<page>
+    <header>
+        <title>Yagsbook Encyclopedia User Guide</title>
+
+        <summary>
+            Software for automatically generating encyclopedia websites.
+        </summary>
+
+        <cvsinfo>
+            <version>$Revision: 1.1 $</version>
+            <date>$Date: 2006/02/07 20:11:34 $</date>
+        </cvsinfo>
+
+        <license type="BSD">
+            <year>2006</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                Redistribution and use in source, binary and printed
+                forms with or without modification is permitted. See
+                the full license text for details.
+            </text>
+            <url>http://www.glendale.org.uk/bsd.txt</url>
+        </license>
+
+        <style>default</style>
+        <footer href="../footer.inc"/>
+    </header>
+
+    <links>
+        <link uri="/index">home</link>
+        <link href="http://sourceforge.net/projects/yagsbook">project</link>
+        <link href="http://mapcraft.sourceforge.net">mapcraft</link>
+    </links>
+
+    <sidebar>
+        <title>Summary</title>
+
+        <p>
+            The Yagsbook encyclopedia is probably the heart of the Yagsbook
+            system. It takes individual Yagsbook articles and brings them
+            together into a single, cohesive, encyclopedia.
+        </p>
+    </sidebar>
+
+    <sidebar>
+        <title>License</title>
+
+        <p>
+            The software is released under the GNU Public License.
+        </p>
+    </sidebar>
+
+    <sidebar>
+        <title>Sourceforge</title>
+
+        <p>
+            Yagsbook is a SourceForge project. See the main project page at
+            <link href="http://sourceforge.net/projects/yagsbook"
+                  name="Sourceforge"/>
+            for reporting bugs and downloading latest releases.
+        </p>
+
+    </sidebar>
+
+    <sidebar>
+        <title>Author</title>
+
+        <p>
+            The author of this software is
+            <link href="http://www.glendale.org.uk/~sam/samuelpenn.html"
+                  name="Samuel Penn"/>.
+        </p>
+    </sidebar>
+
+    <body>
+        <sect1>
+            <p>
+                One of the original aims of <s>Yagsbook</s> was to be able
+                to generate campaign information in a form that was easily
+                readable on a website, in a way that could be cross
+                referenced and indexed like an encyclopedia. By using
+                <s>Yagsbook</s>, campaign articles can be easily written
+                which contain meta information about the document.
+            </p>
+
+            <sect2>
+                <title>Java</title>
+
+                <p>
+                    It can be run directly from Java.
+                </p>
+            </sect2>
+
+            <sect2>
+                <title>Ant</title>
+
+                <p>
+                    It can be called from an Ant task.
+                </p>
+            </sect2>
+        </sect1>
+
+        <sect1>
+            <title>Properties</title>
+
+            <p>
+                There are a number of properties which can be set when the
+                Encyclopedia is generated, which control the look and
+                content of the created pages.
+            </p>
+
+            <sect2>
+                <title>Display Properties</title>
+
+                <sect3>
+                    <title>displayTagline</title>
+
+                    <p>
+                        Set the tagline to use, overriding the tagline
+                        defined in the documents. The tagline is
+                        displayed as part of the page title, and is
+                        normally the overall name of the setting.
+                    </p>
+                </sect3>
+            </sect2>
+
+            <sect2>
+                <title>Link Properties</title>
+
+                <sect3>
+                    <title>linkMainPage</title>
+
+                    <p>
+                        The default link to the main page which includes
+                        the category display. This defaults to
+                        '../index.html'.
+                    </p>
+                </sect3>
+
+                <sect3>
+                    <title>linkIndex</title>
+
+                    <p>
+                        By default this is blank, and no index link is
+                        displayed. If set, links to an index.
+                    </p>
+                </sect3>
+            </sect2>
+
+            <sect2>
+                <title>Detail Properties</title>
+
+                <sect3>
+                    <title>detailCombat</title>
+
+                    <p>
+                        Defaults to 'false'. If set to be 'true', will
+                        cause combat statistics to be worked out and
+                        displayed for characters where possible.
+                    </p>
+                </sect3>
+
+                <sect3>
+                    <title>detailCharacters</title>
+
+                    <p>
+                        Defaults to 'true'. If set to be 'false', will
+                        suppress all game related statistics for
+                        characters, for all game systems.
+                    </p>
+                </sect3>
+            </sect2>
+
+            <sect2>
+                <title>Show Properties</title>
+
+                <sect3>
+                    <title>showYags</title>
+
+                    <p>
+                        Defaults to 'true', and causes <e>Yags</e> stats
+                        to be displayed if they are available. Otherwise,
+                        all Yags statistics are suppressed.
+                    </p>
+                </sect3>
+
+                <sect3>
+                    <title>showWarhammer</title>
+
+                    <p>
+                        Defaults to 'true', and causes <e>Warhammer</e>
+                        stats to be displayed if they are available.
+                        Otherwise, all Warhammer statistics are suppressed.
+                    </p>
+                </sect3>
+
+                <sect3>
+                    <title>showArsMagica</title>
+
+                    <p>
+                        Defaults to 'true', and causes <e>Ars Magica</e>
+                        stats to be displayed if they are available.
+                        Otherwise, all Ars Magica statistics are
+                        suppressed.
+                    </p>
+                </sect3>
+
+                <sect3>
+                    <title>showFiveRings</title>
+
+                    <p>
+                        Defaults to 'true', and causes
+                        <e>Legend of the Five Rings</e> stats to be
+                        displayed if they are available. Otherwise,
+                        all Legend of the Five Rings statistics are
+                        suppressed.
+                    </p>
+                </sect3>
+
+                <sect3>
+                    <title>showGurps</title>
+
+                    <p>
+                        Defaults to 'true', and causes <e>GURPS</e> stats
+                        to be displayed if they are available. Otherwise,
+                        all GURPS statistics are suppressed.
+                    </p>
+                </sect3>
+
+                <sect3>
+                    <title>showD20</title>
+
+                    <p>
+                        Defaults to 'true', and causes <e>d20</e> stats
+                        to be displayed if they are available. Otherwise,
+                        all d20 statistics are suppressed.
+                    </p>
+                </sect3>
+
+                <sect3>
+                    <title>showYags</title>
+
+                    <p>
+                        Defaults to 'true', and causes <e>Yags</e> stats
+                        to be displayed if they are available. Otherwise,
+                        all Yags statistics are suppressed.
+                    </p>
+                </sect3>
+            </sect2>
+        </sect1>
+    </body>
+</page>
+
+

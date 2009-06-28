@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<!--
+    XML Source for HTML.
+    Use pagexml stylesheets to render.
+ -->
+<page>
+    <header>
+        <title>Item</title>
+
+        <summary>
+            Defines Yags specific rules for an item of equipment.
+        </summary>
+
+        <cvsinfo>
+            <version>$Revision: 1.2 $</version>
+            <date>$Date: 2005/07/17 15:14:31 $</date>
+        </cvsinfo>
+
+        <license type="BSD">
+            <year>2005</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                Redistribution and use in source, binary and printed
+                forms with or without modification is permitted. See
+                the full license text for details.
+            </text>
+            <url>http://www.glendale.org.uk/bsd.txt</url>
+        </license>
+
+        <style>default</style>
+        <footer href="../../footer.inc"/>
+    </header>
+
+    <links>
+        <link uri="../index">home</link>
+        <link uri="../../yagsbook">yagsbook</link>
+        <link uri="../equipment-item">item</link>
+    </links>
+
+    <sidebar>
+        <title>Summary</title>
+
+        <p>
+            Defines Yags specific rules for items of equipment. The
+            detail here is quite extensive.
+        </p>
+    </sidebar>
+
+    <sidebar>
+        <title>Parents</title>
+
+        <p>
+            <xml uri="../equipment-item">equipment/item</xml>.
+        </p>
+    </sidebar>
+
+
+    <body>
+        <sect1>
+            <p>
+                Some items of equipment require game specific rules for
+                describing them. Weapons for example will often have
+                damage ratings, locks may specify how hard it is to pick.
+            </p>
+
+            <p>
+                This page describes the various equipment types, and how
+                they relate to Yags.
+            </p>
+
+            <p>
+                All have a namespace of http://yagsbook.sourceforget.net/xml/yags.
+            </p>
+        </sect1>
+
+        <sect1>
+            <title>item/device</title>
+
+            <p>
+                A <xml>device</xml> is a mechanical contraption such as a
+                lock or trap. It has a difficulty to overcome or use,
+                a basic strength to damage.
+            </p>
+
+            <sect2>
+                <title>Examples</title>
+
+
+                <xmlroot name="device">
+                    <attribute name="xmlns" value="http://yagsbook.sourceforget.net/xml/yags"/>
+
+                    <element name="skill" value="Open locks"/>
+                    <element name="difficulty" value="20"/>
+                    <element name="toughness" value="1"/>
+                    <element name="soak" value="10"/>
+                    <element name="break" value="30"/>
+                </xmlroot>
+            </sect2>
+
+            <sect2>
+                <title>Definition</title>
+
+                <p>
+                    device:: difficulty, skill, toughness, soak, break
+                </p>
+
+                <sect3>
+                    <title>skill</title>
+
+                    <p>
+                        The skill required to overcome the device.
+                    </p>
+                </sect3>
+            </sect2>
+        </sect1>
+    </body>
+</page>
+
+

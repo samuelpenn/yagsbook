@@ -1,0 +1,180 @@
+<?xml version="1.0"?>
+<!--
+    XML Source for HTML.
+    Use pagexml stylesheets to render.
+ -->
+<page>
+    <header>
+        <title>Yagsbook</title>
+
+        <summary>
+            An XML based documentation format for roleplaying games.
+        </summary>
+
+        <cvsinfo>
+            <version>$Revision: 1.10 $</version>
+            <date>$Date: 2005/10/27 12:55:30 $</date>
+        </cvsinfo>
+
+        <license type="BSD">
+            <year>2005</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                Redistribution and use in source, binary and printed
+                forms with or without modification is permitted. See
+                the full license text for details.
+            </text>
+            <url>http://www.glendale.org.uk/bsd.txt</url>
+        </license>
+
+        <style>default</style>
+        <footer href="footer.inc"/>
+    </header>
+
+    <links>
+        <link href="http://www.glendale.org.uk/index.html">glendale</link>
+        <link href="http://sourceforge.net/projects/yagsbook">sourceforge</link>
+        <link uri="yagsbook">yagsbook</link>
+        <link uri="encyclopedia">encyclopedia</link>
+        <link uri="pagexml">pagexml</link>
+        <link href="http://mapcraft.sourceforge.net">mapcraft</link>
+    </links>
+
+    <sidebar>
+        <title>Summary</title>
+
+        <p>
+            <s>Yagsbook</s> is a documentation format for roleplaying games.
+            It was originally written to support the Free game system
+            <link href="http://www.glendale.org.uk/yags" name="Yags"/>.
+            It is an XML format similiar to DocBook and has support for
+            generating HTML and PDF documents, as well as complete web
+            sites (such as this one).
+        </p>
+
+        <p>
+            Though it mostly supports Yags, it also has some support for
+            Ars Magica, GURPS, DirtSide, Warhammer and d20, to varying
+            degrees of extent.
+        </p>
+    </sidebar>
+
+    <sidebar>
+        <title>License</title>
+
+        <p>
+            All documentation, stylesheets and schemas are released
+            under a BSD-style license, so can be used in commercial
+            or <e>closed</e> games. The <e>Encyclopedia</e> software
+            is released under the GNU Public License.
+        </p>
+    </sidebar>
+
+    <sidebar>
+        <title>Author</title>
+
+        <p>
+            The author of this software is
+            <link href="http://www.glendale.org.uk/~sam/samuelpenn.html"
+                  name="Samuel Penn"/>.
+        </p>
+    </sidebar>
+
+    <sidebar>
+        <title>Examples</title>
+
+        <p>
+            Yagsbook is mainly about XML formats, with a few utilities
+            for managing them. Until the Schemas are finished, probably
+            the best resource for learning about the formats are
+            examples.
+
+            <link href="http://yagsbook.sourceforge.net/examples"
+                  name="Examples"/>
+        </p>
+    </sidebar>
+
+    <body>
+        <sect1>
+            <p>
+                <s>Yagsbook</s> is an XML format specifically designed
+                for the mark up of roleplaying game content. It was
+                originally based on
+                <link href="http://www.docbook.org" name="DocBook"/>.
+                A <s>Yagsbook</s> document can support multiple types
+                of game systems (allowing d20 and GURPS content to
+                be included side by side for example) and rendered to
+                multiple output formats - currently HTML and PDF are
+                supported.
+            </p>
+
+            <p>
+                The advantage over using other document formats (such
+                as Microsoft Word, OpenOffice or plain HTML) is that
+                document content is <e>structured</e>, and is capable
+                of expressing terms unique to roleplaying games. Skills,
+                characters, spells and items can all be defined using
+                rich XML. This enables objects to be processed and
+                used by other software, or for data to be presented in
+                different ways (skill lists can be defined once, then
+                displayed alphabetically, sorted by groups or filtered
+                according to importance).
+            </p>
+
+            <p>
+                Related to <s>Yagsbook</s> is <e>PageXML</e>, which
+                was designed to markup the documentation for the
+                former. <e>DocBook</e> wasn't considered suitable
+                enough, since it can't easily document XML - PageXML
+                includes markup for describing XML documents and
+                pretty-printing them to a website. This website was
+                written using <e>PageXML</e>.
+            </p>
+
+            <p>
+                PageXML also includes hooks in <s>Yagsbook</s>, for
+                importing articles and auto-generating encyclopedias
+                as part of the website.
+            </p>
+
+            <p>
+                Finally there is <e>Yagsbook Encyclopedia</e>, which takes
+                a collection of Yagsbook articles, and organises them into
+                an online Encyclopedia. The purpose of this is to allow
+                campaign documentation to be quickly organised and published.
+            </p>
+
+            <sect2>
+                <title>Schemas</title>
+
+                <p>
+                    XML Schemas are provided for validation of Yagsbook
+                    documents. Currently, the schemas are far from complete,
+                    and the best 'documentation' are the stylesheets.
+                </p>
+
+                <p>
+                    While there are plans to complete the Schemas, there are
+                    no plans to provide DTDs for Yagsbook.
+                </p>
+
+                <p>
+                    As the schemas are defined, it is likely that Yagsbook
+                    will change, since the writing of proper definitions will
+                    lead to a clearer, more concise, format. This may break
+                    compatibility with previous versions of Yagsbook.
+                </p>
+            </sect2>
+
+            <sect2>
+                <title>Stylesheets</title>
+
+                <p>
+                    XSLT is used to turn the XML documents into either HTML
+                    or PDF format (via XSL-FO). The schemas are currently the
+                    best documentation for what is supported by Yagsbook.
+                </p>
+            </sect2>
+        </sect1>
+    </body>
+</page>

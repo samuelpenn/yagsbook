@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<!--
+    XML Source for HTML.
+    Use pagexml stylesheets to render.
+ -->
+<page>
+    <header>
+        <title>Page</title>
+
+        <summary>
+            An XML format for describing a website.
+        </summary>
+
+        <cvsinfo>
+            <version>$Revision: 1.3 $</version>
+            <date>$Date: 2005/07/17 15:14:29 $</date>
+        </cvsinfo>
+
+        <license type="BSD">
+            <year>2005</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                Redistribution and use in source, binary and printed
+                forms with or without modification is permitted. See
+                the full license text for details.
+            </text>
+            <url>http://www.glendale.org.uk/bsd.txt</url>
+        </license>
+        
+        <style>default</style>    
+        <footer href="../footer.inc"/>
+    </header>
+    
+    <links>
+        <link uri="/index">home</link>
+        <link uri="../pagexml">pagexml</link>
+    </links>
+
+    <sidebar>
+        <title>Summary</title>
+
+        <p>
+            A <xml>page</xml> is the top level root node of a
+            PageXML document. All documents in PageXML use this root.
+        </p>
+    </sidebar>
+    
+    <sidebar>
+        <title>Children</title>
+        
+        <p>
+            <xml uri="header">header</xml>,
+            <xml uri="body">body</xml>.
+        </p>
+    </sidebar>
+        
+
+    <body>
+        <sect1>
+            <p>
+                A <xml>page</xml> node is always the root node of a
+                document. When rendered to the output format, each
+                article will represent a single output document.
+            </p>
+            
+            <sect2>
+                <title>Example</title>
+                
+                <xmlroot name="page">
+                    <element name="header">
+                        <element name="title" value="Example Page"/>
+                        <element name="summary" value="Example document"/>
+                        
+                        <element name="author">
+                            <element name="fullname" value="Samuel Penn"/>
+                            <element name="email" value="sam@bifrost.demon.co.uk"/>
+                        </element>
+                        
+                        <element name="cvsinfo"/>
+                        <element name="license"/>
+                        <element name="style" value="default"/>
+                        <element name="footer">
+                            <attribute name="href" value="footer.inc"/>
+                        </element>
+                    </element>
+                    
+                    <element name="links"/>
+                    
+                    <element name="sidebar"/>
+                    
+                    <element name="body">
+                        <element name="sect1">
+                            <element name="title" value="Main Section"/>
+                            
+                            <element name="p">
+                                A simple paragraph of text.
+                            </element>
+                        </element>
+                    </element>
+                </xmlroot>
+            </sect2>
+            
+            <sect2>
+                <title>Definition</title>
+                
+                <p>
+                    page:: (header, body)
+                </p>
+                
+                <p>
+                    A <xml>page</xml> always consists of exactly one
+                    <xml uri="header">header</xml> and one
+                    <xml uri="body">body</xml> element.
+                </p>
+            </sect2>
+            
+            <sect2>
+                <title>Rendition</title>
+                
+                <p>
+                    The <xml>page</xml> element should be rendered as a
+                    single HTML page.
+                </p>
+            </sect2>
+        </sect1>
+    </body>
+</page>
+
+

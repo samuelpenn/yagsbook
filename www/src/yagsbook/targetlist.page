@@ -1,0 +1,183 @@
+<?xml version="1.0"?>
+<!--
+    XML Source for HTML.
+    Use pagexml stylesheets to render.
+ -->
+<page>
+    <header>
+        <title>Targetlist</title>
+
+        <summary>
+            An XML format for describing roleplaying games.
+        </summary>
+
+        <cvsinfo>
+            <version>$Revision: 1.2 $</version>
+            <date>$Date: 2005/07/17 15:14:31 $</date>
+        </cvsinfo>
+
+        <license type="BSD">
+            <year>2005</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                Redistribution and use in source, binary and printed
+                forms with or without modification is permitted. See
+                the full license text for details.
+            </text>
+            <url>http://www.glendale.org.uk/bsd.txt</url>
+        </license>
+        
+        <style>default</style>    
+        <footer href="../footer.inc"/>
+    </header>
+    
+    <links>
+        <link uri="/index">home</link>
+        <link uri="../yagsbook">yagsbook</link>
+        <link uri="sect1">sect1</link>
+    </links>
+
+    <sidebar>
+        <title>Summary</title>
+
+        <p>
+            Displays a list of target difficulties, or any generic
+            name/value listing.
+        </p>
+    </sidebar>
+    
+    <sidebar>
+        <title>Parents</title>
+        
+        <p>
+            <xml uri="sect1">sect1</xml>,
+            <xml uri="sect2">sect2</xml>,
+            <xml uri="sect3">sect3</xml>,
+            <xml uri="sect4">sect4</xml>,
+            <xml uri="sect5">sect5</xml>,
+            description.
+        </p>
+    </sidebar>
+    
+    <sidebar>
+        <title>Related</title>
+        
+        <p>
+            <xml uri="itemlist">itemlist</xml>.
+        </p>
+    </sidebar>
+    
+    <body>
+        <sect1>
+            <p>
+                A <xml>targetlist</xml> is similar to an
+                <xml uri="itemlist">itemlist</xml>, at least in structure.
+                This type of list though is meant more for a tabular
+                display.
+            </p>
+            
+            <p>
+                Each item in the <xml>targetlist</xml> has a 'target' and
+                a 'value' associated with it. Further, each item may have
+                some free text associated with it.
+            </p>
+            
+            <p>
+                It's principle use is to display a list of target
+                skill difficulties, and what can be achieved at each
+                difficulty level. Another use is for giving costs of
+                items. In each case, the 'target' is a simple atomic
+                piece of information, normally a number. The value is
+                a descriptive string. Any free text is associated with
+                the value, not the target.
+            </p>
+            
+            <sect2>
+                <title>Examples</title>
+                
+                
+                <xmlroot name="targetlist">
+                    <attribute name="title" value="Piloting ratings"/>
+                    <attribute name="targetFirst" value="false"/>
+                    <attribute name="bold" value="true"/>
+                    
+                    <element name="valueLabel" value="Rating"/>
+                    <element name="targetLabel" value="Kills"/>
+                    
+                    <element name="item">
+                        <attribute name="target" value="0"/>
+                        <attribute name="value" value="Harmless."/>
+                        <text>
+                            Someone with little or no experience.
+                        </text>
+                    </element>
+                    
+                    <element name="item">
+                        <attribute name="target" value="8"/>
+                        <attribute name="value" value="Mostly harmless."/>
+                        <text>
+                            This person isn't skilled, but they show
+                            promise.
+                        </text>
+                    </element>
+                    
+                    <element name="item">
+                        <attribute name="target" value="16"/>
+                        <attribute name="value" value="Poor."/>
+                        <text>
+                            Getting the hang of things, but still wet
+                            behind the ears.
+                        </text>
+                    </element>
+                </xmlroot>
+            </sect2>
+            
+            <sect2>
+                <title>Definition</title>
+                
+                <p>
+                    targetlist:: valueLabel?, targetLabel?, item+
+                </p>
+                                
+                <sect3>
+                    <title>targetlist/@targetFirst</title>
+                    
+                    <p>
+                        If this is set to be 'true', then the target is
+                        displayed first - i.e. on the left side of the
+                        table. Otherwise, the target is displayed on the
+                        right of the table.
+                    </p>
+                </sect3>
+                
+                <sect3>
+                    <title>targetlist/@bold</title>
+                    
+                    <p>
+                        If set to 'true', then the value is displayed in
+                        bold.
+                    </p>
+                </sect3>
+                
+                <sect3>
+                    <title>targetlist/targetLabel</title>
+                    
+                    <p>
+                        
+                    </p>
+                </sect3>
+            </sect2>
+            
+            <sect2>
+                <title>Rendition</title>
+                
+                <p>
+                    Each list item should be indented from the main text,
+                    and seperated from preceeding list items in some way.
+                </p>
+            </sect2>
+        </sect1>
+    </body>
+</page>
+
+

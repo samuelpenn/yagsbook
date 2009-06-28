@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+<!--
+    XML Source for HTML.
+    Use pagexml stylesheets to render.
+ -->
+<page>
+    <header>
+        <title>Yagsbook Encyclopedia</title>
+
+        <summary>
+            Software for automatically generating encyclopedia websites.
+        </summary>
+
+        <cvsinfo>
+            <version>$Revision: 1.7 $</version>
+            <date>$Date: 2006/02/07 20:11:32 $</date>
+        </cvsinfo>
+
+        <license type="BSD">
+            <year>2005</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                Redistribution and use in source, binary and printed
+                forms with or without modification is permitted. See
+                the full license text for details.
+            </text>
+            <url>http://www.glendale.org.uk/bsd.txt</url>
+        </license>
+
+        <style>default</style>
+        <footer href="footer.inc"/>
+    </header>
+
+    <links>
+        <link uri="/index">home</link>
+        <link href="http://sourceforge.net/projects/yagsbook">project</link>
+        <link href="http://mapcraft.sourceforge.net">mapcraft</link>
+        <link uri="encyclopedia/guide">guide</link>
+    </links>
+
+    <sidebar>
+        <title>Summary</title>
+
+        <p>
+            The Yagsbook encyclopedia is probably the heart of the Yagsbook
+            system. It takes individual Yagsbook articles and brings them
+            together into a single, cohesive, encyclopedia.
+        </p>
+    </sidebar>
+
+    <sidebar>
+        <title>License</title>
+
+        <p>
+            The software is released under the GNU Public License.
+        </p>
+    </sidebar>
+
+    <sidebar>
+        <title>Sourceforge</title>
+
+        <p>
+            Yagsbook is a SourceForge project. See the main project page at
+            <link href="http://sourceforge.net/projects/yagsbook"
+                  name="Sourceforge"/>
+            for reporting bugs and downloading latest releases.
+        </p>
+
+    </sidebar>
+
+    <sidebar>
+        <title>Author</title>
+
+        <p>
+            The author of this software is
+            <link href="http://www.glendale.org.uk/~sam/samuelpenn.html"
+                  name="Samuel Penn"/>.
+        </p>
+    </sidebar>
+
+    <sidebar>
+        <title>Online Encyclopedias</title>
+
+        <p>
+            There are currently two encyclopedias which use Yagsbook,
+            one for a Harn campaign, the other for my own Habisfern
+            campaign.
+        </p>
+
+        <link
+            href="http://www.glendale.org.uk/habisfern/encyclopedia/entries"
+            name="Habisfern"/>
+        <link
+            href="http://www.glendale.org.uk/arsmagica/encyclopedia/entries"
+            name="Ars Magica"/>
+
+    </sidebar>
+
+    <body>
+        <sect1>
+            <p>
+                One of the original aims of <s>Yagsbook</s> was to be able
+                to generate campaign information in a form that was easily
+                readable on a website, in a way that could be cross
+                referenced and indexed like an encyclopedia. By using
+                <s>Yagsbook</s>, campaign articles can be easily written
+                which contain meta information about the document.
+            </p>
+
+            <p>
+                The <s>Yagsbook Encyclopedia</s> project takes that meta
+                information and builds a cross-referenced and indexed
+                <e>Encyclopedia</e> of all the articles, and builds a
+                static website from it. It also makes use of
+                <link href="http://mapcraft.sourceforge.net"
+                      name="Mapcraft"/>
+                in order to include regional maps of an area dynamically.
+                You no longer need to mess around with generating a
+                screenshot of a particular map region everytime the map
+                is updated - Yagsbook Encyclopedia will do it for you.
+            </p>
+
+            <sect2>
+                <title>What it isn't</title>
+
+                <p>
+                    Because it generates static content, it is not meant
+                    for interactive and publically editable content such
+                    as that used by Wikipedia for example. It is best
+                    used when the GM is producing content for reference by
+                    the players (and others).
+                </p>
+            </sect2>
+
+            <sect2>
+                <title>What it is</title>
+
+                <p>
+                    For a best example of what it does, see the examples
+                    in the sidebar. The pages generated are static, so
+                    it is ideal for home pages where the author is not
+                    able to use dynamic solutions such as PHP or Perl.
+                </p>
+
+                <p>
+                    The software is written in <e>Java</e>, and has hooks
+                    into Ant, XML and CVS. The author's encyclopedias are
+                    stored in CVS repositories, automatically fetched
+                    and generated by an Ant build file.
+                </p>
+            </sect2>
+        </sect1>
+    </body>
+</page>
+
+

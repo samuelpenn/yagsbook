@@ -1,0 +1,198 @@
+<?xml version="1.0"?>
+<!--
+    XML Source for HTML.
+    Use pagexml stylesheets to render.
+ -->
+<page>
+    <header>
+        <title>XMLRoot</title>
+
+        <summary>
+            An XML format for describing a website.
+        </summary>
+
+        <cvsinfo>
+            <version>$Revision: 1.2 $</version>
+            <date>$Date: 2005/07/17 15:14:29 $</date>
+        </cvsinfo>
+
+        <license type="BSD">
+            <year>2005</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                Redistribution and use in source, binary and printed
+                forms with or without modification is permitted. See
+                the full license text for details.
+            </text>
+            <url>http://www.glendale.org.uk/bsd.txt</url>
+        </license>
+        
+        <style>default</style>    
+        <footer href="../footer.inc"/>
+    </header>
+    
+    <links>
+        <link uri="/index">home</link>
+        <link uri="../pagexml">pagexml</link>
+        <link uri="sect1">sect1</link>
+    </links>
+
+    <sidebar>
+        <title>Summary</title>
+
+        <p>
+            The purpose of the <xml>xmlroot</xml> element is to document
+            XML. Describing an XML document with XML is tricky, since so
+            much needs to be escaped. PageXML gets around this by defining
+            elements and attributes which can be used to describe an XML
+            document in an easy and readable way.
+        </p>
+    </sidebar>
+    
+    <sidebar>
+        <title>Parents</title>
+        
+        <p>
+            <xml uri="sect1">sect1</xml>,
+            <xml uri="sect2">sect2</xml>,
+            <xml uri="sect3">sect3</xml>,
+            <xml uri="sect4">sect4</xml>,
+            <xml uri="sect5">sect5</xml>.
+        </p>
+    </sidebar>
+    
+    <sidebar>
+        <title>Children</title>
+        
+        <p>
+            <xml uri="element">element</xml>,
+            <xml uri="attribute">attribute</xml>,
+            <xml uri="comment">comment</xml>.
+        </p>
+    </sidebar>
+        
+
+    <body>
+        <sect1>
+            <p>
+                The <xml>xmlroot</xml> element defines the structure of an
+                XML document. Instead of having to escape characters such
+                as &lt; and &gt; within standard paragraph text, it is
+                possible to markup the elements and attributes in an easy
+                and readable way.
+            </p>
+            
+            <p>
+                The <xml>xmlroot</xml> gives the root node of the document
+                to be described, and has zero or more 
+                <xml uri="element">element</xml> nodes as children.
+            </p>
+            
+            <sect2>
+                <title>Example</title>
+                
+                <p>
+                    Two pieces of XML are given here, a simple XML document
+                    followed by the PageXML used to describe it.
+                </p>
+        
+                <xmlroot name="document">
+                    <element name="title" value="My Document"/>
+                    <element name="author">
+                        <attribute name="name" value="Samuel Penn"/>
+                    </element>
+                    
+                    <comment>
+                        The main body text of the document follows.
+                    </comment>
+                    
+                    <element name="para">
+                        <attribute name="style" value="italic"/>
+                        <attribute name="align" value="left"/>
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing
+                        elit. Nullam ullamcorper. Nunc quam urna, ultrices
+                        et, porta nec, viverra vitae, ante. Praesent
+                        ullamcorper dignissim turpis.
+                    </element>
+                </xmlroot>                        
+
+                <p>
+                    Now the XML that would generate the above structure.
+                </p>                
+                
+                <xmlroot name="xmlroot">
+                    <attribute name="name" value="document"/>
+                    
+                    <element name="element">
+                        <attribute name="name" value="title"/>
+                        <attribute name="value" value="My Document"/>
+                    </element>
+                    
+                    <element name="element">
+                        <attribute name="name" value="author"/>
+                        <element name="attribute">
+                            <attribute name="name" value="name"/>
+                            <attribute name="value" value="Samuel Penn"/>
+                        </element>
+                    </element>
+                        
+                    <element name="comment">
+                        The main body text of the document follows.
+                    </element>
+                    
+                    <element name="element">
+                        <attribute name="name" value="para"/>
+                        <element name="attribute">
+                            <attribute name="name" value="style"/>
+                            <attribute name="value" value="italic"/>
+                        </element>
+                        <element name="attribute">
+                            <attribute name="name" value="align"/>
+                            <attribute name="value" value="left"/>
+                        </element>
+                        <text>
+                            Lorem ipsum dolor sit amet, consectetuer
+                            adipiscing elit. Nullam ullamcorper. Nunc quam
+                            urna, ultrices et, porta nec, viverra vitae,
+                            ante. Praesent ullamcorper dignissim turpis.
+                        </text>
+                    </element>
+                </xmlroot>
+            </sect2>
+            
+            <sect2>
+                <title>Definition</title>
+                
+                <p>
+                    xmlroot:: attribute*, element*
+                </p>
+                
+                <p>
+                    An <xml>xmlroot</xml> has zero or more
+                    <xml uri="attribute">attribute</xml> nodes followed by
+                    zero or more <xml uri="element">element</xml> nodes.
+                    The <xml>xmlroot</xml> always has a single attribute
+                    called 'name'.
+                </p>
+            </sect2>
+            
+            <sect2>
+                <title>Rendition</title>
+                
+                <p>
+                    The <xml>xmlroot</xml> will be rendered in a box
+                    seperate from the main text. Each nested element will
+                    be indented from the left margin.
+                </p>
+                
+                <p>
+                    The generated HTML will probably not be human readable,
+                    since the markup necessary for even a simple display of
+                    this nature is complex.
+                </p>
+            </sect2>
+        </sect1>
+    </body>
+</page>
+
+

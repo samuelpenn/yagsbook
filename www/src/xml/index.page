@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<!--
+    XML Source for HTML.
+    Use pagexml stylesheets to render.
+ -->
+<page>
+    <header>
+        <title>yagsbook</title>
+
+        <summary>
+            Namespace URI for Yagsbook content.
+        </summary>
+
+        <cvsinfo>
+            <version>$Revision: 1.3 $</version>
+            <date>$Date: 2005/07/17 15:14:30 $</date>
+        </cvsinfo>
+
+        <license type="BSD">
+            <year>2005</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                Redistribution and use in source, binary and printed
+                forms with or without modification is permitted. See
+                the full license text for details.
+            </text>
+            <url>http://www.glendale.org.uk/bsd.txt</url>
+        </license>
+        
+        <style>default</style>    
+    </header>
+    
+    <links>
+        <link uri="/index">yagsbook</link>
+        <link uri="/yagsbook">documentation</link>
+    </links>
+
+    <sidebar>
+        <title>XSLT</title>
+
+        <p>
+            This is an XML namespace degined in the Yagsbook specification.
+        </p>
+    </sidebar>
+
+    <sidebar>
+        <title>Versions</title>
+        
+        <p>
+            There is currently no versioning applied for this namespace.
+            A versioning system will be worked out once the XML has
+            been finalised. Until then, this is always the most recent
+            public version.
+        </p>
+    </sidebar>
+
+    <body>
+        <sect1>
+            <p>
+                Any Yagsbook articles should reference this URI for its
+                namespace.
+            </p>
+            
+            <p>
+                The URI is http://yagsbook.sourceforge.net/xml.
+            </p>
+
+			<p>
+			    The following URI is reserved for PageXML resources,
+				though it is not currently used that much:
+			</p>
+
+			<p>
+                The URI is http://yagsbook.sourceforge.net/xml/pagexml.
+			</p>
+            
+            <p>
+                Yagsbook aims to be a system neutral means of documenting
+                roleplaying game content. In order to support rules
+                specific content (such as characters, beasts and spells),
+                a number of sub namespaces exist.
+            </p>
+            
+            <link href="http://yagsbook.sourceforge.net/xml/arsmagica"
+                  name="http://yagsbook.sourceforge.net/xml/arsmagica"/>
+            
+            <link href="http://yagsbook.sourceforge.net/xml/d20"
+                  name="http://yagsbook.sourceforge.net/xml/d20"/>
+            
+            <link href="http://yagsbook.sourceforge.net/xml/dirtside"
+                  name="http://yagsbook.sourceforge.net/xml/dirtside"/>
+
+            <link href="http://yagsbook.sourceforge.net/xml/gurps"
+                  name="http://yagsbook.sourceforge.net/xml/gurps"/>
+            
+            <link href="http://yagsbook.sourceforge.net/xml/yags"
+                  name="http://yagsbook.sourceforge.net/xml/yags"/>
+        </sect1>
+    </body>
+</page>
+
+

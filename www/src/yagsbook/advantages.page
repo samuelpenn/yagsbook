@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<!--
+    XML Source for HTML.
+    Use pagexml stylesheets to render.
+ -->
+<page>
+    <header>
+        <title>Advantages</title>
+
+        <summary>
+            List of advantages and disadvantages.
+        </summary>
+
+        <cvsinfo>
+            <version>$Revision: 1.2 $</version>
+            <date>$Date: 2005/07/17 15:14:30 $</date>
+        </cvsinfo>
+
+        <license type="BSD">
+            <year>2005</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                Redistribution and use in source, binary and printed
+                forms with or without modification is permitted. See
+                the full license text for details.
+            </text>
+            <url>http://www.glendale.org.uk/bsd.txt</url>
+        </license>
+        
+        <style>default</style>    
+        <footer href="../footer.inc"/>
+    </header>
+    
+    <links>
+        <link uri="/index">home</link>
+        <link uri="../yagsbook">yagsbook</link>
+        <link uri="article">article</link>
+    </links>
+
+    <sidebar>
+        <title>Summary</title>
+
+        <p>
+            An <xml>advantages</xml> element contains one or more
+            <xml uri="advantage">advantage</xml> children, each of
+            which describes a single advantage or disadvantage for
+            Yags.
+        </p>
+        
+    </sidebar>
+    
+    <sidebar>
+        <title>Parents</title>
+        
+        <p>
+            <xml uri="sect1">sect1</xml>,
+            <xml uri="sect2">sect2</xml>,
+            <xml uri="sect3">sect3</xml>,
+            <xml uri="sect4">sect4</xml>,
+            <xml uri="sect5">sect5</xml>,
+            <xml uri="beast">beast</xml>,
+            <xml uri="character">character</xml>.
+        </p>
+    </sidebar>
+    
+    <sidebar>
+        <title>Children</title>
+        
+        <p>
+            <xml uri="advantage">advantage</xml>.
+        </p>
+    </sidebar>
+        
+
+    <body>
+        <sect1>
+            <p>
+                An <xml>advantages</xml> tag group togethers a collection
+                of advantages.
+            </p>
+            
+            <sect2>
+                <title>Example</title>
+                
+                <xmlroot name="advantages">
+                    <attribute name="role" value="background"/>
+                    <attribute name="title" value="Wealth"/>
+                                        
+                    <element name="advantage">
+                        <attribute name="name" value="Rich"/>
+                        <attribute name="type" value="background"/>
+                        
+                        <element name="cost" value="4"/>
+                        
+                        <element name="description">
+                            <element name="para" value="Character is rich."/>
+                        </element>
+                    </element>
+                    
+                </xmlroot>
+            </sect2>
+            
+            <sect2>
+                <title>Definition</title>
+                
+                <p>
+                    advantages:: advantage*
+                </p>
+                
+                <sect3>
+                    <title>Role</title>
+                    
+                    <p>
+                        The <e>role</e> attribute provides a means of
+                        describing why the advantages are here, and is used
+                        when they are part of an Encyclopedia entry.
+                    </p>
+                    
+                    <p>
+                        See the 
+                        <xml uri="import-advantages">import-advantages</xml>
+                        element for details on how the role is used.
+                    </p>
+                </sect3>
+            </sect2>
+        </sect1>
+    </body>
+</page>
+
+

@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<!--
+    XML Source for HTML.
+    Use pagexml stylesheets to render.
+ -->
+<page>
+    <header>
+        <title>import-characters</title>
+
+        <summary>
+            An XML format for describing roleplaying games.
+        </summary>
+
+        <cvsinfo>
+            <version>$Revision: 1.2 $</version>
+            <date>$Date: 2005/07/17 15:14:31 $</date>
+        </cvsinfo>
+
+        <license type="BSD">
+            <year>2005</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                Redistribution and use in source, binary and printed
+                forms with or without modification is permitted. See
+                the full license text for details.
+            </text>
+            <url>http://www.glendale.org.uk/bsd.txt</url>
+        </license>
+        
+        <style>default</style>    
+        <footer href="../footer.inc"/>
+    </header>
+    
+    <links>
+        <link uri="/index">home</link>
+        <link uri="../yagsbook">yagsbook</link>
+        <link uri="sect1">sect1</link>
+    </links>
+
+    <sidebar>
+        <title>Summary</title>
+
+        <p>
+            Import a set of characters from an external file or encyclopedia.
+        </p>
+    </sidebar>
+    
+    <sidebar>
+        <title>Parents</title>
+        
+        <p>
+            <xml uri="sect1">sect1</xml>
+        </p>
+    </sidebar>
+    
+        
+
+    <body>
+        <sect1>
+            <p>
+                Used to import a set of character descriptions from an
+                external document or set of documents.
+            </p>
+            
+            <sect2>
+                <title>Usage</title>
+                
+                <p>
+                    In its simplest form, the <xml>import-character</xml>
+                    tag references an external document and either
+                    imports all <xml uri="character">character</xml>
+                    elements it finds there, or import those of a
+                    specific name.
+                </p>
+                
+                <xmlroot name="import-characters">
+                    <attribute name="href" value="mycharacters.yags"/>
+                    <attribute name="name" value="Fred"/>
+                    <attribute name="display" value="full"/>
+                </xmlroot>
+                
+                <p>
+                    The above would import all characters called 'Fred'
+                    from the file mycharacters.yags.
+                </p>
+                
+                <p>
+                    A more complicated use is to import characters from
+                    an Encyclopedia. In this case, the entire Encyclopedia
+                    is searched for any characters matching the provided
+                    role and topic.
+                </p>
+                
+                <xmlroot name="import-characters">
+                    <attribute name="source" value="/usr/share/xml/habisfern"/>
+                    <attribute name="topic" value="weidany"/>
+                    <attribute name="display" value="package"/>
+                </xmlroot>
+                
+                <p>
+                    The topic must be the URI of a topic in the Encyclopedia.
+                    If this is not specified, then no characters will be
+                    found. The @display tag should be one of 'character',
+                    'package' or 'stock', as per the @role tag of a
+                    <xml uri="characters">characters</xml> element.
+                </p>
+            </sect2>
+                        
+            
+            <sect2>
+                <title>Definition</title>
+                
+                <p>
+                    import-characters:: 
+                </p>
+            </sect2>
+        </sect1>
+    </body>
+</page>
+
+

@@ -1,0 +1,224 @@
+
+
+body {
+    background-color: white;
+}
+
+h1 {
+    font-size: xx-large;
+    background-color: #7777ff;
+    color: #000055;
+    line-height: 100%;
+    margin: 0mm;
+    padding: 0mm;
+    border-bottom: 2pt solid #aaaaff;
+}
+
+div.links {
+    text-align: center;
+    margin-bottom: 2mm;
+}
+
+span.link {
+    display: inline;
+    background: url("/images/lk-bottom-right.png") no-repeat bottom right;
+    padding: 0px;
+    margin: 0px;
+    padding-bottom: 2px;
+    margin-right: 2mm;
+}
+
+div.links a {
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 0px;
+    margin: 0px;
+    padding-left: 12px;
+    padding-right: 0px;
+    margin-right: 2mm;
+    padding-bottom: 2px;
+    background-color: #5555bb;
+    background: url("/images/lk-bottom-left.png") no-repeat bottom left;
+}
+
+div.links a:hover {
+    color: #0000ff;
+    text-decoration: underline;
+}
+
+div.sect1 {
+    background-color: white;
+    margin-right: 50mm;
+    text-align: justify;
+}
+
+div.sect1 h1 {
+    color: white;
+    background-color: #8060d0;
+    font-size: x-large;
+    font-weight: bold;
+    margin-top: 0mm;
+}
+
+div.sect2 {
+    background-color: white;
+    margin-left: 5mm;
+}
+
+div.sect2 h2 {
+    color: white;
+    background-color: #5555bb;
+    font-size: large;
+    font-weight: bold;
+    margin-left: -5mm;
+    padding-left: 5mm;
+}
+
+div.sect3 {
+    margin-left: 5mm;
+}
+
+div.sect3 h3 {
+    color: white;
+    background-color: #8060d0;
+    font-size: medium;
+    font-weight: bold;
+}
+
+div.sect4 h4 {
+    color: white;
+    background-color: #8060d0;
+    font-size: medium;
+    font-weight: bold;
+    font-style: italic;
+}
+
+div.sect5 h5 {
+    color: white;
+    background-color: #8060d0;
+    font-size: medium;
+    font-weight: normal;
+    font-style: italic;
+    left: 10mm;
+}
+
+
+div.sidebars {
+    float: right;
+    width: 45mm;
+    margin: 0mm;
+    clear: both;
+}
+
+div.sidebar {
+    margin-right: 0mm;
+    margin-bottom: 3mm;
+    background-color: #bbbbff;
+}
+
+div.sidebar div.title {
+    background: url("/images/sb-top-right.png") no-repeat top right;
+    border-bottom: 1px solid black;
+}
+
+div.sidebar h6 {
+    color: black;
+    background-color: black;
+    font-size: small;
+    font-weight: bold;
+    margin: 0mm;
+    background: url("/images/sb-top-left.png") no-repeat top left;
+    padding: 5px 15px;
+}
+
+div.column {
+    border: 2px solid black;
+    border-top: none;
+    padding: 2px;
+}
+
+div.sidebar p {
+    font-size: xx-small;
+    margin-top: 0mm;
+    margin-bottom: 3mm;
+}
+
+img {
+    border-style: none;
+}
+
+img.inline {
+    float: right;
+}
+
+/*
+ * Following styles are for displaying XML structures in HTML.
+ * Used for documenting XML formats.
+ */
+div.xml {
+    color: black;
+    border: 1pt solid black;
+    padding: 2mm;
+    font-size: x-small;
+}
+
+div.xml p {
+    margin: 0mm;
+}
+
+div.xmlindent {
+    margin-left: 5mm;
+}
+
+span.node {
+    color: darkblue;
+    font-weight: bold;
+}
+
+span.text {
+    color: black;
+    font-weight: normal;
+}
+
+span.inline {
+    font-size: 80%;
+    color: red;
+}
+
+span.attribute {
+    color: blue;
+}
+
+span.attribute-value {
+    color: red;
+}
+
+span.comment {
+    color: green;
+    font-style: italic;
+}
+
+span.fixed {
+    font-family: Courier;
+}
+
+span.menu {
+    border: 1pt solid black;
+    padding-left: 3pt;
+    padding-right: 3pt;
+    background-color: #eeeeee;
+    font-size: small;
+}
+
+div.script {
+    color: black;
+    border: 1pt solid black;
+    padding: 2mm;
+    font-family: Courier;
+    font-size: small;
+}
+
+dt {
+    font-weight: bold;
+}

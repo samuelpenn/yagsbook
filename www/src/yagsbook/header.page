@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<!--
+    XML Source for HTML.
+    Use pagexml stylesheets to render.
+ -->
+<page>
+    <header>
+        <title>Header</title>
+
+        <summary>
+            Header element of the main article document.
+        </summary>
+
+        <cvsinfo>
+            <version>$Revision: 1.4 $</version>
+            <date>$Date: 2005/07/17 15:14:31 $</date>
+        </cvsinfo>
+
+        <license type="BSD">
+            <year>2005</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                Redistribution and use in source, binary and printed
+                forms with or without modification is permitted. See
+                the full license text for details.
+            </text>
+            <url>http://www.glendale.org.uk/bsd.txt</url>
+        </license>
+        
+        <style>default</style>    
+        <footer href="../footer.inc"/>
+    </header>
+    
+    <links>
+        <link uri="/index">home</link>
+        <link uri="../yagsbook">yagsbook</link>
+        <link uri="article">article</link>
+    </links>
+
+    <sidebar>
+        <title>Summary</title>
+
+        <p>
+            A <xml>header</xml> is the first node of an
+            <xml uri="article">article</xml> and contains all the meta
+            data about the document.
+        </p>
+        
+    </sidebar>
+    
+    <sidebar>
+        <title>Possible parents</title>
+        
+        <p>
+            <xml uri="article">article</xml>.
+        </p>
+    </sidebar>
+    
+    <sidebar>
+        <title>Children</title>
+        
+        <p>
+            <xml uri="header">header</xml>,
+            <xml uri="body">body</xml>,
+            <xml uri="front">front</xml>,
+            <xml uri="back">back</xml>.
+        </p>
+    </sidebar>
+        
+
+    <body>
+        <sect1>
+            <p>
+                A <xml>header</xml> is always the first child of an
+                <xml uri="article">article</xml>. It contains meta information
+                about the article, including title, author, license details
+                and any references or topic codes.
+            </p>
+            
+            <sect2>
+                <title>Example</title>
+                
+                <xmlroot name="header">
+                    <element name="title" value="Example Document"/>
+                    <element name="tagline" value="Yagsbook"/>
+                    <element name="slugline" value="simple sample document"/>
+                    
+                    <element name="author">
+                        <element name="fullname" value="Samuel Penn"/>
+                        <element name="email" value="sam@bifrost.demon.co.uk"/>
+                    </element>
+                    
+                    <element name="cvsinfo">
+                        <element name="version" value="$Revision: 1.4 $"/>
+                        <element name="date" value="$Date: 2004/07/10 19:40:40"/>
+                    </element>
+
+                    <element name="license">
+                        <element name="year" value="2004"/>
+                        <element name="holder" value="Samuel Penn"/>
+                        <element name="url" value="http://www.gnu.org/fdl.html"/>
+                        <element name="text">
+                            This example uses the GNU Free Documentation
+                            License.
+                        </element>
+                    </element>
+                    
+                    <element name="style">
+                        <attribute name="name" value="module"/>
+                    </element>
+                </xmlroot>
+            </sect2>
+            
+            <sect2>
+                <title>Definition</title>
+                
+                <p>
+                    header:: (title, tagline, slugline?, author+, cvsinfo,
+                              license, style, references?, topics?)
+                </p>
+
+                <p>
+                    A <xml>header</xml> contains required and optional
+                    elements.
+                </p>
+            </sect2>
+        </sect1>
+    </body>
+</page>
+
+

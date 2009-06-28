@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<!--
+    XML Source for HTML.
+    Use pagexml stylesheets to render.
+ -->
+<page>
+    <header>
+        <title>Equipment</title>
+
+        <summary>
+            Includes a list of items of equipment.
+        </summary>
+
+        <cvsinfo>
+            <version>$Revision: 1.2 $</version>
+            <date>$Date: 2005/07/17 15:14:30 $</date>
+        </cvsinfo>
+
+        <license type="BSD">
+            <year>2005</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                Redistribution and use in source, binary and printed
+                forms with or without modification is permitted. See
+                the full license text for details.
+            </text>
+            <url>http://www.glendale.org.uk/bsd.txt</url>
+        </license>
+
+        <style>default</style>
+        <footer href="../footer.inc"/>
+    </header>
+
+    <links>
+        <link uri="/index">home</link>
+        <link uri="../yagsbook">yagsbook</link>
+        <link uri="sect1">sect1</link>
+        <link uri="equipment-item">item</link>
+    </links>
+
+    <sidebar>
+        <title>Summary</title>
+
+        <p>
+            A list of items of equipment. May be a top level node or
+            embedded in another document.
+        </p>
+    </sidebar>
+
+    <sidebar>
+        <title>Parents</title>
+
+        <p>
+            <xml uri="sect1">sect1</xml>,
+            <xml uri="sect2">sect2</xml>,
+            <xml uri="sect3">sect3</xml>,
+            <xml uri="sect4">sect4</xml>,
+            <xml uri="sect5">sect5</xml>,
+            <xml uri="character">character</xml>.
+        </p>
+    </sidebar>
+
+
+    <body>
+        <sect1>
+            <p>
+                The <xml>equipment</xml> element can be used as a root node
+                of a document, in which case the entire document is a list
+                of equipment items. Such documents are normally referenced
+                by an <xml uri="import-equipment">import-equipment</xml>
+                tag which imports the list into another document.
+            </p>
+
+            <sect2>
+                <title>Examples</title>
+
+                <xmlroot name="equipment">
+                    <element name="item">
+                        <attribute name="name" value="10' pole"/>
+                        <element name="category">Adventuring</element>
+                        <element name="short">A 10' long wooden pole.</element>
+                    </element>
+                </xmlroot>
+            </sect2>
+
+            <sect2>
+                <title>Definition</title>
+
+                <p>
+                    equipment:: (item)+
+                </p>
+            </sect2>
+
+            <sect2>
+                <title>Rendition</title>
+
+                <p>
+                    Each item in the list will be displayed in a table.
+                    The table may contain only a limited subset of the
+                    values defined.
+                </p>
+            </sect2>
+        </sect1>
+    </body>
+</page>
+
+

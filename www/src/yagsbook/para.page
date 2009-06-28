@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<!--
+    XML Source for HTML.
+    Use pagexml stylesheets to render.
+ -->
+<page>
+    <header>
+        <title>Para</title>
+
+        <summary>
+            An XML format for describing roleplaying games.
+        </summary>
+
+        <cvsinfo>
+            <version>$Revision: 1.2 $</version>
+            <date>$Date: 2005/07/17 15:14:31 $</date>
+        </cvsinfo>
+
+        <license type="BSD">
+            <year>2005</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                Redistribution and use in source, binary and printed
+                forms with or without modification is permitted. See
+                the full license text for details.
+            </text>
+            <url>http://www.glendale.org.uk/bsd.txt</url>
+        </license>
+        
+        <style>default</style>    
+        <footer href="../footer.inc"/>
+    </header>
+    
+    <links>
+        <link uri="/index">home</link>
+        <link uri="../yagsbook">yagsbook</link>
+        <link uri="sect1">sect1</link>
+    </links>
+
+    <sidebar>
+        <title>Summary</title>
+
+        <p>
+            The <xml>para</xml> element is the standard block of paragraph
+            text. It may contain inline markup but no other structures.
+        </p>
+    </sidebar>
+    
+    <sidebar>
+        <title>Parents</title>
+        
+        <p>
+            <xml uri="sect1">sect1</xml>,
+            <xml uri="sect2">sect2</xml>,
+            <xml uri="sect3">sect3</xml>,
+            <xml uri="sect4">sect4</xml>,
+            <xml uri="sect5">sect5</xml>,
+            <xml>description</xml>.
+        </p>
+    </sidebar>
+    
+    <sidebar>
+        <title>Children</title>
+        
+        <p>
+            <xml uri="e">e</xml>,
+            <xml uri="note">note</xml>,
+            <xml uri="qv">qv</xml>,
+            <xml uri="s">s</xml>,
+            <xml uri="skillequation">skillequation</xml>,
+            <xml uri="tm">tm</xml>,
+            <xml uri="url">url</xml>,
+            <xml uri="warning">warning</xml>.
+        </p>
+    </sidebar>
+
+    <body>
+        <sect1>
+            <p>
+                The <xml>para</xml> element is the basic block of paragraph
+                text found within a document. Normally, the majority of any
+                document will be text within a <xml>para</xml>.
+            </p>
+            
+            <p>
+                <xml>para</xml> elements are classed as block elements.
+                This class also includes
+                <xml uri="itemlist">itemlist</xml>,
+                <xml uri="table">table</xml>, 
+                <xml uri="targetlist">targetlist</xml>,
+                <xml uri="character">character</xml> and
+                <xml uri="beast">beast</xml>
+                elements, amongst others. All of them consist of a block
+                of formatted text, which is kept seperate from preceeding
+                and following blocks. All may be nested within a section
+                such as <xml uri="sect1">sect1</xml>.
+            </p>
+            
+            <p>
+                A <xml>para</xml> element may also contain inline markup,
+                such as emphasis or warning text.
+            </p>
+            
+            <sect2>
+                <title>Example</title>
+                
+                <xmlroot name="sect1">
+                    <element name="title" value="Section"/>
+                    
+                    <element name="para">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing
+                        elit. Nullam ullamcorper. Nunc quam urna, ultrices
+                        et, <inline name="e" value="porta nec"/>, viverra
+                        vitae, ante. <inline name="warning"
+                        value="Praesent ullamcorper dignissim turpis"/>.
+                    </element>
+                </xmlroot>
+            </sect2>
+            
+            <sect2>
+                <title>Definition</title>
+                
+                <p>
+                    para:: (#text | e | s | note | warning | qv | url | tm | skillequation)*
+                </p>
+                
+                <p>
+                    Can contain text and/or inline elements such as
+                    <xml uri="e">e</xml> or <xml uri="qv">qv</xml>.
+                </p>
+            </sect2>
+            
+            <sect2>
+                <title>Rendition</title>
+                
+                <p>
+                    Each <xml>para</xml> should be displayed as a block of
+                    text, seperated from preceeding and following blocks
+                    by a line of whitespace.
+                </p>
+            </sect2>
+        </sect1>
+    </body>
+</page>
+
+

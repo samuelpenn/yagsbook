@@ -1,0 +1,229 @@
+<?xml version="1.0"?>
+<!--
+    XML Source for HTML.
+    Use pagexml stylesheets to render.
+ -->
+<page>
+    <header>
+        <title>Yagsbook XML Format</title>
+
+        <summary>
+            An XML format for describing roleplaying games.
+        </summary>
+
+        <cvsinfo>
+            <version>$Revision: 1.10 $</version>
+            <date>$Date: 2005/07/17 18:13:39 $</date>
+        </cvsinfo>
+
+        <license type="BSD">
+            <year>2005</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                Redistribution and use in source, binary and printed
+                forms with or without modification is permitted. See
+                the full license text for details.
+            </text>
+            <url>http://www.glendale.org.uk/bsd.txt</url>
+        </license>
+
+        <style>default</style>
+        <footer href="footer.inc"/>
+    </header>
+
+    <links>
+        <link uri="/index">home</link>
+        <link href="http://sourceforge.net/projects/yagsbook">sourceforge</link>
+        <link uri="yagsbook/article">documentation</link>
+    </links>
+
+    <sidebar>
+        <title>Summary</title>
+
+        <p>
+            Yagsbook is an XML format loosely based on Docbook. It allows
+            rules for roleplaying games to be written in XML, which can
+            then be rendered as more human readable formats such as HTML
+            or PDF.
+        </p>
+
+        <p>
+            For an example of what the end result looks like, have a look
+            at <link href="http://www.glendale.org.uk/yags" name="Yags"/>
+            which has used Yagsbook for a while.
+        </p>
+    </sidebar>
+
+    <sidebar>
+        <title>Documentation</title>
+
+        <link uri="scripts" name="Helpful scripts"/>
+
+        <link uri="text2book" name="Text2Book"/>
+
+        <link uri="yagsbook/article" name="Articles"/>
+
+        <link uri="yagsbook/bestiary" name="Bestiary"/>
+    </sidebar>
+
+    <sidebar>
+        <title>Index</title>
+
+        <p>
+            <xml uri="yagsbook/advantages">advantages</xml>,
+            <xml uri="yagsbook/article">article</xml>,
+            <xml uri="yagsbook/body">body</xml>,
+            <xml uri="yagsbook/back">back</xml>,
+            <xml uri="yagsbook/character">character</xml>,
+            <xml uri="yagsbook/characters">characters</xml>,
+            <xml uri="yagsbook/e">e</xml>,
+            <xml uri="yagsbook/front">front</xml>,
+            <xml uri="yagsbook/header">header</xml>,
+            <xml uri="yagsbook/import-characters">import-characters</xml>,
+            <xml uri="yagsbook/itemlist">itemlist</xml>,
+            <xml uri="yagsbook/note">note</xml>,
+            <xml uri="yagsbook/para">para</xml>,
+            <xml uri="yagsbook/s">s</xml>,
+            <xml uri="yagsbook/sect1">sect1</xml>,
+            <xml uri="yagsbook/sect2">sect2</xml>,
+            <xml uri="yagsbook/sect3">sect3</xml>,
+            <xml uri="yagsbook/sect4">sect4</xml>,
+            <xml uri="yagsbook/sect5">sect5</xml>,
+            <xml uri="yagsbook/targetlist">targetlist</xml>,
+            <xml uri="yagsbook/tm">tm</xml>,
+            <xml uri="yagsbook/vehicle">vehicle</xml>,
+            <xml uri="yagsbook/warning">warning</xml>.
+        </p>
+    </sidebar>
+
+    <sidebar>
+        <title>Author</title>
+
+        <p>
+            The author of this software is
+            <link href="http://www.glendale.org.uk/~sam/samuelpenn.html"
+                  name="Samuel Penn"/>.
+        </p>
+    </sidebar>
+
+    <sidebar>
+        <title>Versioning</title>
+
+        <p>
+            Version numbering for Yagsbook has never really been defined.
+            For this reason, the first release has been randomly determined
+            to be 0.5. Yagsbook is still in alpha.
+        </p>
+    </sidebar>
+
+    <sidebar>
+        <title>Namespaces</title>
+
+        <p>
+            The basic namespace for Yagsbook content is
+            <link href="http://yagsbook.sourceforge.net/xml"
+                  name="http://yagsbook.sourceforge.net/xml"/>.
+            Currently this is unversioned, but this URL will always
+            point at the most recent version of the namespace.
+        </p>
+
+        <p>
+            Game specific content is supported by the use of other
+            namespaces. For example, for Yags or Ars Magica. Character
+            or beast descriptions can be written up with system neutral
+            descriptive text, then followed with structured information
+            for each desired game system.
+        </p>
+    </sidebar>
+
+    <body>
+        <sect1>
+            <p>
+                <e>Yagsbook</e> is an XML format similar to Docbook.
+                Initially is was going to be a few addons to Docbook, but
+                it was soon decided that Docbook was too tied to its own
+                domain (technical documentation) to be useful for a
+                roleplaying game. There are some similarities between
+                Docbook and Yagsbook, but these are for historical reasons.
+            </p>
+
+            <p>
+                There are three types of top level documents in Yagsbook
+                and many more <e>support</e> documents which may be
+                included by the top three.
+            </p>
+
+            <sect2>
+                <title>Articles</title>
+
+                <p>
+                    The principle type of document in Yagsbook is the
+                    <xml uri="yagsbook/article">article</xml>. Articles are
+                    designed to be the top level holder of all other
+                    document types, and as such is the only document type
+                    which contains extensive header information.
+                </p>
+
+                <p>
+                    Though besteries and character documents are also
+                    considered top level, these can be referenced from an
+                    article and inlined. No other document type can
+                    currently inline an article.
+                </p>
+
+                <p>
+                    <e>Articles</e> are the basis of the
+                    <link uri="encyclopedia" name="Encyclopedia"/> and are
+                    the main elements of Yags rules.
+                </p>
+            </sect2>
+
+            <sect2>
+                <title>Bestiary</title>
+
+                <p>
+                    A <xml uri="yagsbook/bestiary">bestiary</xml> document
+                    contains one or more <xml uri="yagsbook/beast">beast</xml>
+                    elements and nothing else. Basically, it is a collection
+                    of animal and monster descriptions, which may be used
+                    to generate a standalone document.
+                </p>
+
+                <p>
+                    The contents of a bestiary may be referenced and
+                    included from an article, or it can be used to generate
+                    a standalone document. In the latter case, each beast
+                    may be rendered as a single full page.
+                </p>
+            </sect2>
+
+            <sect2>
+                <title>Characters</title>
+
+                <p>
+                    The third type of top level document is the character
+                    repository, which may be used to generate either a
+                    character sheet for a single character, or a booklet
+                    of character descriptions.
+                </p>
+
+                <p>
+                    Character repositories may contain actual characters,
+                    character templates or character packages. All follow
+                    a very similar format, differing only on what content
+                    is required and how it is presented.
+                </p>
+
+                <p>
+                    A <xml uri="yagsbook/character">character</xml>
+                    element is split into a system neutral section (the
+                    description) and game specific sections (statistic
+                    blocks). A single character can be described using
+                    several statistic blocks, one for each system.
+                </p>
+            </sect2>
+        </sect1>
+    </body>
+</page>
+
+

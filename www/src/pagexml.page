@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<!--
+    XML Source for HTML.
+    Use pagexml stylesheets to render.
+ -->
+<page>
+    <header>
+        <title>PageXML</title>
+
+        <summary>
+            An XML format for describing simple web pages.
+        </summary>
+
+        <cvsinfo>
+            <version>$Revision: 1.5 $</version>
+            <date>$Date: 2005/07/17 15:14:27 $</date>
+        </cvsinfo>
+
+        <license type="BSD">
+            <year>2005</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                Redistribution and use in source, binary and printed
+                forms with or without modification is permitted. See
+                the full license text for details.
+            </text>
+            <url>http://www.glendale.org.uk/bsd.txt</url>
+        </license>
+        
+        <style>default</style>    
+        <footer href="footer.inc"/>
+    </header>
+    
+    <links>
+        <link uri="/index">home</link>
+        <link href="http://sourceforge.net/projects/yagsbook">sourceforge</link>
+        <link uri="pagexml/page">documentation</link>
+    </links>
+
+    <sidebar>
+        <title>Summary</title>
+
+        <p>
+            PageXML is an XML format for describing simple web pages.
+            It uses a mixture of Ant and Xalan plugins to interface with
+            a number of Yagsbook utilities which do all the clever stuff.
+        </p>
+    </sidebar>
+
+    <sidebar>
+        <title>License</title>
+
+        <p>
+            The software is released under the GNU Public License.
+        </p>
+    </sidebar>
+        
+    <sidebar>
+        <title>Author</title>
+        
+        <p>
+            The author of this software is
+            <link href="http://www.glendale.org.uk/~sam/samuelpenn.html"
+                  name="Samuel Penn"/>.
+        </p>
+    </sidebar>
+    
+
+    <body>
+        <sect1>
+            <p>
+                PageXML is a document format similar to Yagsbook, but much
+                simpler. It is used to describe simple content, but includes
+                tags which allow more complex site structures to be embedded
+                into the site.
+            </p>
+            
+            <p>
+                For example, to import a complete encyclopedia, an
+                <xml>import-encyclopedia</xml> tag would be inserted into the
+                page. This would be picked up by the Xalan parser, and
+                encyclopedia articles could be fetched from a CVS repository,
+                and hundreds of pages of encyclopedia articles (including
+                maps and other associated elements) would be automatically
+                generated and inserted into the site.
+            </p>
+            
+            <p>
+                The pages on this site have all been generated using PageXML.
+            </p>
+            
+            <sect2>
+                <title>Main Features</title>
+                
+                <sect3>
+                    <title>Provide a consistent look and feel</title>
+                    
+                    <p>
+                        PageXML is designed to provide a consistent look
+                        and feel across a web site. The output is valid
+                        XHTML (if it isn't, it's considered a bug) which
+                        can be easily tweaked with CSS.
+                    </p>
+                    
+                    <p>
+                        Using XHTML directly can give the same effect,
+                        except by taking a step back with an abstraction
+                        layer, it is possible to radically change how a
+                        site is structured by changing the PageXML XSLT.
+                    </p>
+                </sect3>
+                
+                <sect3>
+                    <title>Automatic Tasks</title>
+                    
+                    <p>
+                        By using a mixture of Ant and XSLT plugins it is
+                        possible to automate certain tasks when a website
+                        is constructed, referencing these tasks directly
+                        within the structure of each page.
+                    </p>
+                    
+                    <p>
+                        PageXML allows documentation sets and encyclopedias
+                        to be generated and linked to when the site is
+                        built. This is useful since such information is
+                        often kept seperate from the site itself.
+                    </p>
+                </sect3>
+                
+                <sect3>
+                    <title>XML Documentation</title>
+                    
+                    <p>
+                        One thing XML is very bad at is talking about XML.
+                        Due to having to escape &lt; characters and the
+                        like, any pages which need to display XML code are
+                        difficult to manage.
+                    </p>
+                    
+                    <p>
+                        PageXML contains structures for describing an XML
+                        document, and the stylesheets generate coloured
+                        markup on output. This feature was added so that
+                        the Yagsbook format could be easily documented.
+                    </p>
+                </sect3>
+            </sect2>
+        </sect1>
+    </body>
+</page>
+
+

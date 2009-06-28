@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<!--
+    XML Source for HTML.
+    Use pagexml stylesheets to render.
+ -->
+<page>
+    <header>
+        <title>Sect5</title>
+
+        <summary>
+            Fifth and lowest level of section block.
+        </summary>
+
+        <cvsinfo>
+            <version>$Revision: 1.1 $</version>
+            <date>$Date: 2005/07/17 15:33:40 $</date>
+        </cvsinfo>
+
+        <license type="BSD">
+            <year>2005</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                Redistribution and use in source, binary and printed
+                forms with or without modification is permitted. See
+                the full license text for details.
+            </text>
+            <url>http://www.glendale.org.uk/bsd.txt</url>
+        </license>
+
+        <style>default</style>
+        <footer href="../footer.inc"/>
+    </header>
+
+    <links>
+        <link uri="/index">home</link>
+        <link uri="../yagsbook">yagsbook</link>
+        <link uri="article">article</link>
+        <link uri="body">body</link>
+        <link uri="sect1">sect1</link>
+    </links>
+
+    <sidebar>
+        <title>Summary</title>
+
+        <p>
+            The <xml>sect5</xml> element is always a direct child of a
+            <xml uri="sect4">sect1</xml> element. It contains paragraph
+            type elements but no other section types.
+        </p>
+    </sidebar>
+
+    <sidebar>
+        <title>Parents</title>
+
+        <p>
+            <xml uri="sect4">sect4</xml>
+        </p>
+    </sidebar>
+
+    <sidebar>
+        <title>Children</title>
+
+        <p>
+            Paragraph elements similar to sect1.
+        </p>
+    </sidebar>
+
+
+    <body>
+        <sect1>
+            <p>
+                A <xml>sect5</xml> element represents a fifth level
+                section, always nested within a <xml uri="sect4">sect4</xml>.
+                It is the lowest level of section element, and therefore
+                contains no other section elements. It does however support
+                all other elements supported by <xml>sect1</xml>.
+            </p>
+
+            <p>
+                See <xml uri="sect1">sect1</xml> for full details of how
+                to use the various section tags.
+            </p>
+
+            <sect2>
+                <title>Rendition</title>
+
+                <p>
+                    The least important type of section, sometimes used
+                    to split descriptions of terms or steps in a process.
+                    The heading should be minor and unobstrusive.
+                </p>
+            </sect2>
+        </sect1>
+    </body>
+</page>
+
+

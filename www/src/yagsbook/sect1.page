@@ -1,0 +1,242 @@
+<?xml version="1.0"?>
+<!--
+    XML Source for HTML.
+    Use pagexml stylesheets to render.
+ -->
+<page>
+    <header>
+        <title>Sect1</title>
+
+        <summary>
+            Top level section block.
+        </summary>
+
+        <cvsinfo>
+            <version>$Revision: 1.7 $</version>
+            <date>$Date: 2006/01/02 16:55:02 $</date>
+        </cvsinfo>
+
+        <license type="BSD">
+            <year>2005</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                Redistribution and use in source, binary and printed
+                forms with or without modification is permitted. See
+                the full license text for details.
+            </text>
+            <url>http://www.glendale.org.uk/bsd.txt</url>
+        </license>
+
+        <style>default</style>
+        <footer href="../footer.inc"/>
+    </header>
+
+    <links>
+        <link uri="/index">home</link>
+        <link uri="../yagsbook">yagsbook</link>
+        <link uri="article">article</link>
+        <link uri="body">body</link>
+    </links>
+
+    <sidebar>
+        <title>Summary</title>
+
+        <p>
+            The <xml>sect1</xml> element is always a direct child of the
+            <xml uri="body">body</xml> element. It contains paragraph
+            type elements and <xml uri="sect2">sect2</xml> sections.
+        </p>
+    </sidebar>
+
+    <sidebar>
+        <title>Parents</title>
+
+        <p>
+            <xml uri="body">body</xml>
+        </p>
+    </sidebar>
+
+    <sidebar>
+        <title>Children</title>
+
+        <p>
+            <xml uri="title">title</xml>,
+            <xml uri="sect2">sect2</xml>,
+            <xml uri="para">para</xml>,
+            <xml uri="table">table</xml>,
+            <xml uri="itemlist">itemlist</xml>,
+            <xml uri="character">character</xml>,
+            <xml uri="characters">characters</xml>,
+            <xml uri="equipment">equipment</xml>.
+        </p>
+    </sidebar>
+
+
+    <body>
+        <sect1>
+            <p>
+                A <xml>sect1</xml> element is a top level section. It's
+                title should be given the most prominence. It contains
+                all paragraph text and has <xml uri="sect2">sect2</xml>
+                elements nested within it.
+            </p>
+
+            <p>
+                There are a number of section elements, of which
+                <xml>sect1</xml> is but the top level. All section
+                elements are treated in the same way, and may contain
+                exactly the same type of elements (block elements).
+                The only difference is that a section element of one
+                level may only directly contain section elements of
+                one level down. A <xml>sect1</xml> section may only
+                contain <xml>sect2</xml> sections.
+            </p>
+
+            <p>
+                Other section elements are
+                <xml uri="sect2">sect2</xml>,
+                <xml uri="sect3">sect3</xml>,
+                <xml uri="sect4">sect4</xml>,
+                <xml uri="sect5">sect5</xml>.
+            </p>
+
+            <p>
+                <xml>sect1</xml> has an additional feature over other
+                section blocks in that it may reference externally
+                defined content.
+            </p>
+
+            <sect2>
+                <title>Example</title>
+
+                <xmlroot name="sect1">
+                    <element name="title" value="Main Section"/>
+
+                    <element name="para">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing
+                        elit. Nullam ullamcorper. Nunc quam urna, ultrices
+                        et, porta nec, viverra vitae, ante. Praesent
+                        ullamcorper dignissim turpis.
+                    </element>
+
+                    <element name="sect2">
+                        <element name="title" value="Sub section"/>
+
+                        <element name="para">
+                            Vivamus velit sapien, vestibulum vel, ultricies sit
+                            amet, sollicitudin quis, turpis. Sed id risus.
+                        </element>
+                    </element>
+                </xmlroot>
+
+                <p>
+                    A <xml>sect1</xml> element may reference an external
+                    document. When it does so, it should not include any
+                    child elements of its own. The following example will
+                    import all <xml>sect1</xml> elements from the document
+                    'document2.yags'.
+                </p>
+
+                <xmlroot name="sect1">
+                    <attribute name="href" value="document2.yags"/>
+                </xmlroot>
+
+                <p>
+                    It is also possible to reference a specific section
+                    in an external document.
+                </p>
+
+                <xmlroot name="sect1">
+                    <attribute name="href" value="document2.yags"/>
+                    <attribute name="name" value="part1"/>
+                </xmlroot>
+
+                <p>
+                    In this case, 'document2.yags' should contain the
+                    following section:
+                </p>
+
+                <xmlroot name="sect1">
+                    <attribute name="id" value="part1"/>
+
+                    <element name="title" value="Part One"/>
+                    <element name="para">
+                        A paragraph of text.
+                    </element>
+                </xmlroot>
+            </sect2>
+
+            <sect2>
+                <title>Definition</title>
+
+                <p>
+                    sect1:: (@href, @name?)?, @id?,
+                            title?,
+                            (para | itemlist | table)*,
+                            sect2*
+                </p>
+
+                <p>
+                    A top level section of the body text.
+                </p>
+
+                <sect3>
+                    <title>@href</title>
+
+                    <p>
+                        If a sect1 has an @href attribute, then it may
+                        not contain any child elements, instead all
+                        content is imported from the external document
+                        referenced by the @href attribute.
+                    </p>
+
+                    <p>
+                        All content beneath the imported <xml>sect1</xml>
+                        will be imported, including child <xml>sect2</xml>
+                        elements and their children.
+                    </p>
+                </sect3>
+
+                <sect3>
+                    <title>@name</title>
+
+                    <p>
+                        If a <xml>sect1</xml> has an @href attribute, then
+                        it may also have an @name attribute. When sections
+                        are imported from the external document, only
+                        those with an @id attribute matching the @name
+                        attribute will be used.
+                    </p>
+                </sect3>
+
+                <sect3>
+                    <title>@id</title>
+
+                    <p>
+                        If a <xml>sect1</xml> element has an @id attribute,
+                        then it can be referenced directly by an external
+                        document. See the @name attribute.
+                    </p>
+                </sect3>
+            </sect2>
+
+            <sect2>
+                <title>Rendition</title>
+
+                <p>
+                    The title should be rendered in the most prominent
+                    font. All block elements should be rendered before
+                    any nested section elements, regardless of the order
+                    within the source document.
+                </p>
+
+                <p>
+                    Any content listings should correctly deal with
+                    imported sections.
+                </p>
+            </sect2>
+        </sect1>
+    </body>
+</page>
+
+

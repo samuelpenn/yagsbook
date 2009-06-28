@@ -1,0 +1,510 @@
+<?xml version="1.0"?>
+<!--
+    XML Source for HTML.
+    Use pagexml stylesheets to render.
+ -->
+<page>
+    <header>
+        <title>Vehicle statistics (Dirtside)</title>
+
+        <summary>
+            A description of a vehicle for Dirtside.
+        </summary>
+
+        <cvsinfo>
+            <version>$Revision: 1.2 $</version>
+            <date>$Date: 2005/10/27 12:55:30 $</date>
+        </cvsinfo>
+
+        <license type="BSD">
+            <year>2005</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                Redistribution and use in source, binary and printed
+                forms with or without modification is permitted. See
+                the full license text for details.
+            </text>
+            <url>http://www.glendale.org.uk/bsd.txt</url>
+        </license>
+
+        <style>default</style>
+        <footer href="../../footer.inc"/>
+    </header>
+
+    <links>
+        <link uri="/index">home</link>
+        <link uri="../yagsbook">yagsbook</link>
+        <link uri="../vehicle">vehicle</link>
+    </links>
+
+    <sidebar>
+        <title>Summary</title>
+
+        <p>
+            A vehicle description, including Dirtside statistics.
+        </p>
+    </sidebar>
+
+    <sidebar>
+        <title>Parents</title>
+
+        <p>
+            <xml uri="../vehicle">vehicle</xml>
+        </p>
+    </sidebar>
+
+    <body>
+        <sect1>
+            <p>
+                The <xml>vehicle</xml> element is used to describe a
+                vehicle, such as a tank, car or plane. It is of most use
+                when game statistics are provided for the vehicle in
+                question - currently only <e>Dirtside</e> is supported
+                but other systems may be added later.
+            </p>
+
+            <sect2>
+                <title>Features Supported</title>
+
+                <p>
+                    Currently there is basic support for calculating
+                    the points value of a vehicle given an XML description.
+                    This can also be extended to working out the points
+                    value of a whole army, by making use of the
+                    <xml uri="import-army-list">import-army-list</xml>
+                    tag.
+                </p>
+
+                <p>
+                    Capacity calculation and validating the design are not
+                    yet supported, but they are planned features. However,
+                    they are not considered to be high priority.
+                </p>
+            </sect2>
+
+            <sect2>
+                <title>Example</title>
+
+                <xmlroot name="statistics">
+                    <attribute name="xmlns"
+                         value="http://yagsbook.sourceforge.net/xml/dirtside"/>
+
+                    <element name="size" value="4"/>
+                    <element name="stealth" value="1"/>
+
+                    <element name="mobility">
+                        <attribute name="type" value="grav"/>
+                    </element>
+
+                    <element name="power">
+                        <attribute name="type" value="fgp"/>
+                    </element>
+
+                    <element name="elint">
+                        <element name="firecon">
+                            <attribute name="quality" value="enhanced"/>
+                        </element>
+
+                        <element name="ecm">
+                            <attribute name="quality" value="basic"/>
+                        </element>
+                    </element>
+
+                    <element name="armour">
+                        <attribute name="front" value="4"/>
+                    </element>
+
+                    <element name="weapons">
+                        <element name="weapon">
+                            <attribute name="type" value="MDC"/>
+                            <attribute name="class" value="4"/>
+                            <element name="turret"/>
+                        </element>
+                        <element name="weapon">
+                            <attribute name="type" value="APSW"/>
+                            <attribute name="number" value="2"/>
+                        </element>
+                    </element>
+
+                    <element name="equipment">
+                        <element name="item">
+                            <attribute name="name" value="pds"/>
+                            <attribute name="quality" value="enhanced"/>
+                        </element>
+                    </element>
+                </xmlroot>
+            </sect2>
+
+            <sect2>
+                <title>Definition</title>
+
+                <sect3>statistics</sect3>
+
+                <p>
+                    The <xml>statistics</xml> element is the parent of
+                    all the Dirtside specific vehicle information. It will
+                    often have a single namespace attribute, which must
+                    be:
+                </p>
+
+                <p>
+                    <s>xmlns</s>="http://yagsbook.sourceforge.net/xml/dirtside"
+                </p>
+            </sect2>
+
+            <sect3>
+                <title>Basic Vehicle Definition</title>
+
+                <p>
+                    The following elements describe basic statistics for
+                    the vehicle, and are generally simple name, value pairs.
+                </p>
+
+                <sect4>
+                    <title>statistics/size</title>
+
+                    <p>
+                        The size class of the vehicle. This will range from
+                        1 to 5 for most vehicles. Note that there is no
+                        special support for oversize (6+) vehicles. This
+                        attribute is required.
+                    </p>
+
+                    <p>
+                        e.g.: <xml value="3">size</xml>
+                    </p>
+                </sect4>
+
+                <sect4>
+                    <title>statistics/stealth</title>
+
+                    <p>
+                        The number of levels of stealth on the vehicle.
+                        This will range from 0 up to the size class of the
+                        vehicle. It is required.
+                    </p>
+
+                    <p>
+                        e.g.: <xml value="1">stealth</xml>
+                    </p>
+                </sect4>
+
+                <sect4>
+                    <title>statistics/armour</title>
+
+                    <p>
+                        The armour rating of the vehicle, together with any
+                        special properties of the armour. There may be
+                        future support for specific values for side and
+                        rear armour, but currently only front armour is
+                        supported, which is set with the @front attribute.
+                    </p>
+
+                    <xmlroot name="armour">
+                        <attribute name="front" value="3"/>
+                        <element name="reactive"/>
+                    </xmlroot>
+
+                    <p>
+                        The armour element may optionally include one
+                        special property, which will be either
+                        <xml>reactive</xml> or <xml>ablative</xml>.
+                        If both are included, the results are undefined.
+                    </p>
+                </sect4>
+
+                <sect4>
+                    <title>statistics/mobility</title>
+
+                    <p>
+                        Defines the mobility type of the vehicle. The format
+                        of this is as follows:
+                    </p>
+
+                    <xmlroot name="mobility">
+                        <attribute name="type" value="grav"/>
+                    </xmlroot>
+
+                    <p>
+                        The allowed mobility types are:
+                        <s>lowWheeled</s>,
+                        <s>highWheeled</s>,
+                        <s>slowTracked</s>,
+                        <s>fastTracked</s>,
+                        <s>slowGev</s>,
+                        <s>fastGev</s>,
+                        <s>grav</s>,
+                        <s>slowVtol</s>,
+                        <s>fastVtol</s>.
+                    </p>
+
+                    <p>
+                        Other mobility types are not currently supported.
+                    </p>
+                </sect4>
+
+                <sect4>
+                    <title>statistics/power</title>
+
+                    <p>
+                        Defines the power type of the vehicle.
+                    </p>
+
+                    <xmlroot name="power">
+                        <attribute name="type" value="cfe"/>
+                    </xmlroot>
+
+                    <p>
+                        The allowed power plant types are:
+                        <s>cfe</s>,
+                        <s>hmt</s>,
+                        <s>fgp</s>.
+                    </p>
+                </sect4>
+            </sect3>
+
+            <sect3>
+                <title>statistics/elint</title>
+
+                <p>
+                    The <xml>elint</xml> element contains information on
+                    fire controls and ECM systems. it is an optional
+                    element.
+                </p>
+
+                <xmlroot name="elint">
+                    <element name="firecon">
+                        <attribute name="quality" value="enhanced"/>
+                    </element>
+
+                    <element name="ecm">
+                        <attribute name="quality" value="basic"/>
+                    </element>
+                </xmlroot>
+
+                <sect4>
+                    <title>firecon</title>
+
+                    <p>
+                        The <xml>firecon</xml> element has a single attribute
+                        named @quality. This is set to the quality of the
+                        firecon, and can be one of
+                        <s>none</s>,
+                        <s>basic</s>,
+                        <s>enhanced</s>,
+                        <s>superior</s>.
+                    </p>
+
+                    <p>
+                        It is an optional element, and defaults to 'none'.
+                    </p>
+                </sect4>
+
+                <sect4>
+                    <title>ecm</title>
+
+                    <p>
+                        The <xml>ecm</xml> element has a single attribute
+                        named @quality. This is set to the quality of the
+                        ECM system, and can be one of
+                        <s>none</s>,
+                        <s>basic</s>,
+                        <s>enhanced</s>,
+                        <s>superior</s>.
+                    </p>
+
+                    <p>
+                        It is an optional element, and defaults to 'none'.
+                    </p>
+                </sect4>
+            </sect3>
+
+            <sect3>
+                <title>statistics/weapons</title>
+
+                <p>
+                    The <xml>weapons</xml> element contains a list of all
+                    the direct fire weapons fitted on the vehicle. For
+                    example, a vehicle with a double MDC and a light GMS
+                    system would be described as follows:
+                </p>
+
+                <xmlroot name="weapons">
+                    <element name="weapon">
+                        <attribute name="type" value="MDC"/>
+                        <attribute name="class" value="4"/>
+                        <attribute name="number" value="2"/>
+                        <element name="turret"/>
+                    </element>
+
+                    <element name="weapon">
+                        <attribute name="type" value="GMS/L"/>
+                        <attribute name="number" value="1"/>
+                        <attribute name="quality" value="basic"/>
+                    </element>
+                </xmlroot>
+
+                <p>
+                    Each individual type of weapon has its own
+                    <xml>weapon</xml> description. Multiple
+                    instances of the same type of weapon can be
+                    denoted using the @number attribute.
+                </p>
+
+                <p>
+                    The weapon @type attribute should be one of the
+                    following values. The other attributes depend on
+                    the type of weapon, as described below.
+                </p>
+
+                <itemlist order="sort">
+                    <item name="APSW">
+                        Uses the @number attribute only. Note that this
+                        should include the 'free' APSW that all vehicles
+                        have, so all vehicles should have at least one
+                        APSW listed.
+                    </item>
+
+                    <item name="HEL">
+                        Uses the @class and @number attributes. The class
+                        should be between 1 and 5.
+                    </item>
+
+                    <item name="RFAC">
+                        Uses the @class and @number attributes. The class
+                        should be between 1 and 2.
+                    </item>
+
+                    <item name="HVC">
+                        Uses the @class and @number attributes. The class
+                        should be between 3 and 5.
+                    </item>
+
+                    <item name="HKP">
+                        Uses the @class and @number attributes. The class
+                        should be between 3 and 5.
+                    </item>
+
+                    <item name="MDC">
+                        Uses the @class and @number attributes. The class
+                        should be between 1 and 5.
+                    </item>
+
+                    <item name="DFFG">
+                        Uses the @class and @number attributes. The class
+                        should be between 1 and 5.
+                    </item>
+
+                    <item name="SLAM">
+                        Uses the @class and @number attributes. The class
+                        should be between 3 and 5.
+                    </item>
+
+                    <item name="GMS/L">
+                        Uses the @quality and @number attributes. The
+                        quality should be one of 'basic', 'enhanced'
+                        and 'superior'.
+                    </item>
+
+                    <item name="GMS/H">
+                        Uses the @quality and @number attributes. The
+                        quality should be one of 'basic', 'enhanced'
+                        and 'superior'.
+                    </item>
+                </itemlist>
+            </sect3>
+
+            <sect3>
+                <title>statistics/equipment</title>
+
+                <p>
+                    The equipment element is parent to zero or more
+                    <xml>item</xml> elements, each of which describes
+                    one item of non-direct fire equipment that the
+                    vehicle carries.
+                </p>
+
+                <p>
+                    Some types of equipment will have a quality
+                    associated with it - this quality will define the
+                    mass and cost of the item. In all cases, the
+                    @quality attribute should be one of <s>basic</s>,
+                    <s>enhanced</s> or <s>superior</s>.
+                </p>
+
+                <p>
+                    <e>Infantry</e> is simply listed as to whether it
+                    is standard or powered infantry. The cost of
+                    infantry is not included in the vehicle cost,
+                    and it is expected that infantry units will be
+                    listed (and costed) seperately in army lists.
+                </p>
+
+                <itemlist order="sort">
+                    <item name="commandSystems">
+                        Command and control systems.
+                    </item>
+
+                    <item name="ads">
+                        Area defence systems. It requires a @quality
+                        attribute.
+                    </item>
+
+                    <item name="lad">
+                        Local air defence.
+                    </item>
+
+                    <item name="cbr">
+                        Counter battery radar. It requires a @quality
+                        attribute.
+                    </item>
+
+                    <item name="pds">
+                        Point defence system. It requires a @quality
+                        attribute.
+                    </item>
+
+                    <item name="apfc">
+                        Anti-Personnel fragmentation charges.
+                    </item>
+
+                    <item name="lightArtillery">
+                        A (class 2) light artillery.
+                    </item>
+
+                    <item name="mediumArtillery">
+                        A (class 4) medium artillery.
+                    </item>
+
+                    <item name="heavyArtillery">
+                        A (class 6) heavy artillery.
+                    </item>
+
+                    <item name="infantry">
+                        Line or milita infantry (non-powered, e.g.
+                        4 capacity).
+                    </item>
+
+                    <item name="poweredInfantry">
+                        Powered infantry (e.g. 8 capacity).
+                    </item>
+
+                    <item name="cargo">
+                        A capacity 4 cargo hold.
+                    </item>
+
+                    <item name="engineering">
+                        An engineering thing.
+                    </item>
+
+                    <item name="repair">
+                        A repair thing.
+                    </item>
+                </itemlist>
+            </sect3>
+
+        </sect1>
+    </body>
+</page>
+
+

@@ -1,0 +1,187 @@
+<?xml version="1.0"?>
+<!--
+    XML Source for HTML.
+    Use pagexml stylesheets to render.
+ -->
+<page>
+    <header>
+        <title>Character/Statistics</title>
+
+        <summary>
+            An XML format for describing roleplaying games.
+        </summary>
+
+        <cvsinfo>
+            <version>$Revision: 1.3 $</version>
+            <date>$Date: 2005/07/17 15:14:31 $</date>
+        </cvsinfo>
+
+        <license type="BSD">
+            <year>2005</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                Redistribution and use in source, binary and printed
+                forms with or without modification is permitted. See
+                the full license text for details.
+            </text>
+            <url>http://www.glendale.org.uk/bsd.txt</url>
+        </license>
+
+        <style>default</style>
+        <footer href="../../footer.inc"/>
+    </header>
+
+    <links>
+        <link uri="/index">home</link>
+        <link uri="../../yagsbook">yagsbook</link>
+        <link uri="../character">character</link>
+    </links>
+
+    <sidebar>
+        <title>Summary</title>
+
+        <p>
+            Yags specific information about a character.
+        </p>
+    </sidebar>
+
+    <sidebar>
+        <title>Parents</title>
+
+        <p>
+            <xml uri="character">character</xml>
+        </p>
+    </sidebar>
+
+
+    <body>
+        <sect1>
+            <p>
+                <e>Yags</e> information about a character is stored in a
+                <xml>statistics</xml> block with a namespace of
+                http://yagsbook.sourceforge.net/xml/yags. There should be
+                only one such element in a <xml>character</xml> with this
+                namespace.
+            </p>
+
+
+            <sect2>
+                <title>Example</title>
+
+                <xmlroot name="statistics">
+                    <attribute name="xmlns"
+                               value="http://yagsbook.sourceforge.net/xml/yags"/>
+
+                    <element name="attributes">
+                        <attribute name="soak" value="12"/>
+                        <attribute name="size" value="5"/>
+                        <attribute name="luck" value="1"/>
+
+                        <element name="attribute">
+                            <attribute name="name" value="strength"/>
+                            <attribute name="score" value="3"/>
+                            <attribute name="xp" value="0"/>
+                        </element>
+
+                        <element name="attribute">
+                            <attribute name="name" value="stamina"/>
+                            <attribute name="score" value="3"/>
+                            <attribute name="xp" value="0"/>
+                        </element>
+
+                        <element name="attribute">
+                            <attribute name="name" value="agility"/>
+                            <attribute name="score" value="3"/>
+                            <attribute name="xp" value="0"/>
+                        </element>
+
+                        <element name="attribute">
+                            <attribute name="name" value="dexterity"/>
+                            <attribute name="score" value="3"/>
+                            <attribute name="xp" value="0"/>
+                        </element>
+
+                        <element name="attribute">
+                            <attribute name="name" value="perception"/>
+                            <attribute name="score" value="3"/>
+                            <attribute name="xp" value="0"/>
+                        </element>
+
+                        <element name="attribute">
+                            <attribute name="name" value="intelligence"/>
+                            <attribute name="score" value="3"/>
+                            <attribute name="xp" value="0"/>
+                        </element>
+
+                        <element name="attribute">
+                            <attribute name="name" value="charisma"/>
+                            <attribute name="score" value="3"/>
+                            <attribute name="xp" value="0"/>
+                        </element>
+
+                        <element name="attribute">
+                            <attribute name="name" value="will"/>
+                            <attribute name="score" value="3"/>
+                            <attribute name="xp" value="0"/>
+                        </element>
+                    </element>
+
+                    <element name="skills">
+                        <element name="group">
+                            <attribute name="name" value="Talents"/>
+                            <attribute name="type" value="talents"/>
+
+                            <element name="skill">
+                                <attribute name="name" value="Athletics"/>
+                                <attribute name="score" value="4"/>
+                                <attribute name="xp" value="3"/>
+                            </element>
+                        </element>
+                    </element>
+                </xmlroot>
+            </sect2>
+
+            <sect2>
+                <title>Definition</title>
+
+                <p>
+                    statistics:: attributes?, skills?, passions?,
+                    advantages?, combat?, equipment?
+                </p>
+
+                <p>
+                    Defines a character using Yags rules. The order of the
+                    elements is not important, but there should be zero or
+                    one of each.
+                </p>
+
+                <sect3>
+                    <title>attributes</title>
+
+                    <p>
+                        attributes:: attribute, attribute, attribute, attribute,
+                        attribute, attribute, attribute, attribute
+                    </p>
+
+                    <p>
+                        Each of the attributes is listed here. They all must
+                        be listed if any are.
+                    </p>
+                </sect3>
+            </sect2>
+
+            <sect2>
+                <title>Rendition</title>
+
+                <p>
+                    Each statistics block is listed below the short description,
+                    with the full character description following all of them.
+                    If there are more than one set of statistics, then each
+                    ruleset should be noted specifically.
+                </p>
+            </sect2>
+        </sect1>
+    </body>
+</page>
+
+

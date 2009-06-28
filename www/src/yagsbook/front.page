@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!--
+    XML Source for HTML.
+    Use pagexml stylesheets to render.
+ -->
+<page>
+    <header>
+        <title>Front</title>
+
+        <summary>
+            Front cover text.
+        </summary>
+
+        <cvsinfo>
+            <version>$Revision: 1.1 $</version>
+            <date>$Date: 2005/07/17 15:33:24 $</date>
+        </cvsinfo>
+
+        <license type="BSD">
+            <year>2005</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                Redistribution and use in source, binary and printed
+                forms with or without modification is permitted. See
+                the full license text for details.
+            </text>
+            <url>http://www.glendale.org.uk/bsd.txt</url>
+        </license>
+
+        <style>default</style>
+        <footer href="../footer.inc"/>
+    </header>
+
+    <links>
+        <link uri="/index">home</link>
+        <link uri="../yagsbook">yagsbook</link>
+        <link uri="article">article</link>
+    </links>
+
+    <sidebar>
+        <title>Summary</title>
+
+        <p>
+            The <xml>front</xml> element contains text which should appear
+            on the front cover of the article. It is an optional tag.
+        </p>
+    </sidebar>
+
+    <sidebar>
+        <title>Parents</title>
+
+        <p>
+            <xml uri="article">article</xml>
+        </p>
+    </sidebar>
+
+    <body>
+        <sect1>
+            <p>
+                The content of the <xml>front</xml> element has yet to
+                be defined. It may contain sub headings and similar
+                text that is not directly obtained from the main title
+                or author information.
+            </p>
+
+            <sect2>
+                <title>Rendition</title>
+
+                <p>
+                    Rendering of this element is not yet supported. It
+                    is unlikely to be supported for anything other than
+                    PDF renditions.
+                </p>
+            </sect2>
+        </sect1>
+    </body>
+</page>
+
+

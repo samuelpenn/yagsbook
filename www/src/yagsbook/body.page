@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<!--
+    XML Source for HTML.
+    Use pagexml stylesheets to render.
+ -->
+<page>
+    <header>
+        <title>Body</title>
+
+        <summary>
+            An XML format for describing roleplaying games.
+        </summary>
+
+        <cvsinfo>
+            <version>$Revision: 1.2 $</version>
+            <date>$Date: 2005/07/17 15:14:30 $</date>
+        </cvsinfo>
+
+        <license type="BSD">
+            <year>2005</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                Redistribution and use in source, binary and printed
+                forms with or without modification is permitted. See
+                the full license text for details.
+            </text>
+            <url>http://www.glendale.org.uk/bsd.txt</url>
+        </license>
+        
+        <style>default</style>    
+        <footer href="../footer.inc"/>
+    </header>
+    
+    <links>
+        <link uri="/index">home</link>
+        <link uri="../yagsbook">yagsbook</link>
+        <link uri="article">article</link>
+    </links>
+
+    <sidebar>
+        <title>Summary</title>
+
+        <p>
+            The <xml>body</xml> element contains the main body text of
+            the <xml>article</xml>. All the main content of the story
+            outside of meta data is contained within the body.
+        </p>
+    </sidebar>
+    
+    <sidebar>
+        <title>Parents</title>
+        
+        <p>
+            <xml uri="article">article</xml>
+        </p>
+    </sidebar>
+    
+    <sidebar>
+        <title>Children</title>
+        
+        <p>
+            <xml uri="sect1">sect1</xml>.
+        </p>
+    </sidebar>
+        
+
+    <body>
+        <sect1>
+            <p>
+                The <xml>body</xml> node is always the last child of the
+                <xml uri="article">article</xml>. It contains zero or more
+                <xml uri="sect1">sect1</xml> elements, each of which
+                contains a top level section of content.
+            </p>
+            
+            <sect2>
+                <title>Example</title>
+                
+                <xmlroot name="body">
+                    <element name="sect1">
+                        <element name="title" value="Main Section"/>
+                        
+                        <element name="p">
+                            A simple paragraph of text.
+                        </element>
+                    </element>
+                    
+                    <element name="sect1">
+                        <element name="title" value="Second section"/>
+                        
+                        <element name="p">
+                            Another paragraph of text.
+                        </element>
+                    </element>
+                </xmlroot>
+            </sect2>
+            
+            <sect2>
+                <title>Definition</title>
+                
+                <p>
+                    body:: sect1*
+                </p>
+                
+                <p>
+                    The <xml>body</xml> element contains zero or more
+                    <xml uri="sect1">sect1</xml> elements, and nothing
+                    else. All actual paragraph text is contained within
+                    sections within the body.
+                </p>
+                
+                <p>
+                    Lower level sections such as <xml uri="sect2">
+                    sect2</xml> or <xml uri="sect3">sect3</xml> cannot
+                    be contained directly by a <xml>body</xml> element,
+                    and must themselves be contained within higher
+                    level section structures.
+                </p>
+            </sect2>
+            
+            <sect2>
+                <title>Rendition</title>
+                
+                <p>
+                    The body content should be the main flow text of the
+                    document. For paginated forms, such as PDF, the text
+                    is expected to flow from page to page. Sections
+                    should probably be denoted by some break.
+                </p>
+            </sect2>
+        </sect1>
+    </body>
+</page>
+
+

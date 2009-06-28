@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+<!--
+    XML Source for HTML.
+    Use pagexml stylesheets to render.
+ -->
+<page>
+    <header>
+        <title>Skill</title>
+
+        <summary>
+            Defines a skill for the Yags rule system.
+        </summary>
+
+        <cvsinfo>
+            <version>$Revision: 1.1 $</version>
+            <date>$Date: 2006/01/02 22:50:09 $</date>
+        </cvsinfo>
+
+        <license type="BSD">
+            <year>2005</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                Redistribution and use in source, binary and printed
+                forms with or without modification is permitted. See
+                the full license text for details.
+            </text>
+            <url>http://www.glendale.org.uk/bsd.txt</url>
+        </license>
+
+        <style>default</style>
+        <footer href="../footer.inc"/>
+    </header>
+
+    <links>
+        <link uri="/index">home</link>
+        <link uri="../yagsbook">yagsbook</link>
+        <link uri="character-statistics">character</link>
+    </links>
+
+    <sidebar>
+        <title>Summary</title>
+
+        <p>
+            Defines a single skill.
+        </p>
+    </sidebar>
+
+    <sidebar>
+        <title>Parents</title>
+
+        <p>
+            <xml uri="skill-list">skill-list</xml>.
+        </p>
+    </sidebar>
+
+
+
+    <body>
+        <sect1>
+            <p>
+                The <xml>skill</xml> element, when a child of a
+                <xml uri="skill-list">skill-list</xml> describes a single
+                skill in full detail. A skill is an ability that may be
+                learnt and improved by a character. Skills can be grouped,
+                have techniques associated with them, and belong to
+                different genres.
+            </p>
+
+
+            <sect2>
+                <title>Examples</title>
+
+                <p>
+                    The simplest description for a skill is as follows.
+                </p>
+
+                <xmlroot name="skill">
+                    <attribute name="name" value="Brawl"/>
+                    <attribute name="type" value="talent"/>
+
+                    <element name="group" value="Talents"/>
+                    <element name="group" value="Combat"/>
+                    <element name="group" value="Melee"/>
+
+                    <element name="short" value="Punching and wrestling."/>
+
+                    <element name="description">
+                        <attribute name="xmlns"
+                                   value="http://yagsbook.sourceforge.net/xml"/>
+
+                        <element name="para">
+                            This is the brawling skill, which is used when
+                            the character is involved in a fist fight.
+                        </element>
+                    </element>
+                </xmlroot>
+
+                <p>
+                    A more complete item description is as follows.
+                </p>
+
+                <xmlroot name="skill">
+                    <attribute name="name" value="Physics"/>
+                    <attribute name="type" value="knowledge"/>
+
+                    <element name="genre" value="Modern"/>
+                    <element name="group" value="Academic"/>
+                    <element name="group" value="Science"/>
+
+                    <element name="short" value="The science of physics."/>
+
+                    <element name="prerequisite" value="Science">
+                        <attribute name="score" value="2"/>
+                    </element>
+
+                    <element name="prerequisite" value="Mathematics">
+                        <attribute name="score" value="2"/>
+                    </element>
+
+                    <element name="default" value="Science"/>
+
+                    <element name="description">
+                        <attribute name="xmlns"
+                                   value="http://yagsbook.sourceforge.net/xml"/>
+
+                        <element name="para">
+                            Physics is a particular branch of <e>Science</e>,
+                            concerned with forces and motion.
+                        </element>
+                    </element>
+
+                    <element name="description">
+                        <attribute name="xmlns"
+                                   value="http://yagsbook.sourceforge.net/xml"/>
+                        <attribute name="task" value="Nuclear physics"/>
+
+                        <element name="para">
+                            Knowledge of nuclear physics.
+                        </element>
+                    </element>
+                </xmlroot>
+            </sect2>
+
+            <sect2>
+                <title>Definition</title>
+
+                <p>
+                    skill:: @name, @type
+                </p>
+
+            </sect2>
+
+            <sect2>
+                <title>Rendition</title>
+
+                <p>
+                    Displayed.
+                </p>
+            </sect2>
+        </sect1>
+    </body>
+</page>
+
+

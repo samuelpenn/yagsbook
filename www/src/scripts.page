@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<!--
+    XML Source for HTML.
+    Use pagexml stylesheets to render.
+ -->
+<page>
+    <header>
+        <title>Scripts</title>
+
+        <summary>
+            Documents the various scripts for managing Yagsbook content.
+        </summary>
+
+        <cvsinfo>
+            <version>$Revision: 1.2 $</version>
+            <date>$Date: 2005/07/17 15:14:27 $</date>
+        </cvsinfo>
+
+        <license type="BSD">
+            <year>2005</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                Redistribution and use in source, binary and printed
+                forms with or without modification is permitted. See
+                the full license text for details.
+            </text>
+            <url>http://www.glendale.org.uk/bsd.txt</url>
+        </license>
+        
+        <style>default</style>    
+        <footer href="footer.inc"/>
+    </header>
+    
+    <links>
+        <link href="/index">home</link>
+        <link uri="yagsbook">yagsbook</link>
+    </links>
+
+    <sidebar>
+        <title>Summary</title>
+
+        <p>
+            These scripts are for use on Linux/UNIX systems, and provide
+            a simple frontend for managing Yagsbook articles.
+        </p>
+    </sidebar>
+
+    <sidebar>
+        <title>License</title>
+
+        <p>
+            The software is released under the GNU Public License.
+        </p>
+    </sidebar>
+    
+    <sidebar>
+        <title>Sourceforge</title>
+        
+        <p>
+            Yagsbook is a SourceForge project. See the main project page at
+            <link href="http://sourceforge.net/projects/yagsbook"
+                  name="Sourceforge"/>
+            for reporting bugs and downloading latest releases.
+        </p>
+        
+    </sidebar>
+    
+    <sidebar>
+        <title>Author</title>
+        
+        <p>
+            The author of this software is
+            <link href="http://www.glendale.org.uk/~sam/samuelpenn.html"
+                  name="Samuel Penn"/>.
+        </p>
+    </sidebar>
+
+    <body>
+        <sect1>
+            <p>
+                There are three shell scripts for managing Yagsbook content.
+                Microsoft Windows versions of these scripts do not exist,
+                and they have only been tested on Linux, though should work
+                on any UNIX.
+            </p>
+            
+            <p>
+                All scripts have a dependency on the C Xalan packages,
+                including <cmd>xmllint</cmd> and <cmd>xsltproc</cmd>.
+                The <cmd>yags2pdf</cmd> script also requires
+                <link href="http://xml.apache.org/fop" name="Apache FOP"/>
+                in order to convert the XML-FO to PDF.
+            </p>
+        </sect1>
+        
+        <sect1>
+            <title>Usage</title>
+            
+            <sect2>
+                <title>validate</title>
+                
+                <p>
+                    <cmd>validate</cmd> is a small script to check a large
+                    batch of Yagsbook documents to see if they are well
+                    formed. Any badly formed (i.e. not XML complient)
+                    documents will be listed as output. If all documents
+                    are correct, then <cmd>validate</cmd> is silent.
+                </p>
+                
+                <p>
+                    <cmd>validate</cmd> returns a count of the number of
+                    broken files found.
+                </p>
+                
+                <script prompt="$ ">
+                    <cmd command="validate">
+                        <argument parameter="directory" optional="true"/>
+                    </cmd>
+                </script>
+            </sect2>
+            
+            <sect2>
+                <title>xml2html</title>
+                
+                <p>
+                    Convert a number of <cmd>*.yags</cmd> files to HTML
+                    format. By default, the stylesheet is found from
+                    each document, but can be overridden.
+                </p>
+                
+                <script prompt="$ ">
+                    <cmd command="yags2html">
+                        <option name="-s" parameter="stylesheet"
+                                optional="true"/>
+                        <option name="-d" parameter="directory"
+                                optional="true"/>
+                        <argument parameter="files..."/>
+                    </cmd>
+                </script>
+                
+                <p>
+                    For example, to convert all files in the current
+                    directory, and output HTML renditions to a directory
+                    called 'html' (which is created if it doesn't exist),
+                    use the following:
+                </p>
+                
+                <script prompt="$ ">
+                    <cmd command="yags2html">
+                        <option name="-d" value="html"/>
+                        <argument value="*.yags"/>
+                    </cmd>
+                </script>
+            </sect2>
+            
+            <sect2>
+                <title>xml2pdf</title>
+                
+                <p>
+                    Convert a number of <cmd>*.yags</cmd> files to PDF
+                    format. By default, the stylesheet is found from
+                    each document, but can be overridden.
+                </p>
+                
+                <script prompt="$ ">
+                    <cmd command="yags2pdf">
+                        <option name="-s" parameter="stylesheet"
+                                optional="true"/>
+                        <option name="-d" parameter="directory"
+                                optional="true"/>
+                        <argument parameter="files..."/>
+                    </cmd>
+                </script>
+                
+                <p>
+                    For example, to convert all files in the current
+                    directory, and output PDF renditions to a directory
+                    called 'pdf' (which is created if it doesn't exist),
+                    use the following:
+                </p>
+                
+                <script prompt="$ ">
+                    <cmd command="yags2pdf">
+                        <option name="-d" value="pdf"/>
+                        <argument value="*.yags"/>
+                    </cmd>
+                </script>
+            </sect2>
+        </sect1>
+    </body>
+</page>
+
+

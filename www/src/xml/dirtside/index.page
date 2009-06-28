@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<!--
+    XML Source for HTML.
+    Use pagexml stylesheets to render.
+ -->
+<page>
+    <header>
+        <title>yagsbook::dirtside</title>
+
+        <summary>
+            Namespace URI for Dirtside specific Yagsbook content.
+        </summary>
+
+        <cvsinfo>
+            <version>$Revision: 1.2 $</version>
+            <date>$Date: 2005/07/17 15:14:30 $</date>
+        </cvsinfo>
+
+        <license type="BSD">
+            <year>2005</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                Redistribution and use in source, binary and printed
+                forms with or without modification is permitted. See
+                the full license text for details.
+            </text>
+            <url>http://www.glendale.org.uk/bsd.txt</url>
+        </license>
+
+        <style>default</style>
+    </header>
+
+    <links>
+        <link uri="/index">yagsbook</link>
+        <link uri="/yagsbook">documentation</link>
+    </links>
+
+    <sidebar>
+        <title>XSLT</title>
+
+        <p>
+            This is an XML namespace degined in the Yagsbook specification.
+        </p>
+    </sidebar>
+
+    <sidebar>
+        <title>Versions</title>
+
+        <p>
+            There is currently no versioning applied for this namespace.
+            A versioning system will be worked out once the XML has
+            been finalised. Until then, this is always the most recent
+            public version.
+        </p>
+    </sidebar>
+
+    <body>
+        <sect1>
+            <p>
+                Any Dirtside content for Yagsbook articles should reference
+                this URI for its namespace.
+            </p>
+
+            <p>
+                The URI is http://yagsbook.sourceforge.net/xml/dirtside.
+            </p>
+        </sect1>
+
+        <sect1>
+            <title>Resources</title>
+
+            <p>
+                Some resources are stored at this location as well as it
+                being the namespare URI. These resources are referenced
+                by the stylesheets for obtaining rule specific information.
+            </p>
+
+            <link href="dirtside.xml" name="Dirtside Game Rules"/>
+        </sect1>
+    </body>
+</page>
+
+

@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!--
+    XML Source for HTML.
+    Use pagexml stylesheets to render.
+ -->
+<page>
+    <header>
+        <title>Yagsbook::Yags</title>
+
+        <summary>
+            URI for Yags specific XSLT.
+        </summary>
+
+        <cvsinfo>
+            <version>$Revision: 1.2 $</version>
+            <date>$Date: 2005/07/17 15:14:30 $</date>
+        </cvsinfo>
+
+        <license type="BSD">
+            <year>2005</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                Redistribution and use in source, binary and printed
+                forms with or without modification is permitted. See
+                the full license text for details.
+            </text>
+            <url>http://www.glendale.org.uk/bsd.txt</url>
+        </license>
+        
+        <style>default</style>    
+        <footer href="../../footer.inc"/>
+    </header>
+    
+    <links>
+        <link uri="/index">yagsbook</link>
+        <link href="http://www.glendale.org.uk/yags/index.html">yags</link>
+        <link uri="/yags">documentation</link>
+    </links>
+
+    <sidebar>
+        <title>XSLT</title>
+
+        <p>
+            This is an XML namespace degined in the Yagsbook specification.
+        </p>
+    </sidebar>
+
+
+    <body>
+        <sect1>
+            <p>
+                Any Yags specific structures in a Yagsbook or PageXML
+                document should reference this URI for the namespace.
+            </p>
+            
+            <p>
+                The URI is http://yagsbook.sourceforge.net/xslt/yags.
+            </p>
+            
+            <p>
+                There is currently no versioning applied for this namespace.
+                A versioning system will be worked out once the XML has
+                been finalised. Until then, this is always the most recent
+                public version.
+            </p>            
+        </sect1>
+    </body>
+</page>
+
+

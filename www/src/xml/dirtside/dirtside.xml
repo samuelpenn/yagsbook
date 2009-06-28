@@ -1,0 +1,257 @@
+<?xml version="1.0"?>
+
+<dirtside version="2">
+    <mobility>
+        <type name="lowWheeled">
+            <description>Low-Mobility Wheeled</description>
+            <speed>10</speed>
+            <cost></cost>
+        </type>
+
+        <type name="highWheeled">
+            <description>Hi-Mobility Wheeled</description>
+            <speed>10</speed>
+            <cost></cost>
+        </type>
+
+        <type name="slowTracked">
+            <description>Slow Tracked</description>
+            <speed>8</speed>
+            <cost></cost>
+        </type>
+
+        <type name="fastTracked">
+            <description>Fast Tracked</description>
+            <speed>12</speed>
+            <cost></cost>
+        </type>
+
+        <type name="slowGev">
+            <description>Slow GEV</description>
+            <speed>12</speed>
+            <cost></cost>
+        </type>
+
+        <type name="fastGev">
+            <description>Fast GEV</description>
+            <speed>15</speed>
+            <cost></cost>
+        </type>
+
+        <type name="grav">
+            <description>Grav</description>
+            <speed>15</speed>
+            <cost></cost>
+        </type>
+    </mobility>
+
+    <firecon>
+        <type name="none" die="4"/>
+        <type name="basic" die="6"/>
+        <type name="enhanced" die="8"/>
+        <type name="superior" die="10"/>
+    </firecon>
+
+    <weapons>
+        <weapon name="HEL">
+            <description>High-Energy Laser</description>
+
+            <cost>10</cost>
+
+            <range class="1" close="60"/>
+            <range class="2" close="60"/>
+            <range class="3" close="60"/>
+            <range class="4" close="60"/>
+            <range class="5" close="60"/>
+
+            <damage>
+                <close>
+                    <red/>
+                </close>
+
+                <close armour="ablative">
+                    <green/>
+                </close>
+
+                <infantry>
+                    <yellow/>
+                </infantry>
+            </damage>
+        </weapon>
+
+        <weapon name="RFAC">
+            <description>Rapid-Fire Autocannon</description>
+
+            <cost>5</cost>
+
+            <range class="1" close="8" medium="12" long="16"/>
+            <range class="2" close="12" medium="18" long="24"/>
+
+            <damage>
+                <close>
+                    <red/><yellow/>
+                </close>
+                <medium>
+                    <red/>
+                </medium>
+                <long>
+                    <green/>
+                </long>
+                <infantry>
+                    <yellow/>
+                </infantry>
+            </damage>
+        </weapon>
+
+        <weapon name="HVC">
+            <description>High-Velocity Cannon</description>
+
+            <cost>8</cost>
+
+            <range class="3" close="16" medium="24" long="32"/>
+            <range class="4" close="18" medium="27" long="36"/>
+            <range class="5" close="20" medium="30" long="40"/>
+
+            <damage>
+                <close>
+                    <red/><yellow/>
+                </close>
+                <medium>
+                    <red/>
+                </medium>
+                <long>
+                    <green/>
+                </long>
+                <infantry>
+                    <yellow/>
+                </infantry>
+            </damage>
+        </weapon>
+
+        <weapon name="HKP">
+            <description>Hyper-Kinetic Penetrator</description>
+
+            <cost>8</cost>
+
+            <range class="3" close="18" medium="30" long="42"/>
+            <range class="4" close="24" medium="36" long="48"/>
+            <range class="5" close="30" medium="42" long="54"/>
+
+            <damage>
+                <close>
+                    <red/><yellow/><green/>
+                </close>
+                <medium>
+                    <red/><yellow/>
+                </medium>
+                <long>
+                    <red/>
+                </long>
+            </damage>
+        </weapon>
+
+        <weapon name="MDC">
+            <description>Mass-Driver Cannon</description>
+
+            <cost>8</cost>
+
+            <range class="1" close="8" medium="16" long="24"/>
+            <range class="2" close="12" medium="24" long="36"/>
+            <range class="3" close="24" medium="36" long="48"/>
+            <range class="4" close="30" medium="42" long="54"/>
+            <range class="5" close="36" medium="48" long="60"/>
+
+            <damage>
+                <close>
+                    <red/><yellow/><green/>
+                </close>
+                <medium>
+                    <red/><yellow/>
+                </medium>
+                <long>
+                    <red/>
+                </long>
+                <infantry>
+                    <yellow/>
+                </infantry>
+            </damage>
+        </weapon>
+
+        <weapon name="DFFG">
+            <description>Direct-Fire Fusion Gun</description>
+
+            <cost></cost>
+
+            <range class="1" close="4" medium="8" long="12"/>
+            <range class="2" close="6" medium="12" long="18"/>
+            <range class="3" close="8" medium="16" long="24"/>
+            <range class="4" close="10" medium="20" long="30"/>
+            <range class="5" close="12" medium="24" long="36"/>
+
+            <damage>
+                <close comment="x2">
+                    <red/><green/><yellow/>
+                </close>
+                <medium>
+                    <red/><green/><yellow/>
+                </medium>
+                <long comment="x half">
+                    <red/><green/><yellow/>
+                </long>
+                <infantry>
+                    <red/>
+                </infantry>
+            </damage>
+        </weapon>
+
+        <weapon name="SLAM">
+            <description>Salvo-Launched Missiles</description>
+
+            <range class="3" close="12" medium="24" long="36"/>
+            <range class="4" close="12" medium="24" long="36"/>
+            <range class="5" close="12" medium="24" long="36"/>
+
+            <damage>
+                <any armour="reactive">
+                    <red/>
+                </any>
+                <any>
+                    <red/><yellow/>
+                </any>
+                <infantry>
+                    <yellow/>
+                </infantry>
+            </damage>
+        </weapon>
+
+        <weapon name="GMS/L">
+            <description>Guided Missile Systems (Light)</description>
+
+            <range class="0" close="36"/>
+
+            <damage>
+                <any armour="reactive">
+                    <red/>
+                </any>
+                <any>
+                    <red/><yellow/>
+                </any>
+            </damage>
+        </weapon>
+
+        <weapon name="GMS/H">
+            <description>Guided Missile Systems (Heavy)</description>
+
+            <range class="0" close="48"/>
+
+            <damage>
+                <any armour="reactive">
+                    <red/>
+                </any>
+                <any>
+                    <red/><yellow/>
+                </any>
+            </damage>
+        </weapon>
+    </weapons>
+</dirtside>
