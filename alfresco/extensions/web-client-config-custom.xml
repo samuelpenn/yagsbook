@@ -1,0 +1,95 @@
+<alfresco-config>
+
+
+
+   <!-- Example of adding languages to the list in the login page -->
+   <config evaluator="string-compare" condition="Languages" replace="true">
+      <languages>
+         <language locale="en_GB">British</language>
+      </languages>
+   </config>
+
+
+   <!-- The config below shows how to incorporate the example model-->
+   <!-- into the web client, for this to work you will need to -->
+   <!-- rename example-model-context.xml.sample to example-model-context.xml -->
+   <config evaluator="string-compare" condition="Content Wizards">
+      <content-types>
+         <type name="yb:article" />
+      </content-types>
+   </config>
+
+   <config evaluator="node-type" condition="yb:article">
+      <property-sheet>
+          <show-property name="yb:destination" display-label="Destination Sever"/>
+          <show-property name="yb:toplevel" display-label="Top Categories"/>
+      </property-sheet>
+   </config>
+
+   <config evaluator="node-type" condition="yb:article">
+      <property-sheet>
+          <!--
+         <show-property name="mimetype" display-label-id="content_type"
+                        component-generator="MimeTypeSelectorGenerator" />
+         <show-property name="size" display-label-id="size"
+                        converter="org.alfresco.faces.ByteSizeConverter"
+                        show-in-edit-mode="false" />
+         -->
+         <show-property name="yb:uri" display-label="Encyclopedia URI" />
+         <show-property name="yb:category" display-label="Category" />
+         <show-property name="yb:topic" display-label="Topic" />
+         <show-property name="yb:subject" display-label="Subject" />
+         <show-property name="yb:seealso" display-label="See Also" />
+      </property-sheet>
+   </config>
+
+   <!--
+   <config evaluator="aspect-name" condition="yb:article">
+      <property-sheet>
+         <show-property name="yb:uri"/>
+         <show-property name="yb:category"/>
+         <show-property name="yb:topic"/>
+      </property-sheet>
+   </config>
+-->
+
+    <config evaluator="string-compare" condition="Action Wizards">
+        <specialise-types>
+            <type name="yb:article"/>
+        </specialise-types>
+    </config>
+
+    <config evaluator="string-compare" condition="Space Wizards">
+        <folder-types>
+            <type name="yb:encyclopedia" icon="/images/icons/encyclopedia.gif"
+                  description="Yagsbook Encyclopedia" display-label="Encyclopedia"/>
+        </folder-types>
+    </config>
+
+    <config evaluator="string-compare" condition="yb:encyclopedia icons">
+        <icons>
+            <icon name="encyclopedia-icon" path="/images/icons/encyclopedia.gif" />
+        </icons>
+    </config>
+
+    <config evaluator="string-compare" condition="yb:article icons">
+        <icons>
+            <icon name="article-icon" path="/images/icons/article.gif" />
+        </icons>
+    </config>
+
+<!--
+   <config evaluator="string-compare" condition="Advanced Search">
+      <advanced-search>
+         <content-types>
+            <type name="my:sop" />
+         </content-types>
+         <custom-properties>
+            <meta-data type="my:sop" property="my:authorisedBy" />
+            <meta-data aspect="my:imageClassification" property="my:resolution" />
+         </custom-properties>
+      </advanced-search>
+   </config>
+   -->
+
+</alfresco-config>

@@ -1,0 +1,6 @@
+This project contains files and tools for hosting Yagsbook material
+inside the Alfresco EDMS. The plan is to move the static Encyclopedia
+software to Alfresco to provide a more dynamic UI.
+
+Currently the scripts are written to work with the 3.2 Preview release
+of Alfresco.

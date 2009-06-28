@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+
+<model name="yb:yagsbookModel" xmlns="http://www.alfresco.org/model/dictionary/1.0">
+    <description>Yagsbook Model</description>
+    <author>Samuel Penn</author>
+    <published>2009-03-30</published>
+    <version>0.1</version>
+
+    <imports>
+        <import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d" />
+        <import uri="http://www.alfresco.org/model/content/1.0" prefix="cm" />
+    </imports>
+
+    <namespaces>
+        <namespace uri="http://yagsbook.sourceforge.net/alfresco/1.0" prefix="yb" />
+    </namespaces>
+
+    <types>
+        <type name="yb:encyclopedia">
+            <title>Encyclopedia</title>
+            <parent>cm:folder</parent>
+
+            <properties>
+                <property name="yb:destination">
+                    <title>Destination Server</title>
+                    <type>d:text</type>
+                </property>
+
+                <property name="yb:toplevel">
+                    <type>d:text</type>
+                    <multiple>true</multiple>
+                </property>
+            </properties>
+        </type>
+
+        <type name="yb:article">
+            <title>Yagsbook Article</title>
+            <parent>cm:content</parent>
+
+            <properties>
+                <property name="yb:uri">
+                    <type>d:text</type>
+                    <mandatory enforced="false">true</mandatory>
+                    <index enabled="true">
+                        <atomic>true</atomic>
+                        <stored>true</stored>
+                        <tokenised>false</tokenised>
+                    </index>
+                </property>
+
+                <property name="yb:subject">
+                    <type>d:text</type>
+                    <mandatory enforced="false">true</mandatory>
+                    <index enabled="true">
+                        <atomic>true</atomic>
+                        <stored>true</stored>
+                        <tokenised>false</tokenised>
+                    </index>
+                </property>
+
+                <property name="yb:category">
+                    <type>d:text</type>
+                    <mandatory enforced="false">true</mandatory>
+                    <index enabled="true">
+                        <atomic>true</atomic>
+                        <stored>true</stored>
+                        <tokenised>false</tokenised>
+                    </index>
+                </property>
+
+                <property name="yb:topic">
+                    <type>d:text</type>
+                    <multiple>true</multiple>
+                    <index enabled="true">
+                        <atomic>true</atomic>
+                        <stored>true</stored>
+                        <tokenised>false</tokenised>
+                    </index>
+                </property>
+
+                <property name="yb:seealso">
+                    <type>d:text</type>
+                    <multiple>true</multiple>
+                    <index enabled="true">
+                        <atomic>true</atomic>
+                        <stored>true</stored>
+                        <tokenised>false</tokenised>
+                    </index>
+                </property>
+            </properties>
+        </type>
+    </types>
+</model>
