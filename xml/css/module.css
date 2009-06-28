@@ -1,0 +1,48 @@
+
+
+
+table {
+    margin-left: 2cm;
+    font-size: 10pt;
+}
+
+
+table tr.dark {
+    background-color: #77ff77;
+}
+
+table tr.light {
+    background-color: #ccffcc;
+}
+
+div.character-sheet {
+    margin: 0cm;
+    font-size: 12pt;
+}
+
+div.character-header {
+    margin: 0cm;
+    font-size: 12pt;
+}
+
+div.character-header div.entry {
+    background-color: #eeffee;
+    border: solid 3pt green;
+    margin-top: 1mm;
+    margin-bottom: 1mm;
+    font-size: 12pt;
+}
+
+div.character h5 {
+    margin: 0mm;
+}
+
+div.book h4 {
+    margin-left: 10mm;
+    margin-bottom: 0mm;
+}
+
+div.book p.nogap {
+    margin-top: 0mm;
+    margin-bottom: 0mm;
+}

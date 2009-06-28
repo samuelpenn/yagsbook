@@ -1,0 +1,51 @@
+h1.header {
+	background-color: #0077bb;
+}
+
+div.sidebar h4 {
+	background-color: #0077bb;
+}
+
+div.bodytext h1 {
+	background-color: #0077bb;
+	color: white;
+}
+
+div.bodytext h2,h3,h4,h5 {
+	color: #0077bb;
+}
+
+div.bodytext table tr.dark {
+	background-color: #99bbff;
+}
+
+div.bodytext table tr.light {
+	background-color: #aaddff;
+}
+
+div.sidebar p {
+	background-color: #0077bb;
+}
+
+div.sidebar a {
+    color: white;
+}
+
+div.sidebar a.c1:hover {
+    background-color: #000055;
+}
+
+div.sidebar a.c2:hover {
+    background-color: #000055;
+}
+
+
+table.spell {
+    margin-left: 1cm;
+    background-color: #bbeeff;
+}
+
+div.spell {
+    margin-left: 10mm;
+}
+

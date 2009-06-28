@@ -1,0 +1,132 @@
+
+Yagsbook
+--------
+
+This module contains all the XML related files for the Yagsbook documentation
+format, including XML Schemas, XSLT and CSS files.
+
+See the file LICENSE for license information.
+
+The following line is needed by the build system
+ant.latest.version: 0.9.0
+
+Changes
+-------
+
+Latest
+
+0.9.0
+  * Character import can force display of character point cost.
+  * PageXML now allows images to have a max width (won't work in IE).
+  * Support for FOP 0.9
+  * Support for images in article headers etc, plus related stuff.
+
+0.8.4
+
+  * Support for block level notes in PDF and HTML.
+  * Basic support for Vehicles in Yags.
+  * Fixed bug where level 5 headings weren't displayed in PDF.
+  * Added align tag to image display in PageXML.
+  * Tables in PageXML now correctly handle complex children.
+  * Equipment lists can include multiple files.
+  * Fixed bug in PDF technique lists to allow trees to span multiple files.
+
+0.8.3
+
+  * Armour and weapon properties shared between all rendition types.
+    Added in new properties for modern weapons and armour.
+
+0.8.2
+
+  * Now displays firearm specific info in equipment lists.
+  * The reach of melee weapons is displayed on character blocks.
+
+0.8.1
+
+  * Better display of character information.
+  * Added option to show/hide point values of character templates etc.
+    Defaults to false, so they are now hidden.
+
+0.8.0 - 14th April 2006
+
+  * Support for examples in main body text.
+  * Support for quotes in main body text.
+  * Technique tree now displays techniques with missing prerequisites.
+  * Changed 'Stamina' to be 'Health'. Breaks compatibility.
+
+0.7.0 - 25th March 2006
+
+  * Changed 'Charisma' to be 'Empathy'. Breaks compatibility.
+  * Added tags for each attribute, for easier listing of skill rolls.
+  * HTML renditions now support the masked tag for sections.
+  * Summary text in HTML encyclopedia now has excess whitespace stripped.
+  * Support for externally set parameters.
+
+0.6.1 - 22nd Jan 2006
+
+  * Fix PDF display of advantages - was ignoring @type attribute.
+  * Fix PDF display of characters - missing techniques and equipment.
+  * Allow limited skills.
+  * Enable import of skills to import multiple skill lists.
+  * Enable skill lists to reference multiple sets of techniques.
+  * Fixed display of armour statistics in brief equipment list.
+  * Removed section numbering from PDFs. This had broken with imported
+    sections, and since HTML doesn't use it, it didn't make a lot of
+    sense to use it for PDF either.
+  * sect1 elements can now import from external files.
+  * Yags skill equations copes with no skill.
+  * Fixed rendering bugs in HTML weapon tables.
+
+0.6.0 - 20th Dec 2005
+
+  * In Yags, passions are now traits, so changed the XML for these.
+  * Improved display of advantages to include commas.
+  * Encyclopedia entries now tries for a better summary in the
+    Dublin Core metadata (uses first paragraph).
+  * Standard advantages now list prequisites and forbiddon advantages.
+  * Other general fixes.
+
+
+Installation
+------------
+
+The location of XSLT and CSS files is being changed to the following
+locations:
+
+/usr/share/xml/yagsbook
+    pagexml
+        xslt
+            html
+                *.xsl
+        css
+            *.css
+    article
+        xslt
+            html
+               *.xsl
+            pdf
+               *.xsl
+            share
+               *.xsl
+        css
+            *.css
+
+The base directory [/usr/share/xml/yagsbook] may be different on non-UNIX
+architectures, but that's for other people to worry about. At the very
+least, all files will be in these locations on a web server, and will be
+found in http://yagsbook.sourceforge.net/usr/share/xml/yagsbook on the
+main project site.
+
+Currently, most Yagsbook software and documents assume that these files are
+all available under the directory /usr/share/web.
+
+This may later change to be:
+
+http://yagsbook.sourceforge.net/usr/share/xml
+
+The most recent version of all these files will be available in this
+location, but there are no plans to support versioning, and they may change
+at any time.
+
+--
+Samuel Penn, 13th May 2004.

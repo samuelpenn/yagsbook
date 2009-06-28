@@ -1,0 +1,169 @@
+<?xml version="1.0"?>
+<!--
+    Ant build file for all the Yagsbook XML files, including PageXML.
+    Files are copied into a directory ready for uploading to the server.
+
+    Version: $Revision: 1.12 $
+    Date:    $Date: 2005/12/20 22:31:50 $
+    Author:  Samuel Penn
+ -->
+<project name="Yagsbook XML" default="yagsbook">
+
+    <property name="build.dir" value="build"/>
+    <property name="base.dir" value="${build.dir}/usr/share/xml"/>
+    <property name="pagexml.dir" value="${base.dir}/yagsbook/pagexml"/>
+    <property name="article.dir" value="${base.dir}/yagsbook/article"/>
+
+    <property name="css.dir" value="css/yagsbook"/>
+    <property name="xslt.dir" value="xsl/yagsbook"/>
+    <property name="xsd.dir" value="xsd/yagsbook"/>
+    <property name="script.dir" value="scripts"/>
+
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+        <delete file="yagsbook.tar"/>
+    </target>
+
+
+    <target name="pagexml">
+        <mkdir dir="${pagexml.dir}"/>
+
+        <mkdir dir="${pagexml.dir}/xslt/html"/>
+
+        <copy todir="${pagexml.dir}/xslt/html">
+            <fileset dir="pagexml/xslt">
+                <include name="*.xsl"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="article">
+        <mkdir dir="${article.dir}"/>
+
+        <mkdir dir="${article.dir}/xsd"/>
+        <mkdir dir="${article.dir}/xslt"/>
+        <mkdir dir="${article.dir}/css"/>
+
+        <copy todir="${article.dir}/xsd">
+            <fileset dir="xsd">
+                <include name="*.xsd"/>
+            </fileset>
+        </copy>
+
+        <copy todir="${article.dir}/xslt">
+            <fileset dir="xslt">
+                <include name="**/*.xsl"/>
+            </fileset>
+        </copy>
+
+        <copy todir="${article.dir}/css">
+            <fileset dir="css">
+                <include name="*.css"/>
+            </fileset>
+        </copy>
+
+    </target>
+
+
+    <!--
+        Copy all the files from the various directories for the Yagsbook
+        resources into the build area ready for uploading.
+     -->
+    <target name="yagsbook" depends="clean, pagexml, article">
+        <tar destfile="yagsbook.tar" basedir="${base.dir}"/>
+    </target>
+
+    <target name="patch">
+        <javac srcdir="utils"/>
+        <java classpath="utils" classname="Release">
+            <arg value="-patch"/>
+        </java>
+
+        <antcall target="release"/>
+    </target>
+
+    <target name="minor">
+        <javac srcdir="utils"/>
+        <java classpath="utils" classname="Release">
+            <arg value="-minor"/>
+        </java>
+
+        <antcall target="release"/>
+    </target>
+
+    <target name="major">
+        <javac srcdir="utils"/>
+        <java classpath="utils" classname="Release">
+            <arg value="-major"/>
+        </java>
+
+        <antcall target="release"/>
+    </target>
+
+
+    <target name="release" depends="clean, pagexml, article">
+        <property file="yagsbook.properties"/>
+
+        <property name="version"
+                  value="${version.major}.${version.minor}.${version.patch}"/>
+        <echo message="Release ${version}"/>
+
+        <!--
+            Validate that we have a sensible README.
+        -->
+        <loadproperties srcFile="README">
+            <filterchain>
+                <linecontains>
+                    <contains value="ant."/>
+                </linecontains>
+            </filterchain>
+        </loadproperties>
+
+        <fail unless="ant.latest.version">
+            README file does not have an ant.latest.version parameter.
+        </fail>
+
+        <fail>
+            <condition>
+                <not>
+                    <equals arg1="${version}" arg2="${ant.latest.version}"/>
+                </not>
+            </condition>
+            Version ${ant.latest.version} in README does not match ${version}.
+        </fail>
+
+        <!-- Copy documentation files -->
+        <copy todir="${base.dir}/yagsbook" file="README"/>
+        <copy todir="${base.dir}/yagsbook" file="LICENSE"/>
+
+        <!-- Copy the scripts -->
+        <property name="bin.dir" value="${base.dir}/yagsbook/bin"/>
+        <mkdir dir="${bin.dir}"/>
+        <copy todir="${bin.dir}">
+            <fileset dir="${script.dir}">
+                <include name="*.sh"/>
+            </fileset>
+        </copy>
+
+        <move file="${bin.dir}/validate.sh" tofile="${bin.dir}/validate"/>
+        <move file="${bin.dir}/yags2pdf.sh" tofile="${bin.dir}/yags2pdf"/>
+        <move file="${bin.dir}/yags2html.sh" tofile="${bin.dir}/yags2html"/>
+
+        <!--
+            Need to rename the directory to include the version number.
+        -->
+        <mkdir dir="${base.dir}/yagsbook-${version}"/>
+        <copy todir="${base.dir}/yagsbook-${version}">
+            <fileset dir="${base.dir}/yagsbook"/>
+        </copy>
+        <delete dir="${base.dir}/yagsbook"/>
+
+        <mkdir dir="releases"/>
+
+        <tar destfile="releases/yagsbook-${version}.tgz"
+             compression="gzip"
+             basedir="${base.dir}"/>
+    </target>
+
+</project>
+

@@ -1,0 +1,576 @@
+
+
+h1.header {
+    color: white;
+    background-color: black;
+    text-align: right;
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+body {
+    background: white;
+    color: black;
+}
+
+div.sidebar {
+    float: left;
+    width: 37mm;
+    margin: 3mm;
+    margin-bottom: 1mm;
+    margin-left: 0cm;
+    margin-top: 0cm;
+}
+
+div.sidebar h2 {
+    color: white;
+    background-color: black;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: medium;
+    text-align: left;
+    margin: 0cm;
+}
+
+div.sidebar p {
+    color: black;
+    background-color: #cccccc;
+    font-size: small;
+    text-align: left;
+    margin-top: 0cm;
+    margin-left: 0cm;
+    margin-left: 0cm;
+    margin-bottom: 0cm;
+}
+
+div.aside {
+    position: absolute;
+    margin-left: -4cm;
+    width: 3.9cm;
+    text-align: justify;
+    float: left;
+    clear: left;
+}
+
+div.aside p {
+    margin: 0cm;
+    font-size: small;
+    text-align: left;
+}
+
+
+div.sidebar p.copyright {
+    font-weight: bold;
+}
+
+div.sidebar p.license {
+    font-style: italic;
+    font-size: xx-small;
+}
+
+div.bodytext {
+    margin-left: 4cm;
+    margin-top: 0cm;
+    font-size: medium;
+    color: black;
+    background-color: white;
+    font-family: sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    text-align: left;
+}
+
+div.bodytext p {
+    margin-left: 1cm;
+    text-align: justify;
+}
+
+div.bodytext h1 {
+    margin-left: 0cm;
+    margin-top: 0cm;
+    font-size: x-large;
+    font-weight: bold;
+    clear: right;
+}
+
+div.bodytext h2 {
+    margin-left: 0cm;
+    font-size: x-large;
+    font-weight: bold;
+    border-bottom: 3pt solid
+}
+
+div.bodytext h3 {
+    margin-left: 0cm;
+    font-size: large;
+    font-weight: bold;
+}
+
+div.bodytext h4 {
+    margin-left: 1cm;
+    font-size: medium;
+    font-weight: bold;
+    font-style: italic;
+}
+
+div.bodytext h5 {
+    margin-left: 1cm;
+    font-size: medium;
+    font-style: italic;
+}
+
+
+
+h2.character-template,h3.character-template,h4.character-template {
+    font-style: italic;
+    margin-bottom: 0cm;
+    padding-bottom: 0cm;
+}
+
+
+table.character-template {
+    margin-left: 0cm;
+}
+
+
+
+div.header {
+    background-color: gray80;
+    background-image: url(graphics/smalltop.jpg);
+    text-align: right;
+    color: white;
+    font-size: 20pt;
+    font-weight: bold;
+}
+
+
+table {
+    margin-left: 2cm;
+    font-size: small;
+}
+
+
+table caption {
+    color: white;
+    background-color: black;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+td {
+    font-size: small;
+}
+
+th {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: small;
+}
+
+table tr.dark {
+    background-color: gray70;
+}
+
+table tr.light {
+    background-color: gray90;
+}
+
+dl {
+    margin-left: 1cm;
+    font-size: medium;
+}
+
+dt {
+    font-weight: bold;
+    font-size: medium;
+}
+
+dd {
+    text-align: justify;
+    margin-left: 0.5cm;
+    margin-right: 1cm;
+    font-style: italic;
+}
+
+
+p.tagline {
+    text-align: right;
+    font-weight: bold;
+    font-style: italic;
+    font-size: medium;
+}
+
+a:link {
+    color: blue;
+}
+
+a:visited {
+    color: red;
+}
+
+a.c1:hover:link,a.c1:hover:visited {
+    background-color: yellow;
+}
+
+a.c2:hover:link,a.c2:hover:visited {
+    background-color: yellow;
+}
+
+a.c2 {
+    font-size: x-small;
+    margin-left: 3mm;
+}
+
+
+
+
+span.note {
+    font-style: italic;
+}
+
+span.warning {
+    font-weight: bold;
+    font-style: italic;
+    color: red;
+}
+
+div.alpha {
+    border: 1mm solid red;
+    padding: 2mm;
+}
+
+div.beta {
+    border: 1mm solid yellow;
+    padding: 2mm;
+}
+
+div.alpha p {
+    color: gray50;
+}
+
+div.beta p {
+    color: gray75;
+}
+
+div.beast {
+    border: 1mm solid black;
+    padding: 2mm;
+    margin-left: 1cm;
+}
+
+div.beast h4 {
+    color: black;
+    font-size: 20pt;
+    font-weight: bold;
+    margin: 0cm;
+}
+
+div.beast p {
+    color: black;
+    margin: 0cm;
+    text-align: justify;
+    font-size: medium;
+}
+
+div.beast table.attributes {
+    margin: 0cm;
+}
+
+div.beast table.attributes th {
+    color: black;
+    font-weight: bold;
+    background-color: white;
+    font-size: small;
+}
+
+div.beast table.attributes td {
+    text-align: center;
+    font-size: small;
+}
+
+table.attributesOpen {
+    margin: 1cm;
+}
+
+table.attributesOpen td.name {
+    color: black;
+    font-weight: bold;
+    background-color: white;
+    font-size: medium;
+    text-align: left;
+    border: 0mm none black;
+}
+
+table.attributesOpen td {
+    text-align: center;
+    font-size: medium;
+    border: 0.5mm solid black;
+    background-color: #efe;
+}
+
+div.character {
+    border: 1mm solid green;
+    background-color: #f7fff7;
+    padding: 2mm;
+    margin-left: 1cm;
+    font-size: small;
+}
+
+div.character h4 {
+    color: green;
+    font-size: large;
+    font-weight: bold;
+    margin: 0cm;
+}
+
+div.character h5 {
+    margin: 0mm;
+    font-size: small;
+}
+
+div.character p {
+    color: black;
+    margin: 0cm;
+    text-align: justify;
+    font-size: small;
+}
+
+div.character table.attributes {
+    margin: 0cm;
+}
+
+div.character table.attributes th {
+    color: black;
+    font-weight: bold;
+    background-color: #f7fff7;
+    font-size: small;
+}
+
+div.character table.attributes td {
+    text-align: center;
+    font-size: small;
+}
+
+ol {
+    font-size: medium;
+    margin-left: 1cm;
+}
+
+div.bestiary h2 {
+    font-size: medium;
+}
+
+div.bestiary h5 {
+    font-size: medium;
+    border-bottom: 2pt solid green;
+}
+
+div.bestiary table.attributes {
+    margin-left: 10mm;
+    width: 100%;
+}
+
+div.bestiary table.attributes td {
+    background-color: #aaddaa;
+}
+
+div.bestiary table.combat {
+    margin-left: 10mm;
+}
+
+div.beast h4 {
+    font-size: large;
+}
+
+div.skill {
+    margin-top: 5mm;
+}
+
+div.skill h6 {
+    color: green;
+    margin-top: 0mm;
+    margin-bottom: 0mm;
+    font-size: medium;
+    margin-left: 10mm;
+    padding: 0mm;
+}
+
+div.skill p.skill {
+    margin-top: 0mm;
+    margin-bottom: 0mm;
+}
+
+div.skill div.task {
+    margin-left: 5mm;
+}
+
+div.skill div.task h6 {
+    margin-bottom: -5mm;
+    font-style: italic;
+}
+
+table.skillexamples {
+    margin-left: 15mm;
+    font-size: x-small;
+}
+
+table.skillexamples td.target {
+    text-align: right;
+    font-weight: bold;
+}
+
+table.skillexamples td.value {
+    text-align: left;
+    font-style: italic;
+}
+
+table.skillexamples caption {
+    text-align: left;
+    background-color: white;
+    color: green;
+}
+
+div.vehicle {
+    border: 1mm solid black;
+    margin-bottom: 5mm;
+	margin-left: 10mm;
+}
+
+div.vehicle h4 {
+    color: white;
+    background-color: black;
+    margin: 0mm;
+    margin-bottom: 2mm;
+    padding: 0mm;
+    padding-left: 3mm;
+    font-size: medium;
+    font-weight: bold;
+}
+
+div.vehicle p {
+    margin: 0pt;
+	margin-left: 5mm;
+	margin-right: 5mm;
+}
+
+div.vehicle div.yags table.attributes {
+    border: 1pt solid black;
+    margin-left: 0mm;
+	margin-right: 5mm;
+    width: 100%;
+    padding: 0mm;
+}
+
+div.vehicle div.yags table.attributes th {
+    color: white;
+    background-color: #333333;
+    width: 20mm;
+    font-size: x-small;
+    text-align: left;
+	padding-left: 2pt;
+}
+
+div.vehicle div.yags table.attributes td {
+    color: black;
+    background-color: white;
+    width: 10mm;
+    font-size: medium;
+    text-align: right;
+    border: 1pt solid black;
+    margin: 0mm;
+    padding: 0mm;
+    text-align: center;
+}
+
+div.vehicle div.yags div.weapon h5 {
+    margin: 0mm;
+	margin-left: 5mm;
+}
+
+div.vehicle table.dirtside {
+    border: 1pt solid black;
+    margin-left: 0mm;
+    width: 100%;
+    padding: 0mm;
+}
+
+div.vehicle table.dirtside td.head {
+    color: white;
+    background-color: #333333;
+    width: 20mm;
+    font-size: x-small;
+    text-align: left;
+}
+
+div.vehicle table.dirtside td {
+    color: black;
+    background-color: white;
+    width: 10mm;
+    font-size: medium;
+    text-align: right;
+    border: 1pt solid black;
+    margin: 0mm;
+    padding: 0mm;
+    text-align: center;
+}
+
+div.vehicle table.dirtside td.text {
+    text-align: left;
+}
+
+
+
+div.example {
+    margin-left: 15mm;
+	margin-right: 10mm;
+	border: 1pt solid black;
+	padding: 2pt;
+	font-style: italic;
+	font-size: small;
+}
+
+div.example h5 {
+	font-size: medium;
+	font-weight: bold;
+	font-style: italic;
+	margin: 0mm;
+	padding: 0mm;
+	margin-bottom: 5mm;
+}
+
+div.example p {
+    margin-left: 0pt;
+	margin-right: 0pt;
+}
+
+div.quote {
+	font-style: italic;
+	font-size: medium;
+	width: 50%;
+	text-align: center;
+	margin: auto;
+}
+
+div.note {
+    border: 1pt solid black;
+	margin-left: 10mm;
+	margin-right: 5mm;
+	padding: 3pt;
+}
+
+div.note h6 {
+    background-color: black;
+	color: white;
+	margin: -3pt;
+	padding: 1pt;
+	font-size: medium;
+}
+
+div.note p {
+    margin-left: 3pt;
+}
+

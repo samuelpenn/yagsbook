@@ -1,0 +1,50 @@
+
+
+h1.header {
+    color: white;
+    background-color: blue;
+}
+
+body {
+    background: white;
+    color: black;
+}
+
+
+div.sidebar p {
+    color: black;
+    background-color: #ccccff;
+}
+
+
+div.bodytext h1 {
+    color: white;
+    background-color: blue;
+}
+
+div.bodytext h2 {
+    color: blue;
+}
+
+h3 {
+    color: blue;
+}
+
+h4 {
+    color: blue;
+}
+
+h5 {
+    color: blue;
+}
+
+
+table tr.dark {
+    background-color: #7777ff;
+}
+
+table tr.light {
+    background-color: #ccccff;
+}
+
+

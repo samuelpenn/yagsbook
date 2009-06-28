@@ -1,0 +1,169 @@
+<?xml version="1.0"?>
+
+<!--
+    Version: $Revision: 1.4 $
+    Date:    $Date: 2006/01/10 20:29:56 $
+    Author:  Samuel Penn
+
+    Toplevel Yagsbook schema.
+ -->
+<xsd:schema targetNamespace="http://yagsbook.sourceforge.net/xml"
+            elementFormDefault="qualified"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:yb="http://yagsbook.sourceforge.net/xml">
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            Yagsbook schema.
+            Copyright 2002-2006 Samuel Penn.
+        </xsd:documentation>
+    </xsd:annotation>
+
+    <xsd:include schemaLocation="lists.xsd"/>
+    <xsd:include schemaLocation="paragraphs.xsd"/>
+    <xsd:include schemaLocation="sections.xsd"/>
+    <!--
+    <xsd:include schemaLocation="bestiary.xsd"/>
+    <xsd:include schemaLocation="header.xsd"/>
+    <xsd:include schemaLocation="imports.xsd"/>
+    -->
+
+    <!-- <xsd:include schemaLocation="yags/yags.xsd"/> -->
+
+    <!-- Substitution Groups -->
+    <xsd:element name="block"/>
+    <xsd:element name="inline"/>
+
+
+
+    <!--
+        article
+
+        An article is the root node of a general Yagsbook document.
+        An article consists of at least a header and a body, plus
+        optional front and back sections.
+    -->
+    <xsd:element name="article">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="header" type="yb:header"/>
+                <xsd:element name="front" type="yb:frontback" minOccurs="0"/>
+                <xsd:element name="back" type="yb:frontback" minOccurs="0"/>
+                <xsd:element name="body" type="yb:body"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+
+    <!-- Front-Back Type -->
+    <xsd:complexType name="frontback">
+        <xsd:sequence>
+            <xsd:element ref="yb:block" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!--
+        bodyType
+
+        The <body> contains all the main body text of the article. It
+        consists of zero or more <sect1> elements and nothing else.
+     -->
+    <xsd:complexType name="body">
+        <xsd:sequence>
+            <xsd:element name="sect1" type="yb:sect1Type"
+                         maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+    <xsd:complexType name="header">
+        <xsd:all>
+            <xsd:element name="title" type="xsd:string"/>
+            <xsd:element name="tagline" type="xsd:string"/>
+            <xsd:element name="slugline" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="summary" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="author" type="yb:authorType"/>
+            <xsd:element name="cvsinfo" type="yb:cvsinfoType"/>
+            <xsd:element name="license" type="yb:licenseType"/>
+            <xsd:element name="style" type="yb:styleType"/>
+        </xsd:all>
+    </xsd:complexType>
+
+
+    <!-- authorType -->
+    <xsd:complexType name="authorType">
+        <xsd:sequence>
+            <xsd:element name="fullname" type="xsd:string"/>
+            <xsd:element name="email" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- cvsinfoType -->
+    <xsd:complexType name="cvsinfoType">
+        <xsd:sequence>
+            <xsd:element name="version" type="xsd:string"/>
+            <xsd:element name="date" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- licenseType -->
+    <xsd:complexType name="licenseType">
+        <xsd:sequence>
+            <xsd:element name="year" type="xsd:string"/>
+            <xsd:element name="holder" type="xsd:string"/>
+            <xsd:element name="url" type="xsd:anyURI" minOccurs="0"/>
+            <xsd:element name="text" type="xsd:string"/>
+        </xsd:sequence>
+
+        <xsd:attribute name="type">
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="BSD"/>
+                    <xsd:enumeration value="GPL2"/>
+                    <xsd:enumeration value="GPL"/>
+                    <xsd:enumeration value="Yags"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:attribute>
+    </xsd:complexType>
+
+
+    <!-- styleType -->
+    <xsd:complexType name="styleType">
+        <xsd:attribute name="name" use="required" type="yb:styleEnum"/>
+    </xsd:complexType>
+
+    <xsd:simpleType name="styleEnum">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="core"/>
+            <xsd:enumeration value="character"/>
+            <xsd:enumeration value="combat"/>
+            <xsd:enumeration value="equipment"/>
+            <xsd:enumeration value="magic"/>
+            <xsd:enumeration value="religion"/>
+            <xsd:enumeration value="psionics"/>
+            <xsd:enumeration value="bestiary"/>
+            <xsd:enumeration value="module"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+
+
+    <xsd:element name="para" substitutionGroup="yb:block">
+        <xsd:complexType mixed="true">
+            <xsd:sequence minOccurs="0" maxOccurs="unbounded">
+                <xsd:element ref="yb:inline"
+                             minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="link" type="yb:linkType" substitutionGroup="yb:block"/>
+    <xsd:complexType name="linkType" mixed="true">
+        <xsd:attribute name="uri" type="xsd:string"/>
+        <xsd:attribute name="href" type="xsd:string"/>
+        <xsd:attribute name="name" type="xsd:string"/>
+    </xsd:complexType>
+
+
+</xsd:schema>

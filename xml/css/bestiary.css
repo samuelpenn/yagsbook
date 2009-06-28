@@ -1,0 +1,152 @@
+
+
+div.sidebar {
+    float: left;
+    width: 1.5cm;
+    margin: 3mm;
+    margin-bottom: 1mm;
+    margin-left: 0cm;
+    margin-top: 0cm;
+}
+
+div.bodytext {
+    margin-left: 1cm;
+    margin-top: 0cm;
+}
+
+div.beast {
+    border: 0mm none black;
+    padding: 0mm;
+    margin-left: 0cm;
+}
+
+div.beast h4 {
+    color: black;
+    font-size: 20pt;
+    font-weight: bold;
+    margin: 0cm;
+}
+
+div.beast p {
+    color: black;
+    margin: 0cm;
+    text-align: justify;
+    font-size: 12pt;
+}
+
+table.beastInfo {
+    margin-left: 1cm;
+    margin-right: 0cm;
+    background-color: #eee;
+}
+
+div.bodytext h2.skillsOpen {
+    margin: 0cm;
+    margin-left: 1cm;
+    font-size: 12pt;
+    color: green;
+    background-color: white;
+}
+
+p.skillsOpen {
+    margin-top: 0cm;
+}
+
+table.beastInfo p {
+    margin: 0mm;
+}
+
+table.beastStats {
+    margin-left: 0cm;
+}
+
+table.combat {
+    margin-left: 0cm;
+    font-size: medium;
+    background-color: #fee;
+}
+
+table.combat th {
+    background-color: #900;
+}
+
+table.beastStats p {
+    margin: 0cm;
+}
+
+div.beast table.attributes {
+    margin: 0cm;
+}
+
+div.beast table.attributes th {
+    color: black;
+    font-weight: bold;
+    background-color: white;
+    font-size: 10pt;
+}
+
+div.beast table.attributes td {
+    text-align: center;
+    font-size: 10pt;
+}
+
+div.bestiary {
+    page-break-after: always;
+}
+
+div.bestiary h2 {
+    margin: 0cm;
+    margin-left: 1cm;
+    color: white;
+    background-color: black;
+}
+
+
+div.character {
+    border: 1mm solid green;
+    padding: 2mm;
+    margin-left: 1cm;
+}
+
+div.character h4 {
+    color: green;
+    font-size: 20pt;
+    font-weight: bold;
+    margin: 0cm;
+}
+
+div.character p {
+    color: black;
+    margin: 0cm;
+    text-align: justify;
+    font-size: 12pt;
+}
+
+div.character table.attributes {
+    margin: 0cm;
+}
+
+div.character table.attributes th {
+    color: black;
+    font-weight: bold;
+    background-color: white;
+    font-size: 10pt;
+}
+
+div.character table.attributes td {
+    text-align: center;
+    font-size: 10pt;
+}
+
+ol {
+    font-size: 12pt;
+    margin-left: 1cm;
+}
+
+table.beastStats {
+    margin: 0mm;
+}
+
+table.attributesOpen {
+    margin-right: 0mm;
+}

@@ -1,0 +1,59 @@
+
+
+h1.header {
+    color: white;
+    background-color: red;
+}
+
+body {
+    background: white;
+    color: black;
+}
+
+
+div.sidebar p {
+    color: black;
+    background-color: #ffcccc;
+}
+
+
+div.bodytext h1 {
+    color: white;
+    background-color: red;
+}
+
+div.bodytext h2 {
+    color: red;
+}
+
+h3 {
+    color: red;
+}
+
+h4 {
+    color: red;
+}
+
+h5 {
+    color: red;
+}
+
+
+table {
+    margin-left: 2cm;
+    font-size: 10pt;
+}
+
+
+table tr.dark {
+    background-color: #ff7777;
+}
+
+table tr.light {
+    background-color: #ffcccc;
+}
+
+table.weapons {
+    margin-left: 10mm;
+}
+

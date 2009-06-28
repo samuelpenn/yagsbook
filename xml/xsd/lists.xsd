@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+
+<!--
+    Version: $Revision: 1.3 $
+    Date:    $Date: 2006/01/09 22:45:16 $
+    Author:  Samuel Penn
+
+    Contains definitions of the various types of lists supported by
+    the Yagsbook format. A list contains one or more ordered or unordered
+    items.
+ -->
+<xsd:schema targetNamespace="http://yagsbook.sourceforge.net/xml"
+            elementFormDefault="qualified"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:yb="http://yagsbook.sourceforge.net/xml">
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            Yagsbook schema for lists.
+            Copyright 2004 Samuel Penn.
+        </xsd:documentation>
+    </xsd:annotation>
+
+
+    <!--
+        itemlist
+
+        An <itemlist> is a generic list of items, which can be numbered,
+        sorted, or just presented in 'as-is' order. Each <itemlist> consists
+        of one or more <item> elements.
+
+        An <itemlist> must have an @order attribute, to say how the list
+        should be ordered and displayed.
+     -->
+
+    <xsd:element name="itemlist" substitutionGroup="yb:block">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="item" type="yb:itemType"
+                             maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="order" type="yb:itemListOrderEnum"
+                        use="required"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:complexType name="itemType" mixed="true">
+        <xsd:attribute name="name" type="xsd:string"/>
+        <xsd:attribute name="value" type="xsd:string"/>
+    </xsd:complexType>
+
+    <xsd:simpleType name="itemListOrderEnum">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="strict"/>
+            <xsd:enumeration value="sort"/>
+            <xsd:enumeration value="unordered"/>
+            <xsd:enumeration value="1"/>
+            <xsd:enumeration value="i"/>
+            <xsd:enumeration value="I"/>
+            <xsd:enumeration value="a"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!--
+        targetlist
+
+        A <targetlist> is a cross between a list and a table. It is
+        defined as a list, but displayed in tabular form.
+     -->
+    <xsd:element name="targetlist" substitutionGroup="yb:block">
+        <xsd:complexType>
+            <xsd:choice minOccurs="1" maxOccurs="unbounded">
+                <xsd:element name="title" maxOccurs="1" type="xsd:string"/>
+                <xsd:element name="valueLabel" maxOccurs="1" type="xsd:string"/>
+                <xsd:element name="targetLabel" maxOccurs="1" type="xsd:string"/>
+
+                <xsd:element name="item" minOccurs="1" maxOccurs="unbounded">
+                    <xsd:complexType>
+                        <xsd:simpleContent>
+                            <xsd:extension base="xsd:string">
+                                <xsd:attribute name="value" type="xsd:string"/>
+                                <xsd:attribute name="target" type="xsd:string"/>
+                            </xsd:extension>
+                        </xsd:simpleContent>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:choice>
+            <xsd:attribute name="targetFirst" type="xsd:boolean"/>
+            <xsd:attribute name="bold" type="xsd:boolean"/>
+            <xsd:attribute name="seperator" type="xsd:string"/>
+        </xsd:complexType>
+    </xsd:element>
+
+
+</xsd:schema>

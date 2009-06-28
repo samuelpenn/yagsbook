@@ -1,0 +1,421 @@
+/*
+ * Cascading Style Sheet for the Yagsbook encyclopedia format.
+ * Similar to standard Yagsbook documents, but slightly different
+ * layout to cope with links to other articles.
+ */
+
+body {
+    background-color: white;
+}
+
+div.header {
+    background: url(/images/css/top-right.png) no-repeat top right;
+    background-color: #4b8b4b;
+    padding: none;
+    padding-right: 6px;
+    margin-bottom: 2mm;
+    border-bottom: 1mm solid black;
+}
+
+div.header table {
+    background: url(/images/css/top-left.png) no-repeat top left;
+    margin: 0mm;
+    padding: 0mm;
+}
+
+div.header table td.tagline {
+    text-align: left;
+    font-size: x-small;
+    margin: 0mm;
+    padding: 0mm;
+}
+
+div.header table td.version {
+    color: white;
+    text-align: right;
+    font-size: x-small;
+    margin: 0mm;
+    padding: 0mm;
+}
+
+div.header table td.title {
+    padding: 0mm;
+    margin: 0mm;
+}
+
+div.header table td.subject {
+    text-align: right;
+}
+
+div.header h1 {
+    background: none;
+    text-align: left;
+    text-valign: bottom;
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: sans-serif;
+    margin: 0mm;
+    padding: none;
+    padding-left: 0pt;
+    border: none;
+}
+
+/*
+ * Links and topics.
+ */
+div.links {
+    text-align: left;
+}
+
+div.links a {
+    font-size: small;
+    padding-left: 1mm;
+    padding-right: 1mm;
+    border: none;
+}
+
+/*
+ * Metadata - see also links and related info.
+ */
+div.metadata {
+    font-size: small;
+    margin: 0mm;
+    margin-bottom: 3mm;
+}
+
+div.metadata h2 {
+    font-size: medium:
+    font-weight: bold;
+    margin: 0mm;
+}
+
+div.metadata p {
+    margin: 0mm;
+}
+
+div.metadata a {
+    background: none;
+}
+
+/*
+ * Common bodytext styles.
+ */
+div.bodytext {
+    margin: 0cm;
+    font-size: medium;
+    color: black;
+    background-color: white;
+    font-family: sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    text-align: left;
+}
+
+div.bodytext p {
+    margin: 0mm;
+    margin-bottom: 5mm;
+    text-align: justify;
+    font-size: medium;
+}
+
+div.bodytext p.indent {
+    margin-left: 15mm;
+}
+
+div.bodytext h1,h2,h3,h4,h5 {
+    color: black;
+    background: url(/images/css/top-left.png) #4b8b4b no-repeat;
+    padding-left: 12px;
+    margin: 0cm;
+    margin-bottom: 2mm;
+    text-align: left;
+    font-weight: bold;
+    font-style: normal;
+    font-family: sans-serif;
+}
+
+div.bodytext h1 {
+    border: 1pt solid black;
+    font-size: x-large;
+    border: none;
+    border-bottom: 3pt solid black;
+}
+
+div.bodytext h2 {
+    font-size: large;
+}
+
+div.bodytext h3 {
+    background: white;
+    font-size: large;
+}
+
+div.bodytext h4 {
+    background: white;
+    font-size: medium;
+}
+
+div.bodytext h5 {
+    background: white;
+    font-size: medium;
+    font-style: italic;
+    font-weight: normal;
+}
+
+
+div.license {
+    margin: 0mm;
+    padding: 0mm;
+    border-top: 1mm solid black;
+    margin-top: 3mm;
+}
+
+div.license p {
+    margin: 0mm;
+    padding: 0mm;
+    font-size: xx-small;
+    text-align: left;
+}
+
+/*
+ * Special character related styles.
+ */
+h2.character-template,h3.character-template,h4.character-template {
+    font-style: italic;
+    margin-bottom: 0cm;
+    padding-bottom: 0cm;
+}
+
+
+table.character-template {
+    margin-left: 0cm;
+}
+
+table.imageblock {
+     margin-left: 1cm;
+}
+
+table {
+    margin-left: 2cm;
+    font-size: small;
+}
+
+
+table caption {
+    color: white;
+    background-color: black;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+table th {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+table tr.dark {
+    background-color: gray70;
+}
+
+table tr.light {
+    background-color: gray90;
+}
+
+dl {
+    margin-left: 1cm;
+    font-size: medium;
+}
+
+dt {
+    font-weight: bold;
+    font-size: medium;
+}
+
+dd {
+    text-align: justify;
+    margin-left: 0.5cm;
+    margin-right: 1cm;
+    font-style: italic;
+}
+
+p {
+    color: black;
+    margin-left: 1cm;
+    text-align: justify;
+    font-size: medium;
+}
+
+p.tagline {
+    text-align: right;
+    font-weight: bold;
+    font-style: italic;
+    font-size: medium;
+}
+
+
+span.note {
+    font-style: italic;
+}
+
+span.warning {
+    font-weight: bold;
+    font-style: italic;
+    color: red;
+}
+
+div.alpha {
+    border: 1mm solid red;
+    padding: 2mm;
+}
+
+div.beta {
+    border: 1mm solid yellow;
+    padding: 2mm;
+}
+
+div.alpha p {
+    color: gray50;
+}
+
+div.beta p {
+    color: gray75;
+}
+
+div.beast {
+    border: 1mm solid black;
+    padding: 2mm;
+    margin-left: 1cm;
+}
+
+div.beast h4 {
+    color: black;
+    font-size: large;
+    font-weight: bold;
+    margin: 0cm;
+}
+
+div.beast p {
+    color: black;
+    margin: 0cm;
+    text-align: justify;
+    font-size: small;
+}
+
+div.beast table.attributes {
+    margin: 0cm;
+}
+
+div.beast table.attributes th {
+    color: black;
+    font-weight: bold;
+    background-color: white;
+    font-size: small;
+}
+
+div.beast table.attributes td {
+    text-align: center;
+    font-size: small;
+}
+
+table.attributesOpen {
+    margin: 1cm;
+}
+
+table.attributesOpen td.name {
+    color: black;
+    font-weight: bold;
+    background-color: white;
+    font-size: large;
+    text-align: left;
+    border: 0mm none black;
+}
+
+table.attributesOpen td {
+    text-align: center;
+    font-size: large;
+    border: 0.5mm solid black;
+    background-color: #efe;
+}
+
+div.character {
+    border: 1pt dashed #709f70;
+    background-color: #f9fff9;
+    padding: 2mm;
+    margin-left: 1cm;
+}
+
+div.character h4 {
+    color: green;
+    font-size: large;
+    font-weight: bold;
+    margin: 0cm;
+}
+
+div.character h5 {
+    color: green;
+    font-size: medium;
+    font-weight: bold;
+    font-style: italic;
+    margin: 0cm;
+}
+
+div.character p {
+    color: black;
+    margin: 0cm;
+    text-align: justify;
+    font-size: small;
+}
+
+div.character div.paragraphs p {
+    color: black;
+    margin: 0cm;
+    margin-bottom: 2mm;
+    text-align: justify;
+    font-size: small;
+}
+
+div.character table.attributes {
+    margin: 0cm;
+}
+
+div.character table.attributes th {
+    color: black;
+    font-weight: bold;
+    background-color: white;
+    font-size: small;
+}
+
+div.character table.attributes td {
+    text-align: center;
+    font-size: small;
+}
+
+div.character table {
+    font-size: x-small;
+}
+
+div.character table.combat {
+    margin-left: 5mm;
+}
+
+ol {
+    font-size: medium;
+    margin-left: 1cm;
+}
+
+div.book h4 {
+    margin-bottom: 0mm;
+}
+
+div.book p.nogap {
+    margin-bottom: 0mm;
+    font-size: small;
+}
+
+
+span.annotation {
+    background-color: #ffff77;
+}

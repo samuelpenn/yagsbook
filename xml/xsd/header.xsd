@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            Yagsbook schema for article header.
+            Copyright 2004 Samuel Penn.
+        </xsd:documentation>
+    </xsd:annotation>
+
+    <!--
+        headerType
+     -->
+    <xsd:complexType name="header">
+        <xsd:all>
+            <xsd:element name="title" type="xsd:string"/>
+            <xsd:element name="tagline" type="xsd:string"/>
+            <xsd:element name="slugline" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="summary" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="author" type="authorType"/>
+            <xsd:element name="cvsinfo" type="cvsinfoType"/>
+            <xsd:element name="license" type="licenseType"/>
+            <xsd:element name="style" type="styleType"/>
+        </xsd:all>
+    </xsd:complexType>
+
+    <!-- authorType -->
+    <xsd:complexType name="authorType">
+        <xsd:sequence>
+            <xsd:element name="fullname" type="xsd:string"/>
+            <xsd:element name="email" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- cvsinfoType -->
+    <xsd:complexType name="cvsinfoType">
+        <xsd:sequence>
+            <xsd:element name="version" type="xsd:string"/>
+            <xsd:element name="date" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- licenseType -->
+    <xsd:complexType name="licenseType">
+        <xsd:sequence>
+            <xsd:element name="year" type="xsd:string"/>
+            <xsd:element name="holder" type="xsd:string"/>
+            <xsd:element name="url" type="xsd:anyURI"/>
+            <xsd:element name="text" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+    <!-- styleType -->
+    <xsd:complexType name="styleType">
+        <xsd:attribute name="name" use="required" type="styleEnum"/>
+    </xsd:complexType>
+
+    <xsd:simpleType name="styleEnum">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="core"/>
+            <xsd:enumeration value="character"/>
+            <xsd:enumeration value="combat"/>
+            <xsd:enumeration value="campaign"/>
+            <xsd:enumeration value="equipment"/>
+            <xsd:enumeration value="magic"/>
+            <xsd:enumeration value="religion"/>
+            <xsd:enumeration value="psionics"/>
+            <xsd:enumeration value="bestiary"/>
+            <xsd:enumeration value="module"/>
+            <xsd:enumeration value="player"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+</xsd:schema>

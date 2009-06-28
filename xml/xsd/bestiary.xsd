@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+
+<!--
+    Version: $Revision: 1.1.1.1 $
+    Date:    $Date: 2004/05/13 20:35:10 $
+    Author:  Samuel Penn
+
+    Bestiary schema.
+ -->
+ <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            Yagsbook bestiary.
+            Copyright 2004 Samuel Penn.
+        </xsd:documentation>
+    </xsd:annotation>
+
+    <!-- beastType -->
+    <xsd:complexType name="beastType">
+        <xsd:sequence>
+            <xsd:element name="information" type="beast-InfoType"
+                         minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="description" type="char-DescType"
+                         minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="attributes" type="attributesType"
+                         minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="skills" type="skillsType"
+                         minOccurs="1" maxOccurs="unbounded"/>
+            <xsd:element name="passions" type="passionsType"
+                         minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="combat" type="combatType"
+                         minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="advantages" type="advantagesType"
+                         minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="name" type="xsd:string"/>
+        <xsd:attribute name="display" type="xsd:string"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="beast-InfoType">
+        <xsd:sequence>
+            <xsd:element name="type" type="beast-TypeEnum" minOccurs="1" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:simpleType name="beast-TypeEnum">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Humanoid"/>
+            <xsd:enumeration value="Monster"/>
+            <xsd:enumeration value="Animal"/>
+            <xsd:enumeration value="Construct"/>
+            <xsd:enumeration value="Demon"/>
+            <xsd:enumeration value="Elemental"/>
+            <xsd:enumeration value="Beast"/>
+            <xsd:enumeration value="Vermin"/>
+            <xsd:enumeration value="Plant"/>
+            <xsd:enumeration value="Undead"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="beast-DemeanorEnum">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Predator"/>
+            <xsd:enumeration value="Scavenger"/>
+            <xsd:enumeration value="Herd"/>
+            <xsd:enumeration value="Violent"/>
+            <xsd:enumeration value="Passive"/>
+            <xsd:enumeration value="Unintelligent"/>
+            <xsd:enumeration value="Selfish"/>
+            <xsd:enumeration value="Aggressive"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="advantagesType">
+        <xsd:attribute name="name" type="xsd:string"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="attributesType">
+        <xsd:attribute name="name" type="xsd:string"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="combatType">
+        <xsd:attribute name="name" type="xsd:string"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="passionsType">
+        <xsd:attribute name="name" type="xsd:string"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="char-DescType">
+        <xsd:attribute name="name" type="xsd:string"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="skillsType">
+        <xsd:attribute name="name" type="xsd:string"/>
+    </xsd:complexType>
+</xsd:schema>

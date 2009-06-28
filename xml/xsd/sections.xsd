@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<!--
+    Version: $Revision: 1.4 $
+    Date:    $Date: 2006/01/10 20:29:56 $
+    Author:  Samuel Penn
+
+    Defines the section layout i a Yagsbook article.
+
+ -->
+<xsd:schema targetNamespace="http://yagsbook.sourceforge.net/xml"
+            elementFormDefault="qualified"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:yb="http://yagsbook.sourceforge.net/xml">
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            Yagsbook schema.
+            Copyright 2002 Samuel Penn.
+        </xsd:documentation>
+    </xsd:annotation>
+
+
+    <!-- titleType. Must occur exactly once as the first item in a section -->
+    <xsd:simpleType name="sectionStatusEnum">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="alpha"/>
+            <xsd:enumeration value="beta"/>
+            <xsd:enumeration value="release"/>
+            <xsd:enumeration value="deprecated"/>
+            <xsd:enumeration value="changed"/>
+            <xsd:enumeration value="optional"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!--
+        sect1
+
+        Section one blocks are the top level blocks within the <body> or an
+        <article>. They contain blocks of text - <para>, <table> and other
+        element types which make up the content of the article.
+
+        A <sect1> element may contain zero or more <sect2> children, which
+        must come after all other elements.
+     -->
+    <xsd:complexType name="sect1Type">
+        <xsd:sequence>
+            <xsd:element name="title" type="xsd:string"
+                         minOccurs="1" maxOccurs="1"/>
+
+            <xsd:element ref="yb:block"
+                         minOccurs="0" maxOccurs="unbounded"/>
+
+            <xsd:element name="sect2" type="yb:sect2Type"
+                         minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+        <xsd:attribute name="name" type="xsd:string"/>
+        <xsd:attribute name="id" type="xsd:string"/>
+        <xsd:attribute name="href" type="xsd:string"/>
+        <xsd:attribute name="status" type="yb:sectionStatusEnum"/>
+    </xsd:complexType>
+
+    <!-- sect2Type -->
+    <xsd:complexType name="sect2Type">
+        <xsd:sequence>
+            <xsd:element name="title" type="xsd:string"
+                         minOccurs="1" maxOccurs="1"/>
+
+            <xsd:element ref="yb:block"
+                         minOccurs="0" maxOccurs="unbounded"/>
+
+            <xsd:element name="sect3" type="yb:sect3Type"
+                         minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+        <xsd:attribute name="status" type="yb:sectionStatusEnum"/>
+    </xsd:complexType>
+
+    <!-- sect3Type -->
+    <xsd:complexType name="sect3Type">
+        <xsd:sequence>
+            <xsd:element name="title" type="xsd:string"
+                         minOccurs="1" maxOccurs="1"/>
+
+            <xsd:element ref="yb:block"
+                         minOccurs="0" maxOccurs="unbounded"/>
+
+            <xsd:element name="sect4" type="yb:sect4Type"
+                         minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+        <xsd:attribute name="status" type="yb:sectionStatusEnum"/>
+    </xsd:complexType>
+
+    <!-- sect4Type -->
+    <xsd:complexType name="sect4Type">
+        <xsd:sequence>
+            <xsd:element name="title" type="xsd:string"
+                         minOccurs="1" maxOccurs="1"/>
+
+            <xsd:element ref="yb:block"
+                         minOccurs="0" maxOccurs="unbounded"/>
+
+            <xsd:element name="sect2" type="yb:sect5Type"
+                         minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+        <xsd:attribute name="status" type="yb:sectionStatusEnum"/>
+    </xsd:complexType>
+
+    <!-- sect5Type -->
+    <xsd:complexType name="sect5Type">
+        <xsd:sequence>
+            <xsd:element name="title" type="xsd:string"
+                         minOccurs="1" maxOccurs="1"/>
+
+            <xsd:element ref="yb:block"
+                         minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+        <xsd:attribute name="status" type="yb:sectionStatusEnum"/>
+    </xsd:complexType>
+
+
+
+</xsd:schema>

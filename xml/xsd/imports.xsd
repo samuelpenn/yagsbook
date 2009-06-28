@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<!--
+    Version: $Revision: 1.1.1.1 $
+    Date:    $Date: 2004/05/13 20:35:11 $
+    Author:  Samuel Penn
+
+    Various import statements.
+ -->
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            Yagsbook schema.
+            Copyright 2002 Samuel Penn.
+        </xsd:documentation>
+    </xsd:annotation>
+
+    <xsd:complexType name="import-weaponlist" substitutionGroup="block">
+        <xsd:sequence>
+            <xsd:element name="category" minOccurs="1" maxOccurs="unbounded"
+                         type="xsd:string">
+            </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="href" type="xsd:string"/>
+        <xsd:attribute name="importance" type="xsd:string"/>
+        <xsd:attribute name="style" type="xsd:string"/>
+    </xsd:complexType>
+
+</xsd:schema>

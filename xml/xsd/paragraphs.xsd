@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+
+<!--
+    Version: $Revision: 1.4 $
+    Date:    $Date: 2006/01/10 20:29:56 $
+    Author:  Samuel Penn
+
+    Defines the <para> element.
+ -->
+<xsd:schema targetNamespace="http://yagsbook.sourceforge.net/xml"
+            elementFormDefault="qualified"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:yb="http://yagsbook.sourceforge.net/xml">
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            Yagsbook schema.
+            Copyright 2002 Samuel Penn.
+        </xsd:documentation>
+    </xsd:annotation>
+
+    <xsd:element name="e" type="xsd:string" substitutionGroup="yb:inline"/>
+    <xsd:element name="s" type="xsd:string" substitutionGroup="yb:inline"/>
+    <xsd:element name="url" type="xsd:string" substitutionGroup="yb:inline"/>
+    <xsd:element name="t" type="xsd:string" substitutionGroup="yb:inline"/>
+    <xsd:element name="tm" type="xsd:string" substitutionGroup="yb:inline"/>
+    <xsd:element name="term" type="xsd:string" substitutionGroup="yb:inline"/>
+
+    <xsd:element name="note" substitutionGroup="yb:block">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="yb:block" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="warning" substitutionGroup="yb:block">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="yb:block" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+
+    <!--
+         paraType
+
+         The paragraph is the basic block of generic text. It may contain
+         inline markup as well.
+
+
+    <xsd:complexType name="paraType" mixed="true">
+        <xsd:choice minOccurs="0" maxOccurs="unbounded">
+            <xsd:element name="name" type="xsd:string"/>
+            <xsd:element name="url" type="xsd:string"/>
+            <xsd:element name="skeq" type="skillEquation"/>
+            <xsd:element name="tm" type="xsd:string"/>
+            <xsd:element name="note" type="xsd:string"/>
+            <xsd:element name="warning" type="xsd:string"/>
+            <xsd:element name="s" type="xsd:string"/>
+            <xsd:element name="e" type="xsd:string"/>
+            <xsd:element name="t" type="xsd:string"/>
+            <xsd:element name="qv" type="qv"/>
+            <xsd:element name="term" type="xsd:string"/>
+        </xsd:choice>
+    </xsd:complexType>
+-->
+
+    <!--
+        qv
+
+        See also tag for use in Yagsbook Encyclopedia. Consists of the
+        form: <qv uri="foo">Foo something</qv>, where the location of uri
+        is automatically calculated.
+     -->
+    <xsd:complexType name="qv" mixed="true">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+                <xsd:attribute name="uri" type="yb:uriPattern"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+    <!--
+        uriPattern
+
+        An uri must consist of lower case letters and hyphens. No other
+        pattern is permitted. Does not yet support Unicode, or even non
+        English characters.
+     -->
+    <xsd:simpleType name="uriPattern">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:pattern value="[a-z\-]+"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+
+    <!-- attributeEnum. Enumerates the possible list of attribute names -->
+    <xsd:simpleType name="attributeEnum">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="strength"/>
+            <xsd:enumeration value="stamina"/>
+            <xsd:enumeration value="agility"/>
+            <xsd:enumeration value="dexterity"/>
+            <xsd:enumeration value="perception"/>
+            <xsd:enumeration value="intelligence"/>
+            <xsd:enumeration value="charisma"/>
+            <xsd:enumeration value="will"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+</xsd:schema>

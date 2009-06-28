@@ -1,0 +1,68 @@
+
+
+h1.header {
+    color: white;
+    background-color: green;
+}
+
+body {
+    background: white;
+    color: black;
+}
+
+
+div.sidebar p {
+    color: black;
+    background-color: #ccffcc;
+}
+
+
+div.bodytext h1 {
+    color: white;
+    background-color: green;
+}
+
+div.bodytext h2 {
+    color: green;
+}
+
+h3 {
+    color: green;
+}
+
+h4 {
+    color: green;
+}
+
+h5 {
+    color: green;
+}
+
+
+table {
+    margin-left: 2cm;
+    font-size: 10pt;
+}
+
+
+table tr.dark {
+    background-color: #77ff77;
+}
+
+table tr.light {
+    background-color: #ccffcc;
+}
+
+div.character-header {
+    margin: 0cm;
+    font-size: 12pt;
+}
+
+div.character-header div.entry {
+    background-color: #eeffee;
+    border: solid 3pt green;
+    margin-top: 1mm;
+    margin-bottom: 1mm;
+    font-size: 12pt;
+}
+

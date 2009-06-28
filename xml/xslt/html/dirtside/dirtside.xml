@@ -1,0 +1,459 @@
+<?xml version="1.0"?>
+
+<dirtside version="2">
+
+    <!--
+        Types of Power systems available.
+        Cost is given as a percentage of the BVP.
+    -->
+    <power>
+        <type name="cfe">
+            <description>CFE</description>
+            <cost>20</cost>
+        </type>
+
+        <type name="hmt">
+            <description>HMT</description>
+            <cost>40</cost>
+        </type>
+
+        <type name="fgp">
+            <description>FGP</description>
+            <cost>60</cost>
+        </type>
+    </power>
+
+    <!--
+        Mobility systems available.
+        Cost is given as a percentage of the BVP.
+    -->
+    <mobility>
+        <type name="lowWheeled">
+            <description>Low-Mobility Wheeled</description>
+            <speed>10</speed>
+            <cost>10</cost>
+        </type>
+
+        <type name="highWheeled">
+            <description>Hi-Mobility Wheeled</description>
+            <speed>10</speed>
+            <cost>30</cost>
+        </type>
+
+        <type name="slowTracked">
+            <description>Slow Tracked</description>
+            <speed>8</speed>
+            <cost>20</cost>
+        </type>
+
+        <type name="fastTracked">
+            <description>Fast Tracked</description>
+            <speed>12</speed>
+            <cost>40</cost>
+        </type>
+
+        <type name="slowGev">
+            <description>Slow GEV</description>
+            <speed>12</speed>
+            <cost>40</cost>
+        </type>
+
+        <type name="fastGev">
+            <description>Fast GEV</description>
+            <speed>15</speed>
+            <cost>60</cost>
+        </type>
+
+        <type name="grav">
+            <description>Grav</description>
+            <speed>15</speed>
+            <cost>100</cost>
+        </type>
+
+        <type name="slowVtol">
+            <description>Transport VTOL</description>
+            <speed>24</speed>
+            <cost>500</cost>
+        </type>
+
+        <type name="fastVtol">
+            <description>Attack VTOL</description>
+            <speed>30</speed>
+            <cost>500</cost>
+        </type>
+    </mobility>
+
+    <!--
+        Fire Control Systems
+
+        Types of firecontrol systems available.
+        Cost is multiplied by largest weapon size.
+    -->
+    <firecon>
+        <type name="none">
+            <description>None</description>
+            <die>4</die>
+            <cost>0</cost>
+        </type>
+
+        <type name="basic">
+            <description>Basic</description>
+            <die>6</die>
+            <cost>2</cost>
+        </type>
+
+        <type name="enhanced">
+            <description>Enhanced</description>
+            <die>8</die>
+            <cost>4</cost>
+        </type>
+
+        <type name="superior">
+            <description>Superior</description>
+            <die>10</die>
+            <cost>6</cost>
+        </type>
+    </firecon>
+
+    <!--
+        ECM Systems
+    -->
+    <ecm>
+        <type name="none">
+            <description>None</description>
+            <die>4</die>
+            <cost>0</cost>
+        </type>
+
+        <type name="basic">
+            <description>Basic</description>
+            <die>6</die>
+            <cost>15</cost>
+        </type>
+
+        <type name="enhanced">
+            <description>Enhanced</description>
+            <die>8</die>
+            <cost>30</cost>
+        </type>
+
+        <type name="superior">
+            <description>Superior</description>
+            <die>10</die>
+            <cost>45</cost>
+        </type>
+    </ecm>
+
+    <weapons>
+        <weapon name="APSW">
+            <description>Anti-Personnel Support Weapon</description>
+            <cost>4</cost>
+            <mass>1</mass>
+
+            <damage>
+                <infantry>
+                    <red/>
+                    <yellow/>
+                    <green/>
+                </infantry>
+            </damage>
+        </weapon>
+
+        <weapon name="HEL">
+            <description>High-Energy Laser</description>
+            <cost>10</cost>
+
+            <range class="1" close="60"/>
+            <range class="2" close="60"/>
+            <range class="3" close="60"/>
+            <range class="4" close="60"/>
+            <range class="5" close="60"/>
+
+            <damage>
+                <close>
+                    <red/>
+                </close>
+
+                <close armour="ablative">
+                    <green/>
+                </close>
+
+                <infantry>
+                    <yellow/>
+                </infantry>
+            </damage>
+        </weapon>
+
+        <weapon name="RFAC">
+            <description>Rapid-Fire Autocannon</description>
+            <cost>5</cost>
+
+            <range class="1" close="8" medium="12" long="16"/>
+            <range class="2" close="12" medium="18" long="24"/>
+
+            <damage>
+                <close>
+                    <red/><yellow/>
+                </close>
+                <medium>
+                    <red/>
+                </medium>
+                <long>
+                    <green/>
+                </long>
+                <infantry>
+                    <yellow/>
+                </infantry>
+            </damage>
+        </weapon>
+
+        <weapon name="HVC">
+            <description>High-Velocity Cannon</description>
+            <cost>8</cost>
+
+            <range class="3" close="16" medium="24" long="32"/>
+            <range class="4" close="18" medium="27" long="36"/>
+            <range class="5" close="20" medium="30" long="40"/>
+
+            <damage>
+                <close>
+                    <red/><yellow/>
+                </close>
+                <medium>
+                    <red/>
+                </medium>
+                <long>
+                    <green/>
+                </long>
+                <infantry>
+                    <yellow/>
+                </infantry>
+            </damage>
+        </weapon>
+
+        <weapon name="HKP">
+            <description>Hyper-Kinetic Penetrator</description>
+            <cost>8</cost>
+
+            <range class="3" close="18" medium="30" long="42"/>
+            <range class="4" close="24" medium="36" long="48"/>
+            <range class="5" close="30" medium="42" long="54"/>
+
+            <damage>
+                <close>
+                    <red/><yellow/><green/>
+                </close>
+                <medium>
+                    <red/><yellow/>
+                </medium>
+                <long>
+                    <red/>
+                </long>
+            </damage>
+        </weapon>
+
+        <weapon name="MDC">
+            <description>Mass-Driver Cannon</description>
+            <cost>8</cost>
+
+            <range class="1" close="8" medium="16" long="24"/>
+            <range class="2" close="12" medium="24" long="36"/>
+            <range class="3" close="24" medium="36" long="48"/>
+            <range class="4" close="30" medium="42" long="54"/>
+            <range class="5" close="36" medium="48" long="60"/>
+
+            <damage>
+                <close>
+                    <red/><yellow/><green/>
+                </close>
+                <medium>
+                    <red/><yellow/>
+                </medium>
+                <long>
+                    <red/>
+                </long>
+                <infantry>
+                    <yellow/>
+                </infantry>
+            </damage>
+        </weapon>
+
+        <weapon name="DFFG">
+            <description>Direct-Fire Fusion Gun</description>
+            <cost>15</cost>
+
+            <range class="1" close="4" medium="8" long="12"/>
+            <range class="2" close="6" medium="12" long="18"/>
+            <range class="3" close="8" medium="16" long="24"/>
+            <range class="4" close="10" medium="20" long="30"/>
+            <range class="5" close="12" medium="24" long="36"/>
+
+            <damage>
+                <close comment="x2">
+                    <red/><green/><yellow/>
+                </close>
+                <medium>
+                    <red/><green/><yellow/>
+                </medium>
+                <long comment="x half">
+                    <red/><green/><yellow/>
+                </long>
+                <infantry>
+                    <red/>
+                </infantry>
+            </damage>
+        </weapon>
+
+        <weapon name="SLAM">
+            <description>Salvo-Launched Missiles</description>
+            <cost>12</cost>
+
+            <range class="3" close="12" medium="24" long="36"/>
+            <range class="4" close="12" medium="24" long="36"/>
+            <range class="5" close="12" medium="24" long="36"/>
+
+            <damage>
+                <any armour="reactive">
+                    <red/>
+                </any>
+                <any>
+                    <red/><yellow/>
+                </any>
+                <infantry>
+                    <yellow/>
+                </infantry>
+            </damage>
+        </weapon>
+
+        <weapon name="GMS/L">
+            <description>Guided Missile Systems (Light)</description>
+            <cost quality="basic">20</cost>
+            <cost quality="enhanced">30</cost>
+            <cost quality="superior">40</cost>
+            <mass>2</mass>
+
+            <range class="0" close="36"/>
+
+            <damage>
+                <any armour="reactive">
+                    <red/>
+                </any>
+                <any>
+                    <red/><yellow/>
+                </any>
+            </damage>
+        </weapon>
+
+        <weapon name="GMS/H">
+            <description>Guided Missile Systems (Heavy)</description>
+            <cost quality="basic">30</cost>
+            <cost quality="enhanced">45</cost>
+            <cost quality="superior">60</cost>
+            <mass>4</mass>
+
+            <range class="0" close="48"/>
+
+            <damage>
+                <any armour="reactive">
+                    <red/>
+                </any>
+                <any>
+                    <red/><yellow/>
+                </any>
+            </damage>
+        </weapon>
+    </weapons>
+
+    <equipment>
+        <type name="commandSystems">
+            <description>Command Systems</description>
+            <cost>100</cost>
+            <mass>8</mass>
+        </type>
+
+        <type name="ads">
+            <description>Area Defence System</description>
+            <cost quality="basic">200</cost>
+            <cost quality="enhanced">300</cost>
+            <cost quality="superior">400</cost>
+            <mass quality="basic">10</mass>
+            <mass quality="enhanced">15</mass>
+            <mass quality="superior">20</mass>
+        </type>
+
+        <type name="lad">
+            <description>Local Air Defence</description>
+            <cost>75</cost>
+            <mass>2</mass>
+        </type>
+
+        <type name="cbr">
+            <description>Counter Battery Radar</description>
+            <cost quality="basic">150</cost>
+            <cost quality="enhanced">200</cost>
+            <cost quality="superior">250</cost>
+            <mass>14</mass>
+        </type>
+
+        <type name="pds">
+            <description>Point Defence System</description>
+            <cost quality="basic">30</cost>
+            <cost quality="enhanced">45</cost>
+            <cost quality="superior">60</cost>
+            <mass quality="basic">2</mass>
+            <mass quality="enhanced">3</mass>
+            <mass quality="superior">4</mass>
+        </type>
+
+        <type name="apfc">
+            <description>APFC</description>
+            <cost size="5"/>
+            <mass>1</mass>
+        </type>
+
+        <type name="lightArtillery">
+            <description>Light artillery</description>
+            <cost>50</cost>
+            <mass>6</mass>
+        </type>
+
+        <type name="mediumArtillery">
+            <description>Medium artillery</description>
+            <cost>100</cost>
+            <mass>12</mass>
+        </type>
+
+        <type name="heavyArtillery">
+            <description>Heavy artillery</description>
+            <cost>200</cost>
+            <mass>18</mass>
+        </type>
+
+        <type name="infantry">
+            <description>Line or militia infantry</description>
+            <cost>0</cost>
+            <mass>4</mass>
+        </type>
+
+        <type name="poweredInfantry">
+            <description>Powered infantry</description>
+            <cost>0</cost>
+            <mass>8</mass>
+        </type>
+
+        <type name="cargo">
+            <cost>0</cost>
+            <mass>4</mass>
+        </type>
+
+        <type name="engineering">
+            <cost>100</cost>
+            <mass>0</mass>
+        </type>
+
+        <type name="repair">
+            <cost size="75"/>
+            <mass>0</mass>
+        </type>
+    </equipment>
+</dirtside>

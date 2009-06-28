@@ -1,0 +1,4 @@
+#!/bin/sh
+
+#cp -r build/usr/share/xml/yagsbook* build/usr/share/xml/yagsbook
+scp -r build/* samuelpenn@shell.sf.net:/home/groups/y/ya/yagsbook/htdocs

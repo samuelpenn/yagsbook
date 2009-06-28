@@ -1,0 +1,56 @@
+
+
+h1.header {
+    color: white;
+    background-color: orange;
+}
+
+body {
+    background: white;
+    color: black;
+}
+
+
+div.sidebar p {
+    color: black;
+    background-color: #ffddbb;
+}
+
+
+div.bodytext h1 {
+    color: white;
+    background-color: orange;
+}
+
+div.bodytext h2 {
+    color: orange;
+}
+
+h3 {
+    color: orange;
+}
+
+h4 {
+    color: orange;
+}
+
+h5 {
+    color: orange;
+}
+
+
+table {
+    margin-left: 2cm;
+    font-size: 10pt;
+}
+
+
+table tr.dark {
+    background-color: #ffbb77;
+}
+
+table tr.light {
+    background-color: #ffddbb;
+}
+
+
