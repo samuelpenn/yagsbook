@@ -1,0 +1,8 @@
+<webscript>
+  <shortname>Lists pages</shortname>
+  <description>Lists all pages in an AVM</description>
+  <url>/glendale/pages</url>
+  <format default="html"/>
+  <authentication>admin</authentication>
+  <transaction>required</transaction>
+</webscript>

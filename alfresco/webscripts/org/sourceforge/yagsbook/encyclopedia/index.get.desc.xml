@@ -1,0 +1,8 @@
+<webscript>
+  <shortname>Display Encyclopedia Index</shortname>
+  <description>Display index page for an encyclopedia</description>
+  <url>/yagsbook/encyclopedia/index/{path}</url>
+  <format default="html"/>
+  <authentication>guest</authentication>
+  <transaction>required</transaction>
+</webscript>

@@ -1,0 +1,8 @@
+<webscript>
+  <shortname>Display Article</shortname>
+  <description>Display a Yagsbook encyclopedia article</description>
+  <url>/yagsbook/encyclopedia/article/{path}</url>
+  <format default="html"/>
+  <authentication>guest</authentication>
+  <transaction>required</transaction>
+</webscript>
