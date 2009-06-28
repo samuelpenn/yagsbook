@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+
+<article xmlns="http://yagsbook.sourceforge.net/xml">
+    <header>
+        <title>Short Folk</title>
+        <tagline>Habisfern</tagline>
+
+        <slugline/>
+
+        <author>
+            <fullname>Samuel Penn</fullname>
+            <email>sam@glendale.org.uk</email>
+        </author>
+
+        <cvsinfo>
+            <version>$Revision: 1.1 $</version>
+            <date>$Date: 2006/02/05 17:16:41 $</date>
+        </cvsinfo>
+
+        <license type="Yags">
+            <year>2003</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                This document can be redistributed and/or modified
+                under the terms of the GNU Public License as published
+                by the Free Software Foundation version 2.
+            </text>
+        </license>
+
+        <style name="module"/>
+
+        <references>
+            <see uri="nailand">Nailand</see>
+            <see uri="shortfolk-matriarchs">Matriarchs</see>
+        </references>
+
+        <topics>
+            <subject uri="shortfolk">Short Folk</subject>
+
+            <category>Races</category>
+
+            <topic uri="nailand">Nailand</topic>
+            <topic uri="euressa">Euressa</topic>
+            <topic uri="habisfern">Habisfern</topic>
+        </topics>
+    </header>
+
+    <body>
+        <sect1>
+            <title>Short Folk</title>
+
+            <para>
+                Inhabiting the plains and woods of Nailand are a 
+                race of short, hairy people who are collectively 
+                known as the Short Folk by the Rornic. They are 
+                possibly related to the mythical Cannadd culture 
+                in Taneith, and it is known that they lived here 
+                long before the People of Rorn came across from 
+                the Old World.
+            </para>
+
+            <para>
+                The short folk are mostly nomadic barbarians, 
+                though a proportion of them do live in small villages.
+            </para>
+
+            <para>
+                The adult men are about 150cm tall, with the 
+                women being about 10cm shorter. They are slight 
+                of build,  but quite strong. Much of a male's 
+                body is covered in thick dark hair, and the 
+                fashion is to grow long beards and head hair.
+            </para>
+
+            <para>
+                The women are far less hairy, and often wear 
+                their head hair short or clean shaven. Status 
+                amongst the women is shown by less hair, though 
+                this is more fashion than anything. Real status 
+                is denoted by tatoos, which the women wear 
+                openly. The quantity and quality of the tatoos 
+                tends to increae with age.
+            </para>
+
+            <para>
+                The short folk tend to wear little or no 
+                clothing, depending on circumstances and weather. 
+                The women in particular like to show off their 
+                tatoos during social occassions.
+            </para>
+
+            <para>
+                Short folk society is a matriarchy, with tribes 
+                being ruled by the female shamans. Their gods are 
+                all earth goddesses, some of whom are quite brutal.
+            </para>
+
+        </sect1>
+    </body>
+</article>
+
+

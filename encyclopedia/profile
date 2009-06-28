@@ -1,0 +1,11 @@
+JAVA_HOME=/opt/java
+export JAVA_HOME
+
+#PATH=$JAVA_HOME/bin:$PATH
+
+#PATH=$PATH:/usr/share/java/ant/bin
+#export PATH
+
+#CLASSPATH=/usr/share/java/xalan/xalan.jar:/usr/share/java/xalan/xercesImpl.jar:/home/sam/src/rpgutils/mapcraft/mapcraft.jar:.
+#export CLASSPATH
+

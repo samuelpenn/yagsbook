@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+
+<article xmlns="http://yagsbook.sourceforge.net/xml">
+    <header>
+        <title>Dwynen of Aiden</title>
+        <tagline>Habisfern</tagline>
+
+        <slugline>Magesmith</slugline>
+
+        <author>
+            <fullname>Samuel Penn</fullname>
+            <email>sam@glendale.org.uk</email>
+        </author>
+
+        <cvsinfo>
+            <version>$Revision: 1.1 $</version>
+            <date>$Date: 2006/02/05 17:16:41 $</date>
+        </cvsinfo>
+
+        <license type="Yags">
+            <year>2002</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                This document can be redistributed and/or modified
+                under the terms of the GNU Public License as published
+                by the Free Software Foundation version 2.
+            </text>
+        </license>
+
+
+        <style name="module"/>
+
+        <topics>
+            <subject uri="dwynen-of-aiden">Dwynen of Aiden</subject>
+            <category>Craftsmen</category>
+
+            <topic uri="aiden-shire">Aiden</topic>
+            <topic uri="weidany">Weidany</topic>
+            <topic uri="habisfern">Habisfern</topic>
+            <topic uri="euressa">Euressa</topic>
+        </topics>
+
+    </header>
+
+    <body>
+        <sect1>
+            <title>Dwynen of Aiden</title>
+
+            <para>
+                Dwynen was a 12th century female magesmith and warrior. She
+                spent most of her time in Aiden, and made a number of
+                powerful weapons and armour, including the sword Rim's
+                Truth, the shield Strong Arm and a set of armour named
+                Blade Turn.
+            </para>
+        </sect1>
+
+    </body>
+
+</article>
+
+
+

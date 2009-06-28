@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+
+<article xmlns="http://yagsbook.sourceforge.net/xml">
+    <header>
+        <title>Vikings</title>
+        <tagline>Habisfern</tagline>
+
+        <slugline/>
+
+        <author>
+            <fullname>Samuel Penn</fullname>
+            <email>sam@glendale.org.uk</email>
+        </author>
+
+        <cvsinfo>
+            <version>$Revision: 1.1 $</version>
+            <date>$Date: 2006/02/05 17:16:41 $</date>
+        </cvsinfo>
+
+        <license type="Yags">
+            <year>2002</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                This document can be redistributed and/or modified
+                under the terms of the GNU Public License as published
+                by the Free Software Foundation version 2.
+            </text>
+        </license>
+
+        <style name="module"/>
+
+        <references>
+        </references>
+
+        <topics>
+            <subject uri="vikings">Vikings</subject>
+
+            <category>Warriors</category>
+        </topics>
+    </header>
+
+    <body>
+        <sect1>
+            <title>Vikings</title>
+
+            <para>
+                The Vikings are Brytish sea raiders, who strike 
+                along the western coast of Euressa during spring 
+                and autumn.
+            </para>
+
+            <para>
+                They are infamous for their longships, which can 
+                be used for both raiding and trade. The longest 
+                can be 30m or more in length.
+            </para>
+
+            <para>
+                A common longship is rated atabout  20 oars - 
+                that's 20 on each side for a total of 40 rowers. 
+            </para>
+
+        </sect1>
+    </body>
+</article>
+
+

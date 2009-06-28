@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<article    xmlns:my-ext="uk.co.demon.bifrost.rpg.encyclopedia.Extensions">
+    <import-map
+        href="/home/sam/rpg/habisfern/encyclopedia/src/maps/euressa.map"
+        scale="4">
+
+        <area name="weidany" margin="2"/>
+    </import-map>
+</article>

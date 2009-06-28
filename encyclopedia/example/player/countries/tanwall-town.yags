@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+
+<article xmlns="http://yagsbook.sourceforge.net/xml">
+    <header>
+        <title>Tanwall</title>
+        <tagline>Habisfern</tagline>
+
+        <slugline></slugline>
+
+        <author>
+            <fullname>Samuel Penn</fullname>
+            <email>sam@glendale.org.uk</email>
+        </author>
+
+        <cvsinfo>
+            <version>$Revision: 1.1 $</version>
+            <date>$Date: 2006/02/05 17:16:41 $</date>
+        </cvsinfo>
+
+        <license type="Yags">
+            <year>2002</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                This document can be redistributed and/or modified
+                under the terms of the GNU Public License as published
+                by the Free Software Foundation version 2.
+            </text>
+        </license>
+
+        <style name="module"/>
+
+        <references>
+        </references>
+
+        <topics>
+            <subject uri="tanwall-town">Tanwall</subject>
+
+            <category>Towns</category>>
+
+            <topic uri="tanwall">Tanwall</topic>
+            <topic uri="euressa">Euressa</topic>
+            <topic uri="habisfern">Habisfern</topic>
+        </topics>
+    </header>
+
+    <body>
+        <sect1>
+            <title>Town of Tanwall</title>
+
+            <para>
+                A small town based around a stone keep in the Tanwall hills.
+                The town overlooks the place where the Brytish were
+                defeated in their war against Tanwall, and where the
+                agreement was reached by the kings of Tanwall to form an
+                alliamce against the greater enemy. The town is part of
+                Tanwall itself, and has a population of 600.
+            </para>
+        </sect1>
+
+    </body>
+
+</article>
+
+
+

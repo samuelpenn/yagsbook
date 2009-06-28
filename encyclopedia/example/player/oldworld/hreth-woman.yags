@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+
+<article xmlns="http://yagsbook.sourceforge.net/xml">
+    <header>
+        <title>Hreth the Mortal</title>
+        <tagline>Habisfern</tagline>
+
+        <slugline>Daughter of Gruaga</slugline>
+
+        <author>
+            <fullname>Samuel Penn</fullname>
+            <email>sam@glendale.org.uk</email>
+        </author>
+
+        <cvsinfo>
+            <version>$Revision: 1.1 $</version>
+            <date>$Date: 2006/02/05 17:16:41 $</date>
+        </cvsinfo>
+
+        <license type="Yags">
+            <year>2004</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                This document can be redistributed and/or modified
+                under the terms of the GNU Public License as published
+                by the Free Software Foundation version 2.
+            </text>
+        </license>
+
+        <style name="module"/>
+
+        <references>
+        </references>
+
+        <topics>
+            <subject uri="hreth-woman">Hreth</subject>
+
+            <category>Heroes</category>
+
+            <topic uri="old-world">Old World</topic>
+        </topics>
+    </header>
+
+    <body>
+        <sect1>
+            <title>Hreth</title>
+
+            <para>
+                A mortal woman who was the lover of <qv uri="erol">Erol</qv>,
+                the son of <qv uri="haltan">Haltan</qv> in the Old World,
+                before the coming of the Ice and the fall of civilisation.
+            </para>
+
+            <para>
+                Hreth betrayed Erol, and layed evidence for her crimes
+                that pointed at Erol's mother, <qv uri="enrith">Enrith</qv>.
+                Erol only found out the truth after he had slain his own
+                mother
+            </para>
+
+            <para>
+                Hreth was the daughter of the god <qv uri="pel">Pel</qv>
+                and the giantess <qv uri="gruaga">Gruaga</qv>. Whether she
+                is the same as the goddess <qv uri="hreth">Hreth</qv> is
+                not known, but similarities between the two lead many to
+                believe that she was.
+            </para>
+        </sect1>
+    </body>
+</article>
+
+

@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+
+<article xmlns="http://yagsbook.sourceforge.net/xml">
+    <header>
+        <title>Nailand</title>
+        <tagline>Habisfern</tagline>
+
+        <slugline/>
+
+        <author>
+            <fullname>Samuel Penn</fullname>
+            <email>sam@glendale.org.uk</email>
+        </author>
+
+        <cvsinfo>
+            <version>$Revision: 1.1 $</version>
+            <date>$Date: 2006/02/05 17:16:41 $</date>
+        </cvsinfo>
+
+        <license type="Yags">
+            <year>2003</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                This document can be redistributed and/or modified
+                under the terms of the GNU Public License as published
+                by the Free Software Foundation version 2.
+            </text>
+        </license>
+
+        <style name="module"/>
+
+        <references>
+            <see uri="shortfolk">Short Folk</see>
+        </references>
+
+        <topics>
+            <subject uri="nailand">Nailand</subject>
+
+            <category>Countries</category>>
+
+            <topic uri="euressa">Euressa</topic>
+            <topic uri="habisfern">Habisfern</topic>
+        </topics>
+    </header>
+
+    <body>
+        <sect1>
+            <title>Nailand</title>
+
+            <para>
+                Nailand is the land south and east of Weidany. It 
+                is considered to be uncivilised, though a large 
+                number of tribal groups of the Short Folk roam 
+                the plains and woods.
+            </para>
+
+        </sect1>
+    </body>
+</article>
+
+

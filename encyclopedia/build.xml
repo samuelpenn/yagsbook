@@ -1,0 +1,237 @@
+
+<project name="Encyclopedia" default="jar" basedir=".">
+
+    <property file="ant.properties"/>
+    <property name="base.package" value="net.sourceforge.yagsbook"/>
+
+    <path id="lib.path">
+        <pathelement location="${mapcraft.install}"/>
+        <pathelement location="${jar.file}"/>
+        <pathelement location="/usr/share/java/ant/lib/xercesImpl.jar"/>
+        <pathelement location="${fop.jar}"/>
+    </path>
+
+    <target name="yagsbook" depends="clean">
+        <mkdir dir="${build.dir}"/>
+        <javac srcdir="${src.dir}" destdir="${build.dir}" debug="on">
+            <classpath>
+                <pathelement location="${xalan.install}/xalan.jar"/>
+                <pathelement location="${xalan.install}/xercesImpl.jar"/>
+                <pathelement location="${mapcraft.install}"/>
+                <pathelement location="${fop.jar}"/>
+                <pathelement path="${java.class.path}"/>
+            </classpath>
+        </javac>
+    </target>
+
+    <target name="yagsbook-jar" depends="yagsbook">
+        <jar basedir="${build.dir}" jarfile="yagsbook.jar">
+            <manifest>
+                <attribute name="Built-By" value="${user.name}"/>
+                <attribute name="Main-Class" value="${base.package}.encyclopedia.Encyclopedia"/>
+                <attribute name="Class-Path" value="${xalan.install}/xalan.jar ${xalan.install}/xercesImpl.jar ${mapcraft.install}"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="${build.dir}"/>
+        <javac srcdir="${src.dir}" destdir="${build.dir}" debug="on">
+            <classpath>
+                <pathelement location="${xalan.install}/xalan.jar"/>
+                <pathelement location="${xalan.install}/xercesImpl.jar"/>
+                <pathelement location="${mapcraft.install}"/>
+                <pathelement location="${fop.jar}"/>
+                <pathelement path="${java.class.path}"/>
+            </classpath>
+        </javac>
+    </target>
+
+    <target name="jar" depends="compile">
+        <jar basedir="${build.dir}" jarfile="${jar.file}">
+            <manifest>
+                <attribute name="Built-By" value="${user.name}"/>
+                <attribute name="Main-Class" value="${base.package}.encyclopedia.Encyclopedia"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="jar2" depends="compile">
+        <jar basedir="${build.dir}" jarfile="${jar.file}" manifest="MANIFEST.MF"/>
+    </target>
+
+    <target name="manifest">
+        <manifest file="m.mf">
+            <attribute name="Built-By" value="${user.name}"/>
+            <attribute name="Main-Class" value="${base.package}.Encyclopedia"/>
+            <attribute name="Class-Path" value="${xalan.install}/xalan.jar ${xalan.install}/xercesImpl.jar ${mapcraft.install}/mapcraft.jar"/>
+        </manifest>
+    </target>
+
+    <target name="clean">
+        <delete dir="${build.dir}" quiet="true"/>
+        <delete dir="${api.dir}" quiet="true"/>
+        <delete dir="entries" quiet="true"/>
+
+        <delete file="${jar.file}"/>
+    </target>
+
+    <target name="docs">
+        <mkdir dir="${api.dir}"/>
+        <javadoc
+            classpath="${build.dir}"
+            sourcepath="${src.dir}"
+            packagenames="${base.package}"
+            destdir="${api.dir}"
+            package="yes"
+            windowtitle="Encyclopedia API">
+            <classpath>
+                <pathelement location="${xalan.install}/xalan.jar"/>
+                <pathelement location="${xalan.install}/xercesImpl.jar"/>
+                <pathelement location="${mapcraft.install}"/>
+                <pathelement path="${java.class.path}"/>
+            </classpath>
+        </javadoc>
+    </target>
+
+    <target name="example">
+        <taskdef name="encyclopedia" classpathref="lib.path"
+                 classname="${base.package}.encyclopedia.ant.EncyclopediaTask">
+        </taskdef>
+        <delete dir="tmp" quiet="true"/>
+        <mkdir dir="tmp"/>
+        <encyclopedia destination="tmp" config="example/config.xml">
+            <repository src="example/player"/>
+            <property name="detailCharacters" value="false"/>
+        </encyclopedia>
+    </target>
+
+    <target name="example-gm">
+        <taskdef name="encyclopedia" classpathref="lib.path"
+                 classname="${base.package}.encyclopedia.ant.EncyclopediaTask">
+        </taskdef>
+        <delete dir="tmp" quiet="true"/>
+        <mkdir dir="tmp"/>
+        <encyclopedia destination="tmp" config="example/config.xml">
+            <repository src="example/player"/>
+            <property name="detailCharacters" value="true"/>
+            <property name="showMasked" value="true"/>
+        </encyclopedia>
+    </target>
+
+    <target name="core">
+        <java classname="net.sourceforge.yagsbook.pagexml.Yagsbook">
+            <classpath>
+			    <pathelement location="encyclopedia.jar"/>
+                <pathelement location="${xalan.install}/xalan.jar"/>
+                <pathelement location="${xalan.install}/xercesImpl.jar"/>
+                <pathelement location="${mapcraft.install}"/>
+                <pathelement location="${fop.jar}"/>
+                <pathelement path="${java.class.path}"/>
+            </classpath>
+        </java>
+    </target>
+
+    <target name="patch">
+        <javac srcdir="utils"/>
+        <java classpath="utils" classname="Release">
+            <arg value="-patch"/>
+        </java>
+
+        <antcall target="release"/>
+    </target>
+
+    <target name="minor">
+        <javac srcdir="utils"/>
+        <java classpath="utils" classname="Release">
+            <arg value="-minor"/>
+        </java>
+
+        <antcall target="release"/>
+    </target>
+
+    <target name="major">
+        <javac srcdir="utils"/>
+        <java classpath="utils" classname="Release">
+            <arg value="-major"/>
+        </java>
+
+        <antcall target="release"/>
+    </target>
+
+    <target name="release" depends="clean, jar">
+        <property file="yagsbook.properties"/>
+
+        <property name="version"
+                  value="${version.major}.${version.minor}.${version.patch}"/>
+        <echo message="Release ${version}"/>
+
+        <!--
+            Validate that we have a sensible README.
+            -->
+        <loadproperties srcFile="README">
+            <filterchain>
+                <linecontains>
+                    <contains value="ant."/>
+                </linecontains>
+            </filterchain>
+        </loadproperties>
+
+        <fail unless="ant.latest.version">
+            README file does not have an ant.latest.version parameter.
+        </fail>
+
+        <fail>
+            <condition>
+                <not>
+                    <equals arg1="${version}" arg2="${ant.latest.version}"/>
+                </not>
+            </condition>
+            Version ${ant.latest.version} in README does not match ${version}.
+        </fail>
+
+        <property name="base.dir" value="${build.dir}/encyclopedia-${version}"/>
+
+        <mkdir dir="${base.dir}"/>
+
+        <!-- Copy documentation files -->
+        <copy todir="${base.dir}" file="README"/>
+        <copy todir="${base.dir}" file="COPYING"/>
+        <copy todir="${base.dir}" file="${jar.file}"/>
+        <move file="${base.dir}/${jar.file}"
+              tofile="${base.dir}/encyclopedia-${version}.jar"/>
+
+        <delete dir="${build.dir}/net" quiet="true"/>
+
+        <copy todir="${base.dir}" file="build.xml"/>
+
+        <copy todir="${base.dir}">
+            <fileset dir=".">
+                <include name="*.properties"/>
+            </fileset>
+        </copy>
+
+        <mkdir dir="${base.dir}/utils"/>
+        <copy todir="${base.dir}/utils">
+            <fileset dir="utils">
+                <include name="*.java"/>
+            </fileset>
+        </copy>
+
+        <mkdir dir="${base.dir}/src/net/sourceforge/yagsbook"/>
+        <copy todir="${base.dir}/src/net/sourceforge/yagsbook">
+            <fileset dir="${src.dir}">
+                <exclude name="CVS"/>
+            </fileset>
+        </copy>
+
+        <mkdir dir="releases"/>
+
+        <tar destfile="releases/encyclopedia-${version}.tgz"
+             compression="gzip"
+             basedir="${build.dir}"/>
+    </target>
+
+
+</project>
+

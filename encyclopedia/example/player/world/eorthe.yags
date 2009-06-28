@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+
+<article xmlns="http://yagsbook.sourceforge.net/xml">
+    <header>
+        <title>Eorthe</title>
+        <tagline>Habisfern</tagline>
+
+        <slugline/>
+
+        <author>
+            <fullname>Samuel Penn</fullname>
+            <email>sam@glendale.org.uk</email>
+        </author>
+
+        <cvsinfo>
+            <version>$Revision: 1.1 $</version>
+            <date>$Date: 2006/02/05 17:16:41 $</date>
+        </cvsinfo>
+
+        <license type="Yags">
+            <year>2002</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                This document can be redistributed and/or modified
+                under the terms of the GNU Public License as published
+                by the Free Software Foundation version 2.
+            </text>
+        </license>
+
+        <style name="module"/>
+
+        <references>
+        </references>
+
+        <topics>
+            <subject uri="eorthe">Eorthe</subject>
+
+            <category>Places</category>>
+
+            <topic uri="eorthe">Eorthe</topic>
+        </topics>
+    </header>
+
+    <body>
+        <sect1>
+            <title>Eorthe</title>
+
+            <para>
+                Eorthe is the world of men, as named by the 
+                people of Rorn. It is also known as Midgaard, 
+                Middle Earth, or just Earth.
+            </para>
+
+            <para>
+                Eorthe has a year of 372 days. It has a single 
+                moon, with a period of 28 days.
+            </para>
+
+            <para>
+                The world is in the middle of on ice age, with 
+                ice caps reaching across much of the northern 
+                continents. The last great expansion of the ice 
+                ended two to three thousand years ago.
+            </para>
+
+            <para>
+                The main populated continent is Gyla, also known 
+                as the Old World. Much of it is still covered by 
+                ice sheets, either from the arctic sheet, or 
+                stretching out from mountains.
+            </para>
+
+            <para>
+                Gyla is joined at the equator by an isthmus of 
+                land to the western continent of Habanna.
+            </para>
+
+            <para>
+                Sitting between the two continents, in the 
+                northern latitudes, is the sub continent of 
+                Euressa. Warmed by warm ocean currents from the 
+                south, it was the destination of many refugees 
+                fleeing the last ice incursions.
+            </para>
+
+        </sect1>
+    </body>
+</article>
+
+

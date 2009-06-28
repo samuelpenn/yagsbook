@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+
+<article xmlns="http://yagsbook.sourceforge.net/xml">
+    <header>
+        <title>Ice</title>
+        <tagline>Habisfern</tagline>
+
+        <slugline>The Northern Powers</slugline>
+
+        <author>
+            <fullname>Samuel Penn</fullname>
+            <email>sam@glendale.org.uk</email>
+        </author>
+
+        <cvsinfo>
+            <version>$Revision: 1.1 $</version>
+            <date>$Date: 2006/02/05 17:16:41 $</date>
+        </cvsinfo>
+
+        <license type="Yags">
+            <year>2004</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                This document can be redistributed and/or modified
+                under the terms of the GNU Public License as published
+                by the Free Software Foundation version 2.
+            </text>
+        </license>
+
+        <style name="module"/>
+
+        <references>
+            <see uri="iss">The Rornic Iss</see>
+            <see uri="iss-brytish">The Brytish Iss</see>
+        </references>
+
+        <topics>
+            <subject uri="ice">Ice</subject>
+
+            <category>Legends</category>>
+
+            <topic uri="habisfern">Habisfern</topic>
+            <topic uri="euressa">Euressa</topic>
+            <topic uri="eorthe">Eorthe</topic>
+        </topics>
+    </header>
+
+    <body>
+        <sect1>
+            <title>The Powers of the Ice</title>
+
+            <para>
+                The <e>Ice</e> is considered a malevolent entity by most of
+                Eorthe. The ebb and flow of the glaciers are governed by the
+                wishes of the great Powers that live in the inhospitable
+                north. These Powers are alien to humans, and seek only a
+                return to the beginning of the world, when everything was
+                covered by Ice.
+            </para>
+
+            <para>
+                The <e>Powers of the Ice</e> seek law and stasis - change,
+                passion and learning are their antithesis. There are a few
+                cults of the Ice, but not many. Currently, it is believed
+                that these Powers are dorment, waiting for a more suitable
+                time to awaken. If nothing else, they are patient.
+            </para>
+        </sect1>
+    </body>
+</article>
+
+
+

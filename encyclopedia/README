@@ -1,0 +1,97 @@
+Yagbook Encyclopedia
+
+Tools for generating an Encyclopedia from Yagsbook documentation.
+Released under the GPL v2. See the file COPYING for details.
+
+ant.latest.version=1.2.0
+
+Releases
+
+Latest
+
+1.2.0 - 10th May 2009
+  * Updated to work with FOP 0.9X, which breaks compatibility
+    with the old APIs
+
+1.1.0 - 28th February 2006
+  * Can now set properties from Ant task and pass them to the
+    XSLT. Needed to support control of generated output.
+
+  * Improved command line arguments to make it more flexible
+    and easier to use.
+
+
+1.0.0 - 15th January 2006
+
+  * Building release for Sourceforge.
+
+
+Running
+-------
+
+In order to run the Encyclopedia, use something like the following:
+
+java -jar encyclopedia.jar -config examples/config.xml -src examples/player -dest tmp
+
+This will build the example encyclopedia in the directory tmp.
+Note that this assumes you are using Linux or some other UNIX-like
+operating system. Paths etc may be different on other systems.
+
+The file tmp/index.html will contain the main index for the generated
+encyclopedia.
+
+The Example
+-----------
+
+The example contains a few articles from the Habisfern campaign
+setting. All the articles to be included in the encyclopedia are
+stored within the 'player' directory. Multiple directories can
+be added from the -src argument, and all files with a '.yags'
+extension will be added. Directories can be nested to many
+layers, though this structure is ignored in the final output.
+
+The config.xml describes some basic rules on how to categorise
+documents and such.
+
+Notes
+
+Topics
+
+Topics are URIs which relate to the current entry. So Dyrisa would have topics
+of Kanday (it is in Kanday), Harn (it is on Harn) and Kethira (it is on the world
+of Kethira). All entries are automatically added to the 'all' topic.
+
+
+Categories
+
+Categories define what sort of thing this entry is. Categories are divided into
+major categories and minor categories.
+
+Landscape       Forest, Hill, Mountain, River, Lake, Sea, Cave, Desert
+Settlement      Village, Town, City, Castle, Stones, Temple, Port, Academic
+Animal
+Plant           Tree, Planet, Herb
+Person          Wizard, Warrior, Merchant, Priest
+Society         Religion, Underworld, Guild, Military
+Region          Country, Shire, Kingdom
+
+
+Map
+
+When importing a map, the following syntax is expected.
+
+<import-map uri="euressa" scale="4">
+    <crop x="20" y="20" width="12" height="8"/>
+</import-map>
+
+
+How do we name map images?
+Cannot just name them after the map, since a single map may produce
+multiple different images - e.g. if several things are displayed, or
+several areas cropped.
+
+uri-scale.jpg
+uri-crop-x-y-w-h-scale.jpg
+uri-area-name-margin-scale.jpg
+uri-thing-name-radius-scale.jpg
+

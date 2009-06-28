@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+
+<article xmlns="http://yagsbook.sourceforge.net/xml">
+    <header>
+        <title>Matriarchs of the Shortfolk</title>
+        <tagline>Habisfern</tagline>
+
+        <slugline/>
+
+        <author>
+            <fullname>Samuel Penn</fullname>
+            <email>sam@glendale.org.uk</email>
+        </author>
+
+        <cvsinfo>
+            <version>$Revision: 1.1 $</version>
+            <date>$Date: 2006/02/05 17:16:41 $</date>
+        </cvsinfo>
+
+        <license type="Yags">
+            <year>2002</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                This document can be redistributed and/or modified
+                under the terms of the GNU Public License as published
+                by the Free Software Foundation version 2.
+            </text>
+        </license>
+
+        <style name="module"/>
+
+        <references>
+        </references>
+
+        <topics>
+            <subject uri="shortfolk">Shortfolk</subject>
+
+            <category>Priests</category>
+
+            <topic uri="nailand">Nailand</topic>
+            <topic uri="euressa">Euressa</topic>
+            <topic uri="habisfern">Habisfern</topic>
+        </topics>
+    </header>
+
+    <body>
+        <sect1>
+            <title>Matriarchs of the Shortfolk</title>
+
+            <para>
+                The short folk are governed by their eldest
+                women, who act as law makers and priestesses to
+                their tribe. Though age confers rank, it is not
+                the only factor, and those who are too senile are ignored.
+            </para>
+
+            <para>
+                The women follow the traditions of the Five
+                Mothers - the earth goddesses who are the
+                foundation of their religion.
+            </para>
+
+            <para>
+                The goddesses are Akarok, Belok, Kernok, Mejenok
+                and Semok. They are principally death goddesses,
+                each with connections to birth and life.
+            </para>
+
+            <para>
+                All women are given the chance of becoming a
+                priestess at the age of 11. There is a test of
+                physical endurance which must be passed, failure
+                resulting in death. A woman may opt to not take
+                the test, in which case they effectivel take on
+                the social status of a slave.
+            </para>
+
+        </sect1>
+    </body>
+</article>
+
+

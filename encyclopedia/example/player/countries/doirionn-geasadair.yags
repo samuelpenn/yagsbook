@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+
+<article xmlns="http://yagsbook.sourceforge.net/xml">
+    <header>
+        <title>Doirionn Geasadair</title>
+        <tagline>Habisfern</tagline>
+
+        <slugline>The Storm Wizards</slugline>
+
+        <author>
+            <fullname>Samuel Penn</fullname>
+            <email>sam@glendale.org.uk</email>
+        </author>
+
+        <cvsinfo>
+            <version>$Revision: 1.1 $</version>
+            <date>$Date: 2006/02/05 17:16:41 $</date>
+        </cvsinfo>
+
+        <license type="Yags">
+            <year>2004</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                This document can be redistributed and/or modified
+                under the terms of the GNU Public License as published
+                by the Free Software Foundation version 2.
+            </text>
+        </license>
+
+        <style name="module"/>
+
+        <references>
+        </references>
+
+        <topics>
+            <subject uri="doirionn-geasadair">Doirionn Geasadair</subject>
+
+            <category>Organisations</category>>
+
+            <topic uri="taneith">Taneith</topic>
+        </topics>
+    </header>
+
+    <body>
+        <sect1>
+            <title>Doirionn Geasadair</title>
+
+            <para>
+                The Doirionn Geasadiar are a group if wizards living either
+                up in the Cullen Hills, or to their north. There are though
+                to be about a dozen of them in all, though only two or three
+                are of any great power. They are considered crazy and
+                dangerous; wizards who force the sky and sea to do their
+                bidding.
+            </para>
+
+            <para>
+                It is not known whether they have any particular goals,
+                though they exact tribute from the tuaths of the area in the
+                form of cattle and corn. It is also said they spirit away
+                young women, or merely steal into their rooms at night.
+            </para>
+
+            <para>
+                Their leader is said to be Bruddach, or Storm Bringer. He is
+                rumoured to be over 200 years old.
+            </para>
+
+            <para>
+                The other two notables are Marlow the Mist Walker, and
+                Cunighan Sea Dancer. The names of the other Storm Wizards
+                is not known outside the group.
+            </para>
+        </sect1>
+    </body>
+</article>
+
+

@@ -1,0 +1,25 @@
+Example Encyclopedia
+====================
+
+(this guide has been written from the point of view of Linux. Translation to
+non-UNIX-like operating systems is left as an exercise to the reader).
+
+In order to generate the example Encyclopedia, type the following:
+
+ant
+
+That's it, assuming that you have ant installed and you are in the example
+directory. It will generate a set of HTML files in the ./tmp directory,
+which will have the following structure:
+
+tmp
+    entries - this is where the HTML files are copied to.
+	images - all the images are copied into here.
+	source - all the source XML files are copied into here.
+
+Browse to tmp/entries/index.html for the front page of the Encyclopedia.
+All content, indexes and category lists are underneath the entries
+directory. Actual entries are split according to the first letter of the
+filename - e.g., entries/a/a*.html, entries/b/b*.html etc.
+
+

@@ -1,0 +1,36 @@
+
+<project name="Encyclopedia" default="example" basedir=".">
+
+    <property name="base.package" value="net.sourceforge.yagsbook"/>
+
+    <path id="lib.path">
+        <pathelement location="../encyclopedia-1.0.0.jar"/>
+    </path>
+
+    <target name="example">
+        <taskdef name="encyclopedia" classpathref="lib.path"
+                 classname="${base.package}.encyclopedia.ant.EncyclopediaTask">
+        </taskdef>
+        <delete dir="tmp" quiet="true"/>
+        <mkdir dir="tmp"/>
+        <encyclopedia destination="tmp" config="config.xml">
+            <repository src="player"/>
+            <property name="detailCharacters" value="false"/>
+        </encyclopedia>
+    </target>
+
+    <target name="example-gm">
+        <taskdef name="encyclopedia" classpathref="lib.path"
+                 classname="${base.package}.encyclopedia.ant.EncyclopediaTask">
+        </taskdef>
+        <delete dir="tmp" quiet="true"/>
+        <mkdir dir="tmp"/>
+        <encyclopedia destination="tmp" config="config.xml">
+            <repository src="player"/>
+            <property name="detailCharacters" value="true"/>
+            <property name="showMasked" value="true"/>
+        </encyclopedia>
+    </target>
+
+</project>
+

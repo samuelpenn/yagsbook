@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+
+<article xmlns="http://yagsbook.sourceforge.net/xml">
+    <header>
+        <title>Cancha</title>
+        <tagline>Habisfern</tagline>
+
+        <slugline/>
+
+        <author>
+            <fullname>Samuel Penn</fullname>
+            <email>sam@glendale.org.uk</email>
+        </author>
+
+        <cvsinfo>
+            <version>$Revision: 1.1 $</version>
+            <date>$Date: 2006/02/05 17:16:41 $</date>
+        </cvsinfo>
+
+        <license type="Yags">
+            <year>2002</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                This document can be redistributed and/or modified
+                under the terms of the GNU Public License as published
+                by the Free Software Foundation version 2.
+            </text>
+        </license>
+
+        <style name="module"/>
+
+        <references>
+        </references>
+
+        <topics>
+            <subject uri="cancha">Cancha</subject>
+
+            <category>Kingdoms</category>>
+
+            <topic uri="cancha">Cancha</topic>
+            <topic uri="euressa">Euressa</topic>
+            <topic uri="habisfern">Habisfern</topic>
+        </topics>
+    </header>
+
+    <body>
+        <sect1>
+            <title>Cancha</title>
+
+            <para>
+                Compared to the other nations along the 
+                northwestern coast of Euressa, Cancha is stable 
+                and civilised. It is at war with no neighbours, 
+                and its major activity is trade.
+            </para>
+
+            <para>
+                A lot of the trade between Taneith and the 
+                mainland kingdoms passes through Cancha. It's 
+                lands are fertile and heavily populated, with a 
+                long line of strong kings who have managed to 
+                keep the status quo.
+            </para>
+
+            <para>
+                The current King is Malcolm IV, a tireless man in 
+                his forties whose main interest is the juggling 
+                of trade deals between the various factions.
+            </para>
+
+            <para>
+                Class structure in Cancha is very rigidly 
+                defined, with a developing bureacracy to keep 
+                everything in check.
+            </para>
+
+        </sect1>
+    </body>
+</article>
+
+

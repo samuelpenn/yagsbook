@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+
+<article xmlns="http://yagsbook.sourceforge.net/xml">
+    <header>
+        <title>Snaw</title>
+        <tagline>Habisfern</tagline>
+
+        <slugline/>
+
+        <author>
+            <fullname>Samuel Penn</fullname>
+            <email>sam@glendale.org.uk</email>
+        </author>
+
+        <cvsinfo>
+            <version>$Revision: 1.1 $</version>
+            <date>$Date: 2006/02/05 17:16:41 $</date>
+        </cvsinfo>
+
+        <license type="Yags">
+            <year>2004</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                This document can be redistributed and/or modified
+                under the terms of the GNU Public License as published
+                by the Free Software Foundation version 2.
+            </text>
+        </license>
+
+        <style name="module"/>
+
+        <references>
+        </references>
+
+        <topics>
+            <subject uri="snaw">Snaw</subject>
+
+            <category>Heroes</category>
+            <topic uri="old-world">Old World</topic>
+        </topics>
+    </header>
+
+    <body>
+        <sect1>
+            <title>Snaw</title>
+
+            <para>
+                Snaw was the son of Brokki, the king of the Ice Giants.
+                Snaw built his castle on the ruins of Ubra after the
+                fall of that city. He wielded the great axe Foe of
+                Summer, with which he can shatter stone and fell trees
+                with a single blow. If is forged from the coldest ice,
+                and stainedd red with the blood of men.
+            </para>
+
+            <para>
+                It was Snaw that led the war against Ideria and caused
+                that city  to be felled. However, Snaw was slain by the
+                sorceress Luthemil after many generations.
+            </para>
+
+        </sect1>
+    </body>
+</article>
+
+

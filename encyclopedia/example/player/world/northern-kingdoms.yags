@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+
+<article xmlns="http://yagsbook.sourceforge.net/xml">
+    <header>
+        <title>Northern Kingdoms</title>
+        <tagline>Habisfern</tagline>
+
+        <slugline/>
+
+        <author>
+            <fullname>Samuel Penn</fullname>
+            <email>sam@glendale.org.uk</email>
+        </author>
+
+        <cvsinfo>
+            <version>$Revision: 1.1 $</version>
+            <date>$Date: 2006/02/05 17:16:41 $</date>
+        </cvsinfo>
+
+        <license type="Yags">
+            <year>2004</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                This document can be redistributed and/or modified
+                under the terms of the GNU Public License as published
+                by the Free Software Foundation version 2.
+            </text>
+        </license>
+
+        <style name="module"/>
+
+        <references>
+            <see uri="urazen">Urazen</see>
+            <see uri="herzon">Herzon</see>
+            <see uri="niemstarg">Niemstarg</see>
+        </references>
+
+        <topics>
+            <subject uri="northern-kingdoms">Northern Kingdoms</subject>
+
+            <category>Places</category>>
+
+            <topic uri="euressa">Euressa</topic>
+            <topic uri="northern-kingdoms">Northern Kingdoms</topic>
+            <topic uri="niemstarg">Niemstarg</topic>
+        </topics>
+    </header>
+
+    <body>
+        <sect1>
+            <title>Northern Kingdoms</title>
+
+            <para>
+                The kingdoms making up the northern coast of Euressa. They
+                were all settled at a similar time, with the original
+                People of Rorn moving east to west across the coast, until
+                the most adventurous of them finally settled in
+                <qv uri="taneith">Taneith</qv>.
+            </para>
+
+            <para>
+                Everything from the <qv uri="white-peninsula">White
+                Peninsula</qv> to <qv uri="urazen">Urazen</qv> is considered
+                to be part of the <e>Northern Kingdoms</e>.
+            </para>
+        </sect1>
+    </body>
+</article>
+
+
