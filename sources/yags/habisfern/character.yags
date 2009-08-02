@@ -1,0 +1,1224 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="/usr/share/xml/yagsbook/article/xslt/html/yagsbook.xsl"
+                 type="text/xsl"?>
+
+<article xmlns="http://yagsbook.sourceforge.net/xml"
+         xmlns:y="http://yagsbook.sourceforge.net/xml/yags">
+    <header>
+        <title>Habisfern Characters</title>
+        <tagline>Yags Habisfern</tagline>
+
+        <summary>
+            Creating characters for the Habisfern campaign.
+        </summary>
+
+        <author>
+            <fullname>Samuel Penn</fullname>
+            <email>sam@glendale.org.uk</email>
+        </author>
+
+        <cvsinfo>
+            <version>$Revision: 1.43 $</version>
+            <date>$Date: 2007-09-09 09:58:44 $</date>
+        </cvsinfo>
+
+        <license type="Yags">
+            <year>2003</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                This document can be redistributed and/or modified
+                under the terms of the GNU Public License as published
+                by the Free Software Foundation version 2.
+            </text>
+        </license>
+
+        <style name="character"/>
+    </header>
+
+    <body>
+        <sect1>
+            <title>The Habisfern Setting</title>
+
+            <para>
+                It has been five years since Queen Behrith received the
+                Kingdom of Weidany from her sister Godrun the Red. Both she
+                and her sister were put on the throne by the Cult of Neya
+                the Oathkeeper, just as all previous Queens before them
+                have been. It was the same cult that, 200 years ago,
+                fortold disaster for the Kingdom if ever a man sat on the
+                throne again. In that time, the royal line of the House of
+                Aethlfryth has remained strong, and the Kingdom has grown
+                in strength and size. The nobility of the other Houses may
+                plot and scheme to weaken the power of the Daughters of
+                Neya and their chosen Queens, but without a disaster to
+                break the popularity of the Queen, they can do little.
+            </para>
+
+            <para>
+                When they first came to this land, ten centuries ago, the
+                People of Rorn were fleeing the death of their god.
+                Betrayed by his own brother, the moon god was slain and
+                his killer took his place as first amongst the gods.
+                The Five Kingdoms fell into ruin and despair, and the
+                Wizard King of Bealurwic marched his dark armies across
+                their ruins.
+            </para>
+
+            <para>
+                Fleeing destruction, the People of Rorn came to the land
+                named Weidany, where another people already dwelt under
+                the cruel grip of the Druids. So the People liberated,
+                conquered, raped, pillaged and finally built new Kingdoms
+                out of the ashes which they could call their own.
+                Barbarians came, which they fought off. Blood thirsty
+                cults of the Goddess of War arose, which were put down.
+                The Druids tried to reclaim what was once theirs, but
+                they were defeated. For now. All of this is recorded in
+                the history of the People, which is known as the
+                <e>Habisfern Scrolls</e>.
+            </para>
+
+            <para>
+                But through it all, there lurks one enemy that cannot be
+                defeated. One foe whose breath is felt every Winter from a
+                time which predates the Five Kingdoms and the Old World
+                before that. It is the Northern Enemy, the Ice, and all it
+                seeks is the extinction of all life.
+            </para>
+
+            <sect2>
+                <title>The Lands</title>
+
+                <para>
+                    The Kingdom of Weidany, also known as the Kingdom of
+                    the People of Rorn, is a large fertile region in the
+                    northwest of the island called Euressa. It is a large
+                    isle, almost 600 leagues from end to end, and most of
+                    it is unknown and unexplored as far as the people of
+                    the Kingdom are concerned.
+                </para>
+
+                <para>
+                    The Kingdom considers itself to be the most civilised
+                    nation, and views its neighbours as barbarians which
+                    need to be tamed. This viewpoint isn't completely
+                    wrong, but in reality is overly simplified.
+                </para>
+
+                <sect3>
+                    <title>Bryteland</title>
+
+                    <para>
+                        What they know of is their neighbours. Further north
+                        and west are the barbarian kingdoms of Bryteland, who
+                        send raiding ships down the coast every autumn. They
+                        are a proud and warlike country, constantly threatened
+                        by the followers of inhuman gods on their own borders.
+                    </para>
+
+                    <para>
+                        Bryteland is not a single kingdom, but five, and
+                        there is constant friction between them. To them,
+                        kin is more important then King, a fact which has
+                        made the lands difficult to unify. To fight bravely
+                        in battle, to give generously of your goods and to
+                        fulfill your obligations to your kin are the
+                        important morals of Brytish society. Most other
+                        things are optional.
+                    </para>
+                </sect3>
+
+                <sect3>
+                    <title>Cadwold</title>
+
+                    <para>
+                        Until recently, Cadwold was controlled by the Druids,
+                        but an invasion by Weidany drove out the Druids and
+                        brought the land their under the control of the
+                        Kingdom. Since then, Cadwold has rebelled, and is
+                        now claiming independence. A war is still being
+                        fought over who has control over the country.
+                    </para>
+                </sect3>
+
+                <sect3>
+                    <title>Nailand</title>
+
+                    <para>
+                        Nailand is a vast grassland inhabited by a
+                        barbarian culture known as the short folk. It
+                        stretches east and south of Weidany, and few have
+                        much experience of its reaches. Constant border
+                        wars are an attempt to tame the barbarians, and
+                        to claim more land for the Kingdom.
+                    </para>
+                </sect3>
+            </sect2>
+        </sect1>
+
+        <sect1>
+            <title>Building a Character</title>
+
+            <para>
+                Before designing a character for play in the world of
+                <e>Habisfern</e>, you will need to decide the type of
+                character you want to play. <e>Habisfern</e> consists
+                almost entirely of humans, though there are a number
+                of different cultures to choose from.
+            </para>
+
+            <note title="Work in Progress">
+                <para>
+                    This is undergoing major re-write to bring in
+                    line with the no points based system. The old
+                    package based system is being ripped out, so
+                    some of it may not make sense.
+                </para>
+            </note>
+
+            <para>
+                Your choice of profession can range from a vagabound or
+                outlaw to a noble lord or lady, plus bards, religious
+                cultists or other members of society. How you define your
+                character is completely up to you.
+            </para>
+
+            <sect2>
+                <title>Mechanics</title>
+
+                <para>
+                    Apart from personality and background which are not
+                    represented within the rules of the game, a character is
+                    described by their <e>attributes</e>, <e>skills</e> and
+                    <e>advantages</e>. The latter can only be chosen at
+                    character generation, and cannot be gained during play,
+                    so they act to differentiate the character throughout
+                    their life. Attributes and skills can be improved within
+                    play, so their long term usefulness does not need to
+                    be considered so much.
+                </para>
+
+                <sect3>
+                    <title>Attributes</title>
+
+                    <para>
+                        There are eight primary attributes which are used
+                        to define a character (and indeed, every creature
+                        within the game). These attributes are:
+                        <t>Strength</t>, <t>Health</t>, <t>Agility</t>,
+                        <t>Dexterity</t>, <t>Perception</t>,
+                        <t>Intelligence</t>, <t>Empathy</t> and
+                        <t>Will</t>.
+                    </para>
+
+                    <para>
+                        These attributes default to 3 unless you buy them
+                        up (or down) during character generation. They can
+                        be improved during the game, though improvement is
+                        slow. Each attribute represents the character's
+                        natural ability in each area, and can range from
+                        2 to 5 during character generation.
+                    </para>
+
+                    <para>
+                        An attribute of 2 indicates that you are
+                        significantly worse than the average in that
+                        attribute. Conversely, an attribute of 4 represents
+                        noticeably above average ability, and 5 exceptional
+                        ability.
+                    </para>
+
+                    <sect4>
+                        <title>Strength</title>
+
+                        <para>
+                            With a high strength you are able to carry more,
+                            move faster and hit harder than other people.
+                            Strength is useful for warriors.
+                        </para>
+                    </sect4>
+
+                    <sect4>
+                        <title>Health</title>
+
+                        <para>
+                            With a high health you are able to continue
+                            going for longer, shrug off the effects of
+                            poison or fatigue, and stay alive after being
+                            badly wounded.
+                        </para>
+                    </sect4>
+
+                    <sect4>
+                        <title>Agility</title>
+
+                        <para>
+                            A high agility allows you to react quicker and
+                            move faster than other people. You are also
+                            better at dodging, wrestling and brawling, as
+                            well as being a good climber and jumper.
+                            Agility is also used when sneaking.
+                        </para>
+                    </sect4>
+
+                    <sect4>
+                        <title>Dexterity</title>
+
+                        <para>
+                            High dexterity provides you with natural ability
+                            at filching and lock picking, but also with the
+                            use of swords and other melee weapons. Dexterity
+                            is useful for both warriors and thieves.
+                        </para>
+                    </sect4>
+
+                    <sect4>
+                        <title>Perception</title>
+
+                        <para>
+                            Perception is a measure of your ability to
+                            notice the world around you. A high perception
+                            means you are more likely to spot ambushes,
+                            notice a pick pocket or find a place to hide.
+                        </para>
+                    </sect4>
+
+                    <sect4>
+                        <title>Intelligence</title>
+
+                        <para>
+                            A high intelligence provides you with wits,
+                            memory and reasoning ability. Since you have a
+                            better memory, you can make better use of
+                            knowledge you have read or been taught. You are
+                            quicker at learning, and less likely to be
+                            confused by people.
+                        </para>
+                    </sect4>
+
+                    <sect4>
+                        <title>Empathy</title>
+
+                        <para>
+                            A high empathy allows you to understand the
+                            emotions and motivations of other people. If
+                            you so wish, you may use this to get on with
+                            them better. Fast talking, seduction and
+                            oratory all use empathy.
+                        </para>
+                    </sect4>
+
+                    <sect4>
+                        <title>Will</title>
+
+                        <para>
+                            A high will enables you to keep control of your
+                            mind in times of stress. You are less likely to
+                            be tempted or fooled, and are able to keep cool
+                            in times of stress.
+                        </para>
+                    </sect4>
+                </sect3>
+
+                <sect3>
+                    <title>Skills</title>
+
+                    <para>
+                        Skills represent training and experience. There are
+                        eight basic skills (called talents) which every
+                        character has, plus a multitude of other skills
+                        which characters will not have unless they are
+                        bought specifically.
+                    </para>
+
+                    <para>
+                        When a skill check is made, you roll your attribute
+                        multiplied by your skill, + 1d20. This is compared
+                        against a target number, and if you equal or exceed
+                        the target, then you succeed. A moderate task is
+                        one which a professional would have a good chance
+                        of succeeding at, but still find challenging. Such
+                        a task has a target of 20.
+                    </para>
+                </sect3>
+            </sect2>
+
+
+            <sect2>
+                <title>Steps to Character Generation</title>
+
+                <sect3>
+                    <title>Choosing Priorities</title>
+
+                    <para>
+                        The first step in character generation is to choose
+                        how to prioritise your character's features. You have
+                        five things to decide upon - <e>Race</e>, <e>Status</e>
+                        <e>Attributes</e>, <e>Experience</e> and <e>Advantages</e>.
+                        Each must be given a priority from A to E, with A being
+                        the highest (best) priority, and E being the lowest
+                        (worst) priority.
+                    </para>
+
+                    <table>
+                        <title>Priority</title>
+                        <colspec colwidth="20mm"/>
+                        <colspec colwidth="13mm"/>
+                        <colspec colwidth="13mm"/>
+                        <colspec colwidth="13mm"/>
+                        <colspec colwidth="13mm"/>
+                        <colspec colwidth="13mm"/>
+
+                        <thead>
+                            <row>
+                                <entry>Category</entry>
+                                <entry>A</entry>
+                                <entry>B</entry>
+                                <entry>C</entry>
+                                <entry>D</entry>
+                                <entry>E</entry>
+                            </row>
+                        </thead>
+
+                        <tbody>
+                            <row>
+                                <entry>Race</entry>
+                                <entry>Fey</entry>
+                                <entry>Half</entry>
+                                <entry>Human</entry>
+                                <entry>Human</entry>
+                                <entry>Human</entry>
+                            </row>
+
+                            <row>
+                                <entry>Status</entry>
+                                <entry>High</entry>
+                                <entry>Noble</entry>
+                                <entry>Free</entry>
+                                <entry>Free</entry>
+                                <entry>Serf</entry>
+                            </row>
+
+                            <row>
+                                <entry>Attributes</entry>
+                                <entry>+6/6</entry>
+                                <entry>+3/5</entry>
+                                <entry>+1/4</entry>
+                                <entry>0/4</entry>
+                                <entry>0/3</entry>
+                            </row>
+
+                            <row>
+                                <entry>Experience</entry>
+                                <entry>60/6</entry>
+                                <entry>50/5</entry>
+                                <entry>40/4</entry>
+                                <entry>30/4</entry>
+                                <entry>20/4</entry>
+                            </row>
+
+                            <row>
+                                <entry>Advantages</entry>
+                                <entry>7</entry>
+                                <entry>5</entry>
+                                <entry>3</entry>
+                                <entry>1</entry>
+                                <entry>0</entry>
+                            </row>
+                        </tbody>
+                    </table>
+
+                    <para>
+                        Most of the time <e>Race</e> can be
+                        set to be lowest (E) and <e>Status</e> to be second
+                        lowest (D), with the other three being arrange as
+                        desired.
+                    </para>
+
+                    <sect4>
+                        <title>Race</title>
+
+                        <para>
+                            Most people in the campaign world are humans,
+                            born of mortal parents with very little that
+                            is strange about them. This doesn't prevent
+                            them going off and performing heroic deeds or
+                            anything. If you want to be human, then
+                            simple put <e>Race</e> as priority E.
+                        </para>
+
+                        <para>
+                            If you wish to be non-human - a Fey, born of
+                            the realms of magic - then you must take
+                            <e>Race</e> as priority A. This can provide
+                            certain benefits, but does mean that you can't
+                            choose the best options in other areas.
+                        </para>
+
+                        <para>
+                            If you take <e>Race</e> as B, then you are
+                            half-fey - one of your parents was mortal.
+                            You have some of the abilities (and looks) of
+                            the Fey, but you are not a pure blood.
+                        </para>
+                    </sect4>
+
+                    <sect4>
+                        <title>Status</title>
+
+                        <para>
+                            <e>Social Status</e> is a measure of where you
+                            are in society. Indirectly, it is also a
+                            measure of wealth. In <e>Habisfern</e>, only
+                            the nobility are truly wealthy. Anyone who
+                            comes into wealth who is not a noble, will
+                            either have their wealth taken away, or be made
+                            into a noble.
+                        </para>
+
+                        <para>
+                            It is assumed that most PCs will begin the game
+                            as a free man, with a priority of D. If you wish
+                            to be a low ranking noble, then you need to take
+                            this as priority B.
+                        </para>
+                    </sect4>
+                </sect3>
+
+                <sect3>
+                    <title>Choose Advantages</title>
+
+                    <para>
+                        <e>Advantages</e> provide your character with an
+                        edge over others. Most affect what your character
+                        can do what they look like, for example
+                        <e>Large</e> or <e>Beautiful</e>. Since advantages
+                        cannot be purchased after character generation,
+                        they are a way to make your character unique.
+                    </para>
+
+                    <para>
+                        Some advantages affect your character's background,
+                        such as providing wealth or powerful friends. There
+                        is nothing preventing your character obtaining
+                        these during the game, but not by spending points.
+                        Likewise, there's nothing preventing your character
+                        loosing these either once the game begins.
+                    </para>
+
+                    <sect4>
+                        <title>Attributes</title>
+
+                        <para>
+                            Amongst the list of advantages are those which
+                            enable you to take above average attributes. If
+                            you do not purchase any of these, then all your
+                            attributes will default to 3 - the human average.
+                        </para>
+
+                        <para>
+                            Attributes can be improved during the game.
+                        </para>
+                    </sect4>
+
+                    <sect4>
+                        <title>Traits</title>
+
+                        <para>
+                            You may also purchase Traits at this point. Each
+                            trait is a measure of part of your character's
+                            personality, and they can provide bonuses when
+                            making certain checks to avoid fear or temptation.
+                        </para>
+
+                        <para>
+                            One special trait is <e>Luck</e>, which has the
+                            most useful benefit of enabling you to re-roll
+                            dice and cheat death.
+                        </para>
+
+                        <para>
+                            Traits can change during the game.
+                        </para>
+                    </sect4>
+                </sect3>
+
+                <sect3>
+                    <title>Skills</title>
+
+                    <para>
+                        Most of your character's skills will be obtained
+                        from the package you chose initially. However, you
+                        have the option of customising your character by
+                        adding further skills. Extra skills can be obtained
+                        by starting your character older than the default
+                        age (normally 16 for most packages).
+                    </para>
+
+                    <para>
+                        Each extra year of age gives you 2 experience
+                        points to spend on buying extra skills.
+                    </para>
+                </sect3>
+
+                <sect3>
+                    <title>The Finishing Touches</title>
+
+                    <para>
+                        The last part of character generation is to
+                        finish off your character's background and
+                        personality (most of this may have come out
+                        of previous selections), and finally to choose
+                        a name for your character.
+                    </para>
+
+                    <para>
+                        Examples of names are provided in the Habisfern
+                        Encyclopedia, though any Saxon (or Saxon sounding)
+                        name will do.
+                    </para>
+                </sect3>
+            </sect2>
+        </sect1>
+
+        <sect1>
+            <title>Character Packages</title>
+
+            <para>
+
+                Every character is begun by choosing one of the many
+                character packages available. Each package provides the
+                character with a social class, broad background and a set
+                of skills. The idea of a package is to determine what the
+                character has been doing up until this point. After
+                character generation, the chosen package has no further
+                direct relevance.
+            </para>
+
+            <para>
+                Not all packages are equal, especially if the total number
+                of skills provided by each is taken as a guide. Not all
+                skills are equal however, and some of the better packages
+                have restrictions in other ways - the character may have
+                obligations, responsibilities and an image to maintain.
+            </para>
+
+            <para>
+                <e>Standard packages</e> are available to pretty much anyone.
+                Also available are packages unique to a particular culture.
+                The GM will determine where in the campaign your characters
+                will be based, and this may restrict which cultures are
+                available to you.
+            </para>
+
+            <sect2>
+                <title>Standard Packages</title>
+
+                <para>
+                    Most packages assume that character is male.
+                    <e>Habisfern</e> is a male dominated society, and
+                    women are expected to look after the home and
+                    raise the children. However, there is a Queen on the
+                    throne of Weidany, and one of the most powerful
+                    religions is female only, which means things can be
+                    different for strong willed women. Most women will
+                    not be questioned if they take a stronger role,
+                    though it is not the norm, and there will always
+                    be some who object.
+                </para>
+
+                <para>
+                    Most packages also assume that the character is not
+                    a landowner, but may be the first child of a landowner
+                    or noble. If desired, you may make your character the
+                    principle landowner, but this brings with it
+                    responsibilities which may restrict what your character
+                    can do. Likewise, packages which come with property
+                    and responsibilities can be modified the opposite way.
+                </para>
+
+                <sect3>
+                    <title>Freemen</title>
+
+                    <para>
+                        Freemen include all those who are not considered
+                        nobles, but who are also not indebted to another.
+                        Collectively, freemen are known as <e>ceorls</e>,
+                        though this social rank is subdivided into
+                        <e>gebur</e> (barely free), <e>kotsetla</e>
+                        (mostly free) and <e>geneat</e> (completely free).
+                        Player characters are assumed to be geneat
+                        unless they choose otherwise. The distinction is
+                        mostly one of wealth - gebur (and to a lesser
+                        extent kotsetla) do not own enough land to support
+                        themselves and their family, so must work their
+                        lord's land to make up the difference. This doesn't
+                        leave them much time to do the interesting things
+                        player characters tend to want to do.
+                    </para>
+
+                    <para>
+                        Here, freemen also includes those outside of the
+                        normal social structure - bandits, rogues and
+                        others who support themselves via independent
+                        means.
+                    </para>
+
+                    <import-characters href="packages/freemen.yags"/>
+                </sect3>
+
+                <sect3>
+                    <title>Nobility</title>
+
+                    <para>
+                        The nobility given here are the lowest ranks of
+                        those who would consider themselves noble. Nobility
+                        does not guarantee wealth, but it does guarantee
+                        responsibility - at least in theory, if not
+                        practise. A noble either owns a significant amount
+                        of land, or is part of a family that does. That
+                        land requires someone to look after it, and if the
+                        PC is unable to do so (because troll hunting is
+                        considered to be more fun), then they may loose it.
+                    </para>
+
+                    <para>
+                        These noble ranks are not heraditory, and if
+                        ownership of the land is lost, then so is the
+                        title of noble.
+                    </para>
+
+                    <import-characters href="packages/lownobles.yags"/>
+                </sect3>
+            </sect2>
+        </sect1>
+
+        <sect1>
+            <title>Advantages and Disadvantages</title>
+
+            <para>
+                A character may be fleshed out with special abilities
+                known as <e>advantages</e>. They may also take
+                <e>disadvantages</e> which are detrimental to the
+                character. Only a certain number of points can be spent
+                on advantages, some of which may already have been spent
+                on raising attributes.
+            </para>
+
+            <para>
+                A typical character will have 10 points to spend.
+            </para>
+
+            <para>
+                It is suggested that a character not have more than 10
+                points of disadvantages. Disadvantages count as negative
+                points and offset advantages, attributes and skills that
+                have been bought.
+            </para>
+
+            <sect2>
+                <title>Heroic Characters</title>
+
+                <para>
+                    If the GM wishes, characters may begin with access to
+                    a greater or fewer number of advantages than the
+                    suggested default. For more heroic characters, it may
+                    be desired to start with more advantages for free.
+                    These free advantages can be spent without needing to
+                    purchase matching disadvantages.
+                </para>
+
+                <para>
+                    The following table gives some guidelines, showing the
+                    number of free advantages, and the maximum number of
+                    disadvantages that can be bought. A Hero for example
+                    gets 5 free advantages, plus can get another 10 by
+                    taking 10 disadvantages.
+                </para>
+
+                <targetlist>
+                    <item target="0/5" value="Commoner.">
+                        Most people will be fairly average, so will have
+                        few advantages or disadvantages.
+                    </item>
+
+                    <item target="0/10" value="Adventurer.">
+                        The suggested average for PCs, you will be able to
+                        choose more options in order to be more interesting,
+                        though you don't get any free advantages.
+                    </item>
+
+                    <item target="5/10" value="Hero.">
+                        As a Hero, you get 5 free advantages to spend. A
+                        common use of this is to raise the good attribute
+                        you get as part of your package to be exceptional.
+                    </item>
+
+                    <item target="10/10" value="Legend.">
+                        You can be considerably above average without
+                        having to take any disadvantages. It's probably
+                        more interesting to take the disadvantages and
+                        extra advantages that go with them however in
+                        order to be truly exceptional.
+                    </item>
+                </targetlist>
+            </sect2>
+
+            <sect2>
+                <title>Traits</title>
+
+                <para>
+                    <e>Traits</e> are a measure of a character's
+                    personality or mental well being. They are all
+                    considered to be zero unless they are bought with
+                    advantages or disadvantages. All traits range in
+                    value from zero to five.
+                </para>
+
+                <para>
+                    Traits may come into play during times of stress,
+                    when the actions of a character are dictated by
+                    the roll of a die rather than the wishes of the
+                    player. The player may wish their character to
+                    stand fast against a charging ogre, however a
+                    fear check may result in the character turning
+                    and running instead.
+                </para>
+
+                <para>
+                    Traits which help a player keep control of their
+                    character in such situations are considered to be
+                    advantages. Those which cause the character to act
+                    on their instincts instead are considered
+                    disadvantages. However, society in Habisfern considers
+                    the suppression of emotion to be a bad thing,
+                    especially when taken to the extreme. Those that
+                    refuse to act through logic rather than out of
+                    passion are considered tools of the Ice, which is
+                    the enemy of passion and lust.
+                </para>
+
+                <sect3>
+                    <title>Valour and Cowardice</title>
+
+                    <para>
+                        <e>Valour</e> is a measure of how brave and heroic
+                        a person is, whilst <e>Cowardice</e> represents
+                        a fearful, timid person who flees from danger.
+                        When a fear, horror or morale check is called for,
+                        then <e>Valour</e> adds to the character's Will,
+                        and <e>Cowardice</e> subtracts from it.
+                    </para>
+
+                    <para>
+                        A valorous character will gain a reputation of
+                        being brave, heroic and possibly foolhardy. A
+                        cowardly character will be known to run at the
+                        first sign of trouble.
+                    </para>
+
+                    <targetlist targetFirst="true">
+                        <targetLabel>Valour</targetLabel>
+                        <valueLabel>Attitude</valueLabel>
+
+                        <item target="1">
+                            You are braver than then average person, and
+                            though you won't actively seek out danger, you
+                            will take the leed when no-one else is willing.
+                        </item>
+
+                        <item target="2">
+                            You are used to danger, and though you are
+                            still careful you don't often show fear. Only
+                            serious danger will make you think twice.
+                        </item>
+
+                        <item target="3">
+                            You are heedless of danger.
+                        </item>
+                    </targetlist>
+                </sect3>
+
+
+                <sect3>
+                    <title>Lust and Chastity</title>
+
+                    <para>
+                        A character with a high <e>Lust</e> enjoys, and is
+                        tempted by, the pleasures of the flesh. The gods
+                        of chaos look on Lust as a good thing, holding it
+                        in high regard, for it is the enemy of the Ice.
+                        A character <e>Chastity</e> has little interest
+                        in sexual pleasure, and is able to resist
+                        temptation with relative ease.
+                    </para>
+
+                    <para>
+                        Those with <e>Lust</e> suffer a penalty to their
+                        Will when resisting such temptation equal to the
+                        level of their trait, and those with
+                        <e>Chastity</e> gain a bonus to Will.
+                    </para>
+                </sect3>
+
+                <sect3>
+                    <title>Ferocity and Restraint</title>
+
+                    <para>
+                        A person with the <e>Ferocity</e> trait is
+                        easily angered, and prone to use violence to
+                        solve problems. Someone who has <e>Restraint</e>
+                        will tend to ignore insults, and when violence i
+                        used it will be in a measured and controlled way.
+                    </para>
+                </sect3>
+
+                <sect3>
+                    <title>Indulgence and Temperance</title>
+
+                    <para>
+                        A person with a trait of <e>Indulgence</e> enjoys
+                        indulging in food and alcohol, often to excess.
+                        A person with <e>Temperance</e> on the other
+                        hand, has little fondness of such things and
+                        finds such temptations easy to resist.
+                    </para>
+                </sect3>
+
+                <sect3>
+                    <title>Luck and Cursed</title>
+
+                    <para>
+                        Lucky characters have a <e>Luck</e> trait which
+                        is rarely used for Will checks, however the GM
+                        may sometimes make a luck roll for the character
+                        or group, in which any Luck traits will play
+                        a part.
+                    </para>
+
+                    <para>
+                        A <e>Cursed</e> character has been abandoned by
+                        Fate. Chance will rarely favour the character,
+                        and whenever a luck roll is made, then their
+                        <e>Cursed</e> trait acts as a penalty.
+                    </para>
+                </sect3>
+
+                <sect3>
+                    <title>Ego and Submissive</title>
+
+                    <para>
+                        <e>Ego</e> is a measure of a character's sense of
+                        personal importance. A character with a high
+                        <e>Ego</e> is strong willed and difficult to sway
+                        with talk or magic. Their trait adds to their Will
+                        when resisting both magical and non-magical
+                        attempts at persuasion or mind control.
+                    </para>
+
+                    <para>
+                        However, Ego does make a character hard to get on
+                        with.
+                    </para>
+                </sect3>
+            </sect2>
+
+            <sect2>
+                <title>List of Advantages</title>
+
+                <sect3>
+                    <title>Common Advantages</title>
+
+                    <y:import-advantages type="advantage">
+                        <y:adv>options/advantages.yags</y:adv>
+                        <y:adv>../core/options/advantages.yags</y:adv>
+                        <y:adv>../core/options/background.yags</y:adv>
+                    </y:import-advantages>
+                </sect3>
+
+                <sect3>
+                    <title>Common Disadvantages</title>
+
+                    <y:import-advantages type="disadvantage">
+                        <y:adv>options/advantages.yags</y:adv>
+                        <y:adv>../core/options/advantages.yags</y:adv>
+                        <y:adv>../core/options/background.yags</y:adv>
+                    </y:import-advantages>
+                </sect3>
+
+                <sect3>
+                    <title>Bryteland</title>
+
+                    <y:import-advantages
+                        source="/usr/share/xml/habisfern"
+                        topic="bryteland"
+                        role="background"/>
+                </sect3>
+
+                <sect3>
+                    <title>Weidany</title>
+
+                    <y:import-advantages
+                        source="/usr/share/xml/habisfern"
+                        topic="weidany"
+                        role="background"/>
+                </sect3>
+
+                <sect3>
+                    <title>Cults</title>
+
+                    <para>
+                        If a character is a member of a cult, they may have
+                        access to some techniques. Techniques are purchased
+                        like advantages, however they are linked to a skill,
+                        and the skill must be at a given level before the
+                        technique can be learnt.
+                    </para>
+
+                    <para>
+                        Some techniques also have prerequisites in that other
+                        techniques must be learnt first.
+                    </para>
+
+                    <y:import-advantages
+                        source="/usr/share/xml/habisfern"
+                        topic="habisfern"
+                        role="technique"/>
+                </sect3>
+            </sect2>
+        </sect1>
+
+        <sect1>
+            <title>Skills</title>
+
+            <sect2>
+                <title>Skills by Groups</title>
+
+                <para>
+                    The following lists all the skills according to
+                    various groups. Skills which belong to more than
+                    one group are listed multiple times. When
+                    designing a character that you want to be good at
+                    some type of thing, these grouping can give an
+                    idea about which skills to buy.
+                </para>
+
+                <y:list-skills maxTech="3">
+                    <y:skills>options/skills.yags</y:skills>
+                    <y:skills>../core/skills/standard-skills.yags</y:skills>
+                    <y:skills>../core/skills/combat-skills.yags</y:skills>
+                    <y:skills>../core/skills/business-skills.yags</y:skills>
+                    <y:skills>../core/skills/investigation-skills.yags</y:skills>
+                    <y:skills>../core/skills/occult-skills.yags</y:skills>
+                    <y:skills>../core/skills/outdoor-skills.yags</y:skills>
+                </y:list-skills>
+            </sect2>
+
+            <sect2>
+                <title>Skill Descriptions</title>
+
+                <y:import-skills maxTech="3">
+                    <y:skills>options/skills.yags</y:skills>
+                    <y:skills>../core/skills/standard-skills.yags</y:skills>
+                    <y:skills>../core/skills/combat-skills.yags</y:skills>
+                    <y:skills>../core/skills/academic-skills.yags</y:skills>
+                    <y:skills>../core/skills/business-skills.yags</y:skills>
+                    <y:skills>../core/skills/investigation-skills.yags</y:skills>
+                    <y:skills>../core/skills/occult-skills.yags</y:skills>
+                    <y:skills>../core/skills/outdoor-skills.yags</y:skills>
+
+                    <y:techniques>../core/techniques/combat.yags</y:techniques>
+                    <y:techniques>../core/techniques/physical.yags</y:techniques>
+                    <y:techniques>../core/techniques/social.yags</y:techniques>
+                </y:import-skills>
+            </sect2>
+        </sect1>
+
+        <sect1>
+            <title>Luck</title>
+
+            <para>
+                <e>Habisfern</e> is a world where fate and destiny are
+                seen to be a very real part of everyday life. For some
+                people, Fate will guide them towards their goal, for
+                others, Fate may try to drag them down to their doom.
+                In Habisfern, whether Fate has an interest in a character
+                is represented by the <e>Luck</e> and <e>Cursed</e>
+                traits.
+            </para>
+
+            <para>
+                The GM may at certain points in an adventure call for a
+                Luck check. Some checks can be determined to see how
+                many guards are on duty, if a window has been left open
+                etc. If the character succeeds, then things work out in
+                the character's favour.
+            </para>
+
+            <targetlist targetFirst="true">
+                <targetLabel>Chance</targetLabel>
+                <valueLabel>Circumstance</valueLabel>
+
+                <item target="5" value="Likely.">
+                    Event is very likely to happen unless the
+                    character is particularly unlucky.
+                </item>
+
+                <item target="10" value="Evens.">
+                </item>
+
+                <item target="15" value="Unlikely.">
+                </item>
+
+                <item target="20" value="Improbable.">
+                </item>
+            </targetlist>
+
+            <sect2>
+                <title>Using Luck</title>
+
+                <para>
+                    Luck may also be used to cheat death. At any point,
+                    a character with at least one point of <e>Luck</e>
+                    may spend it, loosing it permanently, in order
+                    to remain alive after a death result.
+                </para>
+
+                <para>
+                    Instead of being dead, the character is left in a
+                    state of being stable but fatally wounded. It cannot
+                    be relied upon entirely - being only wounded after
+                    falling into a pit of lava still leaves you in a
+                    pit of lava.
+                </para>
+            </sect2>
+        </sect1>
+
+        <sect1>
+            <title>Experience Progression</title>
+
+            <para>
+                The principle way for a character to improve their skills
+                and attributes in Yags is through training and study. Since
+                how this is done is described in the <e>Campaign</e>
+                article, it is not discussed here. However,
+                <e>Habisfern</e> also allows characters to gain experience
+                from performing heroic deeds. Depending on how often
+                a character has an <e>adventure</e>, such experience may
+                be quicker or slower than training.
+            </para>
+
+            <para>
+                Normally, a character is assumed to gain about 2 points
+                of experience per average game session. This normally
+                assumes an evening of play. A particularly intensive
+                session would warrent 3 points, a light session only 1.
+            </para>
+
+            <para>
+                If individual characters or players stood out during
+                the session, then a bonus point may also be gained.
+            </para>
+
+            <para>
+                Experience may be spent in the following ways.
+            </para>
+
+            <itemlist order="1">
+                <item>
+                    Any skill which currently has a score of 3 or less may
+                    have one experience point placed on it.
+                </item>
+
+                <item>
+                    One skill of four or higher, or a single attribute,
+                    or a single trait may have one experience point placed
+                    on it. Only one of these options may be chosen for a
+                    single session.
+                </item>
+
+                <item>
+                    Any number of points may be placed into any number
+                    of techniques, as long as the prerequisites for the
+                    technique have been met.
+                </item>
+            </itemlist>
+
+            <para>
+                The GM may wish to enforce players only spending experience
+                on skills that have actually been used during the session.
+            </para>
+
+            <sect2>
+                <title>Improving Skills</title>
+
+                <para>
+                    Skills can be raised with experience, at a cost
+                    equal to the level the skill is being raised to.
+                    Knowledge skills always require some source of
+                    knowledge available if it is to be raised.
+                </para>
+
+                <para>
+                    A technique cannot be used until the full cost of
+                    the technique has been paid for.
+                </para>
+            </sect2>
+
+            <sect2>
+                <title>Improving Attributes</title>
+
+                <para>
+                    Attributes can be raised with experience, at a cost
+                    equal to three times the level the character is
+                    raising the attribute to. So an attribute of three
+                    will cost 12 points to raise it to 4.
+                </para>
+            </sect2>
+
+            <sect2>
+                <title>Advantages</title>
+
+                <para>
+                    It is not possible to buy new advantages after
+                    character generation. It may be possible to gain an
+                    advantage (or something similar to it) in play,
+                    but it does not need to be paid for.
+                </para>
+
+                <para>
+                    Similarly, disadvantages cannot, or do not need to be,
+                    paid off. If the character starts with an Enemy, and
+                    manages to remove the Enemy in game, then they are
+                    no longer have an enemy. There is no requirement that
+                    they pick up a new enemy (though they may if there is
+                    an in-game reason to do so), or have to take a new
+                    disadvantage to replace the old one.
+                </para>
+            </sect2>
+
+            <sect2>
+                <title>Traits</title>
+
+                <para>
+                    Traits may be raised (or reduced) during the game, as
+                    long as the GM is happy that the character is being
+                    played in a way that corresponds to the direction the
+                    trait is going. A character with a trait of Valorous,
+                    who is being played as a coward, cannot have their
+                    Valorous trait increased. A character with Cowardice
+                    who was being played as a coward, but who showed signs
+                    that they were trying not to be a coward, could
+                    buy off their Cowardice trait however.
+                </para>
+
+                <para>
+                    It costs 10 experience points to change a Trait by one
+                    level.
+                </para>
+            </sect2>
+        </sect1>
+    </body>
+</article>
+
+

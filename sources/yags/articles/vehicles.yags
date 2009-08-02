@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<?xml-stylesheet
+    href="/usr/share/xml/yagsbook/article/xslt/html/yagsbook.xsl"
+    type="text/xsl"?>
+
+<article xmlns="http://yagsbook.sourceforge.net/xml"
+         xmlns:y="http://yagsbook.sourceforge.net/xml/yags">
+
+    <header>
+        <title>Spacecraft</title>
+        <tagline>Yags</tagline>
+
+        <summary>
+            Designing, building and using spacecraft in Yags. These are
+            an extension to the vehicle rules.
+        </summary>
+
+        <author>
+            <fullname>Samuel Penn</fullname>
+            <email>sam@glendale.org.uk</email>
+        </author>
+
+        <cvsinfo>
+            <version>$Revision: 1.11 $</version>
+            <date>$Date: 2008-07-20 22:22:03 $</date>
+        </cvsinfo>
+
+        <license type="Yags">
+            <year>2008</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                This document can be redistributed and/or modified
+                under the terms of the GNU Public License as published
+                by the Free Software Foundation version 2.
+            </text>
+        </license>
+
+        <style name="combat"/>
+    </header>
+
+    <body>
+        <sect1>
+            <title>Spacecraft</title>
+
+            <para>
+                Spacecraft are just a subset of vehicles, but they tend to
+                fit into a special category of their own, especially in
+                science fiction settings. Whilst cars and tanks tend to be
+                used in the same sort of scales as characters, spacecraft
+                may be kilometres in size, and have weapon ranges in the
+                thousands or millions of kilometres. The distances and
+                time scales involved call for special consideration.
+            </para>
+
+            <note title="Wargaming Combat">
+                <para>
+                    Spaceship combat in <e>Yags</e> is designed so that it
+                    is possible to <e>wargame</e> it - represent spaceships
+                    on the table with models. This makes visualising what
+                    is going on much easier, since it's difficult to describe
+                    where everyone is in relation to each other without any
+                    fixed reference points.
+                </para>
+
+                <para>
+                    A suggested scale is 1" = 1000km. Space ships are assumed to
+                    be point targets unless they are really big.
+                </para>
+            </note>
+
+            <para>
+                How quickly a spacecraft moves is measured by its
+                <e>acceleration</e>, which is given in 'g'. Every
+                'g' of acceleration allows the ship to accelerate
+                up to (roughly) 1000km/turn/turn.
+            </para>
+
+            <sect2>
+                <title>Weapons</title>
+
+                <para>
+                    Space is big, really big, and the ranges of many
+                    space-born weapons are huge compared to the sort
+                    of scales present in ground combat.
+                </para>
+
+                <para>
+                    The <e>short range</e> of a space weapon is the distance
+                    at which it does the stated damage. Each increment of
+                    the short range reduces the damage by -25.
+                </para>
+
+                <para>
+                    Since such weapons are designed to be used at massive
+                    distances, the distance increment is normally in
+                    multiples of 1km.
+                </para>
+            </sect2>
+        </sect1>
+    </body>
+</article>
+
+

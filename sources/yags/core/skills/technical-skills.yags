@@ -1,0 +1,258 @@
+<?xml version="1.0"?>
+
+<!--
+    Modern skills, mostly sciences and engineering skills.
+
+    Copyright (c) 2005, Samuel Penn.
+    This document can be redistributed and/or modified under the terms
+    of the GNU Public License as published by the Free Software Foundation
+    version 2.
+
+    Version: $Revision: 1.2 $
+    Date:    $Date: 2007-08-29 19:56:01 $
+    Author: Samuel Penn
+-->
+
+<skill-list xmlns="http://yagsbook.sourceforge.net/xml/yags"
+            xmlns:y="http://yagsbook.sourceforge.net/xml/yags"
+            xmlns:yb="http://yagsbook.sourceforge.net/xml"
+            techniques="options/techniques.yags">
+
+
+
+    <skill name="Computer operation" type="skill">
+        <group>Technical</group>
+        <default>Intelligence</default>
+        <default>Electronic operation</default>
+
+        <short>The skill of using a computer.</short>
+
+        <description xmlns="http://yagsbook.sourceforge.net/xml">
+            <para>
+                This covers the skills needed to use a modern computer,
+                from switching it on to finding files, sending messages
+                and using common applications. At the higher levels,
+                programming, system administration and network
+                intrusion become possible. This skill covers a wide
+                range of complex of tasks, which are detailed elsewhere.
+            </para>
+        </description>
+
+        <examples>
+            <example target="10">
+                Looking for a particular file using easy criteria.
+            </example>
+
+            <example target="20">
+                Filtering information from a database and analysing
+                it (producing graphs, finding correlations).
+            </example>
+        </examples>
+    </skill>
+
+
+    <skill name="Communication systems">
+        <group>Technical</group>
+        <group>Military</group>
+
+        <short>Using radios and similar communications gear.</short>
+
+        <description xmlns="http://yagsbook.sourceforge.net/xml">
+            <para>
+                This skill provides advanced knowledge of how to use
+                communication devices such as radios. It does not just
+                cover how to switch a device on and talk into it, since
+                that is covered by basic <t>Intelligence</t>, but provides
+                in depth knowledge of how to fix it when things go wrong,
+                how to get around jamming, how to jam someone else's
+                communications, and how to improve signal strength.
+            </para>
+        </description>
+    </skill>
+
+    <skill name="Sensor systems">
+        <group>Technical</group>
+        <group>Military</group>
+
+        <short>Using radar, sonar and other sensor systems.</short>
+
+        <description xmlns="http://yagsbook.sourceforge.net/xml">
+            <para>
+                Provides knowledge and experience with using advanced
+                sensor systems, interpreting raw sensor data, knowing
+                how to evade and block sensors, and how to make best
+                use of an existing sensor network.
+            </para>
+
+            <para>
+                This provides far more knowledge than a person working in
+                traffic control would have, and it is a skill normally
+                only found in the military, in labs or amongst hackers.
+            </para>
+        </description>
+    </skill>
+
+    <skill name="Security systems">
+        <group>Technical</group>
+        <group>Rogue</group>
+
+        <short>Using and evading security.</short>
+
+        <description xmlns="http://yagsbook.sourceforge.net/xml">
+            <para>
+                Provides knowledge of using and by-passing electronic
+                security systems such as short range sensors, pressure
+                pads, electronic locks, iris and fingerprint scanners
+                etc. It can be used to forge ID to try and bypass such
+                systems.
+            </para>
+        </description>
+    </skill>
+
+    <skill name="Surveillance systems">
+        <group>Technical</group>
+        <group>Rogue</group>
+        <group>Military</group>
+        <group>Criminal</group>
+
+        <default>Security systems</default>
+
+        <short>Spying on people with electronic devices.</short>
+
+        <description xmlns="http://yagsbook.sourceforge.net/xml">
+            <para>
+                You know how to spy on people, often using the latest in
+                surveillance gadgets such as bugs, sound detectors,
+                hidden video cameras and the like. You have been trained
+                in how best to place such devices so that they gain
+                maximum coverage with minimum chance of detection.
+            </para>
+
+            <para>
+                This skill also provides knowledge of counter surveillance,
+                and can be used to find bugs or jam their signals. This
+                skill is very much focused on the use of electronics to
+                observe remotely - use of the mark I eyeball is covered
+                by basic Streetwise or Awareness.
+            </para>
+        </description>
+    </skill>
+
+
+    <skill name="Electronics">
+        <group>Technical</group>
+        <prerequisite>Electronics operation</prerequisite>
+
+        <short>Building electronic devices.</short>
+
+        <description xmlns="http://yagsbook.sourceforge.net/xml">
+            <para>
+                You have skill in building electronic devices, as well as
+                a good understanding of how they work and the theories on
+                which they are constructed.
+            </para>
+
+            <para>
+                There is a technique for each type of electronic device
+                that can be built. Knowing the correct technique halves
+                the difficulty for a task.
+            </para>
+        </description>
+    </skill>
+
+    <skill name="Machinest">
+        <group>Technical</group>
+        <default>Mechanics</default>
+
+        <short>Building tools</short>
+
+        <description xmlns="http://yagsbook.sourceforge.net/xml">
+            <para>
+                The skill of building high tech tools. Though absolutely
+                vital to a high tech society, most mechanics and engineers
+                can get away with buying standard parts from a local shop.
+                In a society where there isn't a ready availability of tools
+                and parts, most (if not all) engineers will have some
+                level of skill in <e>Machinest</e>.
+            </para>
+        </description>
+    </skill>
+
+    <skill name="Engineering">
+        <group>Technical</group>
+
+        <short>The science of building things.</short>
+
+        <description xmlns="http://yagsbook.sourceforge.net/xml">
+            <para>
+                The knowledge and skill of designing, building and repairing
+                machines, buildings and other structures. Engineering tends
+                towards the theoretical side of things, and does not
+                necessarily cover the everyday maintenance of such items.
+            </para>
+        </description>
+    </skill>
+
+    <skill name="Mechanics">
+        <group>Technical</group>
+        <default>Engineering</default>
+
+        <short>Fixing machines.</short>
+
+        <description xmlns="http://yagsbook.sourceforge.net/xml">
+            <para>
+                The skill of fixing mechanical devices when they break.
+            </para>
+        </description>
+    </skill>
+
+    <skill name="Electrician">
+        <group>Technical</group>
+        <default>Electronics</default>
+
+        <short>Fixing electrical things.</short>
+
+        <description xmlns="http://yagsbook.sourceforge.net/xml">
+            <para>
+                The skill of fixing electrical systems when they break.
+            </para>
+        </description>
+    </skill>
+
+    <skill name="Intelligence analysis" type="skill">
+        <group>Military</group>
+
+        <short>Analysing intelligence data.</short>
+
+        <description xmlns="http://yagsbook.sourceforge.net/xml">
+            <para>
+                You have been trained to analyse intelligence data in order
+                to understand what it means. You can look at troop movements
+                or supply movements for example and determine what the
+                enemy is planning.
+            </para>
+        </description>
+    </skill>
+
+    <skill name="Signal intelligence">
+        <group>Technical</group>
+        <group>Military</group>
+
+        <short>Using sensor and communications equipment.</short>
+
+        <description xmlns="http://yagsbook.sourceforge.net/xml">
+            <para>
+                You have been trained in the use of both communications and
+                sensor systems. Anyone can talk into a microphone or watch
+                a radar display, but you have indepth knowledge of how such
+                things actually work, and how best to interpret data from
+                them. You have been trained in the use of electronic warfare,
+                how to get the best range out of communications gear, how
+                to interpret poor quality signals, and how to make best
+                use of signals intelligence.
+            </para>
+        </description>
+    </skill>
+
+</skill-list>
+

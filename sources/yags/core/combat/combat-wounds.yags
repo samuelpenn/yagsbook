@@ -1,0 +1,607 @@
+<?xml version="1.0"?>
+<?xml-stylesheet
+    href="/usr/share/xml/yagsbook/article/xslt/html/yagsbook.xsl"
+    type="text/xsl"?>
+
+<article xmlns="http://yagsbook.sourceforge.net/xml"
+         xmlns:y="http://yagsbook.sourceforge.net/xml/yags">
+
+    <header>
+        <title>Combat (Wounds)</title>
+        <tagline>Yags</tagline>
+
+        <summary>
+            Basic combat rules, mostly for fantasy/historical combat.
+            Includes both melee and missile combat, as well as basic
+            movement, damage and armour rules.
+        </summary>
+
+        <author>
+            <fullname>Samuel Penn</fullname>
+            <email>sam@glendale.org.uk</email>
+        </author>
+
+        <cvsinfo>
+            <version>$Revision: 1.8 $</version>
+            <date>$Date: 2008-01-06 16:30:20 $</date>
+        </cvsinfo>
+
+        <license type="Yags">
+            <year>2004</year>
+            <holder>Samuel Penn</holder>
+            <text>
+                This document can be redistributed and/or modified
+                under the terms of the GNU Public License as published
+                by the Free Software Foundation version 2.
+            </text>
+        </license>
+
+        <style name="combat"/>
+    </header>
+
+    <body>
+        <sect1 id="damage">
+            <title>Damage, Stuns and Wounds</title>
+
+            <para>
+                Damage can take many forms, but it all comes down to one
+                of the three types - either <e>wounds</e>, <e>stuns</e> or
+                <e>mixed</e>. Related to damage is <e>fatigue</e> and
+                <e>exhaustion</e>.
+            </para>
+
+            <sect2>
+                <title>Wounds</title>
+
+                <para>
+                    Wounds represent serious injuries that penetrate the
+                    skin and potentially affect internal organs. They
+                    can lead to bleeding, infection and death. Wounds
+                    heal over a period of many weeks.
+                </para>
+            </sect2>
+
+            <sect2>
+                <title>Stuns</title>
+
+                <para>
+                    Stuns represent cuts and bruises which will generally
+                    heal naturally within a few days. They will rarely
+                    lead to death
+                </para>
+            </sect2>
+
+            <sect2>
+                <title>Fatigue</title>
+
+                <para>
+                    A character's fatigue is measured in a similar way to
+                    wounds, though the number of fatigue levels they have
+                    is based on their health, ranging from OK to
+                    Exhausted. If a character becomes Exhausted then they
+                    must immediately rest.
+                </para>
+
+                <para>
+                    Fatigue is normally short term, and can be lost in
+                    minutes. Exhaustion is gained through long term
+                    effort or lack of sleep, and can only be lost through
+                    a night of sleep. Exhaustion and fatigue stack
+                    together on the same track - two levels of
+                    fatigue and two levels of exhaustion add up to
+                    four levels on the fatigue track, and count as a
+                    single penalty as if the character had four levels
+                    of either.
+                </para>
+
+                <para>
+                    It is suggested that fatigue is kept track of on the
+                    character sheet by crossing off fatigue levels
+                    with a single line, and exhaustion with a cross.
+                    Exhaustion is always <e>first</e> on the line,
+                    and last to be lost.
+                </para>
+
+                <para>
+                    If you are <e>exhausted</e> through a combination of
+                    fatigue and exhaustion, and gain more fatigue or
+                    exhaustion, then one level of fatigue is changed to
+                    be exhaustion.
+                </para>
+            </sect2>
+
+            <sect2>
+                <title>Size effects on Damage</title>
+
+                <para>
+                    Damage against a creature which is 10 size points
+                    or more higher than the attacker have the damage
+                    type shifted down by a category (so <e>wounds</e> become
+                    <e>mixed</e>, <e>mixed</e> become <e>stuns</e> and
+                    <e>stuns</e> become <e>ineffective</e>).
+                </para>
+
+                <para>
+                    If the target is 15 size points larger, then the damage
+                    is shifted down two categories. These effects make
+                    larger weapons (spears and great swords for example)
+                    more effective against large creatures, since they
+                    offset this to some extent.
+                </para>
+
+                <para>
+                    The converse is also true. If the attacker is 10 size
+                    points or more larger than the target, then the damage
+                    type is shifted up one category, and up two categories
+                    if they are 15 size points higher. There is no damage
+                    category above <e>wounds</e>, so such damage is
+                    unaffected.
+                </para>
+            </sect2>
+
+            <sect2>
+                <title>Vehicle Scale Weapons</title>
+
+                <para>
+                    The use of <e>Vehicles</e> in <s>Yags</s> is covered
+                    more fully in a separate article. Vehicle mounted
+                    weapons can, if they hit, be very effective against
+                    human targets. Vehicle damage is either <e>Major</e>
+                    (similar to wounds) or <e>Minor</e> (similar to stuns).
+                    Either type of vehicle damage is treated the same
+                    against characters. Unless a character is in Heavy
+                    armour, a character gets <e>no</e> soak against
+                    vehicle scale weapons.
+                </para>
+
+                <para>
+                    A character in heavy armour has their total soak roll
+                    halved, and always suffers wounds.
+                </para>
+
+                <para>
+                    Character scale weapons against vehicles have their
+                    damage roll halved, and only cause <e>Minor</e> damage.
+                    Damage may also be shifted down due to the Size of
+                    the target. Character scale weapons shifted down
+                    have no effect against large vehicles (there is no
+                    <e>ineffective</e> damage against vehicles).
+                </para>
+
+                <para>
+                    If vehicle damage is shifted up a category against
+                    characters, then heavy armour is ignored, but there
+                    are otherwise no extra effects.
+                </para>
+
+                <para>
+                    Most man-portable firearms are considered to be Size 5.
+                    Anti-vehicle weapons (such as a tank's main gun) are
+                    normally Size 10 regardless of the size of the firing
+                    vehicle. Naval guns and artillery are Size 20.
+                </para>
+            </sect2>
+
+            <sect2>
+                <title>Damage types</title>
+
+                <sect3>
+                    <title>Explosive damage</title>
+
+                    <para>
+                        <e>Explosive</e> damage tends to affect all targets
+                        within an area, with less damage being caused to
+                        targets at the edge than near ground zero. When
+                        weapons cause explosive effects, they are listed as
+                        <s>Ex-X</s>, where <s>X</s> is the base radius of
+                        the explosion in metres.
+                    </para>
+
+                    <para>
+                        Out to the base radius, targets receive the full
+                        force of the explosion, and suffer <e>wounds</e>.
+                        Out to twice the radius, targets receive only
+                        mixed damage (but the damage rating is itself
+                        unchanged) and out to triple the radius
+                        <e>stuns</e> are caused.
+                    </para>
+
+                    <para>
+                        An explosion which does less than <e>wounds</e> will
+                        have a similar drop in damage types, but may do no
+                        damage at x2 or x3 ranges.
+                    </para>
+
+                    <sect4>
+                        <title>Very large explosions</title>
+
+                        <para>
+                            The above assumes small explosions, normally
+                            those designed to be effective against
+                            characters. Larger explosions are treated as
+                            <e>Vehicle</e> weapons, and hence cause
+                            vehicle scale damage. Anything which is the
+                            equivalent of a pound or more of TNT is
+                            generally considered to be vehicle scale.
+                        </para>
+
+                        <para>
+                            A vehicle scale explosion does <e>Major</e>
+                            damage out to the blast radius, and <e>Minor</e>
+                            damage out to twice this. For each doubling of
+                            the radius beyond this, reduce the damage by
+                            100 (explosions causing less than +100 damage
+                            will only damage out to twice the radius).
+                        </para>
+
+                        <para>
+                            One pound (about 0.5kg) of TNT does +50 damage
+                            and has an explosive radius of 2 metres. It is
+                            considered to be a <t>Size</t> 10 weapon. Every
+                            doubling of the TNT amount causes +10 damage,
+                            each ten fold increase doubles the radius, and
+                            each thousand fold increase raises the
+                            <t>Size</t> by +10.
+                        </para>
+
+                        <table>
+                            <title>Damage from TNT</title>
+                            <colspec colwidth="18mm"/>
+                            <colspec colwidth="18mm"/>
+                            <colspec colwidth="18mm"/>
+                            <colspec colwidth="18mm"/>
+
+                            <thead>
+                                <row>
+                                    <entry>TNT</entry>
+                                    <entry>Damage</entry>
+                                    <entry>Radius</entry>
+                                    <entry>Size</entry>
+                                </row>
+                            </thead>
+                            <tbody>
+                                <row>
+                                    <entry>1 lb</entry>
+                                    <entry>50</entry>
+                                    <entry>Ex-2</entry>
+                                    <entry>10</entry>
+                                </row>
+                                <row>
+                                    <entry>10 lb</entry>
+                                    <entry>65</entry>
+                                    <entry>Ex-4</entry>
+                                    <entry>10</entry>
+                                </row>
+                                <row>
+                                    <entry>100 lb</entry>
+                                    <entry>115</entry>
+                                    <entry>Ex-8</entry>
+                                    <entry>10</entry>
+                                </row>
+                                <row>
+                                    <entry>1000 lb</entry>
+                                    <entry>150</entry>
+                                    <entry>Ex-16</entry>
+                                    <entry>20</entry>
+                                </row>
+                                <row>
+                                    <entry>1 T</entry>
+                                    <entry>160</entry>
+                                    <entry>Ex-16</entry>
+                                    <entry>20</entry>
+                                </row>
+                                <row>
+                                    <entry>1 KT</entry>
+                                    <entry>260</entry>
+                                    <entry>Ex-128</entry>
+                                    <entry>30</entry>
+                                </row>
+                                <row>
+                                    <entry>1 MT</entry>
+                                    <entry>360</entry>
+                                    <entry>Ex-1024</entry>
+                                    <entry>40</entry>
+                                </row>
+                            </tbody>
+                        </table>
+
+                        <para>
+                            The most accurate results for working out the
+                            effects of TNT come from playing with logarithms,
+                            but simply assuming that damage etc only changes
+                            after a doubling is a simple solution which
+                            works reasonably well.
+                        </para>
+
+                        <example title="Large explosions">
+                            <para>
+                                An bomb does +100 damage at Ex-10. The damage
+                                rolled is 113, and a character rolls a soak
+                                of 21. The damage applied is 92, or 19 levels
+                                of damage.
+                            </para>
+
+                            <para>
+                                Out to 10m, he would receive 19 wounds - an
+                                immediate kill for pretty much anyone. Out to
+                                20m, he would still receive 10 stuns and 9
+                                wounds, again pretty certain death (4 of the
+                                stuns would go 'off the scale', and wrap onto
+                                wounds, giving a total of 13 wounds).
+                            </para>
+
+                            <para>
+                                If he was within 30m, he would receive 19
+                                stuns (which again wraps to 13 wounds).
+                            </para>
+
+                            <para>
+                                Out to 40m, the number of stuns (not the
+                                damage roll) is reduced to 3 (19/5, rounded
+                                down).
+                            </para>
+                        </example>
+                    </sect4>
+
+                    <sect4>
+                        <title>How big is my bomb?</title>
+
+                        <para>
+                            So, you've just dropped a 4000lb bomb on someone,
+                            and want to know how much damage it does. The
+                            simple answer is a lot. In most cases, the result
+                            is an instant (messy) death.
+                        </para>
+
+                        <para>
+                            If they're in a tank, or it's not a direct hit,
+                            then it gets a bit more tricky. As a rough guide,
+                            assume the following conversion for basic
+                            explosives.
+                        </para>
+
+                        <para>
+                            A single pound of TNT (since pounds is what TNT
+                            is normally measured in) does +50 damage Ex-2.
+                            Each doubling of the amount of explosive does an
+                            extra +10 damage. Each ten fold increase in amount
+                            of explosive doubles the radius.
+                        </para>
+                    </sect4>
+                </sect3>
+            </sect2>
+        </sect1>
+
+
+
+        <sect1 id="healing">
+            <title>Healing and First aid</title>
+
+            <sect2>
+                <title>Untended Wounds</title>
+
+                <para>
+                    Surviving the battle isn't always enough, and many
+                    more people may die of their wounds after a battle
+                    than during it - especially if there is no access to
+                    modern medicines.
+                </para>
+
+                <sect3>
+                    <title>Fatal Wounds</title>
+
+                    <para>
+                        If you have been <e>fatally</e> wounded, then you
+                        will never recover naturally until you receive
+                        medical attention. Every minute if inactive, or
+                        every <e>round</e> if active, you must make a
+                        <t>health</t> check at a target of 20 or die.
+                        If you fumble the check, then you also die.
+                    </para>
+                </sect3>
+
+                <sect3>
+                    <title>Critical Wounds</title>
+
+                    <para>
+                        If you have been <e>critically</e> wounded, then
+                        you must make a <t>health</t> check at a target
+                        of 20 every day if inactive, or hour if active.
+                        Failure or fumble will cause your wounds to
+                        worsen to <e>fatally</e> wounded and you fall
+                        into a coma. Continue to make similar checks
+                        every day, with another failure resulting in
+                        death.
+                    </para>
+                </sect3>
+
+                <sect3>
+                    <title>Other Wounds</title>
+
+                    <para>
+                        If you have been wounded (but not critically
+                        or fatally), and you do not receive medical
+                        attention within an hour, then you must make
+                        a <t>health</t> check at a target of 20.
+                        Failure means that the wound will worsen by
+                        one level, then stabalise (so no further
+                        checks are required). Success causes the wound
+                        to stabalise naturally.
+                    </para>
+
+                    <para>
+                        If you fumble this check, then the wound becomes
+                        infected. It will continue to worsen by one
+                        level each day until you die. Basic first aid
+                        is not able to aid you at this point (though
+                        herb lore, medicine and other such skills may).
+                    </para>
+                </sect3>
+
+                <sect3>
+                    <title>Stuns</title>
+
+                    <para>
+                        Stuns do not require tending before they will
+                        begin to heal, and no <t>health</t> checks are
+                        required to see if they worsen. An immediate
+                        <e>First aid</e> check after getting stunned
+                        is still a good idea however, since it can
+                        enable you to recover from stuns immediately.
+                    </para>
+                </sect3>
+            </sect2>
+
+            <sect2>
+                <title>First aid</title>
+
+                <para>
+                    It is generally a good idea to get your wounds tended
+                    to by another. Tending a wound takes one minute, and
+                    requires an <y:intelligence>First aid</y:intelligence>
+                    check at a base target of 10. The target is modified by
+                    the total of your <e>wound</e> and <e>stun</e>
+                    penalties halved (round up).
+                </para>
+
+                <para>
+                    For example, you have moderate (-10) wounds and
+                    light (-5) stuns, so the first aid difficulty will
+                    be 10 + (10 + 5)/2 = 18. If you are <e>beaten</e>
+                    and <e>fatally wounded</e>, then check difficulty
+                    would be 50.
+                </para>
+
+                <note title="It doesn't hurt">
+                    <para>
+                        If you happen to have abilities such as
+                        <e>Ignore Pain</e> which reduce the penalty from
+                        stuns and wounds, then this only applies to the
+                        penalties you suffer when performing actions,
+                        it does not in any way affect any of the
+                        difficulties for healing, first aid, medicine
+                        and so on.
+                    </para>
+                </note>
+
+                <para>
+                    On success, the wounds are stabalised. On a <e>good</e>
+                    success, one level of wounds is immediately healed.
+                </para>
+
+                <para>
+                    <e>Stuns</e> can be first aided as well, except that
+                    the base target is 0, with the same modifiers. On
+                    success, one stun is healed, and each level of success
+                    beyond that heals another stun.
+                </para>
+
+                <para>
+                    You may first aid yourself, though since you suffer
+                    your full penalties whilst trying to do so, it may
+                    be much harder than having someone else do it.
+                </para>
+            </sect2>
+
+            <sect2>
+                <title>Natural healing</title>
+
+                <sect3>
+                    <title>Recovering from stuns</title>
+
+                    <para>
+                        Stuns heal themselves after a full night's rest.
+                        Each morning, a <t>health</t> check is made at a
+                        target of 0, modified by half the total wound and
+                        stun penalties currently suffered. Each level of
+                        success causes one level of stun to be healed.
+                    </para>
+                </sect3>
+
+                <sect3>
+                    <title>Recovering from wounds</title>
+
+                    <para>
+                        Wounds heal naturally after a week. Each week, the
+                        character gets a health roll at difficulty 10,
+                        modified by their total stun and wound penalties
+                        halved. On a success, a single level of wound is
+                        healed.
+                    </para>
+
+                    <para>
+                        If the character fumbles their health roll, then
+                        their injury worsens, and they gain an extra wound
+                        level. A character who is already fatally wounded
+                        will die.
+                    </para>
+
+                    <para>
+                        If the wounded individual is spending the time
+                        resting, and they are being looked after by someone
+                        who has the <e>first aid</e> skill (spending at
+                        least an hour a day with them), then they receive
+                        a bonus equal to the healer's <e>first aid</e>
+                        score to their healing check.
+                    </para>
+
+                    <note title="You're going to die">
+                        <para>
+                            If you've been wounded <e>fatally</e> and
+                            stunned to <e>beaten</e>, then the recovery
+                            difficulty is 50 for stuns and 60 for wounds.
+                            You are unlikely to recover from this.
+                        </para>
+
+                        <para>
+                            <e>First aid</e> though only applies the
+                            basic minimum of medical knowledge, however
+                            since knowledge of it is common, and it
+                            requires only minimal time and material to
+                            apply, it is the skill covered here.
+                        </para>
+
+                        <para>
+                            In a modern setting, the <e>Medicine</e> skill
+                            when combined with high tech care will enable
+                            you to recover from the worst possible
+                            conditions. In low tech settings, the
+                            <e>chirurgury</e> skill is useful, and certains
+                            herbs (or even magic) may be available to
+                            provide further bonuses in order to allow
+                            healing. However, these options are not
+                            described here.
+                        </para>
+                    </note>
+
+                    <para>
+                        A patient looking after themselves in this way
+                        only receives half the normal bonus (rounded up).
+                    </para>
+                </sect3>
+
+                <sect3>
+                    <title>Recovering from Fatigue</title>
+
+                    <para>
+                        The only way to recover from fatigue is through
+                        rest. For each level of fatigue or exhaustion a
+                        character has, it takes five minutes to recover
+                        one level of fatigue.
+                    </para>
+
+                    <para>
+                        Exhaustion counts towards fatigue, but cannot be
+                        lost through a few minutes of rest. Four hours of
+                        good sleep with remove all fatigue and one point
+                        of exhaustion for every two points of health
+                        (rounded up, so 2 exhaustion is recovered by
+                        someone with a health of 3 or 4).
+                    </para>
+                </sect3>
+            </sect2>
+        </sect1>
+    </body>
+</article>
+
+

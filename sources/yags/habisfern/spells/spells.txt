@@ -1,0 +1,41 @@
+
+
+Fire Magic
+
+
+Ignite, 1
+    Warm, 3
+        Resist Fire, 5
+        Heat, 5
+            Burning Wind, 7
+
+    Burning Motes, 3
+        Flaming Spear, 5
+            Ring of Fire, 7
+                Engulf, 9
+                    Body of Fire, 12
+            Whip of Flame, 7
+        Smoke fog, 5
+            Whither, 7
+                Boiling Rain, 9
+
+    Wild Fire, 3
+        Fire Burst, 5
+            Sea of Fire, 7
+
+    Alertness, 3
+        Quicken, 5
+            Haste, 7
+        Fire Sight, 5
+            Visions of the Flame, 7
+                Eyes of the Fires, 9
+
+
+
+Metal
+
+Harden, 1
+    Stamina, 3
+        Strength, 5
+
+    Sharpen, 3
