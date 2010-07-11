@@ -121,7 +121,7 @@
         </performance>
 
         <vehicle xmlns="http://yagsbook.sourceforge.net/xml/yags">
-            <attributes size="9" soak="9" move="300" acceleration="25">
+            <attributes size="9" soak="9" move="300" acceleration="20">
                 <attribute name="strength" score="18"/>
                 <attribute name="health" score="3"/>
                 <attribute name="agility" score="5"/>
@@ -129,88 +129,39 @@
         </vehicle>
     </item>
 
-    <item name="Snatch Land Rover">
+    <item name="Sports car">
         <category>Vehicle</category>
         <genre>Modern</genre>
         <legality>4</legality>
-        <cost>75000</cost>
-        <weight>4000000</weight>
-        <techLevel>8</techLevel>
-        <availability>3</availability>
-        <importance>3</importance>
-
-        <short>Protected patrol vehicle.</short>
-
-        <description>
-            <para>
-                Designed as a general patrol vehicle in low threat areas, the
-                Snatch Land Rover is used by the British military. It is
-                lightly armoured and not really designed to protect against
-                a serious attack. However, it is cheaper and more agile than
-                heavier vehicles which serve similar roles.
-            </para>
-        </description>
-
-        <performance realm="Ground">
-            <speed>97</speed>
-            <acceleration>15</acceleration>
-            <range>510</range>
-        </performance>
-
-        <vehicle xmlns="http://yagsbook.sourceforge.net/xml/yags">
-            <attributes size="11" soak="16" move="134" acceleration="25">
-                <attribute name="strength" score="25"/>
-                <attribute name="health" score="4"/>
-                <attribute name="agility" score="4"/>
-            </attributes>
-
-            <combat>
-                <armour location="Front" score="8"/>
-                <armour location="Top/Rear" score="4"/>
-            </combat>
-        </vehicle>
-    </item>
-
-
-    <item name="Cougar">
-        <category>Vehicle</category>
-        <genre>Modern</genre>
-        <legality>2</legality>
-        <cost>475000</cost>
-        <weight>14500000</weight>
+        <cost>60000</cost>
+        <weight>914000000</weight>
         <techLevel>8</techLevel>
         <availability>2</availability>
         <importance>3</importance>
 
-        <short>Armoured fighting vehicle.</short>
+        <short>Lotus Exige</short>
 
         <description>
             <para>
-                A US armoured fighting vehicle designed for deployment in
-                high risk areas, and to be resistant to anti-vehicle mines
-                and IEDs. Comes with air conditioning as standard.
+                A two-door, two-seat coupe sports car made by Lotus Cars.
             </para>
         </description>
 
         <performance realm="Ground">
-            <speed>105</speed>
-            <acceleration>15</acceleration>
-            <range>966</range>
+            <speed>249</speed>
+            <acceleration>25</acceleration>
+            <range>400</range>
         </performance>
 
         <vehicle xmlns="http://yagsbook.sourceforge.net/xml/yags">
-            <attributes size="13" soak="26" move="134" acceleration="25">
-                <attribute name="strength" score="39"/>
-                <attribute name="health" score="4"/>
-                <attribute name="agility" score="3"/>
+            <attributes size="8" soak="8" move="300" acceleration="25">
+                <attribute name="strength" score="15"/>
+                <attribute name="health" score="3"/>
+                <attribute name="agility" score="6"/>
             </attributes>
-
-            <combat>
-                <armour location="All" score="12"/>
-                <armour location="Bottom" score="20"/>
-            </combat>
         </vehicle>
     </item>
+
 </equipment>
 
 
