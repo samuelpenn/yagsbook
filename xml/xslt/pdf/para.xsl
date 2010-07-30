@@ -68,6 +68,7 @@
     </xsl:template>
 
     <xsl:template name="pararaw" match="yb:para" mode="raw">
+        hello
         <xsl:apply-templates/>
     </xsl:template>
 
@@ -154,7 +155,7 @@
     </xsl:template>
 
     <xsl:template match="yb:example">
-        <fo:block-container keep-together="always">
+        <fo:block-container>
             <fo:block font-size="{$font-medium}"
                     color="black" background-color="#d4d4ff" space-after="{$font-medium}">
 
@@ -187,15 +188,31 @@
                   margin-right="5mm"
                   space-after="10pt">
 
-            <fo:block text-align="left">
-                <xsl:value-of select="."/>
-            </fo:block>
+            <xsl:choose>
+                <xsl:when test="yb:line">
+                    <xsl:apply-templates select="yb:line"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <fo:block text-align="left">
+                        <xsl:value-of select="."/>
+                    </fo:block>
+                </xsl:otherwise>
+            </xsl:choose>
 
             <xsl:if test="@signature">
                 <fo:block text-align="right">
                     -- <xsl:value-of select="@signature"/>
                 </fo:block>
             </xsl:if>
+        </fo:block>
+    </xsl:template>
+
+    <xsl:template match="yb:quote/yb:line">
+        <fo:block text-align="left">
+            <xsl:if test="@name">
+                <fo:inline font-style="normal"><xsl:value-of select="@name"/>: </fo:inline>
+            </xsl:if>
+            <xsl:value-of select="."/>
         </fo:block>
     </xsl:template>
 

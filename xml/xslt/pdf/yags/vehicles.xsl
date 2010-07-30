@@ -96,7 +96,12 @@
 
         <fo:block>
             <fo:inline font-weight="bold">Atk: </fo:inline><xsl:value-of select="y:attack/@score"/>;
-            <fo:inline font-weight="bold">Dmg: </fo:inline><xsl:value-of select="y:damage/@score"/>
+            <fo:inline font-weight="bold">Dmg: </fo:inline><xsl:value-of select="y:damage/@score"/>; 
+			<fo:inline font-weight="bold">Size: </fo:inline>
+			<xsl:choose>
+                <xsl:when test="y:size"><xsl:value-of select="y:size"/></xsl:when>
+		        <xsl:otherwise>5</xsl:otherwise>
+		    </xsl:choose>
             <xsl:if test="y:properties">
                 (<xsl:apply-templates select="y:properties"/>)
             </xsl:if>
@@ -120,7 +125,7 @@
 
     <!-- Display vehicle attributes -->
     <xsl:template match="y:vehicle/y:attributes">
-        <fo:table table-layout="fixed">
+        <fo:table table-layout="fixed" width="78mm">
             <fo:table-column column-width="12mm"/>
             <fo:table-column column-width="8mm"/>
             <fo:table-column column-width="8mm"/>
@@ -179,6 +184,8 @@
             </fo:table-body>
         </fo:table>
 
+        <xsl:variable name="levels" select="((@size * @size) div 20)"/>
+
         <fo:block space-after="0pt" font-size="{$font-small}">
             <fo:block color="red" font-weight="bold" font-family="{$font-heading}">
                 Damage track
@@ -187,21 +194,21 @@
             <fo:block>
                 <fo:inline font-weight="bold"><xsl:text>+0 : </xsl:text></fo:inline>
                 <xsl:call-template name="output-track">
-                    <xsl:with-param name="count" select="ceiling(@size div 3)"/>
+                    <xsl:with-param name="count" select="ceiling(($levels) div 3)"/>
                 </xsl:call-template>
             </fo:block>
 
             <fo:block>
                 <fo:inline font-weight="bold">-10: </fo:inline>
                 <xsl:call-template name="output-track">
-                    <xsl:with-param name="count" select="ceiling((@size - 1) div 3)"/>
+                    <xsl:with-param name="count" select="ceiling(($levels - 1) div 3)"/>
                 </xsl:call-template>
             </fo:block>
 
             <fo:block>
                 <fo:inline font-weight="bold">-25: </fo:inline>
                 <xsl:call-template name="output-track">
-                    <xsl:with-param name="count" select="ceiling((@size - 2) div 3)"/>
+                    <xsl:with-param name="count" select="ceiling(($levels - 2) div 3)"/>
                 </xsl:call-template>
             </fo:block>
 
