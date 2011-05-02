@@ -25,30 +25,29 @@
  -->
 <equipment xmlns="http://yagsbook.sourceforge.net/xml">
 
-    <item name="M151 TOW Launcher">
+    <item name="X54 Hunter Pack">
         <category>Weapon</category>
         <importance>2</importance><availability>2</availability>
         <techLevel>7</techLevel>
         <legality>2</legality>
-        <weight>80000</weight>
-        <cost>350</cost>
+        <weight>25000</weight>
+        <cost>35000</cost>
 
-        <short>Wire guided anti-tank missile.</short>
+        <short>Portable smart missile launcher.</short>
         <description>
             <para>
-                Designed to fire the BGM-71 TOW wire guided missile,
-                the M151 is a vehicle mounted launcher which is also
-                (barely) man portable. The TOW (Tube-launched,
-                Optically Tracked, Wire command) is a guided missile that
-                must be manually guided by an operator at the
-                launch platform. It was first produced in 1970 by the
-                US Army. The BGM-71 is the missile itself, and it may
-                be fired from a variety of launch platforms.
+                A portable backpack carrying 6 micro-missiles normally
+                equipped with HEX warheads. They link in with the soldier's
+                rifle or HUD to pinpoint the rough location of the enemy,
+                launch themselves on a high angle ballistic trajectory,
+                then use automated smart guidance to pinpoint the exact
+                locations and perform final flight corrections before
+                impacting with the targets.
             </para>
 
             <para>
-                It has a top speed of 278m/s, and a maximum range of
-                3750m.
+                They are designed to take out targets dug in behind walls
+                or inside buildings. A <e>Heavy Weapons</e> skill check
             </para>
         </description>
 
@@ -57,75 +56,23 @@
             <category>Heavy</category>
             <class>heavy</class>
             <combat>
-                <attack>+5</attack><damage>55</damage>
+                <attack>25</attack><damage>35</damage>
                 <range>
-                    <increment>200</increment>
-                    <short>300</short><medium>3000</medium><long>4500</long>
+                    <increment>500</increment>
+                    <short>2000</short><medium>4000</medium><long>5000</long>
                 </range>
             </combat>
-            <strength>10</strength><load>20</load><reach>4</reach>
-            <capacity>1</capacity><rof>1</rof><recoil>-20</recoil>
+            <strength>3</strength><load>25</load><reach>0</reach>
+            <capacity>6</capacity><rof>1</rof><recoil>-20</recoil>
             <properties>
                 <missile/><vehicle/><heavy/>
-                <guided type="manual" score="3" move="1500"/>
+                <guided type="clever" score="3"/>
                 <explosive score="2"/>
                 <reload score="4"/>
             </properties>
         </weapon>
     </item>
 
-    <item name="AGM-65 Maverick">
-        <category>Weapon</category>
-        <importance>1</importance><availability>1</availability>
-        <techLevel>7</techLevel>
-        <legality>1</legality>
-        <weight>250000</weight>
-        <cost>160000</cost>
-
-        <short>Air-to-ground tactical missile.</short>
-        <description>
-            <para>
-                A fire and forget missile designed for close air
-                support against ground (or sea) targets. The physical
-                characteristics given here exclude the launcher and
-                fire control systems.
-            </para>
-
-            <para>
-                It uses IR homing to track a target that has been
-                identified by an operator. After launch, it uses its
-                own sensors and navigation systems to stay on course
-                and track the target.
-            </para>
-
-            <para>
-                It has a top speed of 1,200km/h and a range of 28km,
-                using a solid fuel rocket for propulsion. It is roughly
-                2.5m in length.
-            </para>
-        </description>
-
-        <weapon xmlns="http://yagsbook.sourceforge.net/xml/yags">
-            <category>Firearms</category>
-            <category>Heavy</category>
-            <class>heavy</class>
-            <combat>
-                <attack>+5</attack><damage>55</damage>
-                <range>
-                    <increment>200</increment>
-                    <short>350</short><medium>25000</medium><long>30000</long>
-                </range>
-            </combat>
-            <strength>10</strength><load>20</load><reach>4</reach>
-            <capacity>1</capacity><rof>1</rof><recoil>-20</recoil>
-            <properties>
-                <missile/><vehicle/><heavy/>
-                <guided type="homing" score="4" skill="4" move="1500"/>
-                <explosive score="2"/>
-                <reload score="4"/>
-            </properties>
-        </weapon>
-    </item>
 
    <item name="M61 Vulcan">
         <category>Weapon</category>
