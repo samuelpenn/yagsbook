@@ -52,7 +52,7 @@
     </xsl:template>
 
     <xsl:template match="yb:para[@flag]">
-        <fo:block-container keep-together="always"
+        <fo:block-container 
                             background-image="{$svgImageBase}flag-{@flag}.svg"
                             background-repeat="no-repeat">
             <fo:block
@@ -111,7 +111,7 @@
         This is a note which stands out from the main text.
     -->
     <xsl:template match="yb:note">
-        <fo:block-container keep-together="always">
+        <fo:block-container>
             <fo:block font-size="{$font-medium}"
                     color="black" background-color="#ffffb4" space-after="{$font-medium}">
 
