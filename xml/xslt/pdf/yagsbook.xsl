@@ -10,10 +10,8 @@
     All global variables should also be defined in this file.
 
     Author:  Samuel Penn
-    Version: $Revision: 1.16 $
-    Date:    $Date: 2009/06/28 09:44:30 $
 
-    Copyright 2005 Samuel Penn, http://yagsbook.sourceforge.net.
+    Copyright 2011 Samuel Penn, http://yagsbook.sourceforge.net.
     All rights reserved.
 
     Redistribution and use in source and binary forms, with or without
@@ -53,7 +51,7 @@
     <xsl:variable name="font-x-large">14pt</xsl:variable>
     <xsl:variable name="font-xx-large">16pt</xsl:variable>
 
-    <xsl:variable name="font-body">Times</xsl:variable>
+    <xsl:variable name="font-body">serif</xsl:variable>
     <xsl:variable name="font-heading">sans-serif</xsl:variable>
 
     <xsl:variable name="svgImageBase">../icons/</xsl:variable>
@@ -183,19 +181,20 @@
     <xsl:template name="masterpages">
         <fo:layout-master-set>
             <!-- Left master page -->
+
             <fo:simple-page-master master-name="leftPage"
-                page-height="297mm"
-                page-width="210mm"
-                margin-top="10mm"
-                margin-bottom="5mm"
-                margin-left="0mm"
-                margin-right="10mm">
+		page-height="297mm"
+		page-width="210mm"
+		margin-top="15mm"
+		margin-bottom="15mm"
+		margin-left="15mm"
+		margin-right="30mm">
 
                 <fo:region-body
                     column-count="2"
                     margin-left="20mm"
                     margin-right="10mm"
-                    margin-top="11mm"
+                    margin-top="15mm"
                     margin-bottom="11mm" />
 
                 <fo:region-before extent="15mm"
@@ -208,18 +207,18 @@
 
             <!-- Right master page -->
             <fo:simple-page-master master-name="rightPage"
-                page-height="297mm"
-                page-width="210mm"
-                margin-top="10mm"
-                margin-bottom="5mm"
-                margin-left="15mm"
-                margin-right="-10mm" padding="0mm">
+		page-height="297mm"
+		page-width="210mm"
+		margin-top="15mm"
+		margin-bottom="15mm"
+		margin-left="30mm"
+		margin-right="15mm">
 
                 <fo:region-body
                     column-count="2"
                     margin-right="20mm"
                     margin-left="10mm"
-                    margin-top="11mm"
+                    margin-top="15mm"
                     margin-bottom="11mm" />
 
                 <fo:region-before extent="15mm"
@@ -264,7 +263,7 @@
                                    margin-top="10mm"
                                    margin-bottom="5mm"
                                    margin-left="15mm"
-                                   margin-right="-10mm" padding="0mm">
+                                   margin-right="10mm" padding="0mm">
 
                 <fo:region-body
                                column-count="1"
@@ -320,75 +319,6 @@
     <!-- ************************************************************** -->
     <!-- Template for the document itself.                              -->
     <!-- ************************************************************** -->
-    <xsl:template name="document0">
-        <fo:page-sequence master-reference="document">
-            <fo:static-content flow-name="region-before-right">
-                <fo:block font-family="Helvetica" font-size="24pt"
-                    text-align="end"
-                    font-weight="bold"
-                    color="white"
-                    background-color="{$colour}">
-                    <xsl:value-of select="/yb:article/yb:header/yb:title"/>
-                    <xsl:text> </xsl:text><fo:page-number/>
-                    <xsl:text> </xsl:text>
-                </fo:block>
-            </fo:static-content>
-
-            <fo:static-content flow-name="region-after-right">
-                <fo:block font-family="{$font-body}" font-size="12pt"
-                    text-align="end"
-                    font-weight="bold"
-                    font-style="italic"
-                    border-before-width="2px"
-                    border-before-color="black"
-                    border-before-style="solid">
-                    <xsl:call-template name="copyright-and-version"/>
-                </fo:block>
-            </fo:static-content>
-
-            <fo:static-content flow-name="region-before-left">
-                <fo:block font-family="Helvetica" font-size="24pt"
-                    text-align="start"
-                    font-weight="bold"
-                    color="white"
-                    background-color="{$colour}">
-                    <xsl:text> </xsl:text>
-                    <fo:page-number/><xsl:text> </xsl:text>
-                    <xsl:value-of select="/yb:article/yb:header/yb:title"/>
-                </fo:block>
-            </fo:static-content>
-
-            <fo:static-content flow-name="region-after-left">
-                <fo:block font-family="{$font-body}" font-size="12pt"
-                    text-align="start"
-                    font-weight="bold"
-                    font-style="italic"
-                    border-before-width="2px"
-                    border-before-color="black"
-                    border-before-style="solid">
-                    <xsl:call-template name="copyright-and-version"/>
-                </fo:block>
-            </fo:static-content>
-
-            <fo:flow flow-name="xsl-region-body" text-align="justify">
-                <xsl:apply-templates select="/yb:article/yb:body/yb:sect1"/>
-
-                <!-- Stick license text at the end -->
-                <fo:block
-                    font-size="10pt"
-                    font-family="{$font-body}"
-                    font-style="italic"
-                    line-height="12pt"
-                    border-style="solid"
-                    padding="3pt"
-                    space-after="12pt">
-
-                    <xsl:value-of select="/yb:article/yb:header/yb:license/yb:text"/>
-                </fo:block>
-            </fo:flow>
-
-        </fo:page-sequence>
-    </xsl:template>
 
     <xsl:template name="document">
         <xsl:apply-templates select="/yb:article/yb:body/yb:sect1">

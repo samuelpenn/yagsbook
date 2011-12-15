@@ -80,7 +80,7 @@
 
         <xsl:choose>
             <xsl:when test="@align">
-                <fo:block space-after="0pt" space-before="0pt" text-align="center">
+                <fo:block space-after="0pt" space-before="0px" text-align="center">
                     <fo:external-graphic src="{$src}" display-align="center" content-width="{$width}" />
                 </fo:block>
             </xsl:when>

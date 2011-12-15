@@ -859,9 +859,6 @@
                 <xsl:choose>
                     <xsl:when test="@units='credits'"> Cr</xsl:when>
                     <xsl:when test="not(@units)"> Cr</xsl:when> <!-- HACK -->
-                    <xsl:otherwise>
-                        <xsl:value-of select="@units"/>
-                    </xsl:otherwise>
                 </xsl:choose>
             </xsl:otherwise>
         </xsl:choose>
@@ -1118,34 +1115,34 @@
 
                         <!-- Short range -->
                         <xsl:choose>
-                            <xsl:when test="$short mod 1000 = 0">
+                            <xsl:when test="$short &gt; 1000">
                                 <xsl:value-of select="$short div 1000"/>
                                 <xsl:text>km / </xsl:text>
                             </xsl:when>
                             <xsl:otherwise>
-                                <xsl:value-of select="$short div 1000"/>
+                                <xsl:value-of select="$short"/>
                                 <xsl:text>m / </xsl:text>
                             </xsl:otherwise>
                         </xsl:choose>
                         <!-- Medium range -->
                         <xsl:choose>
-                            <xsl:when test="$medium mod 1000 = 0">
+                            <xsl:when test="$medium &gt; 1000">
                                 <xsl:value-of select="$medium div 1000"/>
                                 <xsl:text>km / </xsl:text>
                             </xsl:when>
                             <xsl:otherwise>
-                                <xsl:value-of select="$medium div 1000"/>
+                                <xsl:value-of select="$medium"/>
                                 <xsl:text>m / </xsl:text>
                             </xsl:otherwise>
                         </xsl:choose>
                         <!-- Long range -->
                         <xsl:choose>
-                            <xsl:when test="$long mod 1000 = 0">
+                            <xsl:when test="$long &gt; 1000">
                                 <xsl:value-of select="$long div 1000"/>
                                 <xsl:text>km</xsl:text>
                             </xsl:when>
                             <xsl:otherwise>
-                                <xsl:value-of select="$long div 1000"/>
+                                <xsl:value-of select="$long"/>
                                 <xsl:text>m</xsl:text>
                             </xsl:otherwise>
                         </xsl:choose>
@@ -1160,7 +1157,7 @@
                                 <xsl:text>km</xsl:text>
                             </xsl:when>
                             <xsl:otherwise>
-                                <xsl:value-of select="$short div 1000"/>
+                                <xsl:value-of select="$short"/>
                                 <xsl:text>m</xsl:text>
                             </xsl:otherwise>
                         </xsl:choose>

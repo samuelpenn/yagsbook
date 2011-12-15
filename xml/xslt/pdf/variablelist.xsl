@@ -176,7 +176,7 @@
                 <xsl:otherwise>22</xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
-        <xsl:variable name="valueWidth" select="82-$targetWidth"/>
+        <xsl:variable name="valueWidth" select="80-$targetWidth"/>
 
         <xsl:variable name="align">
             <xsl:choose>
@@ -188,7 +188,7 @@
             </xsl:choose>
         </xsl:variable>
 
-        <fo:table table-layout="fixed" width="82mm" space-after="{$font-medium}">
+        <fo:table table-layout="fixed" width="80mm" space-after="{$font-medium}">
             <xsl:choose>
                 <xsl:when test="@targetFirst='true'">
                     <fo:table-column column-width="{$targetWidth}mm"/>
