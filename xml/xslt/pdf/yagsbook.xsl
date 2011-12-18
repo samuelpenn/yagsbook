@@ -187,8 +187,8 @@
 		page-width="210mm"
 		margin-top="15mm"
 		margin-bottom="15mm"
-		margin-left="15mm"
-		margin-right="30mm">
+		margin-left="0mm"
+		margin-right="10mm">
 
                 <fo:region-body
                     column-count="2"
@@ -211,8 +211,8 @@
 		page-width="210mm"
 		margin-top="15mm"
 		margin-bottom="15mm"
-		margin-left="30mm"
-		margin-right="15mm">
+		margin-left="10mm"
+		margin-right="0mm">
 
                 <fo:region-body
                     column-count="2"
