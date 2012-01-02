@@ -890,7 +890,7 @@
     </xsl:template>
 
     <xsl:template match="yb:item" mode="full">
-        <fo:block space-after="{$font-medium}" font-size="{$font-medium}" font-family="{$font-body}">
+        <fo:block keep-together.within-column="always" space-after="{$font-medium}" font-size="{$font-medium}" font-family="{$font-body}">
             <fo:block font-weight="bold" color="{$colour}" font-family="{$font-heading}">
                 <xsl:value-of select="@name"/>
             </fo:block>

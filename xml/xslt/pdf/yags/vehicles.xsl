@@ -10,7 +10,7 @@
     Version: $Revision: 1.6 $
     Date:    $Date: 2007/07/29 16:16:58 $
 
-    Copyright 2005 Samuel Penn, http://yagsbook.sourceforge.net.
+    Copyright 2012 Samuel Penn, http://yagsbook.sourceforge.net.
     All rights reserved.
 
     Redistribution and use in source and binary forms, with or without
