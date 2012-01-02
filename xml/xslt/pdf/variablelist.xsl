@@ -191,11 +191,13 @@
         <fo:table table-layout="fixed" width="80mm" space-after="{$font-medium}">
             <xsl:choose>
                 <xsl:when test="@targetFirst='true'">
+                    <fo:table-column column-width="3mm"/>
                     <fo:table-column column-width="{$targetWidth}mm"/>
                     <fo:table-column column-width="{$valueWidth}mm"/>
                     <fo:table-header font-size="{$font-medium}"
                                      font-family="sans-serif">
                         <fo:table-row>
+                            <fo:table-cell><fo:block/></fo:table-cell>
                             <fo:table-cell>
                                 <fo:block color="white" background-color="black" text-align="{$align}">
                                     <xsl:value-of select="yb:targetLabel"/>
@@ -210,11 +212,13 @@
                     </fo:table-header>
                 </xsl:when>
                 <xsl:otherwise>
+                    <fo:table-column column-width="3mm"/>
                     <fo:table-column column-width="{$valueWidth}mm"/>
                     <fo:table-column column-width="{$targetWidth}mm"/>
                     <fo:table-header font-size="{$font-medium}"
                                      font-family="sans-serif">
                         <fo:table-row>
+                            <fo:table-cell><fo:block/></fo:table-cell>
                             <fo:table-cell>
                                 <fo:block color="white" background-color="black">
                                     <xsl:value-of select="yb:valueLabel"/>
@@ -250,6 +254,7 @@
         </xsl:variable>
 
         <fo:table-row background-color="{$bgcolour}" font-size="{$font-medium}">
+	    <fo:table-cell background-color="white"><fo:block background-color="white"/></fo:table-cell>
             <xsl:choose>
                 <xsl:when test="../@targetFirst='true'">
                     <xsl:apply-templates select="." mode="target"/>

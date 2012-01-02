@@ -5,10 +5,8 @@
     Handles all paragraph styles.
 
     Author:  Samuel Penn
-    Version: $Revision: 1.8 $
-    Date:    $Date: 2009/06/28 09:44:30 $
 
-    Copyright 2005 Samuel Penn, http://yagsbook.sourceforge.net.
+    Copyright 2012 Samuel Penn, http://yagsbook.sourceforge.net.
     All rights reserved.
 
     Redistribution and use in source and binary forms, with or without
@@ -107,12 +105,37 @@
         </fo:inline>
     </xsl:template>
 
+    <xsl:template match="yb:warning">
+        <fo:block-container>
+            <fo:block font-size="{$font-medium}"
+                    color="black" background-color="#ffb4b4" space-after="{$font-medium}">
+
+                <xsl:if test="@title">
+                    <fo:block background-color="#ffa0a0"
+                            padding-top="0px" padding-bottom="0px">
+
+                        <fo:block start-indent="0px" font-family="{$font-heading}"
+                                  font-weight="bold">
+                            <xsl:value-of select="@title"/>
+                        </fo:block>
+                    </fo:block>
+                </xsl:if>
+
+                <fo:block border-style="solid" border-width="0pt" border-color="black">
+                    <fo:block margin="2pt">
+                        <xsl:apply-templates/>
+                    </fo:block>
+                </fo:block>
+            </fo:block>
+        </fo:block-container>
+    </xsl:template>
+
     <!--
         This is a note which stands out from the main text.
     -->
     <xsl:template match="yb:note">
-        <fo:block-container>
-            <fo:block font-size="{$font-medium}"
+        <fo:block-container keep-together.within-column="always">
+            <fo:block font-size="{$font-medium}" keep-together.within-column="always"
                     color="black" background-color="#ffffb4" space-after="{$font-medium}">
 
                 <xsl:if test="@title">
@@ -186,7 +209,9 @@
         <fo:block font-style="italic" font-size="9pt"
                   margin-left="10mm"
                   margin-right="5mm"
-                  space-after="10pt">
+                  space-after="10pt"
+                  keep-with-next="always"
+                  keep-together.within-column="always">
 
             <xsl:choose>
                 <xsl:when test="yb:line">

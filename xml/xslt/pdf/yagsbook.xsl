@@ -11,7 +11,7 @@
 
     Author:  Samuel Penn
 
-    Copyright 2011 Samuel Penn, http://yagsbook.sourceforge.net.
+    Copyright 2012 Samuel Penn, http://yagsbook.sourceforge.net.
     All rights reserved.
 
     Redistribution and use in source and binary forms, with or without
@@ -188,11 +188,12 @@
 		margin-top="15mm"
 		margin-bottom="15mm"
 		margin-left="0mm"
-		margin-right="10mm">
+		margin-right="10mm"
+		padding="0mm">
 
                 <fo:region-body
                     column-count="2"
-                    margin-left="20mm"
+                    margin-left="10mm"
                     margin-right="10mm"
                     margin-top="15mm"
                     margin-bottom="11mm" />
@@ -201,7 +202,7 @@
                     region-name="region-before-left"/>
                 <fo:region-after extent="10mm"
                     region-name="region-after-left"/>
-                <fo:region-start extent="20mm"/>
+                <fo:region-start extent="10mm"/>
                 <fo:region-end extent="10mm"/>
             </fo:simple-page-master>
 
@@ -212,11 +213,12 @@
 		margin-top="15mm"
 		margin-bottom="15mm"
 		margin-left="10mm"
-		margin-right="0mm">
+		margin-right="0mm"
+		padding="0mm">
 
                 <fo:region-body
                     column-count="2"
-                    margin-right="20mm"
+                    margin-right="10mm"
                     margin-left="10mm"
                     margin-top="15mm"
                     margin-bottom="11mm" />
@@ -228,7 +230,7 @@
                     region-name="region-after-right"/>
 
                 <fo:region-start extent="10mm"/>
-                <fo:region-end extent="20mm"/>
+                <fo:region-end extent="10mm"/>
 
             </fo:simple-page-master>
 
@@ -243,7 +245,7 @@
 
                 <fo:region-body
                                column-count="1"
-                               margin-left="20mm"
+                               margin-left="10mm"
                                margin-right="10mm"
                                margin-top="11mm"
                                margin-bottom="11mm" />
@@ -252,7 +254,7 @@
                                   region-name="region-before-left"/>
                 <fo:region-after extent="10mm"
                                  region-name="region-after-left"/>
-                <fo:region-start extent="20mm"/>
+                <fo:region-start extent="10mm"/>
                 <fo:region-end extent="10mm"/>
             </fo:simple-page-master>
 
@@ -262,12 +264,12 @@
                                    page-width="210mm"
                                    margin-top="10mm"
                                    margin-bottom="5mm"
-                                   margin-left="15mm"
-                                   margin-right="10mm" padding="0mm">
+                                   margin-left="10mm"
+                                   margin-right="0mm">
 
                 <fo:region-body
                                column-count="1"
-                               margin-right="20mm"
+                               margin-right="10mm"
                                margin-left="10mm"
                                margin-top="11mm"
                                margin-bottom="11mm" />
@@ -279,7 +281,7 @@
                                  region-name="region-after-right"/>
 
                 <fo:region-start extent="10mm"/>
-                <fo:region-end extent="20mm"/>
+                <fo:region-end extent="10mm"/>
 
             </fo:simple-page-master>
 
@@ -380,6 +382,7 @@
                           text-align="end"
                           font-weight="bold"
                           color="white"
+			  keep-with-next="always"
                           background-image="{$svgImageBase}{$headerImage}-right.svg"
                           background-repeat="no-repeat"
                           background-color="{$colour}">

@@ -167,6 +167,7 @@
                 font-family="{$font-heading}"
                 line-height="{$font-large}"
                 space-after="{$font-medium}"
+		keep-with-next="always"
                 text-align="start">
                 <!--
                 <xsl:value-of select="$prefix"/>.<xsl:number level="multiple" format="1"/>
