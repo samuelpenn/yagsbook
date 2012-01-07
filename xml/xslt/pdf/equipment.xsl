@@ -950,6 +950,7 @@
             <xsl:apply-templates select="y:task" mode="full"/>
             <xsl:apply-templates select="y:vehicle" mode="full"/>
             <xsl:apply-templates select="y:drug" mode="full"/>
+            <xsl:apply-templates select="y:make" mode="full"/>
         </fo:block>
 
         <xsl:apply-templates select="yb:description"/>
@@ -1280,5 +1281,22 @@
     </xsl:template>
 
     <xsl:template match="yb:item/y:drug/y:addictive">
+    </xsl:template>
+
+    <xsl:template match="yb:item/y:make" mode="full">
+	<fo:block>
+	    <fo:inline font-weight="bold">Skill to make: </fo:inline>
+            <xsl:value-of select="y:skill"/>
+	</fo:block>
+	<fo:block>
+	    <fo:inline font-weight="bold">Difficulty to make: </fo:inline>
+            <xsl:value-of select="y:target"/>
+            <xsl:if test="y:target/@need">
+		<xsl:text> / </xsl:text><xsl:value-of select="y:target/@need"/>
+	    </xsl:if>
+	    <xsl:text>; </xsl:text>
+	    <fo:inline font-weight="bold">Time: </fo:inline>
+            <xsl:value-of select="y:time"/>
+	</fo:block>
     </xsl:template>
 </xsl:stylesheet>
