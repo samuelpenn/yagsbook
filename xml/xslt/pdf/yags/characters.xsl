@@ -53,9 +53,34 @@
 
 
     <xsl:template match="y:statistics">
-        <xsl:apply-templates select="y:attributes"/>
-        <xsl:apply-templates select="y:traits"/>
-        <xsl:apply-templates select="y:skills"/>
+		<xsl:choose>
+			<xsl:when test="../yb:description/yb:image">
+				<fo:table table-layout="fixed">
+					<fo:table-column column-width="6.5cm"/>
+					<fo:table-column column-width="2cm"/>
+
+					<fo:table-body>
+						<fo:table-row>
+							<fo:table-cell>
+								<xsl:apply-templates select="y:attributes"/>
+								<xsl:apply-templates select="y:traits"/>
+								<xsl:apply-templates select="y:skills"/>
+							</fo:table-cell>
+							<fo:table-cell>
+								<fo:block>
+									<fo:external-graphic src="{../yb:description/yb:image/@src}" content-width="2cm" />
+								</fo:block>
+							</fo:table-cell>
+						</fo:table-row>
+					</fo:table-body>
+				</fo:table>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:apply-templates select="y:attributes"/>
+				<xsl:apply-templates select="y:traits"/>
+				<xsl:apply-templates select="y:skills"/>
+			</xsl:otherwise>
+		</xsl:choose>
         <xsl:apply-templates select="y:advantages"/>
         <xsl:apply-templates select="y:combat"/>
     </xsl:template>
@@ -65,25 +90,25 @@
     <!-- Display character attributes -->
     <xsl:template match="y:attributes">
         <fo:table table-layout="fixed">
-            <fo:table-column column-width="1cm"/>
-            <fo:table-column column-width="1cm"/>
-            <fo:table-column column-width="1cm"/>
-            <fo:table-column column-width="1cm"/>
-            <fo:table-column column-width="1cm"/>
-            <fo:table-column column-width="1cm"/>
-            <fo:table-column column-width="1cm"/>
-            <fo:table-column column-width="1cm"/>
+            <fo:table-column column-width="8mm"/>
+            <fo:table-column column-width="8mm"/>
+            <fo:table-column column-width="8mm"/>
+            <fo:table-column column-width="8mm"/>
+            <fo:table-column column-width="8mm"/>
+            <fo:table-column column-width="8mm"/>
+            <fo:table-column column-width="8mm"/>
+            <fo:table-column column-width="8mm"/>
 
             <fo:table-header>
                 <fo:table-row font-size="10pt" font-weight="bold">
-                    <fo:table-cell><fo:block>Str</fo:block></fo:table-cell>
-                    <fo:table-cell><fo:block>Hea</fo:block></fo:table-cell>
-                    <fo:table-cell><fo:block>Agi</fo:block></fo:table-cell>
-                    <fo:table-cell><fo:block>Dex</fo:block></fo:table-cell>
-                    <fo:table-cell><fo:block>Per</fo:block></fo:table-cell>
-                    <fo:table-cell><fo:block>Int</fo:block></fo:table-cell>
-                    <fo:table-cell><fo:block>Emp</fo:block></fo:table-cell>
-                    <fo:table-cell><fo:block>Wil</fo:block></fo:table-cell>
+                    <fo:table-cell><fo:block>S</fo:block></fo:table-cell>
+                    <fo:table-cell><fo:block>H</fo:block></fo:table-cell>
+                    <fo:table-cell><fo:block>A</fo:block></fo:table-cell>
+                    <fo:table-cell><fo:block>D</fo:block></fo:table-cell>
+                    <fo:table-cell><fo:block>P</fo:block></fo:table-cell>
+                    <fo:table-cell><fo:block>I</fo:block></fo:table-cell>
+                    <fo:table-cell><fo:block>E</fo:block></fo:table-cell>
+                    <fo:table-cell><fo:block>W</fo:block></fo:table-cell>
                 </fo:table-row>
             </fo:table-header>
 

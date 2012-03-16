@@ -293,10 +293,21 @@
             font-style="normal"
             space-after.optimum="0pt">
 
-            <fo:inline font-weight="bold">
-                <xsl:value-of select="@name"/>
-                (Cost <xsl:value-of select="y:cost/@points"/>):
-            </fo:inline>
+	    <xsl:choose>
+                <xsl:when test="y:cost/@mastery='true'">
+	            <fo:inline font-weight="bold">
+                        <xsl:value-of select="@name"/>
+                        (Cost <xsl:value-of select="y:cost/@points"/>+):
+	    	    </fo:inline>
+	        </xsl:when>
+
+	        <xsl:otherwise>
+                    <fo:inline font-weight="bold">
+                        <xsl:value-of select="@name"/>
+                        (Cost <xsl:value-of select="y:cost/@points"/>):
+                    </fo:inline>
+	        </xsl:otherwise>
+            </xsl:choose>
 
             <xsl:apply-templates select="y:skill"/>
         </fo:block>
