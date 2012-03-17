@@ -245,6 +245,7 @@
 
     <xsl:template match="yb:character" mode="full">
         <fo:block
+	    keep-together.within-column="always"
             border-color="green"
             border-style="solid"
             padding="5pt"
