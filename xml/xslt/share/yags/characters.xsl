@@ -83,6 +83,7 @@
         <xsl:if test="y:statistics/y:advantages/y:advantage[$i]">
             <xsl:variable name="cost">
                 <xsl:choose>
+		    <xsl:when test="not(y:statistics/y:advantages/y:advantage[$i]/@skill)">0</xsl:when>
                     <xsl:when test="y:statistics/y:advantages/y:advantage[$i]/@cost">
                         <xsl:value-of
                             select="y:statistics/y:advantages/y:advantage[$i]/@cost"/>
