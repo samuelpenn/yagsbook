@@ -10,7 +10,7 @@
             <gender>Female</gender>
             <age>21</age>
 
-            <image src="packages/mobette_1.jpg"/>
+            <image src="packages/jenny_galloway.jpg"/>
 
             <background>
                 <para>
@@ -60,7 +60,7 @@
 
                 <group name="Knowledges" type="knowledges">
                     <skill name="Speak English" score="4"/>
-                    <skill name="Area lore (UK)" score="4"/>
+                    <skill name="Area lore (London)" score="4"/>
                 </group>
 
                 <group name="Social" type="skills">
@@ -75,7 +75,7 @@
             </skills>
 
             <advantages>
-                <advantage name="Educated"/>
+                <advantage name="Educated" cost="0"/>
 
                 <advantage name="Sexy" cost="+3"/>
                 <advantage name="Reflexes" cost="+1"/>
@@ -171,8 +171,6 @@
             </advantages>
         </statistics>
     </character>
-
-
 
 </characters>
 
