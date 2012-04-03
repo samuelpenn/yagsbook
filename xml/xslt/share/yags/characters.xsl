@@ -51,15 +51,27 @@
         <xsl:param name="total" select="0"/>
 
         <xsl:if test="y:statistics/y:skills/y:group[$j]/y:skill[$i]">
-            <xsl:variable name="score"
-                 select="y:statistics/y:skills/y:group[$j]/y:skill[$i]/@score"/>
-            <xsl:variable name="cost" select="(($score * ($score + 1)) div 2)"/>
+	    <xsl:choose>
+		<xsl:when test="y:statistics/y:skills/y:group[$j]/y:skill[$i]/@cost">
+		    <xsl:variable name="cost" select="y:statistics/y:skills/y:group[$j]/y:skill[$i]/@cost"/>
+		    <xsl:call-template name="y:sum-skill-points">
+			<xsl:with-param name="i" select="$i + 1"/>
+			<xsl:with-param name="j" select="$j"/>
+			<xsl:with-param name="total" select="$total + $cost"/>
+		    </xsl:call-template>
+		</xsl:when>
+		<xsl:otherwise>
+		    <xsl:variable name="score"
+			 select="y:statistics/y:skills/y:group[$j]/y:skill[$i]/@score"/>
+		    <xsl:variable name="cost" select="(($score * ($score + 1)) div 2)"/>
 
-            <xsl:call-template name="y:sum-skill-points">
-                <xsl:with-param name="i" select="$i + 1"/>
-                <xsl:with-param name="j" select="$j"/>
-                <xsl:with-param name="total" select="$total + $cost"/>
-            </xsl:call-template>
+		    <xsl:call-template name="y:sum-skill-points">
+			<xsl:with-param name="i" select="$i + 1"/>
+			<xsl:with-param name="j" select="$j"/>
+			<xsl:with-param name="total" select="$total + $cost"/>
+		    </xsl:call-template>
+		</xsl:otherwise>
+	    </xsl:choose>
         </xsl:if>
 
         <xsl:if test="not(y:statistics/y:skills/y:group[$j]/y:skill[$i])">
