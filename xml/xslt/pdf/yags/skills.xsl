@@ -397,6 +397,36 @@
                         </xsl:if>
                     </xsl:if>
 
+		    <xsl:if test="y:specialisation">
+			<fo:block text-align="start">
+		    	    <fo:inline font-weight="bold">
+				Specialisations (<xsl:value-of select="y:specialisation"/>):
+			    </fo:inline>
+			    <xsl:variable name="t"><xsl:value-of select="y:specialisation"/> (*)</xsl:variable>
+			    <fo:inline font-style="italic">
+			        <xsl:for-each select="$techniques/y:advantage[@name=$t]/yb:description/yb:itemlist/yb:item">
+			    	    <xsl:value-of select="@name"/>
+				    <xsl:choose>
+					<xsl:when test="position()=last()">
+				            <xsl:text>.</xsl:text>
+					</xsl:when>
+					<xsl:otherwise>
+					    <xsl:text>, </xsl:text>
+					</xsl:otherwise>
+				    </xsl:choose>
+			        </xsl:for-each>
+			    </fo:inline>
+			</fo:block>
+		    </xsl:if>
+
+		    <xsl:if test="y:familiarity">
+			<fo:block>
+		    	    <fo:inline font-weight="bold">Familiarity: </fo:inline>
+			    <xsl:value-of select="y:familiarity"/>
+			</fo:block>
+		    </xsl:if>
+
+
                     <xsl:apply-templates select="yb:description[not(@task)]"/>
 
                     <xsl:for-each select="yb:description[@task]">

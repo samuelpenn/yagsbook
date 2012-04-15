@@ -212,7 +212,7 @@
                 Techniques
             </fo:block>
 
-            <fo:block font-size="{$font-small}" font-family="Times">
+            <fo:block font-size="{$font-small}" font-family="Times" text-align="start">
                 <xsl:apply-templates select="y:advantage[@skill]"/>
             </fo:block>
         </xsl:if>
@@ -229,26 +229,17 @@
     </xsl:template>
 
     <xsl:template match="y:statistics/y:advantages/y:advantage">
-        <xsl:if test="position() &gt; 1">
-            <xsl:text>, </xsl:text>
-        </xsl:if>
-
+        <xsl:if test="position() &gt; 1"><xsl:text>, </xsl:text></xsl:if>
         <xsl:value-of select="@name"/>
         <xsl:if test="@skill">
-            <xsl:text>[</xsl:text>
+            <xsl:text> [</xsl:text>
             <fo:inline font-style="italic">
                 <xsl:value-of select="@skill"/>
             </fo:inline>
             <xsl:text>]</xsl:text>
         </xsl:if>
-
-        <xsl:if test="@cost">
-            (<xsl:value-of select="@cost"/>)
-        </xsl:if>
-
-        <xsl:if test="position() = last()">
-            <xsl:text>.</xsl:text>
-        </xsl:if>
+        <xsl:if test="@cost"> (<xsl:value-of select="@cost"/>)</xsl:if>
+        <xsl:if test="position() = last()"><xsl:text>.</xsl:text></xsl:if>
     </xsl:template>
 
     <!-- Build up the table displaying combat statistics -->
