@@ -8,7 +8,7 @@
     Version: $Revision: 1.11 $
     Date:    $Date: 2007/08/29 19:28:21 $
 
-    Copyright 2005 Samuel Penn, http://yagsbook.sourceforge.net.
+    Copyright 2012 Samuel Penn, http://yagsbook.sourceforge.net.
     All rights reserved.
 
     Redistribution and use in source and binary forms, with or without
@@ -140,7 +140,7 @@
 
     <xsl:template match="y:import-advantages[y:adv]">
         <xsl:variable name="type" select="@type"/>
-        <xsl:variable name="list" select="document(y:adv)/y:advantages/y:advantage[@type=$type]"/>
+	<xsl:variable name="list" select="document(y:adv)/y:advantages/y:advantage[@type=$type]"/>
         <!--
             <xsl:choose>
                 <xsl:when test="@type"><xsl:value-of select="$all/y:advantage[@type=$type]"/></xsl:when>

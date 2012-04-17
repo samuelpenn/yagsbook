@@ -13,7 +13,7 @@
     Version: $Revision: 1.12 $
     Date:    $Date: 2009/06/28 09:44:30 $
 
-    Copyright 2005 Samuel Penn, http://yagsbook.sourceforge.net.
+    Copyright 2012 Samuel Penn, http://yagsbook.sourceforge.net.
     All rights reserved.
 
     Redistribution and use in source and binary forms, with or without
@@ -420,9 +420,24 @@
 		    </xsl:if>
 
 		    <xsl:if test="y:familiarity">
-			<fo:block>
-		    	    <fo:inline font-weight="bold">Familiarity: </fo:inline>
-			    <xsl:value-of select="y:familiarity"/>
+			<fo:block text-align="start">
+		    	    <fo:inline font-weight="bold">
+				Familiarities (<xsl:value-of select="y:familiarity"/>):
+			    </fo:inline>
+			    <xsl:variable name="t"><xsl:value-of select="y:familiarity"/> (*)</xsl:variable>
+			    <fo:inline font-style="italic">
+			        <xsl:for-each select="$techniques/y:advantage[@name=$t]/yb:description/yb:itemlist/yb:item">
+			    	    <xsl:value-of select="@name"/>
+				    <xsl:choose>
+					<xsl:when test="position()=last()">
+				            <xsl:text>.</xsl:text>
+					</xsl:when>
+					<xsl:otherwise>
+					    <xsl:text>, </xsl:text>
+					</xsl:otherwise>
+				    </xsl:choose>
+			        </xsl:for-each>
+			    </fo:inline>
 			</fo:block>
 		    </xsl:if>
 
