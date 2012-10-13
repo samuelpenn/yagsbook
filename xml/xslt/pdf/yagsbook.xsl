@@ -183,13 +183,13 @@
             <!-- Left master page -->
 
             <fo:simple-page-master master-name="leftPage"
-		page-height="297mm"
-		page-width="210mm"
-		margin-top="15mm"
-		margin-bottom="15mm"
-		margin-left="0mm"
-		margin-right="10mm"
-		padding="0mm">
+                                    page-height="297mm"
+                                    page-width="210mm"
+                                    margin-top="15mm"
+                                    margin-bottom="15mm"
+                                    margin-left="0mm"
+                                    margin-right="10mm"
+                                    padding="0mm">
 
                 <fo:region-body
                     column-count="2"
@@ -208,13 +208,13 @@
 
             <!-- Right master page -->
             <fo:simple-page-master master-name="rightPage"
-		page-height="297mm"
-		page-width="210mm"
-		margin-top="15mm"
-		margin-bottom="15mm"
-		margin-left="10mm"
-		margin-right="0mm"
-		padding="0mm">
+                                    page-height="297mm"
+                                    page-width="210mm"
+                                    margin-top="15mm"
+                                    margin-bottom="15mm"
+                                    margin-left="10mm"
+                                    margin-right="0mm"
+                                    padding="0mm">
 
                 <fo:region-body
                     column-count="2"
@@ -285,6 +285,22 @@
 
             </fo:simple-page-master>
 
+            <fo:simple-page-master master-name="frontPage"
+                                   page-height="297mm"
+                                   page-width="210mm"
+                                   margin-top="10mm"
+                                   margin-bottom="5mm"
+                                   margin-left="10mm"
+                                   margin-right="0mm">
+
+                <fo:region-body
+                               column-count="1"
+                               margin-right="0mm"
+                               margin-left="0mm"
+                               margin-top="0mm"
+                               margin-bottom="0mm" />
+            </fo:simple-page-master>
+
             <!-- Sequence for the whole document -->
             <fo:page-sequence-master master-name="document">
                 <fo:repeatable-page-master-alternatives>
@@ -304,6 +320,14 @@
                 </fo:repeatable-page-master-alternatives>
             </fo:page-sequence-master>
 
+            <fo:page-sequence-master master-name="cover">
+                <fo:repeatable-page-master-alternatives>
+                    <fo:conditional-page-master-reference
+                        master-reference="frontPage" odd-or-even="even"/>
+                    <fo:conditional-page-master-reference
+                        master-reference="frontPage" odd-or-even="odd"/>
+                </fo:repeatable-page-master-alternatives>
+            </fo:page-sequence-master>
         </fo:layout-master-set>
     </xsl:template>
 
@@ -323,6 +347,22 @@
     <!-- ************************************************************** -->
 
     <xsl:template name="document">
+        <xsl:if test="/yb:article/yb:front">
+            <fo:page-sequence master-reference="cover" initial-page-number="1" force-page-count="no-force">
+                <fo:flow flow-name="xsl-region-body" text-align="justify">
+                    <fo:block>
+                        <fo:external-graphic src="{/yb:article/yb:front/@href}" content-width="200mm"/>
+                    </fo:block>
+                </fo:flow>
+            </fo:page-sequence>
+            <fo:page-sequence master-reference="cover">
+                <fo:flow flow-name="xsl-region-body" text-align="justify">
+                    <fo:block>
+                    </fo:block>
+                </fo:flow>
+            </fo:page-sequence>
+        </xsl:if>
+
         <xsl:apply-templates select="/yb:article/yb:body/yb:sect1">
             <xsl:with-param name="documentTitle">
                 <xsl:value-of select="/yb:article/yb:header/yb:title"/>
@@ -382,7 +422,7 @@
                           text-align="end"
                           font-weight="bold"
                           color="white"
-			  keep-with-next="always"
+                          keep-with-next="always"
                           background-image="{$svgImageBase}{$headerImage}-right.svg"
                           background-repeat="no-repeat"
                           background-color="{$colour}">
