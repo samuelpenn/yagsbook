@@ -363,10 +363,18 @@
             </fo:page-sequence>
         </xsl:if>
 
-        <xsl:apply-templates select="/yb:article/yb:body/yb:sect1">
+        <xsl:apply-templates select="/yb:article/yb:body/yb:sect1[1]">
             <xsl:with-param name="documentTitle">
                 <xsl:value-of select="/yb:article/yb:header/yb:title"/>
             </xsl:with-param>
+            <xsl:with-param name="pageNumber">1</xsl:with-param>
+        </xsl:apply-templates>
+
+        <xsl:apply-templates select="/yb:article/yb:body/yb:sect1[not(position()=1)]">
+            <xsl:with-param name="documentTitle">
+                <xsl:value-of select="/yb:article/yb:header/yb:title"/>
+            </xsl:with-param>
+            <xsl:with-param name="pageNumber">auto</xsl:with-param>
         </xsl:apply-templates>
     </xsl:template>
 
@@ -377,6 +385,7 @@
     -->
     <xsl:template match="/yb:article/yb:body/yb:sect1[@href]">
         <xsl:param name="documentTitle" select="yb:article/yb:header/yb:title"/>
+        <xsl:param name="pageNumber" select="auto"/>
 
         <xsl:variable name="body" select="document(@href)/yb:article/yb:body"/>
         <xsl:variable name="name" select="@name"/>
@@ -398,16 +407,19 @@
 
     <xsl:template match="yb:sect1">
         <xsl:param name="documentTitle" select="yb:article/yb:header/yb:title"/>
+        <xsl:param name="pageNumber" select="auto"/>
 
         <xsl:choose>
             <xsl:when test="@format='wide'">
                 <xsl:apply-templates select="." mode="wide">
                     <xsl:with-param name="documentTitle" select="$documentTitle"/>
+                    <xsl:with-param name="pageNumber" select="$pageNumber"/>
                 </xsl:apply-templates>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:apply-templates select="." mode="columns">
                     <xsl:with-param name="documentTitle" select="$documentTitle"/>
+                    <xsl:with-param name="pageNumber" select="$pageNumber"/>
                 </xsl:apply-templates>
             </xsl:otherwise>
         </xsl:choose>
@@ -415,8 +427,9 @@
 
     <xsl:template match="yb:sect1" mode="columns">
         <xsl:param name="documentTitle" select="/yb:article/yb:header/yb:title"/>
+        <xsl:param name="pageNumber" select="auto"/>
 
-        <fo:page-sequence master-reference="document">
+        <fo:page-sequence master-reference="document" initial-page-number="{$pageNumber}">
             <fo:static-content flow-name="region-before-right">
                 <fo:block font-family="Helvetica" font-size="24pt"
                           text-align="end"
@@ -509,8 +522,9 @@
 
     <xsl:template match="yb:sect1" mode="wide">
         <xsl:param name="documentTitle" select="/yb:article/yb:header/yb:title"/>
+        <xsl:param name="pageNumber" select="auto"/>
 
-        <fo:page-sequence master-reference="document1">
+        <fo:page-sequence master-reference="document1" initial-page-number="{$pageNumber}">
             <fo:static-content flow-name="region-before-right">
                 <fo:block font-family="Helvetica" font-size="24pt"
                           text-align="end"
