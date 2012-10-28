@@ -94,16 +94,34 @@
     </xsl:template>
 
     <xsl:template match="yb:table/yb:thead/yb:row/yb:entry">
+        <xsl:variable name="p" select="position()"/>
+        <xsl:variable name="a">
+            <xsl:choose>
+                <xsl:when test="../../../yb:colspec[$p]/@align">
+                    <xsl:value-of select="../../../yb:colspec[$p]/@align"/>
+                </xsl:when>
+                <xsl:otherwise>start</xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
         <fo:table-cell font-size="{$font-small}">
-            <fo:block color="white" background-color="black">
+            <fo:block color="white" background-color="black" text-align="{$a}">
                 <xsl:value-of select="."/>
             </fo:block>
         </fo:table-cell>
     </xsl:template>
 
     <xsl:template match="yb:table/yb:tbody/yb:row/yb:entry">
+        <xsl:variable name="p" select="position()"/>
+        <xsl:variable name="a">
+            <xsl:choose>
+                <xsl:when test="../../../yb:colspec[$p]/@align">
+                    <xsl:value-of select="../../../yb:colspec[$p]/@align"/>
+                </xsl:when>
+                <xsl:otherwise>start</xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
         <fo:table-cell>
-            <fo:block font-family="{$font-body}" text-align="start">
+            <fo:block font-family="{$font-body}" text-align="{$a}">
                 <xsl:value-of select="."/>
             </fo:block>
         </fo:table-cell>
