@@ -275,7 +275,7 @@
             <xsl:if test="yb:description/yb:background">
                 <fo:block font-size="{$font-small}" font-family="{$font-body}" space-before="3pt">
                     <fo:inline font-weight="bold">Background: </fo:inline>
-                    <xsl:apply-templates select="yb:description/yb:background"/>
+                    <xsl:apply-templates select="yb:description/yb:background" mode="small"/>
                 </fo:block>
             </xsl:if>
 

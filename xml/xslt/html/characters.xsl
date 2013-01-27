@@ -51,12 +51,13 @@
     version="1.0">
 
     <!-- Import templates for game system specific rules -->
+<!--
     <xsl:include href="yags/characters.xsl"/>
     <xsl:include href="arsmagica/characters.xsl"/>
     <xsl:include href="d20/characters.xsl"/>
     <xsl:include href="warhammer/characters.xsl"/>
     <xsl:include href="fiverings/characters.xsl"/>
-
+-->
     <!--
         A character sheet.
      -->

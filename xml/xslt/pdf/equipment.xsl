@@ -884,12 +884,22 @@
     </xsl:template>
 
     <xsl:template match="yb:import-equipment[@style='full']">
+	<xsl:variable name="min-importance">
+	    <xsl:choose>
+		<xsl:when test="@min-importance"><xsl:value-of select="@min-importance"/></xsl:when>
+		<xsl:otherwise>0</xsl:otherwise>
+	    </xsl:choose>
+	</xsl:variable>
         <xsl:apply-templates select="document(yb:list)/yb:equipment/yb:item" mode="full">
+	    <xsl:with-param name="min-importance"><xsl:value-of select="$min-importance"/></xsl:with-param>
             <xsl:sort select="@name" data-type="text"/>
         </xsl:apply-templates>
     </xsl:template>
 
     <xsl:template match="yb:item" mode="full">
+	<xsl:param name="min-importance">0</xsl:param>
+	
+	<xsl:if test="yb:importance >= $min-importance">
         <fo:block keep-together.within-column="always" space-after="{$font-medium}" font-size="{$font-medium}" font-family="{$font-body}">
             <fo:block font-weight="bold" color="{$colour}" font-family="{$font-heading}">
                 <xsl:value-of select="@name"/>
@@ -954,6 +964,7 @@
         </fo:block>
 
         <xsl:apply-templates select="yb:description"/>
+	</xsl:if>
     </xsl:template>
 
     <!--

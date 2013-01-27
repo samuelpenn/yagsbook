@@ -49,6 +49,17 @@
         </fo:block>
     </xsl:template>
 
+    <xsl:template match="yb:para" mode="small">
+        <fo:block
+            font-size="{$font-small}"
+            font-family="{$font-body}"
+            line-height="{$font-large}"
+            space-after="{$font-medium}">
+
+            <xsl:apply-templates/>
+        </fo:block>
+    </xsl:template>
+
     <xsl:template match="yb:para[@flag]">
         <fo:block-container 
                             background-image="{$svgImageBase}flag-{@flag}.svg"
@@ -163,11 +174,21 @@
 
     <!-- URL -->
     <xsl:template match="yb:url">
-        <fo:basic-link external-destination="{@href}"
+	<xsl:choose>
+            <xsl:when test="@href">
+		<fo:basic-link external-destination="{@href}"
                        text-decoration="underline" color="blue">
-            <xsl:apply-templates/>
-        </fo:basic-link>
-        [<xsl:value-of select="@href"/>]
+                    <xsl:apply-templates/>
+        	</fo:basic-link>
+        	[<xsl:value-of select="@href"/>]
+	    </xsl:when>
+	    <xsl:otherwise>
+		<fo:basic-link external-destination="{.}"
+                       text-decoration="underline" color="blue">
+                    <xsl:apply-templates/>
+		</fo:basic-link>
+            </xsl:otherwise>
+	</xsl:choose>
     </xsl:template>
 
     <!--
