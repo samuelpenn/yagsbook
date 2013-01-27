@@ -101,6 +101,7 @@
         <xsl:if test="y:laser">Ls </xsl:if>
         <xsl:if test="y:plasma">Pl </xsl:if>
         <xsl:if test="y:sonic">So </xsl:if>
+        <xsl:if test="y:shotgun">Sg </xsl:if>
         <xsl:if test="y:reload/@score">
             Lo-<xsl:value-of select="y:reload/@score"/>
             <xsl:text> </xsl:text>
