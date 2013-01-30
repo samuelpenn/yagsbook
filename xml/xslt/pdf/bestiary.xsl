@@ -116,16 +116,51 @@
     <!--
         Top level template for a beast element
     -->
-    <xsl:template match="beast">
+    <xsl:template match="yb:beast[@primary='true']">
+	<fo:block border-bottom-width="1px" border-bottom-style="solid" border-bottom-color="black">
+	    <fo:block font-weight="bold" font-size="{$font-xx-large}">
+	        <xsl:value-of select="@name"/>
+	    </fo:block>
+            <xsl:if test="yb:description/yb:aka">
+                <fo:block font-weight="bold" font-style="italic">
+                    <xsl:for-each select="yb:description/yb:aka">
+                        <xsl:value-of select="yb:description/yb:aka"/>
+                    </xsl:for-each>
+                </fo:block>
+            </xsl:if>
+	</fo:block>
+
+        <xsl:if test="yb:description/yb:short">
+	    <fo:block font-size="{$font-medium}" font-style="italic" space-after="${font-medium}">
+                <xsl:value-of select="yb:description/yb:short"/>
+            </fo:block>
+        </xsl:if>
+
+        <xsl:if test="yb:description/yb:physical">
+            <fo:block font-weight="bold">
+		Physical Description
+            </fo:block>
+	    <xsl:apply-templates select="yb:description/yb:physical"/>
+        </xsl:if>
+
+        <xsl:if test="yb:description/yb:training">
+            <fo:block font-weight="bold">
+		Training
+            </fo:block>
+	    <xsl:apply-templates select="yb:description/yb:training"/>
+        </xsl:if>
+    </xsl:template>
+
+    <xsl:template match="yb:beast">
         <fo:block border-width="1px"
                   border-color="black"
                   border-style="solid"
                   padding="1mm"
                   space-after="{$font-medium}">
 
-            <fo:block font-weight="bold" font-size="14pt">
-                <xsl:value-of select="@name"/>
-            </fo:block>
+	    <fo:block font-weight="bold" font-size="14pt">
+		<xsl:value-of select="@name"/>
+	    </fo:block>
             <xsl:if test="description/aka">
                 <fo:block font-weight="bold" font-style="italic">
                     <xsl:for-each select="description/aka">
