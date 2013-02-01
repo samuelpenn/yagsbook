@@ -898,7 +898,7 @@
 
     <xsl:template match="yb:item" mode="full">
 	<xsl:param name="min-importance">0</xsl:param>
-	
+
 	<xsl:if test="yb:importance >= $min-importance">
         <fo:block keep-together.within-column="always" space-after="{$font-medium}" font-size="{$font-medium}" font-family="{$font-body}">
             <fo:block font-weight="bold" color="{$colour}" font-family="{$font-heading}">
