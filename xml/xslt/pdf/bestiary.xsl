@@ -129,28 +129,30 @@
     </xsl:template>
 
     <xsl:template match="yb:beast" mode="description">
-        <xsl:choose>
-            <xsl:when test="yb:description/yb:image">
-                <fo:table table-layout="fixed" width="100%">
-                    <fo:table-column column-width="50mm"/>
-                    <fo:table-column column-width="30mm"/>
+        <fo:block keep-together.within-column="always">
+            <xsl:choose>
+                <xsl:when test="yb:description/yb:image">
+                    <fo:table table-layout="fixed" width="100%">
+                        <fo:table-column column-width="50mm"/>
+                        <fo:table-column column-width="30mm"/>
 
-                    <fo:table-body>
-                        <fo:table-cell>
-                            <xsl:apply-templates select="yb:information" mode="inline"/>
-                        </fo:table-cell>
-                        <fo:table-cell>
-                            <fo:block>
-                                <fo:external-graphic src="{yb:description/yb:image/@src}" content-width="28mm"/>
-                            </fo:block>
-                        </fo:table-cell>
-                    </fo:table-body>
-                </fo:table>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:apply-templates select="yb:information" mode="inline"/>
-            </xsl:otherwise>
-        </xsl:choose>
+                        <fo:table-body>
+                            <fo:table-cell>
+                                <xsl:apply-templates select="yb:information" mode="inline"/>
+                            </fo:table-cell>
+                            <fo:table-cell>
+                                <fo:block>
+                                    <fo:external-graphic src="{yb:description/yb:image/@src}" content-width="28mm"/>
+                                </fo:block>
+                            </fo:table-cell>
+                        </fo:table-body>
+                    </fo:table>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:apply-templates select="yb:information" mode="inline"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </fo:block>
         <xsl:apply-templates select="yb:description" mode="inline"/>
 
     </xsl:template>
@@ -160,16 +162,18 @@
     <xsl:template match="yb:beast[not(@parent)]" mode="parent">
         <xsl:variable name="name" select="@name"/>
 
-        <fo:block border-bottom-width="3px" border-bottom-style="solid" border-bottom-color="black" space-after="3px">
-            <fo:block font-weight="bold" font-size="{$font-xx-large}">
-                <xsl:value-of select="$name"/>
+        <fo:block keep-together.within-column="always" keep-with-next.within-column="always" text-align="left">
+            <fo:block border-bottom-width="3px" border-bottom-style="solid" border-bottom-color="black" space-after="3px">
+                <fo:block font-weight="bold" font-size="{$font-xx-large}">
+                    <xsl:value-of select="$name"/>
+                </fo:block>
             </fo:block>
+            <xsl:if test="yb:description/yb:short">
+                <fo:block font-size="{$font-medium}" font-style="italic" space-after="{$font-medium}" text-align="left">
+                    <xsl:value-of select="yb:description/yb:short"/>
+                </fo:block>
+            </xsl:if>
         </fo:block>
-        <xsl:if test="yb:description/yb:short">
-        <fo:block font-size="{$font-medium}" font-style="italic" space-after="{$font-medium}">
-                <xsl:value-of select="yb:description/yb:short"/>
-            </fo:block>
-        </xsl:if>
 
         <xsl:apply-templates select="." mode="description"/>
 
@@ -183,15 +187,16 @@
     <xsl:template match="yb:beast" mode="child">
         <xsl:variable name="name" select="@name"/>
 
-        <fo:block font-weight="bold" font-style="italic" font-size="{$font-x-large}">
-            <xsl:value-of select="$name"/>
-        </fo:block>
-        <xsl:if test="yb:description/yb:short">
-        <fo:block font-size="{$font-medium}" font-style="italic" space-after="{$font-medium}">
-                <xsl:value-of select="yb:description/yb:short"/>
+        <fo:block keep-together.within-column="always" keep-with-next.within-column="always" text-align="left">
+            <fo:block font-weight="bold" font-style="italic" font-size="{$font-x-large}">
+                <xsl:value-of select="$name"/>
             </fo:block>
-        </xsl:if>
-
+            <xsl:if test="yb:description/yb:short">
+            <fo:block font-size="{$font-medium}" font-style="italic" space-after="{$font-medium}">
+                    <xsl:value-of select="yb:description/yb:short"/>
+                </fo:block>
+            </xsl:if>
+        </fo:block>
         <xsl:apply-templates select="." mode="description"/>
 
         <!-- YAGS specific statistics -->
