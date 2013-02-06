@@ -51,9 +51,13 @@
 
             <fo:table-body font-size="{$font-medium}" font-family="{$font-body}">
                 <fo:table-row>
-                    <fo:table-cell><fo:block><xsl:value-of select="$size"/></fo:block></fo:table-cell>
+                    <fo:table-cell><fo:block>
+                        <xsl:value-of select="$size"/>
+                        <xsl:if test="../y:advantages/y:advantage[@name='Tiny']">*</xsl:if>
+                    </fo:block></fo:table-cell>
                     <fo:table-cell><fo:block>
                     <xsl:value-of select="$strength"/>
+                    <xsl:if test="../y:advantages/y:advantage[@name='Weak']">*</xsl:if>
                     <xsl:if test="y:attribute[@name='strength']/@half">
                         /<xsl:value-of select="y:attribute[@name='strength']/@half"/>
                     </xsl:if>
