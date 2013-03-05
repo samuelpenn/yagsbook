@@ -170,10 +170,18 @@
             </xsl:if>
 -->
             <xsl:if test="y:attributes/@size">
+                <xsl:variable name="woundlevels">
+                    <xsl:choose>
+                        <xsl:when test="y:advantages/y:advantage[@name='Undead']">
+                            <xsl:value-of select="y:attributes/@size * 2"/>
+                        </xsl:when>
+                        <xsl:otherwise><xsl:value-of select="y:attributes/@size"/></xsl:otherwise>
+                    </xsl:choose>
+                </xsl:variable>
                 <fo:block space-after="0pt" font-size="{$font-small}">
                     <fo:inline font-weight="bold">Wounds: </fo:inline>
                     <xsl:call-template name="y:output-wound-levels">
-                        <xsl:with-param name="size" select="y:attributes/@size"/>
+                        <xsl:with-param name="size" select="$woundlevels"/>
                         <xsl:with-param name="okay">OK</xsl:with-param>
                         <xsl:with-param name="fatal">Fatal</xsl:with-param>
                     </xsl:call-template>
@@ -181,7 +189,7 @@
                 <fo:block space-after="0pt" font-size="{$font-small}">
                     <fo:inline font-weight="bold">Stuns: </fo:inline>
                     <xsl:call-template name="y:output-wound-levels">
-                        <xsl:with-param name="size" select="y:attributes/@size"/>
+                        <xsl:with-param name="size" select="$woundlevels"/>
                         <xsl:with-param name="okay">OK</xsl:with-param>
                         <xsl:with-param name="fatal">Out</xsl:with-param>
                     </xsl:call-template>
