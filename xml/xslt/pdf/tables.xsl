@@ -121,7 +121,7 @@
             </xsl:choose>
         </xsl:variable>
         <fo:table-cell>
-            <fo:block font-family="{$font-body}" text-align="{$a}">
+            <fo:block font-family="{$font-body}" font-size="{$font-small}" text-align="{$a}">
                 <xsl:value-of select="."/>
             </fo:block>
         </fo:table-cell>

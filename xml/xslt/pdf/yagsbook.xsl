@@ -11,7 +11,7 @@
 
     Author:  Samuel Penn
 
-    Copyright 2012 Samuel Penn, http://yagsbook.sourceforge.net.
+    Copyright 2013 Samuel Penn, http://yagsbook.sourceforge.net.
     All rights reserved.
 
     Redistribution and use in source and binary forms, with or without
@@ -69,6 +69,7 @@
             <xsl:when test="$article-style='core'">orange</xsl:when>
             <xsl:when test="$article-style='combat'">red</xsl:when>
             <xsl:when test="$article-style='character'">green</xsl:when>
+            <xsl:when test="$article-style='campaign'">brown</xsl:when>
             <xsl:when test="$article-style='catalogue'">black</xsl:when>
             <xsl:when test="$article-style='magic'">#00eeff</xsl:when>
 
@@ -82,9 +83,9 @@
     <xsl:variable name="lightcolour">
         <xsl:choose>
             <xsl:when test="$article-style='core'">#ffeecc</xsl:when>
-            <xsl:when test="$article-style='core'">#ffddbb</xsl:when>
             <xsl:when test="$article-style='character'">#aaffaa</xsl:when>
             <xsl:when test="$article-style='combat'">#ffeeee</xsl:when>
+            <xsl:when test="$article-style='campaign'">#fffeee</xsl:when>
             <xsl:when test="$article-style='magic'">#aaddff</xsl:when>
 
             <xsl:when test="$article-style='religion'">#aaddff</xsl:when>
@@ -97,9 +98,9 @@
     <xsl:variable name="darkcolour">
         <xsl:choose>
             <xsl:when test="$article-style='core'">#ffdd99</xsl:when>
-            <xsl:when test="$article-style='core'">#ffbb77</xsl:when>
             <xsl:when test="$article-style='character'">#ddffdd</xsl:when>
             <xsl:when test="$article-style='combat'">#ffdddd</xsl:when>
+            <xsl:when test="$article-style='campaign'">#ffeedd</xsl:when>
             <xsl:when test="$article-style='catalogue'">#eeeeee</xsl:when>
             <xsl:when test="$article-style='magic'">#5555ff</xsl:when>
 
@@ -115,6 +116,7 @@
             <xsl:when test="$article-style='core'">header-core</xsl:when>
             <xsl:when test="$article-style='character'">header-character</xsl:when>
             <xsl:when test="$article-style='combat'">header-combat</xsl:when>
+            <xsl:when test="$article-style='campaign'">header-campaign</xsl:when>
             <xsl:when test="$article-style='catalogue'">header</xsl:when>
             <xsl:when test="$article-style='magic'">header</xsl:when>
 
@@ -435,6 +437,7 @@
                           text-align="end"
                           font-weight="bold"
                           color="white"
+			  padding-right="2mm"
                           keep-with-next="always"
                           background-image="{$svgImageBase}{$headerImage}-right.svg"
                           background-repeat="no-repeat"
@@ -462,6 +465,7 @@
                           text-align="start"
                           font-weight="bold"
                           color="white"
+			  padding-left="2mm"
                           background-image="{$svgImageBase}{$headerImage}-left.svg"
                           background-repeat="no-repeat"
                           background-position-horizontal="right"
