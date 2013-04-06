@@ -89,7 +89,7 @@
                 <fo:block font-weight="bold" color="black" font-size="{$font-medium}" font-style="italic">
                     Advantages
                 </fo:block>
-                <fo:block font-size="{$font-small}">
+                <fo:block font-size="{$font-small}" space-after="{$font-small}">
                     <xsl:for-each select="y:advantages/y:advantage">
                         <xsl:value-of select="@name"/>
                         <xsl:if test="@target">
@@ -110,7 +110,7 @@
                     Traits
                 </fo:block>
 
-                <fo:block font-size="{$font-small}">
+                <fo:block font-size="{$font-small}" space-after="{$font-small}">
                     <xsl:for-each select="y:traits/y:trait">
                         <xsl:value-of select="@name"/>
                         <xsl:if test="@target">
@@ -160,6 +160,10 @@
                 </fo:block>
             </xsl:if>
 
+            <fo:block font-size="{$font-small}" font-weight="bold" space-before="{$font-small}">
+                Soak and Armour
+            </fo:block>
+
             <xsl:apply-templates select="y:combat/y:armourstyle" mode="beast-inline"/>
             <!--
             <xsl:if test="attributes/@soak">
@@ -178,7 +182,7 @@
                         <xsl:otherwise><xsl:value-of select="y:attributes/@size"/></xsl:otherwise>
                     </xsl:choose>
                 </xsl:variable>
-                <fo:block space-after="0pt" font-size="{$font-small}">
+                <fo:block space-after="0pt" font-size="{$font-small}" space-before="{$font-small}">
                     <fo:inline font-weight="bold">Wounds: </fo:inline>
                     <xsl:call-template name="y:output-wound-levels">
                         <xsl:with-param name="size" select="$woundlevels"/>
@@ -210,7 +214,7 @@
 
 
     <xsl:template match="y:skills/y:group" mode="beast-inline">
-        <fo:block font-size="{$font-small}">
+        <fo:block font-size="{$font-small}" space-after="{$font-small}">
             <fo:inline font-weight="bold"><xsl:value-of select="@name"/>: </fo:inline>
             <xsl:for-each select="y:skill">
                 <xsl:value-of select="@name"/> (<xsl:value-of select="@score"/>);
@@ -280,6 +284,27 @@
                 </fo:block>
             </fo:table-cell>
         </fo:table-row>
+    </xsl:template>
+
+    <xsl:template match="y:armourstyle" mode="beast-inline">
+        <xsl:variable name="basic" select="../../y:attributes/@soak"/>
+        <xsl:variable name="style" select="@style"/>
+
+        <xsl:variable name="total" select="sum(y:armour/@protection)"/>
+
+        <fo:block font-size="{$font-small}">
+            <fo:inline font-style="italic"><xsl:value-of select="$style"/>: </fo:inline>
+            <xsl:value-of select="$basic + $total"/>
+            <xsl:if test="y:armour">
+                <xsl:text> (</xsl:text>
+                <xsl:for-each select="y:armour">
+                    <xsl:value-of select="@name"/>
+                    <xsl:text> +</xsl:text><xsl:value-of select="@protection"/>;
+                    <xsl:text> </xsl:text>
+                </xsl:for-each>
+                <xsl:text>)</xsl:text>
+            </xsl:if>
+        </fo:block>
     </xsl:template>
 
 </xsl:stylesheet>
