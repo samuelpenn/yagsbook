@@ -233,6 +233,9 @@
                             select="y:cost/@levels"/> levels):
                     </fo:inline>
                 </xsl:when>
+		<xsl:when test="not(y:cost)">
+                    <fo:inline font-weight="bold"><xsl:value-of select="@name"/>:</fo:inline>
+		</xsl:when>
 
                 <!-- Fixed/multiple cost advantages -->
                 <xsl:otherwise>
