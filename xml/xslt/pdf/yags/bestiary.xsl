@@ -177,7 +177,7 @@
                 <xsl:variable name="woundlevels">
                     <xsl:choose>
                         <xsl:when test="y:advantages/y:advantage[@name='Undead']">
-                            <xsl:value-of select="y:attributes/@size * 2"/>
+                            <xsl:value-of select="y:attributes/@size * 1"/>
                         </xsl:when>
                         <xsl:otherwise><xsl:value-of select="y:attributes/@size"/></xsl:otherwise>
                     </xsl:choose>
