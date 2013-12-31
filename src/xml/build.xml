@@ -158,9 +158,9 @@
         </copy>
         <delete dir="${base.dir}/yagsbook"/>
 
-        <mkdir dir="releases"/>
+        <mkdir dir="../../releases"/>
 
-        <tar destfile="releases/yagsbook-${version}.tgz"
+        <tar destfile="../../releases/yagsbook-${version}.tgz"
              compression="gzip"
              basedir="${base.dir}"/>
     </target>

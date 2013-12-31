@@ -8,12 +8,16 @@ format, including XML Schemas, XSLT and CSS files.
 See the file LICENSE for license information.
 
 The following line is needed by the build system
-ant.latest.version: 0.9.0
+ant.latest.version: 0.10.0
 
 Changes
 -------
 
 Latest
+
+0.10.0 - 31st December 2013
+  * Lots of undocumented revisions.
+  * Move from Sourceforge to Github.
 
 0.9.0
   * Character import can force display of character point cost.
