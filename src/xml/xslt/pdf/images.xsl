@@ -41,6 +41,15 @@
                xmlns:yb="http://yagsbook.sourceforge.net/xml"
                version="1.0">
 
+    <xsl:template match="yb:span">
+        <xsl:variable name="src" select="@src"/>
+        <fo:block-container span="all" background-color="white">
+            <fo:block>
+                <fo:external-graphic src="{$src}" width="auto" height="auto"/>
+            </fo:block>
+        </fo:block-container>
+    </xsl:template>
+
     <xsl:template match="yb:para/yb:svg">
         <xsl:variable name="src" select="@src"/>
         <xsl:variable name="width" select="@width"/>
