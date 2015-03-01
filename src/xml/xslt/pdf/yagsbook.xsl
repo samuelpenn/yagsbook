@@ -51,7 +51,7 @@
     <xsl:variable name="font-x-large">14pt</xsl:variable>
     <xsl:variable name="font-xx-large">16pt</xsl:variable>
 
-    <xsl:variable name="font-body">Helvetica</xsl:variable>
+    <xsl:variable name="font-body">Palatino</xsl:variable>
     <xsl:variable name="font-heading">sans-serif</xsl:variable>
 
     <xsl:variable name="svgImageBase">../icons/</xsl:variable>

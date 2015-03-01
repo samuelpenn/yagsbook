@@ -195,6 +195,11 @@
         Description
      -->
     <xsl:template match="yb:description">
+        <xsl:if test="@title">
+            <fo:block keep-with-next="always" font-style="italic" font-weight="bold">
+                <xsl:value-of select="@title"/>
+            </fo:block>
+        </xsl:if>
         <xsl:apply-templates/>
     </xsl:template>
 
@@ -228,6 +233,7 @@
 
     <xsl:template match="yb:quote">
         <fo:block font-style="italic" font-size="9pt"
+                  font-family="{$font-body}"
                   margin-left="10mm"
                   margin-right="5mm"
                   space-after="10pt"
