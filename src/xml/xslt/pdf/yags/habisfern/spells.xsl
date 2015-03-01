@@ -57,7 +57,7 @@
                 <fo:table-row>
                     <fo:table-cell>
                         <fo:block font-family="Times">
-                            <fo:inline font-weight="bold">Time:</fo:inline>
+                            <fo:inline font-weight="bold">Time: </fo:inline>
                             <xsl:if test="h:time">
                                 <xsl:value-of select="h:time"/>
                             </xsl:if>
