@@ -100,10 +100,32 @@
                     </fo:table-row>
                 </xsl:if>
 
+                <xsl:if test="h:radius">
+                    <fo:table-row>
+                        <fo:table-cell>
+                            <fo:block font-family="Times">
+                                <fo:inline font-weight="bold">Radius: </fo:inline>
+                                <xsl:value-of select="h:radius"/>
+                            </fo:block>
+                        </fo:table-cell>
+                    </fo:table-row>
+                </xsl:if>
+
+                <xsl:if test="h:prerequisite">
+                    <fo:table-row>
+                        <fo:table-cell>
+                            <fo:block font-family="Times">
+                                <fo:inline font-weight="bold">Prerequisites: </fo:inline>
+                                <xsl:value-of select="h:prerequisite"/>
+                            </fo:block>
+                        </fo:table-cell>
+                    </fo:table-row>
+                </xsl:if>
+
             </fo:table-body>
         </fo:table>
 
-         <fo:block
+        <fo:block
             font-size="10pt"
             font-family="Times"
             line-height="12pt"
