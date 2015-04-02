@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 
 <!--
     Stylesheet transform for Yagsbook to PDF.
@@ -41,6 +41,8 @@
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:fo="http://www.w3.org/1999/XSL/Format"
                 version="1.0">
+
+    <xsl:output encoding="utf-8"/>
 
     <!-- Global static variables -->
     <xsl:variable name="font-xx-small">6pt</xsl:variable>
