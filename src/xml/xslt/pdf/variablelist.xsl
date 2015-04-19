@@ -195,7 +195,7 @@
                     <fo:table-column column-width="{$targetWidth}mm"/>
                     <fo:table-column column-width="{$valueWidth}mm"/>
                     <fo:table-header font-size="{$font-medium}"
-                                     font-family="sans-serif">
+                                     font-family="{$font-heading}">
                         <fo:table-row>
                             <fo:table-cell><fo:block/></fo:table-cell>
                             <fo:table-cell>
@@ -216,7 +216,7 @@
                     <fo:table-column column-width="{$valueWidth}mm"/>
                     <fo:table-column column-width="{$targetWidth}mm"/>
                     <fo:table-header font-size="{$font-medium}"
-                                     font-family="sans-serif">
+                                     font-family="{$font-heading}">
                         <fo:table-row>
                             <fo:table-cell><fo:block/></fo:table-cell>
                             <fo:table-cell>
@@ -235,7 +235,7 @@
             </xsl:choose>
 
 
-            <fo:table-body font-size="10pt" font-family="sans-serif">
+            <fo:table-body font-size="10pt" font-family="{$font-heading}">
                 <xsl:apply-templates select="yb:item"/>
             </fo:table-body>
         </fo:table>

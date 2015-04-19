@@ -73,7 +73,7 @@
             <xsl:when test="$article-style='character'">green</xsl:when>
             <xsl:when test="$article-style='campaign'">brown</xsl:when>
             <xsl:when test="$article-style='catalogue'">black</xsl:when>
-            <xsl:when test="$article-style='magic'">#00eeff</xsl:when>
+            <xsl:when test="$article-style='magic'">#005588</xsl:when>
 
             <xsl:when test="$article-style='religion'">blue</xsl:when>
             <xsl:when test="$article-style='module'">black</xsl:when>

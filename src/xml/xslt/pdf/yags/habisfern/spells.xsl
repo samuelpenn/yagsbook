@@ -62,14 +62,22 @@
                                 <xsl:value-of select="h:time"/>
                             </xsl:if>
                             <xsl:if test="not(h:time)">
-                                1 round
+                                Action
                             </xsl:if>
                         </fo:block>
                     </fo:table-cell>
                     <fo:table-cell>
                         <fo:block font-family="Times">
                             <fo:inline font-weight="bold">Range: </fo:inline>
-                            <xsl:value-of select="h:range"/>
+                            <xsl:choose>
+                                <xsl:when test="h:range='Reach'">Reach (3m)</xsl:when>
+                                <xsl:when test="h:range='Short'">Short (25m)</xsl:when>
+                                <xsl:when test="h:range='Medium'">Medium (100m)</xsl:when>
+                                <xsl:when test="h:range='Long'">Long (250m)</xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:value-of select="h:range"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
                         </fo:block>
                     </fo:table-cell>
                 </fo:table-row>
@@ -105,7 +113,15 @@
                         <fo:table-cell>
                             <fo:block font-family="Times">
                                 <fo:inline font-weight="bold">Radius: </fo:inline>
-                                <xsl:value-of select="h:radius"/>
+                                <xsl:choose>
+                                    <xsl:when test="h:radius='Tiny'">Tiny (1m)</xsl:when>
+                                    <xsl:when test="h:radius='Small'">Small (3m)</xsl:when>
+                                    <xsl:when test="h:radius='Medium'">Medium (10m)</xsl:when>
+                                    <xsl:when test="h:radius='Large'">Large (25m)</xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:value-of select="h:radius"/>
+                                    </xsl:otherwise>
+                                </xsl:choose>
                             </fo:block>
                         </fo:table-cell>
                     </fo:table-row>

@@ -56,6 +56,10 @@
         <xsl:variable name="height" select="@height"/>
         <xsl:variable name="name" select="@name"/>
 
+        <fo:external-graphic
+                    src="{$src}" width="{$width}" height="{$height}"
+                    content-width="{$width}" content-height="{$height}"/>
+
     </xsl:template>
 
     <xsl:template match="yb:svg">
@@ -67,7 +71,7 @@
         <fo:block space-after="0pt">
             <!-- <fo:instream-foreign-object -->
             <fo:external-graphic
-                    src="{$src}" width="auto" height="auto"/>
+                    src="{$src}" width="{$width}" height="auto"/>
 <!--                    content-width="auto" content-height="auto"/> -->
         </fo:block>
     </xsl:template>
