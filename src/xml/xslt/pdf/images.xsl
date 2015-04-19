@@ -57,9 +57,8 @@
         <xsl:variable name="name" select="@name"/>
 
         <fo:external-graphic
-                    src="{$src}" width="{$width}" height="{$height}"
-                    content-width="{$width}" content-height="{$height}"/>
-
+            src="{$src}" width="{$width}" height="{$height}"
+            content-width="{$width}" content-height="{$height}"/>
     </xsl:template>
 
     <xsl:template match="yb:svg">
@@ -68,12 +67,20 @@
         <xsl:variable name="height" select="@height"/>
         <xsl:variable name="name" select="@name"/>
 
-        <fo:block space-after="0pt">
-            <!-- <fo:instream-foreign-object -->
-            <fo:external-graphic
-                    src="{$src}" width="{$width}" height="auto"/>
-<!--                    content-width="auto" content-height="auto"/> -->
-        </fo:block>
+        <xsl:choose>
+            <xsl:when test="@align='center'">
+                <fo:block space-after="0pt" space-before="0px" text-align="center">
+                    <fo:external-graphic
+                        src="{$src}" width="{$width}" height="{$height}"
+                        content-width="{$width}" content-height="{$height}"/>
+                </fo:block>
+            </xsl:when>
+            <xsl:otherwise>
+                <fo:external-graphic
+                    src="{$src}" width="{$width}" height="{$height}"
+                    content-width="{$width}" content-height="{$height}"/>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
 
     <xsl:template match="yb:para/yb:image">

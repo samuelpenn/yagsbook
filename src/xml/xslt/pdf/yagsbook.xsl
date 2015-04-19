@@ -88,7 +88,7 @@
             <xsl:when test="$article-style='character'">#aaffaa</xsl:when>
             <xsl:when test="$article-style='combat'">#ffeeee</xsl:when>
             <xsl:when test="$article-style='campaign'">#fffeee</xsl:when>
-            <xsl:when test="$article-style='magic'">#aaddff</xsl:when>
+            <xsl:when test="$article-style='magic'">#66ccee</xsl:when>
 
             <xsl:when test="$article-style='religion'">#aaddff</xsl:when>
             <xsl:when test="$article-style='module'">#fafafa</xsl:when>
@@ -104,7 +104,7 @@
             <xsl:when test="$article-style='combat'">#ffdddd</xsl:when>
             <xsl:when test="$article-style='campaign'">#ffeedd</xsl:when>
             <xsl:when test="$article-style='catalogue'">#eeeeee</xsl:when>
-            <xsl:when test="$article-style='magic'">#5555ff</xsl:when>
+            <xsl:when test="$article-style='magic'">#3388aa</xsl:when>
 
             <xsl:when test="$article-style='religion'">#5555ff</xsl:when>
             <xsl:when test="$article-style='module'">#eeeeee</xsl:when>
