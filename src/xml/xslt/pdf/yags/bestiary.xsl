@@ -250,7 +250,7 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:variable>
-            <xsl:value-of select="$attrScore * 4"/>
+            <xsl:value-of select="$attrScore"/>
         </xsl:variable>
 
         <xsl:variable name="atkBonus">
