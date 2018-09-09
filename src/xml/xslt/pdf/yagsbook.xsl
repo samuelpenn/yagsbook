@@ -135,6 +135,12 @@
         <xsl:variable name="temp" select="substring-after($cvsvtag, ' ')"/>
         <xsl:value-of select="substring-before($temp, ' ')"/>
     </xsl:variable>
+    
+    <xsl:variable name="footerImage">
+        <xsl:variable name="lowercase" select="'abcdefghijklmnopqrstuvwxyz'" />
+        <xsl:variable name="uppercase" select="'ABCDEFGHIJKLMNOPQRSTUVWXYZ'" />
+        <xsl:value-of select="translate(substring-after(/yb:article/yb:header/yb:tagline, ' '), $uppercase, $lowercase)"/>
+    </xsl:variable>
 
 
     <!-- Generic elements (mostly DocBook compatible) -->
@@ -190,7 +196,7 @@
                                     page-height="297mm"
                                     page-width="210mm"
                                     margin-top="15mm"
-                                    margin-bottom="15mm"
+                                    margin-bottom="0mm"
                                     margin-left="0mm"
                                     margin-right="10mm"
                                     padding="0mm">
@@ -200,11 +206,11 @@
                     margin-left="10mm"
                     margin-right="10mm"
                     margin-top="15mm"
-                    margin-bottom="11mm" />
+                    margin-bottom="21mm" />
 
                 <fo:region-before extent="15mm"
                     region-name="region-before-left"/>
-                <fo:region-after extent="10mm"
+                <fo:region-after extent="20mm"
                     region-name="region-after-left"/>
                 <fo:region-start extent="10mm"/>
                 <fo:region-end extent="10mm"/>
@@ -215,7 +221,7 @@
                                     page-height="297mm"
                                     page-width="210mm"
                                     margin-top="15mm"
-                                    margin-bottom="15mm"
+                                    margin-bottom="0mm"
                                     margin-left="10mm"
                                     margin-right="0mm"
                                     padding="0mm">
@@ -225,12 +231,12 @@
                     margin-right="10mm"
                     margin-left="10mm"
                     margin-top="15mm"
-                    margin-bottom="11mm" />
+                    margin-bottom="21mm" />
 
                 <fo:region-before extent="15mm"
                     region-name="region-before-right"/>
 
-                <fo:region-after extent="10mm"
+                <fo:region-after extent="20mm"
                     region-name="region-after-right"/>
 
                 <fo:region-start extent="10mm"/>
@@ -281,7 +287,7 @@
                 <fo:region-before extent="15mm"
                                   region-name="region-before-right"/>
 
-                <fo:region-after extent="10mm"
+                <fo:region-after extent="20mm"
                                  region-name="region-after-right"/>
 
                 <fo:region-start extent="10mm"/>
@@ -338,12 +344,12 @@
     <xsl:template name="copyright-and-version">
         <xsl:value-of select="$tagLine"/>
         <xsl:text> </xsl:text>
-        (<xsl:value-of select="/yb:article/yb:header/yb:title"/>
-        <xsl:text> </xsl:text>
-        <xsl:value-of select="$versionNumber"/>)
+        <fo:inline font-size="{$font-x-small}" vertical-align="super">
+            <xsl:value-of select="$versionNumber"/>
+        </fo:inline>
         <xsl:text> </xsl:text>
         <xsl:value-of select="/yb:article/yb:header/yb:license/yb:holder"/>
-        (c) <xsl:value-of select="/yb:article/yb:header/yb:license/yb:year"/>
+        © <xsl:value-of select="/yb:article/yb:header/yb:license/yb:year"/>
     </xsl:template>
 
     <!-- ************************************************************** -->
@@ -451,15 +457,22 @@
             </fo:static-content>
 
             <fo:static-content flow-name="region-after-right">
-                <fo:block font-family="{$font-body}" font-size="12pt"
-                          text-align="end"
-                          font-weight="bold"
-                          font-style="italic"
-                          border-before-width="2px"
-                          border-before-color="black"
-                          border-before-style="solid">
-                    <xsl:call-template name="copyright-and-version"/>
-                </fo:block>
+                <fo:block-container height="20mm"
+                            background-image="{$svgImageBase}footer-{$footerImage}-right.png"
+                            background-repeat="no-repeat"
+                            background-position-vertical="bottom"
+                            background-position-horizontal="right"
+                    >
+                    <fo:block font-family="{$font-body}" font-size="12pt"
+                            text-align="end"
+                            font-weight="bold"
+                            font-style="italic"
+                            border-before-width="2px"
+                            border-before-color="black"
+                            border-before-style="solid">
+                        <xsl:call-template name="copyright-and-version"/>
+                    </fo:block>
+                </fo:block-container>
             </fo:static-content>
 
             <fo:static-content flow-name="region-before-left">
@@ -479,15 +492,22 @@
             </fo:static-content>
 
             <fo:static-content flow-name="region-after-left">
-                <fo:block font-family="{$font-body}" font-size="12pt"
-                          text-align="start"
-                          font-weight="bold"
-                          font-style="italic"
-                          border-before-width="2px"
-                          border-before-color="black"
-                          border-before-style="solid">
-                    <xsl:call-template name="copyright-and-version"/>
-                </fo:block>
+                <fo:block-container height="20mm"
+                            background-image="{$svgImageBase}footer-{$footerImage}-left.png"
+                            background-repeat="no-repeat"
+                            background-position-vertical="bottom"
+                            background-position-horizontal="left"
+                    >
+                    <fo:block font-family="{$font-body}" font-size="12pt"
+                            text-align="start"
+                            font-weight="bold"
+                            font-style="italic"
+                            border-before-width="2px"
+                            border-before-color="black"
+                            border-before-style="solid">
+                        <xsl:call-template name="copyright-and-version"/>
+                    </fo:block>
+                </fo:block-container>
             </fo:static-content>
 
             <fo:flow flow-name="xsl-region-body" text-align="justify">
